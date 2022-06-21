@@ -1,13 +1,13 @@
 {
-  "name": "mtg-boilerplate",
+  "name": "Intersec",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "author": "Marin",
+  "author": "Andrew",
   "license": "MIT",
   "env": {
-    "dev": "mtg-dev-marin",
-    "prod": "mtg-dev-marin"
+    "dev": "mtg-dev-andrew",
+    "prod": "mtg-dev-andrew"
   },
   "scripts": {
     "clean:dist": "rm -rf dist && mkdir dist ",
@@ -19,8 +19,8 @@
     "watch": "gulp watch",
     "watch:webpack": "webpack --watch --progress",
     "hs:auth": "hs auth personalaccesskey",
-    "hs:sync-prod": "hs upload --overwrite --portal=$npm_package_env_dev dist boilerplate-mtg-hubspot",
-    "hs:sync-dev": "hs upload --overwrite --portal=$npm_package_env_dev dist boilerplate-mtg-hubspot",
+    "hs:sync-prod": "hs upload --overwrite --portal=Intersec dist Intersec",
+    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-andrew  dist Intersec",
     "hs:module": "yarn plop;",
     "hs:watch": "hs watch --portal=$npm_package_env_dev dist MTG",
     "deploy:prod": "yarn build && yarn hs:sync-prod",
@@ -78,8 +78,13 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
-    "flickity": "^2.2.1",
+    "flickity": "^2.3.0",
+    "flickity-fade": "^1.0.0",
+    "flickity-fullscreen": "^1.1.1",
     "flickity-imagesloaded": "^2.0.0",
-    "n": "^8.0.2"
+    "gsap": "npm:@gsap/business@^3.10.4",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.4.1",
+    "splitting": "^1.0.6"
   }
 }
