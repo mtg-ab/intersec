@@ -4,11 +4,25 @@ section.hero-home{
     position: relative;
     svg.bg-circles{
         position: absolute;
-        top:7%;
+        top:0px;
         left:50%;
         transform:translateX(-50%);
         pointer-events: none;
         max-width:950px;
+        
+        &.active{
+            path{
+                opacity:1;
+                transform: rotate(0deg);
+            }
+        }
+        
+        path{
+            transition: 1.5s;
+            transform-origin: 50% 50%;
+            opacity:0;
+            transform: rotate(-30deg);
+        }
     }
     div.container{
         position: relative;
@@ -36,6 +50,17 @@ section.hero-home{
                     left:10px;
                     bottom:0px;
                     background: linear-gradient(90deg, rgba(242,112,38,0) 0%, rgba(242,112,38,1) 100%);
+                }
+            }
+        }
+        div.bloc-btns{
+            display: flex;
+            justify-content: center;
+            margin-top:60px;
+            div.row-btns{
+                a.btn{
+                    margin:0px 15px;
+                    
                 }
             }
         }

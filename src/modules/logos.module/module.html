@@ -1,0 +1,28 @@
+<section id="{{module.module_identity}}" class="logos-row {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% for item in module.logos %}
+            {% if item.logo.src %}
+                <figure>
+                    <img loding="lazy" src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" />
+                </figure>
+            {% endif %}
+        {% endfor %}
+        {% for item in module.logos %}
+            {% if item.logo.src %}
+                <figure>
+                    <img loding="lazy" src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" />
+                </figure>
+            {% endif %}
+        {% endfor %}
+        {% for item in module.logos %}
+            {% if item.logo.src %}
+                <figure>
+                    <img loding="lazy" src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" />
+                </figure>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+    <span class="btn-left left-hover"></span>
+    <span class="btn-right right-hover"></span>
+</section>

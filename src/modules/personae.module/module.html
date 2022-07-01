@@ -1,0 +1,31 @@
+<section id="{{module.module_identity}}" class="personae {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+    </div>
+    <div class="container">
+        {% if module.image.src %}
+            <div class="bloc-img" data-speed="0.95">
+                <figure>
+                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                </figure>
+                <div class="bloc-line">
+                    <svg width="448" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="224" cy="224" r="223" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 0"/>
+                    </svg>
+                </div>
+                <svg width="448" class="dashed-circle" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="224" cy="224" r="223" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 10"/>
+                </svg>
+            </div>                
+        {% endif %}
+        {% if module.text %}
+            <div class="bloc-txt">
+                <div class="txt">
+                    {{ module.text }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>

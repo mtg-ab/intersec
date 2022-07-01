@@ -1,0 +1,44 @@
+<section id="{{module.module_identity}}" class="banner-cta {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-title">
+            {% if module.title %}
+                <h2>{{ module.title }}</h2>
+            {% endif %}
+            {% if module.image.src %}
+                <div class="bloc-img" data-speed="0.9">
+                    <figure>
+                        <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                    </figure>
+                    <div class="bloc-line">
+                        <svg width="388" height="388" viewBox="0 0 388 388" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="194" cy="194" r="193" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 0"/>
+                        </svg>
+                    </div>
+                    <svg width="418" class="dashed-circle" height="418" viewBox="0 0 418 418" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="209" cy="209" r="208" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 10"/>
+                    </svg>
+                </div>                
+            {% endif %}
+        </div>        
+        <div class="bloc-txt">
+            <div>
+                {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+                {% if module.cta_field %}
+                    <div class="row-btns">
+                        {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+                    </div>
+                {% else if module.button_url.href %}
+                    <div class="row-btns">
+                        <a href="{{ module.button_url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                            </svg>
+                            {{ module.button_text }}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,127 @@
+section.banner-cta{
+    background-color: $color1;
+    background-repeat: repeat-x;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+    &.active{
+        div.container{
+            div.bloc-title{
+                div.bloc-img{
+                    div.bloc-line{
+                        svg{
+                            circle{
+                                stroke-dashoffset: 0;
+                                opacity:1;
+                            }
+                        }
+                    }
+                    svg.dashed-circle{
+                        transform: rotate(-180deg);
+                        opacity:1;
+                    }
+                }
+            }
+        }
+    }
+    div.container{
+        display:flex;
+        flex-direction: column;
+        max-width:1125px;
+        div.bloc-title{
+            position: relative;
+            width:100%;
+            max-width:680px;
+            padding-top:60px;
+            h2{
+                color:#fff;
+                position: relative;
+                z-index:2;
+                margin-bottom:0px;
+            }
+            div.bloc-img{
+                width:416px;
+                height:416px;
+                border-radius:50%;
+                position: absolute;
+                top:0px;
+                right:0px;
+                padding:25px;
+                div.bloc-line{
+                    position: absolute;
+                    top:15px;
+                    left:15px;
+                    width:388px;
+                    height:388px;
+                    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+                    transition: 1.55s;
+                    svg{
+                        transform: rotate(-90deg);
+                        circle{
+                            stroke-dasharray: 1250;
+                            stroke-dashoffset: 1000;
+                            transition: 1.55s;
+                            opacity:0;
+                        }
+                    }
+                }
+                svg{
+                    position: absolute;
+                    left:0px;
+                    top:0px;
+                    
+                    &.dashed-circle{
+                        width:100%;
+                        height:100%;
+                        transition: 1.55s;
+                        opacity:0;
+
+                    }
+                }
+                figure{
+                    width:100%;
+                    height:100%;
+                    display:block;
+                    border-radius:50%;
+                    overflow: hidden;
+                    margin:0px;
+                    img{
+                        display:block;
+                        object-fit: cover;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+           
+        }
+        div.bloc-txt{
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            color:#fff;
+            div{
+                max-width:310px;
+                p{
+                    color:#fff;
+                    margin-top:0px;
+                }
+                div.row-btns{
+                    position: relative;
+                    margin-top:20px;
+                    display: inline-block;
+                    a.btn{
+                        background-color: $color1;
+                        color:$color2;
+                        
+                        z-index:2;
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+    }
+}

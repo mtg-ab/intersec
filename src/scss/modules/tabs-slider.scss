@@ -1,0 +1,274 @@
+section.tabs-slider{
+    background-color: $color1;
+    background-repeat: repeat-x;
+    background-position: center;
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+    span.bg-txt{
+        position: absolute;
+        top:0px;
+        left:0px;
+        width:100%;
+        height:100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='1440' height='235' viewBox='0 0 1440 235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-12 12.123V158.221C-12 170.24 -10.1286 181.016 -6.38571 190.549C-2.64285 199.874 2.76351 207.853 9.83336 214.484C17.1111 221.116 25.6366 226.193 35.4096 229.716C45.1826 233.239 55.8914 235 67.5358 235C79.1803 235 89.889 233.239 99.6621 229.716C109.435 226.193 117.857 221.116 124.926 214.484C131.996 207.853 137.403 199.874 141.145 190.549C145.096 181.016 147.072 170.24 147.072 158.221V12.123H110.267V156.667C110.267 170.137 106.628 181.016 99.3502 189.306C92.0724 197.388 81.4676 201.429 67.5358 201.429C53.3961 201.429 42.6874 197.388 35.4096 189.306C28.3397 181.016 24.8048 170.137 24.8048 156.667V12.123H-12Z' fill='%23383838'/%3E%3Cpath d='M217.952 159.775L190.504 178.737C195.287 188.684 201.733 197.906 209.843 206.402C217.952 214.899 227.413 221.737 238.226 226.918C249.247 231.892 261.203 234.378 274.095 234.378C283.452 234.378 292.393 232.824 300.919 229.716C309.652 226.814 317.45 222.67 324.312 217.282C331.174 211.687 336.58 204.848 340.531 196.766C344.482 188.684 346.457 179.566 346.457 169.411C346.457 159.879 344.794 151.59 341.467 144.544C338.348 137.498 334.085 131.384 328.678 126.204C323.272 120.816 317.242 116.36 310.588 112.837C304.142 109.314 297.696 106.413 291.25 104.134C279.605 99.989 270.144 95.948 262.866 92.0106C255.589 88.0732 250.182 83.9286 246.647 79.5767C243.32 75.0176 241.657 69.9405 241.657 64.3452C241.657 58.1283 244.048 52.7403 248.831 48.1812C253.613 43.4149 261.099 41.0317 271.288 41.0317C278.566 41.0317 284.908 42.4824 290.314 45.3836C295.928 48.0776 300.815 51.8078 304.974 56.5741C309.132 61.1332 312.563 66.1067 315.267 71.4947L345.209 54.709C341.467 47.0414 336.268 39.6847 329.614 32.6389C323.168 25.593 315.163 19.7906 305.597 15.2315C296.032 10.6724 284.804 8.39286 271.912 8.39286C258.812 8.39286 247.063 10.8796 236.666 15.8532C226.477 20.6195 218.368 27.4581 212.338 36.369C206.308 45.0727 203.293 55.2271 203.293 66.832C203.293 76.9863 205.268 85.69 209.219 92.9431C213.17 99.989 218.16 105.999 224.19 110.972C230.22 115.739 236.562 119.78 243.216 123.095C249.87 126.204 255.901 128.69 261.307 130.556C270.456 133.871 278.462 137.291 285.324 140.813C292.393 144.129 297.904 148.274 301.855 153.247C305.805 158.014 307.781 164.438 307.781 172.52C307.781 181.016 304.662 187.959 298.424 193.347C292.186 198.735 284.076 201.429 274.095 201.429C265.778 201.429 258.292 199.771 251.638 196.455C244.984 192.932 238.85 188.062 233.235 181.845C227.829 175.421 222.735 168.064 217.952 159.775Z' fill='%23383838'/%3E%3Cpath d='M416.355 229.716H526.458V197.388H416.355V229.716ZM416.355 44.4511H526.458V12.123H416.355V44.4511ZM416.355 129.001H520.22V97.295H416.355V129.001ZM393.586 12.123V229.716H429.767V12.123H393.586Z' fill='%23383838'/%3E%3Cpath d='M711.135 120.919C711.135 105.377 714.566 91.907 721.428 80.5093C728.498 68.9043 737.647 59.9934 748.876 53.7765C760.312 47.3523 772.684 44.1402 785.992 44.1402C796.389 44.1402 805.746 45.4872 814.064 48.1812C822.381 50.8752 829.867 54.6054 836.521 59.3717C843.383 63.9308 849.309 69.1116 854.3 74.914V31.3955C845.15 23.9352 835.273 18.2363 824.669 14.2989C814.064 10.3616 800.756 8.39286 784.745 8.39286C768.734 8.39286 753.762 11.0869 739.83 16.4749C726.107 21.8629 714.15 29.634 703.961 39.7884C693.772 49.9427 685.767 61.9621 679.945 75.8466C674.33 89.5238 671.523 104.548 671.523 120.919C671.523 137.291 674.33 152.418 679.945 166.303C685.767 179.98 693.772 191.896 703.961 202.05C714.15 212.205 726.107 219.976 739.83 225.364C753.762 230.752 768.734 233.446 784.745 233.446C800.756 233.446 814.064 231.477 824.669 227.54C835.273 223.602 845.15 217.903 854.3 210.443V166.925C849.309 172.727 843.383 178.011 836.521 182.778C829.867 187.337 822.381 190.963 814.064 193.657C805.746 196.351 796.389 197.698 785.992 197.698C772.684 197.698 760.312 194.59 748.876 188.373C737.647 181.949 728.498 172.934 721.428 161.329C714.566 149.724 711.135 136.254 711.135 120.919Z' fill='%23383838'/%3E%3Cpath d='M930.641 173.763H1046.05L1038.87 142.679H937.503L930.641 173.763ZM987.719 73.6706L1022.34 154.491L1023.28 163.505L1052.91 229.716H1094.39L987.719 0L881.048 229.716H922.531L952.786 161.64L953.41 153.558L987.719 73.6706Z' fill='%23383838'/%3E%3Cpath d='M1143.49 159.775L1116.05 178.737C1120.83 188.684 1127.28 197.906 1135.38 206.402C1143.49 214.899 1152.96 221.737 1163.77 226.918C1174.79 231.892 1186.74 234.378 1199.64 234.378C1208.99 234.378 1217.94 232.824 1226.46 229.716C1235.19 226.814 1242.99 222.67 1249.85 217.282C1256.72 211.687 1262.12 204.848 1266.07 196.766C1270.02 188.684 1272 179.566 1272 169.411C1272 159.879 1270.34 151.59 1267.01 144.544C1263.89 137.498 1259.63 131.384 1254.22 126.204C1248.81 120.816 1242.78 116.36 1236.13 112.837C1229.68 109.314 1223.24 106.413 1216.79 104.134C1205.15 99.989 1195.69 95.948 1188.41 92.0106C1181.13 88.0732 1175.72 83.9286 1172.19 79.5767C1168.86 75.0176 1167.2 69.9405 1167.2 64.3452C1167.2 58.1283 1169.59 52.7403 1174.37 48.1812C1179.16 43.4149 1186.64 41.0317 1196.83 41.0317C1204.11 41.0317 1210.45 42.4824 1215.86 45.3836C1221.47 48.0776 1226.36 51.8078 1230.52 56.5741C1234.67 61.1332 1238.11 66.1067 1240.81 71.4947L1270.75 54.709C1267.01 47.0414 1261.81 39.6847 1255.16 32.6389C1248.71 25.593 1240.7 19.7906 1231.14 15.2315C1221.57 10.6724 1210.35 8.39286 1197.45 8.39286C1184.35 8.39286 1172.61 10.8796 1162.21 15.8532C1152.02 20.6195 1143.91 27.4581 1137.88 36.369C1131.85 45.0727 1128.83 55.2271 1128.83 66.832C1128.83 76.9863 1130.81 85.69 1134.76 92.9431C1138.71 99.989 1143.7 105.999 1149.73 110.972C1155.76 115.739 1162.1 119.78 1168.76 123.095C1175.41 126.204 1181.44 128.69 1186.85 130.556C1196 133.871 1204 137.291 1210.87 140.813C1217.94 144.129 1223.45 148.274 1227.4 153.247C1231.35 158.014 1233.32 164.438 1233.32 172.52C1233.32 181.016 1230.2 187.959 1223.97 193.347C1217.73 198.735 1209.62 201.429 1199.64 201.429C1191.32 201.429 1183.83 199.771 1177.18 196.455C1170.53 192.932 1164.39 188.062 1158.78 181.845C1153.37 175.421 1148.28 168.064 1143.49 159.775Z' fill='%23383838'/%3E%3Cpath d='M1341.9 229.716H1452V197.388H1341.9V229.716ZM1341.9 44.4511H1452V12.123H1341.9V44.4511ZM1341.9 129.001H1445.76V97.295H1341.9V129.001ZM1319.13 12.123V229.716H1355.31V12.123H1319.13Z' fill='%23383838'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 100% auto;
+    }
+    div.container{
+        
+        h2{
+            color:#fff;
+        }
+        &.container-slider{
+            max-width:calc(100%);
+            display: flex;
+            justify-content: flex-end;
+        }
+        div.bloc-tabs-slider{
+            display:flex;
+            justify-content: space-between;
+            margin-top:95px;
+            padding-left:85px;
+            max-width:calc(50% + 612px);
+            width:100%;
+            div.bloc-tabs{
+                max-width:206px;
+                display: flex;
+                flex-direction: column;
+                width:100%;
+                div.bloc{
+                    text-decoration: none;
+                    width:calc(100%);
+                    height:170px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    position: relative;
+                    color:#fff;
+                    transition: 0.75s;
+                    cursor: pointer;
+                    opacity:0;
+                    transform: translateY(40px);
+                    &:nth-child(1){
+                        z-index:10
+                    }
+                    &:nth-child(2){
+                        z-index:9;
+                    }
+                    &:nth-child(3){
+                        z-index:8;
+                    }
+                    &:nth-child(4){
+                        z-index:7;
+                    }
+                    &:hover,&.selected{
+                        z-index:11;
+                        div.bloc-img{
+                            background-color: $color2;
+                        }
+                        svg{
+                            &.line-outline{
+                                circle{
+                                    transition: 1.5s;
+                                    stroke: $color2;
+                                }
+                            }
+                            &.line-dashed{
+                                top:calc(50% + 16px);
+                                transform: translateX(-50%) scale(1.16) translateY(-50%) rotate(-90deg);
+                                opacity:1;
+                                circle{
+                                    stroke-dasharray: 3;
+                                    stroke-dashoffset: 15;
+                                    stroke: $color2;
+                                }
+                            }
+                        }
+                        p{
+                            color:$color2;
+                        }
+                    }
+                    svg{
+                        position: absolute;
+                        top:50%;
+                        left:50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        &.line-outline{
+                            transform-origin: 50%;
+                            circle{
+                                stroke:#fff;
+                                fill:#2F2F2F;
+                                transition: 0.5s;
+                                transform: rotate(-90deg);
+                                transform-origin: 50% 50%;
+                                transition-timing-function: ease-in-out;
+                            }
+                        }
+                        &.line-dashed{
+                            transition: 0.75s;
+                            transform-origin: 50% 50%;
+                            opacity:0;
+                            circle{
+                                transition: 0.75s;
+                                transition-timing-function: ease-in-out;
+                            }
+                        }
+                    }
+                    div.bloc-img{
+                        margin:0px;
+                        display:flex;
+                        justify-content: center;
+                        position: relative;
+                        z-index:2;
+                        width:52px;
+                        height:52px;
+                        mask-repeat: no-repeat;
+                        -webkit-mask-repeat: no-repeat;
+                        mask-position: center;
+                        -webkit-mask-position: center;
+                        background-color: #fff;
+                        transition: 0.5s;
+                    }
+                    p{
+                        font-size:19px;
+                        line-height:22px;
+                        font-weight: bold;
+                        position: relative;
+                        z-index:2;
+                        margin-bottom:0px;
+                        color:#fff;
+                        transition: 0.5s;
+                    }
+                    
+                }
+            }
+            div.bloc-slider{
+                width:calc(100% - 350px);
+                position: relative;
+                z-index:2;
+                padding-bottom:80px;
+                overflow:hidden;
+                &:after{
+                    display:block;
+                    content:'';
+                    position: absolute;
+                    right:0px;
+                    top:0px;
+                    width:160px;
+                    height:100%;
+                    z-index:6;
+                    background: linear-gradient(268.47deg, #2F2F2F -2.41%, rgba(47, 47, 47, 0) 98.47%);
+                }
+                div.slider{
+                    display: flex;
+                    cursor: grab;
+                    position: absolute;
+                    left:0px;
+                    transition: 0.75s;
+                    opacity:0px;
+                    width:100%;
+                    transform: translateY(40px);
+                    z-index:1;
+                    &.selected{
+                        opacity:1;
+                        transform: translateY(0px);
+                        z-index:3;
+                    }
+                    div.flickity-viewport{
+                        width:100%;
+                        height:100%;
+                        div.flickity-slider{
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                    ol.flickity-page-dots{
+                        position: absolute;
+                        bottom:-80px;
+                        left:50%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        align-items: center;
+                        li{
+                            list-style-type: none;
+                            width:4px;
+                            height:4px;
+                            border-radius: 50%;
+                            background: rgba(255, 255, 255, 0.5);
+                            margin:0px 8px;
+                            &.is-selected{
+                                width:8px;
+                                height:8px;
+                                background-color: $color2;
+                            }
+                        }
+
+                    }
+                    div.bloc{
+                        max-width:210px;
+                        margin-right:100px;
+                        opacity:0;
+                        left:60px;
+                        &:nth-child(2n+2){
+                            padding-top:72px;
+                        }
+                        h3{
+                            color:#fff;
+                            a{
+                                color:#fff;
+                                text-decoration: none;
+                            }
+                        }
+                        a.bloc-img{
+                            width:100%;
+                            height:210px;
+                            display:block;
+                            overflow:hidden;
+                            &:hover{
+                                figure{
+                                    img{
+                                        transform: scale(1.1);
+                                    }
+                                }
+                            }
+                            figure{
+                                display:block;
+                                width:100%;
+                                height:100%;
+                                img{
+                                    display: block;
+                                    object-fit: cover;
+                                    width: 100%;
+                                    height:100%;
+                                    object-position: center;
+                                    transition: 0.5s;
+                                }
+                            }
+                        }
+                        div.bloc-txt{
+                            padding-top:15px;
+                            margin-top:15px;
+                            border-top: 1px solid $color2;
+                            color:#fff;
+                            margin-bottom:30px;
+                            & > *{
+                                color:#fff;
+                            }
+                            p{
+                                margin-top:0px;
+                            }
+                        }
+                        div.row-btns{
+                            a.btn{
+                                background-color: $color1;
+                                color:$color2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

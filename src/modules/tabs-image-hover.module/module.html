@@ -1,0 +1,55 @@
+<section id="{{module.module_identity}}" class="tabs-image-hover {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+    </div>
+    <div class="container">
+        <div class="bloc-tabs-columns">
+            <div class="bloc-tabs">
+                {% for item in module.items %}
+                    <div class="bloc {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        <div class="circles">
+                            <svg width="25" class="line-outline" height="25" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="11" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                            </svg>
+                            
+                            <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="66" cy="66" r="61" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 5"/>
+                            </svg> 
+                            
+                        </div>
+                        <div class="item-title">
+                            <p class="title">{{ item.title }}</p>
+                            <p class="subtitle">{{ item.subtitle }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="bloc-columns">
+                {% for item in module.items %}
+                    <div class="blocs {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        {% for page in item.subitems %}
+                            <a href="{{ page.link }}" class="row link-hover">
+                                {% if page.title %}
+                                    <h3>{{ page.title }}</h3>
+                                {% endif %}
+                                {% if page.image.src %}
+                                    <div class="bloc-img">
+                                        <figure>
+                                            <img loading="lazy" src="{{ page.image.src }}" alt="{{ page.image.alt }}" />
+                                        </figure>
+                                    </div>
+                                {% endif %}
+                                {% if page.text %}
+                                    <div class="bloc-txt">{{ page.text }}</div>
+                                {% endif %}
+                                <div class="step">(0{{ loop.index }})</div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

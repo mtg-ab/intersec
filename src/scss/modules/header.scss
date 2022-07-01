@@ -1,0 +1,101 @@
+header{
+    position: absolute;
+    top:0px;
+    z-index:5;
+    left:0px;
+    width:100%;
+    height:115px;
+    background-color: #fff;
+    @media(max-width:$size4){
+        top:60px;
+    }
+    div.container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height:100%;
+        div.contain-nav{
+            display: flex;
+            align-items: center;
+            
+            @media(max-width:$size4){
+                display:none;
+            }
+            nav{
+                margin-left:65px;
+                ul{
+                    display:flex;
+                    margin:0px;
+                    padding:0px;
+                    li{
+                        list-style-type: none;
+                        margin-right:45px;
+                        a{
+                            color:$color1;
+                            font-size: 14px;
+                            line-height: 20px;
+                            text-decoration: none;
+                            transition: 0.5s;
+                            &:hover{
+                                color:$color2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div.contact{
+            display:flex;
+            div.switch-language{
+                display: flex;
+                align-items: center;
+                font-size: 14.439px;
+                line-height: 17px;
+                margin-right:25px;
+                cursor: pointer;
+                &.en{
+                    span.switcher{
+                        &:before{
+                            transform: translateY(-50%) translateX(calc(100% - 1px));
+                        }
+                    }
+                }
+                span.switcher{
+                    width: 16px;
+                    height: 10px;    
+                    border: 0.451219px solid #000000; 
+                    border-radius: 4.5122px;
+                    position: relative;
+                    display:block;
+                    margin-left:5px;
+                    
+                    &:before{
+                        display:block;
+                        content:'';
+                        position: absolute;
+                        left:1px;
+                        width:7px;
+                        height:7px;
+                        border-radius: 50%;
+                        background-color: $color2;
+                        top:50%;
+                        transform: translateY(-50%);
+                        transition: 0.5s;
+                    }
+                }
+            }
+            div.row-btns{
+                a.btn{
+                    background-color: $color2;
+                    padding:10px 36px;
+                    color:#fff;
+                    font-size:14px;
+                    font-weight:400;
+                    &:before,&:after{
+                        display:none;
+                    }
+                }
+            }
+        }
+    }
+}

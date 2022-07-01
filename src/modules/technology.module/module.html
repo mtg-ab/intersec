@@ -1,0 +1,51 @@
+<section id="{{module.module_identity}}" class="technology {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <span class="bg-txt" data-speed="0.85"></span>
+    <div class="container">
+        <div class="bloc-title">
+            <h2>{{ module.title }}</h2>
+            {% if module.cta_field %}
+                <div class="row-btns">
+                    {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+                </div>
+            {% else if module.button_url.href %}
+                <div class="row-btns">
+                    <a href="{{ module.button_url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg">
+                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                        </svg>
+                        {{ module.button_text }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="blocs">
+            <div class="bloc">
+                {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+            </div>
+            {% for item in module.items %}
+                <a href="{{ item.link.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="bloc bloc-circle">
+                    {% if item.image.src %}
+                        <figure>
+                            <img loading="lazy" src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                        </figure>
+                    {% endif %}
+                    {% if item.title %}
+                        <div class="item-title">
+                            <p>{{ item.title }}</p>
+                        </div>
+                    {% endif %}
+                    <svg width="214" class="line-outline" height="214" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="107" cy="107" r="106" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                    </svg>
+                    <svg width="214" class="line-dashed" height="214" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="107" cy="107" r="106" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                    </svg>   
+                </a>
+            {% endfor %}
+            <div class="bloc">
+                {% inline_rich_text field="rich_text" value="{{ module.text2 }}" %}
+            </div>
+        </div>
+    </div>
+</section>

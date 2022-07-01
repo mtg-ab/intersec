@@ -1,0 +1,75 @@
+section.logos-row{
+    position: relative;
+    span.left-hover{
+        display:block;
+        width:50%;
+        height:100%;
+        position: absolute;
+        left:0px;
+        top:0px;
+        z-index:4;
+        cursor: pointer;
+    }
+    span.right-hover{
+        display:block;
+        width:50%;
+        height:100%;
+        position: absolute;
+        right:0px;
+        top:0px;
+        z-index:4;
+        cursor: pointer;
+    }
+    div.container{
+        display:flex;
+        max-width:100%;
+        overflow:hidden;
+        
+        div.flickity-viewport{
+            width:100%;
+            height:100%;
+            div.flickity-slider{
+                width:100%;
+                height:100%;
+            }
+            &:hover{
+                cursor: grab;
+            }
+        }
+        figure{
+            width:auto;
+            position: relative;
+            height: 70px;
+            margin:0px 40px;
+            padding: 0 0px;
+            width:100%;
+            max-width:205px;
+            &:before{
+                display:block;
+                content:'';
+                position: absolute;
+                background-color: $color2;
+                border-radius: 50%;
+                left:-40px;
+                top:50%;
+                transform: translateY(-50%);
+                width:14px;
+                height:14px;
+            }
+            @media(max-width:$size4){
+                max-width:155px;
+                margin:0px;
+                max-width:185px;
+            }
+            img{
+                max-height: 70px;
+                display: block;
+                width: 100%;
+                height: 100%;
+                -o-object-fit: contain;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+}

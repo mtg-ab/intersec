@@ -1,0 +1,20 @@
+section.richtext{
+    div.container{
+        display: flex;
+        flex-direction: column;
+        max-width:1020px;
+        h2{
+            max-width:400px;
+            margin-bottom:0px;
+        }
+        div.bloc-txt{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top:20px;
+            div{
+                max-width:495px;
+            }
+        }
+    }
+}

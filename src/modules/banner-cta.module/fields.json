@@ -74,21 +74,9 @@
         "validation_regex": "",
         "allow_new_line": false,
         "show_emoji_picker": false,
-        "type": "richtext",
-        "help_text": "",
-        "default": "Flowing without any loss of consect."
-    },
-    {
-        "name": "subtitle",
-        "label": "Subtitle",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
         "type": "text",
         "help_text": "",
-        "default": "Welcome"
+        "default": "Request a demo / Contact us"
     },
     {
         "name": "text",
@@ -99,8 +87,22 @@
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "richtext",
-        "help_text": "",
-        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non risus gravida platea vel sed suscipit. Eget arcu lectus dictumst turpis et sed euismod. Venenatis cras orci auctor vel viverra pellentesque enim.</p>"
+        "help_text": "Title can describe your content properly.",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas congue sed mattis lectus. Cursus morbi urna, lacus duis vulputate sapien pellentesque laoreet viverra. Aliquam aliquet .</p>"
+    },
+    {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image",
+        "default": {
+            "size_type": "auto",
+            "src": "https://via.placeholder.com/600",
+            "alt": "Example of an image used in your module"
+        }
     },
     {
         "name": "button_type",
@@ -123,7 +125,7 @@
         ],
         "type": "choice",
         "placeholder": "",
-        "default": "cta" 
+        "default": "btn" 
     },
     {
         "name": "button_text",
@@ -172,87 +174,6 @@
     {
         "name": "cta_field",
         "label": "CTA field",
-        "required": false,
-        "locked": false,
-        "inline_help_text": "",
-        "help_text": "",
-        "type": "cta",
-        "default": null,
-        "visibility": {
-            "controlling_field": "button_type_id",
-            "controlling_value_regex": "cta",
-            "operator": "EQUAL"
-        } 
-    },
-    {
-        "name": "button_type_2",
-        "label": "Button type 2",
-        "required": false,
-        "locked": false,
-        "display": "select",
-        "inline_help_text": "",
-        "help_text": "",
-        "choices": [
-        [
-            "btn",
-            "Classic button"
-        ],
-        [
-            "cta",
-            "Hubspot Cta"
-        ]
-        ],
-        "type": "choice",
-        "placeholder": "",
-        "default": "cta" 
-    },
-    {
-        "name": "button_text_2",
-        "label": "Texte button 2",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "placeholder": "",
-        "inline_help_text": "",
-        "help_text": "",
-        "default": "Let's talk",
-        "visibility": {
-            "controlling_field": "button_type_id",
-            "controlling_value_regex": "btn",
-            "operator": "EQUAL"
-        }
-    },
-    {
-        "name": "button_url_2",
-        "label": "URL button 2",
-        "required": false,
-        "locked": false,
-        "inline_help_text": "",
-        "help_text": "",
-        "supported_types": [
-        "EXTERNAL",
-        "CONTENT",
-        "FILE",
-        "EMAIL_ADDRESS",
-        "BLOG"
-        ],
-        "type": "url",
-        "default": {
-        "content_id": null,
-        "href": "",
-        "type": "EXTERNAL"},
-        "visibility": {
-            "controlling_field": "button_type_id",
-            "controlling_value_regex": "btn",
-            "operator": "EQUAL"
-        } 
-    },
-    {
-        "name": "cta_field_2",
-        "label": "CTA field 2",
         "required": false,
         "locked": false,
         "inline_help_text": "",

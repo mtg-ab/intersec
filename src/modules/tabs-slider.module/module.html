@@ -1,0 +1,71 @@
+<section id="{{module.module_identity}}" class="tabs-slider {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <span class="bg-txt" data-speed="0.85"></span>
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+    </div>
+    <div class="container container-slider">
+        <div class="bloc-tabs-slider">
+            <div class="bloc-tabs">
+                {% for item in module.items %}
+                    <div class="bloc {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        {% if item.image.src %}
+                            <div class="bloc-img" style="mask-image:url({{ item.image.src }});-webkit-mask-image:url({{ item.image.src }})">
+                            </div>
+                        {% endif %}
+                        {% if item.title %}
+                            <div class="item-title">
+                                <p>{{ item.title }}</p>
+                            </div>
+                        {% endif %}
+                        <svg width="206" class="line-outline" height="206" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="103" cy="103" r="102" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                        </svg>
+                        <svg width="206" class="line-dashed" height="206" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="103" cy="103" r="102" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                        </svg>   
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="bloc-slider">
+                {% for item in module.items %}
+                    <div class="slider {% if loop.index == 1 %}selected{% endif %} grab-hover" data-id="{{ loop.index }}" data-flickity='{"contain": true,"pageDots": true,"prevNextButtons": false,"cellAlign": "left","selectedAttraction": "0.01","friction": "0.15"}'>
+                        {% for page in item.pages %}
+                            <div class="bloc">
+                                {% if page.title %}
+                                    <h3><a href="page.button_url.href">{{ page.title }}</a></h3>
+                                {% endif %}
+                                {% if page.image.src %}
+                                    <a href="page.button_url.href" class="bloc-img">
+                                        <figure>
+                                            <img loading="lazy" src="{{ page.image.src }}" alt="{{ page.image.alt }}" />
+                                        </figure>
+                                    </a>
+                                {% endif %}
+                                {% if page.text %}
+                                    <div class="bloc-txt">{{ page.text }}</div>
+                                {% endif %}
+                                {% if page.cta_field %}
+                                    <div class="row-btns">
+                                        {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+                                    </div>
+                                {% else if page.button_url.href %}
+                                    <div class="row-btns">
+                                        <a href="{{ page.button_url.href }}" {% if page.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            </svg>
+                                            {{ page.button_text }}
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

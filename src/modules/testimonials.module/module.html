@@ -1,0 +1,29 @@
+<section id="{{module.module_identity}}" class="testimonials {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+        <div class="bloc-testimonials">
+            <div class="bloc-circles">
+                <svg width="446" height="446" viewBox="0 0 446 446" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="223" class="line-dashed" cy="223" r="222" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 6"/>
+                </svg>
+                <svg width="388" height="388" viewBox="0 0 388 388" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="194" cy="194" class="line-outline" r="193" stroke="#F1762C" stroke-opacity="0.5" stroke-linecap="round"/>
+                </svg>    
+            </div>
+            <div class="bloc-slider">
+                {% for item in module.testimonials %}
+                    <div class="bloc right-hover">
+                        <div class="txt">
+                            <span class="quote quote-start">“</span>{{ item.testimonial }}<span class="quote quote-end">”</span>
+                        </div>
+                        <span class="line"><span></span></span>
+                        <p class="name">{{ item.nom }}</p>
+                        <p class="job">{{ item.job }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

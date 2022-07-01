@@ -1,0 +1,31 @@
+<header id="{{module.module_identity}}" class="{% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="contain-nav">
+            {% if module.logo.logo_src.src %}
+                <a href="{{ module.logo.logo_link.href }}" class="logo">
+                    <img src="{{ module.logo.logo_src.src }}" loading="lazy" alt="{{ module.logo.logo_src.alt }}" width="{{ module.logo.logo_src.width }}" height="{{ module.logo.logo_src.height }}" />
+                </a>
+            {% endif %}
+            <nav>
+                {% menu "header_menu" id={{ module.header_menu }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+            </nav>
+        </div>
+        <div class="contact">
+            <div class="switch-language">
+                <span class="lang">FR</span>
+                <span class="switcher"></span>
+            </div>
+            {% if module.cta_field %}
+                <div class="row-btns">
+                    {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+                </div>
+            {% else if module.button_url.href %}
+                <div class="row-btns">
+                    <a href="{{ module.button_url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                        {{ module.button_text }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</header>
