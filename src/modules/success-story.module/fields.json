@@ -66,6 +66,7 @@
             }
         ]
     },
+    
     {
         "name": "title",
         "label": "Title",
@@ -75,8 +76,8 @@
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "text",
-        "help_text": "",
-        "default": "Request a demo / Contact us"
+        "help_text": "Title can describe your content properly.",
+        "default": "Client success story"
     },
     {
         "name": "text",
@@ -87,8 +88,8 @@
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "richtext",
-        "help_text": "Title can describe your content properly.",
-        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas congue sed mattis lectus. Cursus morbi urna, lacus duis vulputate sapien pellentesque laoreet viverra. Aliquam aliquet .</p>"
+        "help_text": "",
+        "default": ""
     },
     {
         "name": "image",
@@ -105,29 +106,6 @@
         }
     },
     {
-        "name": "button_type",
-        "id":"button_type_id",
-        "label": "Button type",
-        "required": false,
-        "locked": false,
-        "display": "select",
-        "inline_help_text": "",
-        "help_text": "",
-        "choices": [
-        [
-            "btn",
-            "Classic button"
-        ],
-        [
-            "cta",
-            "Hubspot Cta"
-        ]
-        ],
-        "type": "choice",
-        "placeholder": "",
-        "default": "btn" 
-    },
-    {
         "name": "button_text",
         "label": "Texte button",
         "required": false,
@@ -139,12 +117,7 @@
         "placeholder": "",
         "inline_help_text": "",
         "help_text": "",
-        "default": "Let's talk",
-        "visibility": {
-            "controlling_field": "button_type_id",
-            "controlling_value_regex": "btn",
-            "operator": "EQUAL"
-        }
+        "default": "Let's talk"
     },
     {
         "name": "button_url",
@@ -160,26 +133,30 @@
         "EMAIL_ADDRESS",
         "BLOG"
         ],
-        "type": "link",
-        "visibility": {
-            "controlling_field": "button_type_id",
-            "controlling_value_regex": "btn",
-            "operator": "EQUAL"
-        } 
+        "type": "link"
     },
     {
-        "name": "cta_field",
-        "label": "CTA field",
+        "name": "testimonial",
+        "label": "Testimonial",
         "required": false,
         "locked": false,
-        "inline_help_text": "",
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
         "help_text": "",
-        "type": "cta",
-        "default": null,
-        "visibility": {
-            "controlling_field": "button_type_id",
-            "controlling_value_regex": "cta",
-            "operator": "EQUAL"
-        } 
+        "default": ""
+    },
+    {
+        "name": "author",
+        "label": "Author",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": ""
     }
 ]

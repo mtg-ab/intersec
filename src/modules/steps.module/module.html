@@ -1,0 +1,15 @@
+<section id="{{module.module_identity}}" class="steps {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+    </div>
+    <div class="steps grab-hover">
+        {% for item in module.steps %}
+            <div class="bloc-step">
+                <p class="title"><span class="picto" style="background-image:url({{ item.pictogram.src }})"></span>{{ item.title }}</p>
+                {{ item.text }}
+            </div>
+        {% endfor %}
+    </div>
+</section>

@@ -1,4 +1,43 @@
 section.tabs-toggle{
+    &.bg-black{
+        background-color: $color1;
+        div.container{
+            h2{
+                color:#fff;
+            }
+            div.bloc-txt{
+                div.items{
+                    div.item{
+                        &.open{
+                            div.item-title{
+                                p{
+                                    color:#fff;
+                                }
+                            }
+                            div.item-txt{
+                                color:#fff;
+                                > *{
+                                    color:#fff;
+                                }
+                            }
+                        }
+                        div.item-title{
+                            border-bottom: 0.5px solid rgba(#fff,.3);
+                            p{
+                                color:#fff;
+                            }
+                           
+                        }
+                        
+                    }
+                }
+                a.btn{
+                    color:#fff;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
     div.container{
         display:flex;
         justify-content: space-between;
@@ -127,7 +166,7 @@ section.tabs-toggle{
         }
         div.bloc-imgs{
             max-width:495px;
-            height:330px;
+            min-height:430px;
             position: relative;
             width:100%;
             a.bloc-img{

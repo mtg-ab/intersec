@@ -1,0 +1,144 @@
+section.tabs-logos{
+    position: relative;    
+    div.container{
+        display:flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        z-index:2;
+        padding-bottom:120px;
+        p.title_bg{
+            position: absolute;
+            color:#F9F9F9;
+            bottom:0px;
+            font-weight: 700;
+            font-size:24em;
+            line-height:280px;
+            letter-spacing: 0.075em;
+            margin:0px;
+            text-transform: uppercase;
+            text-align: center;
+            left:50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index:-1;
+        }
+        div.bloc-txt{
+            width:100%;
+            max-width:720px;
+            h2{
+                margin-bottom:0px;
+            }
+            div.bloc-txt-circle{
+                position: relative;
+                width:100%;
+                height:565px;
+                svg.circle{
+                    left:83px;
+                    position: absolute;
+                    top:-124px;
+                    transform: rotate(-90deg);
+                    circle{
+                        stroke-dasharray: 3000;
+                        stroke-dashoffset: 3000;
+                        transition: 8.5s;
+                        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                    }
+                }
+                div.bloc{
+                    padding-top:75px;
+                    padding:75px 62px 0px 62px;
+                    position: absolute;
+                    top:0px;
+                    left:84px;
+                    opacity: 0;
+                    visibility: hidden;
+                    max-width:635px;
+                    width:100%;
+                    text-align: center;
+                    transition: 0.5s;
+                    transform: translateY(30px);
+                    p{
+                        text-align: center;
+                        font-size:32px;
+                        line-height:38px;
+                        font-weight: 500;
+                        margin:0px;
+                        &.subtitle{
+                            color:$color1;
+                            font-size:18px;
+                            line-height:23px;
+                            max-width:200px;
+                            margin:0 auto;
+                            margin-top:20px;
+                            font-weight: 400;
+                        }
+                    }
+                    &.selected{
+                        opacity: 1;
+                        visibility: visible;
+                        z-index:2;
+                        transition: 0.75s;
+                        transform: translateY(0px);
+                    }
+                    a.btn{
+                        margin-top:70px;
+                    }
+                }
+            }
+        }
+        div.bloc-logos{
+            max-width:420px;
+            display:flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-grow: 2;
+            div.bloc-logo{
+                max-width:180px;
+                width:100%;
+                height:85px;
+                margin-bottom:20px;
+                padding:10px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+                transition: 0.5s;
+                svg{
+                    width:100%;
+                    height:100%;
+                    position: absolute;
+                    left:0px;
+                    top:0px;
+                    rect{
+                        stroke-dasharray: 1250;
+                        stroke-dashoffset: 1300;
+                        transition: 3s;
+                        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                    }
+                }
+                &.selected{
+                    rect{
+                        stroke-dashoffset: 0;
+                        transition: 3.5s;
+                    }
+                }
+                figure{
+                    width:100%;
+                    height:100%;
+                    max-width:80px;
+                    max-height:65px;
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        position: relative;
+                        left:50%;
+                        top:50%;
+                        transform: translateY(-50%) translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -167,11 +167,7 @@
         "EMAIL_ADDRESS",
         "BLOG"
         ],
-        "type": "url",
-        "default": {
-        "content_id": null,
-        "href": "",
-        "type": "EXTERNAL"},
+        "type": "link",
         "visibility": {
             "controlling_field": "button_type_id",
             "controlling_value_regex": "btn",

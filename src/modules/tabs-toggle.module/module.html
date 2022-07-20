@@ -1,4 +1,4 @@
-<section id="{{module.module_identity}}" class="tabs-toggle {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+<section id="{{module.module_identity}}" class="tabs-toggle {% if module.content_style.background_black %}bg-black{% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         {% if module.title %}
             <h2>{{ module.title }}</h2>
@@ -29,9 +29,9 @@
                 <div class="row-btns">
                     {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
                 </div>
-            {% else if module.button_url.href %}
+            {% else if module.button_url.url.href %}
                 <div class="row-btns">
-                    <a href="{{ module.button_url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                    <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
                         <svg xmlns="http://www.w3.org/2000/svg">
                             <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
                             <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />

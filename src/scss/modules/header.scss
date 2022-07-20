@@ -1,11 +1,10 @@
 header{
-    position: absolute;
+    position: fixed;
     top:0px;
     z-index:5;
     left:0px;
     width:100%;
     height:115px;
-    background-color: #fff;
     @media(max-width:$size4){
         top:60px;
     }
@@ -31,8 +30,8 @@ header{
                         list-style-type: none;
                         margin-right:45px;
                         a{
-                            color:$color1;
-                            font-size: 14px;
+                            color:#fff;
+                            font-size: 16px;
                             line-height: 20px;
                             text-decoration: none;
                             transition: 0.5s;
@@ -53,6 +52,7 @@ header{
                 line-height: 17px;
                 margin-right:25px;
                 cursor: pointer;
+                color:#fff;
                 &.en{
                     span.switcher{
                         &:before{
@@ -63,7 +63,7 @@ header{
                 span.switcher{
                     width: 16px;
                     height: 10px;    
-                    border: 0.451219px solid #000000; 
+                    border: 0.451219px solid #fff; 
                     border-radius: 4.5122px;
                     position: relative;
                     display:block;

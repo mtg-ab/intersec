@@ -17,7 +17,41 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.technology .bloc",1.25, { opacity:1,x:0,stagger:0.15,ease: "power2.inOut" });
+        tl.staggerTo("section.technology .bloc",1, { opacity:1,x:0,stagger:0.05,ease: "power2.inOut" });
         //INIT ANIM
+
+        jQuery("section.technology div.row-1 div.bloc-circle").each(function() {
+            jQuery(this).click(function() {
+
+                jQuery("section.technology div.row-1 div.bloc-circle").removeClass('selected')
+                jQuery(this).addClass('selected')
+                var id = jQuery(this).data("id");
+                jQuery("section.technology div.row-1 div.bloc div.bloc-txt").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        jQuery(this).addClass('selected')
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
+
+            })
+        })
+
+        jQuery("section.technology div.row-2 div.bloc-circle").each(function() {
+            jQuery(this).click(function() {
+
+                jQuery("section.technology div.row-2 div.bloc-circle").removeClass('selected')
+                jQuery(this).addClass('selected')
+                var id = jQuery(this).data("id");
+                jQuery("section.technology div.row-2 div.bloc div.bloc-txt").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        jQuery(this).addClass('selected')
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
+
+            })
+        })
     }
 })

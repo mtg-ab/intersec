@@ -1,0 +1,29 @@
+section.txt-three-columns{
+    div.container{
+        div.blocks{
+            display: flex;
+            padding-top:190px;
+            div.block{
+                width:calc(100% / 3 - 28px);
+                &:nth-child(3n+2){
+                    margin-left:42px;
+                    margin-right:42px;
+                    transform: translateY(-95px);
+                }
+                &:nth-child(3n+3){
+                    transform: translateY(-190px);
+                }
+                p{
+                    margin-bottom:30px;
+                    &.title{
+                        font-weight: 500;
+                        font-size: 32px;
+                        line-height: 110%;
+                        margin:0px 0px 17px 0px;
+                    }
+                }
+            }
+        }
+        
+    }
+}

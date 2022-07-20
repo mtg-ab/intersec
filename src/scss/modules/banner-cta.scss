@@ -1,8 +1,19 @@
 section.banner-cta{
-    background-color: $color1;
-    background-repeat: repeat-x;
-    background-position: center;
-    background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+    position: relative;
+    &:before{
+        content:'';
+        display:block;
+        position: absolute;
+        width:100%;
+        height:calc(100% + 2px);
+        top:-1px;
+        left:0px;
+        z-index:0;
+        background-color: $color1;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+    }
     &.active{
         div.container{
             div.bloc-title{
@@ -27,6 +38,8 @@ section.banner-cta{
         display:flex;
         flex-direction: column;
         max-width:1125px;
+        position: relative;
+        z-index:2;
         div.bloc-title{
             position: relative;
             width:100%;

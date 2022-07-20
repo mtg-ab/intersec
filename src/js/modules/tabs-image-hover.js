@@ -1,11 +1,5 @@
 jQuery( document ).ready(function() {
     if(jQuery("section").hasClass("tabs-toggle")){
-        
-        jQuery("section.tabs-image-hover a.row").each(function() {
-
-            
-
-        })
 
         jQuery("section.tabs-image-hover div.bloc-tabs div.bloc").each(function() {
             jQuery(this).click(function() {
@@ -40,7 +34,6 @@ jQuery( document ).ready(function() {
         });
         
         var $loop = setInterval(function(){
-            // change 12 to alter damping higher is slower
             $xp += (($mouseX - $xp)/12);
             $yp += (($mouseY - $yp)/12);
             jQuery("section.tabs-image-hover a.row div.bloc-img").css({left:$xp +'px', top:$yp +'px'});  

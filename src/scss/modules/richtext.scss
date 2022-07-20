@@ -14,6 +14,11 @@ section.richtext{
             padding-top:20px;
             div{
                 max-width:495px;
+                
+                > *{
+                    font-size:18px;
+                    line-height:23px;
+                }
             }
         }
     }

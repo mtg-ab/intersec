@@ -20,31 +20,49 @@
             {% endif %}
         </div>
         <div class="blocs">
-            <div class="bloc">
-                {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
-            </div>
-            {% for item in module.items %}
-                <a href="{{ item.link.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="bloc bloc-circle">
-                    {% if item.image.src %}
-                        <figure>
-                            <img loading="lazy" src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
-                        </figure>
-                    {% endif %}
-                    {% if item.title %}
-                        <div class="item-title">
-                            <p>{{ item.title }}</p>
+            <div class="row row-1">
+                <div class="bloc">
+                    {% for item in module.items %}
+                        {% if loop.index < 4 %}
+                            <div class="bloc-txt {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                {% inline_rich_text field="rich_text" value="{{ item.text }}" %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% for item in module.items %}
+                    <div class="bloc bloc-circle" data-id="{{ loop.index }}">
+                        {% if item.image.src %}
+                            <figure>
+                                <img loading="lazy" src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                            </figure>
+                        {% endif %}
+                        {% if item.title %}
+                            <div class="item-title">
+                                <p>{{ item.title }}</p>
+                            </div>
+                        {% endif %}
+                        <svg width="214" class="line-outline" height="214" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="107" cy="107" r="106" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                        </svg>
+                        <svg width="214" class="line-dashed" height="214" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="107" cy="107" r="106" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                        </svg>   
+                    </div>
+                    {% if loop.index == 4 %}
                         </div>
+                        <div class="row row-2">
                     {% endif %}
-                    <svg width="214" class="line-outline" height="214" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="107" cy="107" r="106" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
-                    </svg>
-                    <svg width="214" class="line-dashed" height="214" viewBox="0 0 214 214" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="107" cy="107" r="106" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
-                    </svg>   
-                </a>
-            {% endfor %}
-            <div class="bloc">
-                {% inline_rich_text field="rich_text" value="{{ module.text2 }}" %}
+                {% endfor %}
+                <div class="bloc">
+                    {% for item in module.items %}
+                        {% if loop.index > 4 %}
+                            <div class="bloc-txt {% if loop.index == 5 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                {% inline_rich_text field="rich_text" value="{{ item.text }}" %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

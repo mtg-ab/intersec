@@ -1,0 +1,134 @@
+section.faq{
+    div.container{
+        display:flex;
+        justify-content: space-between;
+        padding-top:170px;
+        position: relative;
+        p.title_bg{
+            position: absolute;
+            color:#F9F9F9;
+            left:0px;
+            top:0px;
+            font-weight: 700;
+            font-size:280px;
+            line-height:280px;
+            letter-spacing: 0.075em;
+            margin:0px;
+            opacity:0;
+        }
+        div.items{
+            width:100%;
+            max-width:600px;
+            margin:0 auto;
+            div.item{
+                position: relative;
+                padding-top:10px;
+                transition: 0.5s;
+                width:100%;
+                transform: translateY(30px);
+                &:last-child{
+                    border:none;
+                }
+                &.open{
+                    div.item-title{
+                        &:after{
+                            width:100%;
+                        }
+                        p{
+                            opacity:1;
+                        }
+                        span.btn-more{
+                            &:after{
+                                transform: translateY(-50%) rotate(180deg);
+                            }
+                            &:before{
+                                transform: translateX(-50%) rotate(90deg);
+                                opacity:0;
+                            }
+                        }
+                    }
+                }
+                div.item-title{
+                    color:$color1;
+                    font-weight: bold;
+                    position: relative;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 21px;
+                    border-bottom: 0.5px solid rgba(#2F2F2F,0.3);
+                    padding:14px 45px 14px 0px;
+                    &:after{
+                        content:'';
+                        display:block;
+                        position: absolute;
+                        left:0px;
+                        width:0px;
+                        height:2px;
+                        background-color: $color2;
+                        transition: 0.55s;
+                        transition-timing-function: ease-in-out;
+                        bottom:-1px;
+                    }
+                    p{
+                        opacity:0.4;
+                        transition: 0.5s;
+                        margin:0px;
+                    } 
+                    span.btn-more{
+                        position: absolute;
+                        right:25px;
+                        width:12px;
+                        height:12px;
+                        text-indent: -9999px;
+                        display:block;
+                        top:50%;
+                        transform: translateY(-50%);
+                        transition: 0.5s;
+                        transform-origin: 50%;
+                        &:after{
+                            display:block;
+                            width:12px;
+                            height:1.2px;
+                            background-color: $color2;
+                            content:'';
+                            position: absolute;
+                            left:0px;
+                            top:50%;
+                            transition: 0.5s;
+                            transform: translateY(-50%);
+                        }
+                        &:before{
+                            display:block;
+                            width:1.2px;
+                            height:12px;
+                            background-color: $color2;
+                            content:'';
+                            position: absolute;
+                            left:50%;
+                            top:0%;
+                            transition: 0.5s;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+                div.item-txt{
+                    transition: 0.35s;
+                    transition-timing-function:ease-out; 
+                    overflow:hidden;
+                    margin-top:20px;
+                    height: 0px;
+                    div.contain-txt{
+                        position: relative;
+                        display:block;
+                        p{
+                            margin:0px;
+                            padding:10px 0px;
+                        }
+                    }
+                }
+            }
+        }        
+    }
+}

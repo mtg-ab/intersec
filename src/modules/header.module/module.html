@@ -19,9 +19,9 @@
                 <div class="row-btns">
                     {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
                 </div>
-            {% else if module.button_url.href %}
+            {% else if module.button_url.url.href %}
                 <div class="row-btns">
-                    <a href="{{ module.button_url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                    <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
                         {{ module.button_text }}
                     </a>
                 </div>

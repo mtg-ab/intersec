@@ -12,7 +12,7 @@ jQuery( document ).ready(function() {
             scrollTrigger: {
                 trigger: "section.hero-home",
                 start:"-=250",
-                toggleClass: {targets: "section.hero-home svg.bg-circles", className: "active"}
+                toggleClass: {targets: "section.hero-home svg", className: "active"}
             }
         });
         //INIT TIMELINE

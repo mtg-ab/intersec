@@ -19,101 +19,127 @@ section.technology{
             }
         }
         div.blocs{
-            display: flex;
-            align-items: center;
-            flex-wrap:wrap;
-            flex-grow: 5;
             margin-top:30px;
-            div.bloc,a.bloc{
-                width:calc(100% / 5 - 36px);
-                margin-bottom:45px;
-                text-decoration: none;
-                opacity:0;
-                
-                &.bloc-circle{
-                    width:calc(100% / 5 - 36px);
+            div.row{
+                display: flex;
+                align-items: center;
+                flex-wrap:wrap;
+                flex-grow: 5;
+                div.bloc{
                     height:214px;
                     display:flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
+                }
+                div.bloc{
+                    width:calc(100% / 5 - 36px);
+                    margin-bottom:45px;
+                    text-decoration: none;
+                    opacity:0;
                     position: relative;
-                    transform: translateX(-40px);
-                    &:nth-child(5n+2){
-                        margin-left:45px;
-                        margin-right:45px;
-                    }
-                    &:nth-child(5n+3){
-                        margin-right:45px;
-                    }
-                    &:nth-child(5n+4){
-                        margin-right:45px;
-                    }
-                    &:hover{
+                    &.bloc-circle{
+                        width:calc(100% / 5 - 36px);
+                        height:214px;
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        position: relative;
+                        transform: translateX(-40px);
+                        cursor: pointer;
+                        &:nth-child(5n+2){
+                            margin-left:45px;
+                            margin-right:45px;
+                        }
+                        &:nth-child(5n+3){
+                            margin-right:45px;
+                        }
+                        &:nth-child(5n+4){
+                            margin-right:45px;
+                        }
+                        &:hover,&.selected{
+                            svg{
+                                &.line-outline{
+                                    circle{
+                                        stroke-dashoffset: 0;
+                                        transition: 1.5s;
+                                    }
+                                }
+                                &.line-dashed{
+                                    top:calc(50% + 10px);
+                                    transform: translateX(-50%) scale(1.1) translateY(-50%) rotate(-90deg);
+                                    circle{
+                                        stroke-dasharray: 3;
+                                        stroke-dashoffset: 15;
+                                        stroke: $color2;
+                                        fill:transparent;
+                                    }
+                                }
+                            }
+                        }
                         svg{
+                            position: absolute;
+                            top:50%;
+                            left:50%;
+                            transform: translateX(-50%) translateY(-50%);
                             &.line-outline{
+                                transform-origin: 50%;
+                                fill:#fff;
                                 circle{
-                                    stroke-dashoffset: 0;
-                                    transition: 1.5s;
+                                    stroke-dasharray: 1000;
+                                    stroke-dashoffset: 1100;
+                                    transition: 0.5s;
+                                    stroke:$color2;
+                                    transform: rotate(-90deg);
+                                    transform-origin: 50% 50%;
+                                    transition-timing-function: ease-in-out;
                                 }
                             }
                             &.line-dashed{
-                                top:calc(50% + 10px);
-                                transform: translateX(-50%) scale(1.1) translateY(-50%) rotate(-90deg);
+                                transition: 0.75s;
+                                transform-origin: 50% 50%;
                                 circle{
-                                    stroke-dasharray: 3;
-                                    stroke-dashoffset: 15;
-                                    stroke: $color2;
-                                    fill:transparent;
+                                    transition: 0.75s;
+                                    transition-timing-function: ease-in-out;
                                 }
                             }
                         }
+                        figure{
+                            margin:0px;
+                            display:flex;
+                            justify-content: center;
+                            position: relative;
+                            z-index:2;
+                        }
+                        p{
+                            font-size:19px;
+                            line-height:22px;
+                            font-weight: bold;
+                            position: relative;
+                            z-index:2;
+                            margin-bottom:0px;
+                            color:$color1;
+                        }
                     }
-                    svg{
+                    div.bloc-txt{
+                        visibility: hidden;
+                        opacity:0;
+                        transition: 0.5s;
+                        transform: translateY(35px);
                         position: absolute;
-                        top:50%;
-                        left:50%;
-                        transform: translateX(-50%) translateY(-50%);
-                        &.line-outline{
-                            transform-origin: 50%;
-                            fill:#fff;
-                            circle{
-                                stroke-dasharray: 1000;
-                                stroke-dashoffset: 1100;
-                                transition: 0.5s;
-                                stroke:$color2;
-                                transform: rotate(-90deg);
-                                transform-origin: 50% 50%;
-                                transition-timing-function: ease-in-out;
-                            }
+                        left:0px;
+                        &.selected{
+                            display:block;
+                            opacity:1;
+                            visibility: visible;
+                            transform: translateY(0px);
                         }
-                        &.line-dashed{
-                            transition: 0.75s;
-                            transform-origin: 50% 50%;
-                            circle{
-                                transition: 0.75s;
-                                transition-timing-function: ease-in-out;
-                            }
-                        }
-                    }
-                    figure{
-                        margin:0px;
-                        display:flex;
-                        justify-content: center;
-                        position: relative;
-                        z-index:2;
-                    }
-                    p{
-                        font-size:19px;
-                        line-height:22px;
-                        font-weight: bold;
-                        position: relative;
-                        z-index:2;
-                        margin-bottom:0px;
-                        color:$color1;
                     }
                 }
             }
+            
+            
         }
     }
 }

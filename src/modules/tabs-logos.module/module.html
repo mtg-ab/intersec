@@ -1,0 +1,51 @@
+<section id="{{module.module_identity}}" class="tabs-logos {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="bloc-txt">
+            <h2>{{ module.title }}</h2>
+            <div class="bloc-txt-circle">
+                <svg width="635" height="635" viewBox="0 0 635 635" class="circle" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="317.5" cy="317.5" r="317" stroke="#F1762C"/>
+                </svg>    
+                {% for item in module.logos %}
+                    <div class="bloc {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        {{ item.text }}
+                        {% if item.subtitle %}
+                            <p class="subtitle">{{ item.subtitle }}</p>
+                        {% endif %}
+                        {% if item.cta_field %}
+                            <div class="row-btns">
+                                {% cta "cta" label='Select a CTA', guid='{{ item.cta_field }}' %}
+                            </div>
+                        {% else if item.button_url.url.href %}
+                            <div class="row-btns">
+                                <a href="{{ item.button_url.url.href }}" {% if item.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                        <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                    </svg>
+                                    {{ item.button_text }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="bloc-logos">
+            {% for item in module.logos %}
+                <div class="bloc-logo {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                    <svg width="180" height="84" viewBox="0 0 180 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="179" height="83" rx="41.5" stroke="#F1762C"/>
+                    </svg>
+                    <figure>
+                        <img loading="lazy" src="{{ item.logo.src }}" width="{{ item.logo.width }}" height="{{ item.logo.height }}" alt="{{ page.image.alt }}" />
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
+        {% if module.title_bg %}
+            <p class="title_bg" data-speed="0.95">{{ module.title_bg }}</p>
+        {% endif %}
+    </div>
+    
+</section>

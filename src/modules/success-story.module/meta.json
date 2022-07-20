@@ -1,9 +1,9 @@
 {
     "css_assets": [],
     "external_js": [],
-    "global": true,
+    "global": false,
     "help_text": "",
-    "label": "Header",
+    "label": "Success story",
     "host_template_types": ["PAGE"],
     "js_assets": [],
     "other_assets": [],

@@ -1,27 +1,45 @@
 section.hero-home{
-    padding-top:265px;
-    padding-bottom:175px;
+    padding-top:325px;
+    padding-bottom:210px;
     position: relative;
-    svg.bg-circles{
+    background-color: $color1;
+    overflow:hidden;
+    &:after{
+        display:block;
+        height:115px;
+        content:'';
         position: absolute;
+        left:0px;
         top:0px;
+        width:100%;
+        background-color: $color1;
+        z-index:1;
+    }
+    svg{
+        position: absolute;
+        top:50%;
         left:50%;
-        transform:translateX(-50%);
+        transform:translateX(-50%) translateY(-50%);
         pointer-events: none;
-        max-width:950px;
-        
         &.active{
-            path{
+            circle{
                 opacity:1;
-                transform: rotate(0deg);
+                &.rotate,&.reverse{
+                    transform: rotate(0deg);
+                }
             }
         }
-        
-        path{
-            transition: 1.5s;
+        circle{
             transform-origin: 50% 50%;
             opacity:0;
-            transform: rotate(-30deg);
+            &.rotate{
+                transform: rotate(-130deg);
+                transition: 2.5s;
+            }
+            &.reverse{
+                transform: rotate(130deg);
+                transition: 4.5s;
+            }
         }
     }
     div.container{
@@ -29,10 +47,12 @@ section.hero-home{
         z-index:2;
         h1{
             text-align: center;
+            color:#fff;
         }
         p{
             max-width:495px;
             margin:0 auto;
+            color:#fff;
             &.subtitle{
                 text-align: center;
                 position: relative;
@@ -41,16 +61,7 @@ section.hero-home{
                 transform: translateX(-50%);
                 margin-bottom:45px;
                 padding-bottom:4px;
-                &:before{
-                    display:block;
-                    content:'';
-                    position: absolute;
-                    height:1px;
-                    width:43px;
-                    left:10px;
-                    bottom:0px;
-                    background: linear-gradient(90deg, rgba(242,112,38,0) 0%, rgba(242,112,38,1) 100%);
-                }
+                color:$color2;
             }
         }
         div.bloc-btns{
@@ -60,7 +71,11 @@ section.hero-home{
             div.row-btns{
                 a.btn{
                     margin:0px 15px;
-                    
+                    background-color: $color2;
+                    color:#fff;
+                    &:before,&:after{
+                        background-color: #fff;
+                    }
                 }
             }
         }
