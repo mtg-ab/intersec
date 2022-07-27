@@ -20,10 +20,19 @@
                 </svg>
             </div>                
         {% endif %}
-        {% if module.text %}
+        {% if module.texts %}
             <div class="bloc-txt">
-                <div class="txt">
-                    {{ module.text }}
+                <div class="contain-txt">
+                    {% for item in module.texts %}
+                        <div class="bloc">
+                            <h3>{{ item.title }}</h3>
+                            <div class="txt">
+                                <div>
+                                    {{ item.text }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         {% endif %}

@@ -67,8 +67,8 @@
         ]
     },
     {
-        "name": "title",
-        "label": "Title",
+        "name": "title_bg",
+        "label": "Title background",
         "required": false,
         "locked": false,
         "validation_regex": "",
@@ -76,7 +76,7 @@
         "show_emoji_picker": false,
         "type": "text",
         "help_text": "",
-        "default": "Green eye"
+        "default": "Intersec"
     },
     {
         "name" : "items",
@@ -85,7 +85,7 @@
         "locked" : false,
         "occurrence" : {
           "min" : null,
-          "max" : null,
+          "max" : 3,
           "sorting_label_field" : "items.item",
           "default" : null
         },
@@ -93,18 +93,6 @@
             {
                 "name": "title",
                 "label": "Title",
-                "required": false,
-                "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "text",
-                "help_text": "",
-                "default": "Evaluate"
-            },
-            {
-                "name": "subtitle",
-                "label": "subtitle",
                 "required": false,
                 "locked": false,
                 "validation_regex": "",
@@ -127,16 +115,16 @@
                 },
                 "children" : [
                     {
-                        "name": "title",
-                        "label": "Title",
+                        "name": "text",
+                        "label": "Text",
                         "required": false,
                         "locked": false,
                         "validation_regex": "",
                         "allow_new_line": false,
                         "show_emoji_picker": false,
-                        "type": "text",
+                        "type": "richtext",
                         "help_text": "",
-                        "default": "Evaluate"
+                        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque</p>"
                     },
                     {
                         "name": "image",
@@ -153,7 +141,19 @@
                         }
                     },
                     {
-                        "name": "text",
+                        "name": "title",
+                        "label": "Title",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "help_text": "",
+                        "default": "Evaluate"
+                    },
+                    {
+                        "name": "text_2",
                         "label": "Text",
                         "required": false,
                         "locked": false,
@@ -162,7 +162,7 @@
                         "show_emoji_picker": false,
                         "type": "richtext",
                         "help_text": "",
-                        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque</p>"
+                        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
                     },
                     {
                         "name": "link",
@@ -178,7 +178,7 @@
                             "EMAIL_ADDRESS",
                             "BLOG"
                         ],
-                        "type": "link" 
+                        "type": "link"
                     }
                 ],
                 "type" : "group"

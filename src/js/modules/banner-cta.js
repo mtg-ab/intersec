@@ -11,14 +11,15 @@ jQuery( document ).ready(function() {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "section.banner-cta",
-                start:"-=250",
+                start:"-=450",
                 toggleClass: {targets: "section.banner-cta", className: "active"}
             }
         });
         //INIT TIMELINE
 
         //INIT ANIM
-        //tl.staggerTo("section.banner-cta div.bloc",0.75, { opacity:1,y:0,stagger:0.2,ease: "power2.inOut" });
+        tl.to("section.banner-cta div.bloc-img figure",0.75, { opacity:1,y:0,ease: "power2.inOut" });
+        tl.to("section.banner-cta div.bloc-txt",0.75, { opacity:1,y:0,delay:-0.5,ease: "power2.inOut" });
         //INIT ANIM
     }
 })

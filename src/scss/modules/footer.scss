@@ -6,27 +6,35 @@ footer{
     background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
     div.contain-main-footer{
         padding:135px 0px 55px 0px;
-        @media(max-width:$size4){
-            padding:100px 0px 120px 0px;
+        @media(max-width:$size3){
+            padding:0px 0px 40px 0px;
         }
         div.container{
             display:flex;
             justify-content: space-between;
-            @media(max-width:$size4){
-                padding:0px 60px;
+            @media(max-width:$size3){
+                flex-direction: column;
             }
         }
         div.bloc-logo{
+            @media(max-width:$size3){
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
             a.logo{
                 img{
-                    @media(max-width:$size4){
-                        max-width:97px;
+                    @media(max-width:$size3){
+                        max-width:112px;
                     }
                 }
             }
             div.socials{
                 display:flex;
                 margin-top:44px;
+                @media(max-width:$size3){
+                    margin-top:0px;
+                }
                 a{
                     width:20px;
                     height:20px;
@@ -36,10 +44,9 @@ footer{
                     margin-right:45px;
                     position: relative;
                     transition: 0.5s;
-                    @media(max-width:$size4){
-                        width:12px;
-                        height:12px;
-                        margin-left:10px;
+                    @media(max-width:$size3){
+                        margin-left:45px;
+                        margin-right:0px;
                     }
                     &:hover{
                         &:after{
@@ -60,10 +67,6 @@ footer{
                         -webkit-mask-repeat: no-repeat;
                         -webkit-mask-position: center;
                         background-color: $color2;
-                        @media(max-width:$size4){
-                            mask-size:5px;
-                            -webkit-mask-size:5px;
-                        }
                     }
                     &.youtube{
                         &:after{
@@ -97,7 +100,7 @@ footer{
                 span,div{
                     width:100%;
                 }
-                @media(max-width:$size4){
+                @media(max-width:$size3){
                     max-width:100%;
                     margin-top:60px;
                 }
@@ -105,7 +108,7 @@ footer{
                     margin:0px;
                     padding:0px;
                     display:flex;
-                    @media(max-width:$size4){
+                    @media(max-width:$size3){
                         flex-wrap: wrap;
                         flex-grow: 2;
                         justify-content: space-between;
@@ -113,32 +116,31 @@ footer{
                     li{
                         list-style-type: none;
                         margin-right:80px;
-                        max-width:180px;
-                        @media(max-width:$size4){
+                        max-width:160px;
+                        @media(max-width:$size3){
                             margin-right:0px;
                             max-width:120px;
                             width:50%;
-                            margin-bottom:30px;
+                            margin-bottom:20px;
                         }
                         a{
                             color:#fff;
                             font-size: 16px;
                             line-height: 23px;
                             text-decoration: none;
-                            @media(max-width:$size4){
-                                font-size:12px;
-                                line-height:14px;
-                            }
+                            display:inline-block;
                         }
                         ul{
                             flex-direction: column;
                             margin-top:16px;
+                            @media(max-width:$size3){   
+                                margin-top:6px;
+                            }
                             li{
                                 margin-right:0px;
-                                @media(max-width:$size4){
-                                    margin-bottom:0px;
-                                    max-width:100%;
+                                @media(max-width:$size3){   
                                     width:100%;
+                                    margin-bottom:3px;
                                 }
                                 a{
                                     color:#fff;
@@ -147,8 +149,7 @@ footer{
                                     font-size: 14px;
                                     line-height: 20px;
                                     text-transform: inherit;
-                                    @media(max-width:$size4){
-                                        font-size:10px;
+                                    @media(max-width:$size3){   
                                         line-height:14px;
                                     }
                                 }
@@ -166,8 +167,9 @@ footer{
             padding-top:25px;
             padding-bottom:80px;
             border-top: 1px solid rgba(255, 255, 255, 0.5);
-            @media(max-width:$size4){
-                padding:0px 60px;
+            @media(max-width:$size1){
+                max-width:calc(100% - 66px);
+                padding:30px 0px 65px 0px;
             }
             p{
                 color:#fff;

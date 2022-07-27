@@ -30,7 +30,7 @@
                 {% for item in module.items %}
                     <div class="blocs {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
                         {% for page in item.subitems %}
-                            <a href="{{ page.link }}" class="row link-hover">
+                            <a href="{{ page.link.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="row link-hover">
                                 {% if page.title %}
                                     <h3>{{ page.title }}</h3>
                                 {% endif %}

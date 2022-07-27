@@ -24,7 +24,7 @@
                 <div class="bloc">
                     {% for item in module.items %}
                         {% if loop.index < 4 %}
-                            <div class="bloc-txt {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                            <div class="bloc-txt" data-id="{{ loop.index }}">
                                 {% inline_rich_text field="rich_text" value="{{ item.text }}" %}
                             </div>
                         {% endif %}
@@ -57,7 +57,7 @@
                 <div class="bloc">
                     {% for item in module.items %}
                         {% if loop.index > 4 %}
-                            <div class="bloc-txt {% if loop.index == 5 %}selected{% endif %}" data-id="{{ loop.index }}">
+                            <div class="bloc-txt" data-id="{{ loop.index }}">
                                 {% inline_rich_text field="rich_text" value="{{ item.text }}" %}
                             </div>
                         {% endif %}

@@ -25,6 +25,25 @@ jQuery( document ).ready(function() {
         $('span.btn-right').on( 'click', function() {
             flickity.next();
         });
+
+        //INIT GSAP
+        const { gsap } = require("gsap/dist/gsap");
+        var ScrollTrigger = require('gsap/ScrollTrigger');
+        gsap.registerPlugin(ScrollTrigger);
+        //INIT GSAP
+
+        //INIT TIMELINE
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "section.logos-row",
+                start:"-=650",
+            }
+        });
+        //INIT TIMELINE
+
+        //INIT ANIM
+        tl.to("section.logos-row figure",0.75, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
+        //INIT ANIM
         
     }
 })

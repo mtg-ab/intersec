@@ -1,6 +1,26 @@
 jQuery( document ).ready(function() {
     if(jQuery("section").hasClass("tabs-toggle")){
 
+        //INIT GSAP
+        const { gsap } = require("gsap/dist/gsap");
+        var ScrollTrigger = require('gsap/ScrollTrigger');
+        gsap.registerPlugin(ScrollTrigger);
+        //INIT GSAP
+
+        //INIT TIMELINE
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "section.tabs-image-hover",
+                start:"-=650",
+            }
+        });
+        //INIT TIMELINE
+
+        //INIT ANIM
+        tl.staggerTo("section.tabs-image-hover div.bloc-tabs div.bloc",1, { opacity:0.65,x:0,delay:0,stagger:0.15,ease: "power2.inOut" });
+        tl.staggerTo("section.tabs-image-hover div.bloc-columns a.row",1, { opacity:1,y:0,delay:-0.75,stagger:0.15,ease: "power2.inOut" });
+        //INIT ANIM
+
         jQuery("section.tabs-image-hover div.bloc-tabs div.bloc").each(function() {
             jQuery(this).click(function() {
                 jQuery("section.tabs-image-hover div.bloc-tabs div.bloc").removeClass('selected')
@@ -23,7 +43,6 @@ jQuery( document ).ready(function() {
         });
 
         jQuery('section.tabs-image-hover div.bloc-columns').height(maxHeight);
-        console.log(maxHeight);
 
         var $mouseX = 0, $mouseY = 0;
         var $xp = 0, $yp =0;
@@ -38,6 +57,16 @@ jQuery( document ).ready(function() {
             $yp += (($mouseY - $yp)/12);
             jQuery("section.tabs-image-hover a.row div.bloc-img").css({left:$xp +'px', top:$yp +'px'});  
         }, 30);
+
+        if (jQuery(window).width() < 768) {
+            var Flickity = require('flickity');
+
+            var flky = new Flickity( 'section.tabs-image-hover div.bloc-columns div.blocs', {
+                prevNextButtons: false,
+                pageDots: false,
+                cellAlign: "left",
+            })            
+        }
 
     }
 })

@@ -26,7 +26,7 @@ jQuery( document ).ready(function() {
             pageDots: false,
             fade:true,
             draggable:false,
-            autoPlay: 4500,
+            autoPlay: 10500,
             prevNextButtons: false
         })
 

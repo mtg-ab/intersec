@@ -12,6 +12,10 @@ section.richtext{
             flex-direction: column;
             align-items: flex-end;
             padding-top:20px;
+            opacity:0;
+            @media(max-width:$size3){
+                padding-left:45px;
+            }
             div{
                 max-width:495px;
                 

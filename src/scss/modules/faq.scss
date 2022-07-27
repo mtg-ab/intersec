@@ -1,9 +1,13 @@
 section.faq{
+    overflow:hidden;
     div.container{
         display:flex;
         justify-content: space-between;
         padding-top:170px;
         position: relative;
+        @media(max-width:$size3){
+            padding-top:0px;
+        }
         p.title_bg{
             position: absolute;
             color:#F9F9F9;
@@ -15,6 +19,10 @@ section.faq{
             letter-spacing: 0.075em;
             margin:0px;
             opacity:0;
+            @media(max-width:$size4){
+                font-size:200px;
+                line-height:200px;
+            }
         }
         div.items{
             width:100%;

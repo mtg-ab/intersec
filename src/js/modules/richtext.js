@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("section").hasClass("latest-news")){
+    if(jQuery("section").hasClass("richtext")){
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
@@ -10,14 +10,14 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
         let tl = gsap.timeline({
             scrollTrigger: {
-                trigger: "section.latest-news",
+                trigger: "section.richtext",
                 start:"-=450",
             }
         });
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.latest-news .bloc",1.25, { opacity:1,x:0,stagger:0.15,ease: "power2.inOut" });
+        tl.to("section.richtext div.bloc-txt",0.75, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
         //INIT ANIM
     }
 })

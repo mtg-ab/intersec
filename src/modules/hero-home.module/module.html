@@ -1,10 +1,18 @@
-<section id="{{module.module_identity}}" class="hero-home {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+<div class="loader">
+    <div class="circle">
+        <p><span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span></p>
+        <svg width="246" height="246" viewBox="0 0 246 246" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="123" cy="123" r="122" stroke="#F1762C" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </div>
+</div>
+<section id="hero-home" class="hero-home {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         {% if module.subtitle %}
             <p class="subtitle">{{ module.subtitle }}</p>
         {% endif %}
         {% if  module.title %}
-            <h1>{{ module.title }}</h1>
+            <h1 class="loader">{{ module.title }}</h1>
         {% endif %}
         {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
         <div class="bloc-btns">
@@ -41,7 +49,7 @@
             {% endif %}
         </div>
     </div>
-    <svg width="1434" height="1434" viewBox="0 0 1434 1434" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="1434" height="1434" data-speed="0.92" viewBox="0 0 1434 1434" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle class="reverse" opacity="0.5" cx="717" cy="717" r="271" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
         <g filter="url(#filter0_f_3_49)">
         <circle class="rotate" cx="717" cy="717" r="570" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
@@ -79,4 +87,13 @@
         </filter>
         </defs>
     </svg>
+    <div class="bloc-imgs">
+        {% for item in module.content_style.images %}
+            <div class="bloc">
+                <figure>
+                    <img src="{{ item.image.src }}" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}">
+                </figure>
+            </div>
+        {% endfor %}
+    </div>
 </section>

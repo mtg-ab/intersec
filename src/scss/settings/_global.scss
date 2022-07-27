@@ -22,14 +22,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
+  overflow-x:hidden;
 }
 
 div.container {
   max-width: $size1;
   margin: 0 auto;
-
   @media screen and (max-width: $size1) {
-    padding: 0 15px;
+    padding: 0 33px;
   }
 }
 
@@ -56,6 +56,10 @@ h1,
   font-size: 90px;
   line-height:99px;
   margin-bottom: 30px;
+  @media(max-width:$size3){
+    font-size:55px;
+    line-height:60px;
+  }
   span.word{
     display: inline-block;
     span.char{
@@ -75,6 +79,10 @@ h2,
   font-size: 60px;
   line-height: 100%;
   margin-bottom: 30px;
+  @media(max-width:$size4){
+    font-size:45px;
+    line-height:45px;
+  }
   span.word{
     display: inline-block;
     span.char{
@@ -184,12 +192,6 @@ a:not([href]):hover {
   }
 }
 
-div.container{
-  @media(max-width:$size1){
-    padding:0px 44px;
-  }
-}
-
 //Cursor
 
 div#contain-cursor{
@@ -212,6 +214,7 @@ div#contain-cursor{
 		position: absolute;
 		left:calc(50%);
 		top:calc(50%);
+    transform: translateY(-50%) translateX(-50%);
 		cursor: default;
 		display:flex;
     display: flex;
@@ -233,7 +236,9 @@ div#contain-cursor{
 	}
 	&.ui-state-hovered{
 		div.cursor{
-      transform: scale(1.65);
+      width:30px;
+      height:30px;
+      cursor: none;
 			span{
 				opacity:1;
         transform:translateY(0px) skewY(0deg);
@@ -247,6 +252,7 @@ div#contain-cursor{
     div.cursor{
       width:85px;
       height:85px;
+      cursor: none;
 			span{
 				opacity:1;
         transform:translateY(0px) skewY(0deg);
@@ -260,6 +266,7 @@ div#contain-cursor{
     div.cursor{
       width:85px;
       height:85px;
+      cursor: none;
 			span{
 				opacity:1;
         transform:translateY(0px) skewY(0deg);
@@ -273,6 +280,7 @@ div#contain-cursor{
     div.cursor{
       width:85px;
       height:85px;
+      cursor: none;
 			span{
 				opacity:1;
         transform:translateY(0px) skewY(0deg);
@@ -286,6 +294,7 @@ div#contain-cursor{
     div.cursor{
       width:85px;
       height:85px;
+      cursor: none;
 			span{
 				opacity:1;
         transform:translateY(0px) skewY(0deg);
@@ -294,5 +303,11 @@ div#contain-cursor{
         background-image: url("data:image/svg+xml,%3Csvg width='17' height='15' viewBox='0 0 17 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.52194 6.28622C1.00573 6.28622 0.587259 6.70469 0.587259 7.2209C0.587259 7.73711 1.00573 8.15558 1.52194 8.15558V6.28622ZM16.418 7.88182C16.783 7.51681 16.783 6.925 16.418 6.55999L10.4698 0.611716C10.1047 0.246701 9.51294 0.246701 9.14793 0.611716C8.78291 0.976732 8.78291 1.56854 9.14793 1.93355L14.4353 7.2209L9.14793 12.5083C8.78291 12.8733 8.78291 13.4651 9.14793 13.8301C9.51294 14.1951 10.1047 14.1951 10.4698 13.8301L16.418 7.88182ZM1.52194 8.15558H15.7571V6.28622H1.52194V8.15558Z' fill='white'/%3E%3C/svg%3E");
       }
 		}
+  }
+}
+
+.grab-hover,.left-hover,.right-hover,.link-hover{
+  &:hover{
+    cursor:none;
   }
 }

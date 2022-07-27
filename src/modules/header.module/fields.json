@@ -104,12 +104,199 @@
         ]
     },
     {
-        "name" : "header_menu",
-        "label" : "Header menu",
+        "name" : "menu_header",
+        "label" : "Menu header",
         "required" : false,
         "locked" : false,
-        "type" : "menu",
-        "default" : 12345678911
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "menu_header.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name" : "text_menu",
+                "label" : "Text menu",
+                "required" : false,
+                "locked" : false,
+                "validation_regex" : "",
+                "allow_new_line" : false,
+                "show_emoji_picker" : false,
+                "type" : "text"
+            },
+            {
+                "name" : "link",
+                "label" : "Link",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "show_advanced_rel_options" : false
+            },
+            {
+                "name" : "links",
+                "label" : "Links",
+                "required" : false,
+                "locked" : false,
+                "occurrence" : {
+                  "min" : null,
+                  "max" : null,
+                  "sorting_label_field" : "links.item",
+                  "default" : null
+                },
+                "children" : [
+                    {
+                        "name" : "title_links",
+                        "label" : "Title",
+                        "required" : false,
+                        "locked" : false,
+                        "validation_regex" : "",
+                        "allow_new_line" : false,
+                        "show_emoji_picker" : false,
+                        "type" : "text"
+                    },
+                    {
+                        "name" : "items",
+                        "label" : "Items",
+                        "required" : false,
+                        "locked" : false,
+                        "occurrence" : {
+                          "min" : null,
+                          "max" : null,
+                          "sorting_label_field" : "items.link",
+                          "default" : null
+                        },
+                        "children" : [
+                            {
+                                "name" : "text_menu_items",
+                                "label" : "Text menu",
+                                "required" : false,
+                                "locked" : false,
+                                "validation_regex" : "",
+                                "allow_new_line" : false,
+                                "show_emoji_picker" : false,
+                                "type" : "text"
+                            },
+                            {
+                                "name" : "link_items",
+                                "label" : "Link",
+                                "required" : false,
+                                "locked" : false,
+                                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                                "type" : "link",
+                                "show_advanced_rel_options" : false
+                            }
+                        ],
+                        "type" : "group"
+                    }
+                ],
+                "type" : "group"
+            },
+            {
+                "name": "image_cta",
+                "label": "Image CTA",
+                "required": false,
+                "locked": false,
+                "responsive": true,
+                "resizable": true,
+                "type": "image",
+                "default": {
+                    "size_type": "auto",
+                    "src": "https://via.placeholder.com/600",
+                    "alt": "Example of an image used in your module"
+                }
+            },
+            {
+                "name" : "title_cta",
+                "label" : "Title CTA",
+                "required" : false,
+                "locked" : false,
+                "validation_regex" : "",
+                "allow_new_line" : false,
+                "show_emoji_picker" : false,
+                "type" : "text"
+            },
+            {
+                "name": "button_type_cta",
+                "id":"button_type_id_cta",
+                "label": "Button type",
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "inline_help_text": "",
+                "help_text": "",
+                "choices": [
+                [
+                    "btn",
+                    "Classic button"
+                ],
+                [
+                    "cta",
+                    "Hubspot Cta"
+                ]
+                ],
+                "type": "choice",
+                "placeholder": "",
+                "default": "btn" 
+            },
+            {
+                "name": "button_text_cta",
+                "label": "Texte button",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "Let's talk",
+                "visibility": {
+                    "controlling_field": "button_type_id_cta",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name": "button_url_cta",
+                "label": "URL button",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                "EXTERNAL",
+                "CONTENT",
+                "FILE",
+                "EMAIL_ADDRESS",
+                "BLOG"
+                ],
+                "type": "link",
+                "visibility": {
+                    "controlling_field": "button_type_id_cta",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                } 
+            },
+            {
+                "name": "cta_field_cta",
+                "label": "CTA field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "type": "cta",
+                "default": null,
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "cta",
+                    "operator": "EQUAL"
+                } 
+            }
+        ],
+        "type" : "group"
     },
     {
         "name": "button_type",

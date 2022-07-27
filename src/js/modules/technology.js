@@ -11,7 +11,7 @@ jQuery( document ).ready(function() {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "section.technology",
-                start:"-=250",
+                start:"-=450",
             }
         });
         //INIT TIMELINE
@@ -21,9 +21,10 @@ jQuery( document ).ready(function() {
         //INIT ANIM
 
         jQuery("section.technology div.row-1 div.bloc-circle").each(function() {
-            jQuery(this).click(function() {
-
+            jQuery(this).hover(function() {
                 jQuery("section.technology div.row-1 div.bloc-circle").removeClass('selected')
+                jQuery("section.technology div.row-2 div.bloc-circle").removeClass('selected')
+                jQuery("section.technology div.row-2 div.bloc div.bloc-txt").removeClass('selected')
                 jQuery(this).addClass('selected')
                 var id = jQuery(this).data("id");
                 jQuery("section.technology div.row-1 div.bloc div.bloc-txt").each(function() {
@@ -38,8 +39,9 @@ jQuery( document ).ready(function() {
         })
 
         jQuery("section.technology div.row-2 div.bloc-circle").each(function() {
-            jQuery(this).click(function() {
-
+            jQuery(this).hover(function() {
+                jQuery("section.technology div.row-1 div.bloc-circle").removeClass('selected')
+                jQuery("section.technology div.row-1 div.bloc div.bloc-txt").removeClass('selected')
                 jQuery("section.technology div.row-2 div.bloc-circle").removeClass('selected')
                 jQuery(this).addClass('selected')
                 var id = jQuery(this).data("id");

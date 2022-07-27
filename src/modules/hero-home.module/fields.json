@@ -63,6 +63,30 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
+            },
+            {
+                "name" : "images",
+                "label" : "Images",
+                "required" : false,
+                "locked" : false,
+                "occurrence" : {
+                  "min" : null,
+                  "max" : null,
+                  "sorting_label_field" : "steps.item",
+                  "default" : null
+                },
+                "children" : [
+                    {
+                        "name": "image",
+                        "label": "Image",
+                        "required": false,
+                        "locked": false,
+                        "responsive": true,
+                        "resizable": true,
+                        "type": "image"
+                    }
+                ],
+                "type" : "group"
             }
         ]
     },

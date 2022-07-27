@@ -38,7 +38,7 @@ jQuery( document ).ready(function() {
         smooth: 0.5,
         effects: true
     });
-    
+
 })
 
 

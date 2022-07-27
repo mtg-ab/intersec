@@ -19,18 +19,21 @@ jQuery( document ).ready(function() {
         //ANIM TIMELINE 
     })
 
-    jQuery( "h1" ).each(function( index ) {
-        //INIT TIMELINE
-        var tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: jQuery(this),
-                start:"-=550",
-            }
-        });
-        //INIT TIMELINE
+    if(!jQuery( "h1" ).hasClass('loader')){
+        jQuery( "h1" ).each(function( index ) {
+            //INIT TIMELINE
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: jQuery(this),
+                    start:"-=550",
+                }
+            });
+            //INIT TIMELINE
+        
+            //ANIM TIMELINE
+            tl.staggerTo(jQuery(this).find("span.char"),0.35, { opacity:1,x:0,y:0,stagger:0.025,ease: "power2.Out" });
+            //ANIM TIMELINE 
+        })
+    }
     
-        //ANIM TIMELINE
-        tl.staggerTo(jQuery(this).find("span.char"),0.35, { opacity:1,x:0,y:0,stagger:0.025,ease: "power2.Out" });
-        //ANIM TIMELINE 
-    })
 })

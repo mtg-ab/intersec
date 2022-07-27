@@ -93,15 +93,42 @@
         }
     },
     {
-        "name": "text",
-        "label": "Text",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "richtext",
-        "help_text": "",
-        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque scelerisque donec aliquam adipiscing. Mattis ligula purs phasellus et posuere aliquam orci sed. </p>"
+        "name" : "texts",
+        "label" : "Texts",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "texts.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text": "",
+                "default": "It is expected to break ground in Summer"
+            },
+            {
+                "name": "text",
+                "label": "Text",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "richtext",
+                "help_text": "",
+                "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque scelerisque donec aliquam adipiscing. Mattis ligula purus phasellus et posuere aliquam orci sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            }
+        ],
+        "type" : "group"
     }
 ]

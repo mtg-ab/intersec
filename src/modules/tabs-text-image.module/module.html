@@ -1,0 +1,52 @@
+<section id="{{module.module_identity}}" class="tabs-txt-img {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    {% if module.title_bg %}
+        <p class="title_bg" data-speed="0.95">{{ module.title_bg }}</p>
+    {% endif %}
+    <div class="container">
+        <div class="items">
+            {% for item in module.items %}
+                <div class="bloc {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                    <div class="circles">
+                        <svg width="25" class="line-outline" height="25" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="11" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                        </svg>
+                        
+                        <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="66" cy="66" r="61" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 5"/>
+                        </svg> 
+                        
+                    </div>
+                    <div class="item-title">
+                        <p class="title">{{ item.title }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="bloc-columns">
+            {% for item in module.items %}
+                <div class="blocs {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                    {% for page in item.subitems %}
+                        <div class="row">
+                            {% if page.text %}
+                                <div class="bloc-txt">{{ page.text }}</div>
+                            {% endif %}
+                            {% if page.image.src %}
+                                <a href="{{ page.link.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="bloc-img link-hover">
+                                    <figure>
+                                        <img loading="lazy" src="{{ page.image.src }}" alt="{{ page.image.alt }}" />
+                                    </figure>
+                                </a>
+                            {% endif %}
+                            <div class="bloc-link">
+                                {% if page.title %}
+                                    <p class="title">{{ page.title }}</p>
+                                {% endif %}
+                                {{ page.text_2 }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

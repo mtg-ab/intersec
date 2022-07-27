@@ -1,5 +1,6 @@
 section.tabs-logos{
-    position: relative;    
+    position: relative;  
+    overflow:hidden;  
     div.container{
         display:flex;
         justify-content: space-between;
@@ -7,6 +8,10 @@ section.tabs-logos{
         position: relative;
         z-index:2;
         padding-bottom:120px;
+        @media(max-width:$size3){
+            flex-direction: column;
+            padding:0px 12px;
+        }
         p.title_bg{
             position: absolute;
             color:#F9F9F9;
@@ -28,20 +33,33 @@ section.tabs-logos{
             max-width:720px;
             h2{
                 margin-bottom:0px;
+                position: relative;
+                z-index:2;
             }
             div.bloc-txt-circle{
                 position: relative;
                 width:100%;
                 height:565px;
+                @media(max-width:$size3){
+                    height:500px;
+                    margin-top:60px;
+                }
                 svg.circle{
                     left:83px;
                     position: absolute;
                     top:-124px;
                     transform: rotate(-90deg);
+                    @media(max-width:$size3){
+                        width:500px;
+                        height:500px;
+                        left:50%;
+                        transform: translateX(-50%);
+                        top:0px;
+                    }
                     circle{
                         stroke-dasharray: 3000;
                         stroke-dashoffset: 3000;
-                        transition: 8.5s;
+                        transition: 9.5s;
                         transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
                     }
                 }
@@ -58,12 +76,22 @@ section.tabs-logos{
                     text-align: center;
                     transition: 0.5s;
                     transform: translateY(30px);
+                    @media(max-width:$size3){
+                        left:0px;
+                        max-width:100%;
+                        height:100%;
+                        padding:75px 20px 0px 20px;
+                    }
                     p{
                         text-align: center;
                         font-size:32px;
                         line-height:38px;
                         font-weight: 500;
                         margin:0px;
+                        @media(max-width:$size3){
+                            font-size:20px;
+                            line-height: 26px;
+                        }
                         &.subtitle{
                             color:$color1;
                             font-size:18px;
@@ -81,18 +109,33 @@ section.tabs-logos{
                         transition: 0.75s;
                         transform: translateY(0px);
                     }
-                    a.btn{
+                    div.row-btns{
                         margin-top:70px;
+                        @media(max-width:$size3){
+                            width: 100%;
+                            text-align: center;
+                            position: absolute;
+                            margin-top: inherit;
+                            bottom:-20px;
+                            left:50%;
+                            transform: translateX(-50%);
+                        }
                     }
+                    
                 }
             }
         }
         div.bloc-logos{
             max-width:420px;
+            width:100%;
             display:flex;
             justify-content: space-between;
             flex-wrap: wrap;
             flex-grow: 2;
+            @media(max-width:$size3){
+                max-width:100%;
+                margin-top:60px;
+            }
             div.bloc-logo{
                 max-width:180px;
                 width:100%;
@@ -121,7 +164,7 @@ section.tabs-logos{
                 &.selected{
                     rect{
                         stroke-dashoffset: 0;
-                        transition: 3.5s;
+                        transition: 3s;
                     }
                 }
                 figure{

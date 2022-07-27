@@ -7,7 +7,84 @@
                 </a>
             {% endif %}
             <nav>
-                {% menu "header_menu" id={{ module.header_menu }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+                <ul>
+                    {% for item in module.menu_header %}
+                        <li class="menu-parent">
+                            <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
+                            {% if item.title_cta %}
+                            <div class="sub-menu">
+                                <div class="container">
+                                    <div class="bloc-menu">
+                                        <div class="col">
+                                            {% for links in item.links %}
+                                                {% if loop.index is odd %}
+                                                    {% if links.title_links %}
+                                                        <p class="title">{{ links.title_links }}</p>
+                                                    {% endif %}
+                                                    <ul>
+                                                        {% for item in links.items %}
+                                                            {% if item.text_menu_items %}
+                                                                <li>
+                                                                    <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="col">
+                                            {% for links in item.links %}
+                                                {% if loop.index is even %}
+                                                    {% if links.title_links %}
+                                                        <p class="title">{{ links.title_links }}</p>
+                                                    {% endif %}
+                                                    <ul>
+                                                        {% for item in links.items %}
+                                                            {% if item.text_menu_items %}
+                                                                <li>
+                                                                    <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="bloc-cta">
+                                        <div class="bloc-img">
+                                            <figure>
+                                                <img loading="lazy" src="{{ item.image_cta.src }}" width="{{ item.image_cta.width }}" height="{{ item.image_cta.height }}" alt="{{ item.image_cta.alt }}" />
+                                            </figure>
+                                        </div>
+                                        {% if item.title_cta %}
+                                            <p class="title">{{ item.title_cta }}</p>
+                                        {% endif %}
+                                        {% if item.cta_field_cta %}
+                                            <div class="row-btns">
+                                                {% cta "cta" label='Select a CTA', guid='{{ item.cta_field_cta }}' %}
+                                            </div>
+                                        {% else if item.button_text_cta %}
+                                            {% if item.button_text_cta %}
+                                            <div class="row-btns">
+                                                <a href="{{ item.button_url_cta.url.href }}" {% if item.button_url_cta.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                        <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                    </svg>
+                                                    {{ item.button_text_cta }}
+                                                </a>
+                                            </div>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
             </nav>
         </div>
         <div class="contact">

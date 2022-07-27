@@ -57,5 +57,12 @@ jQuery( document ).ready(function() {
             })
         })
 
+        var maxHeight = -1;
+        jQuery('section.tabs-slider div.bloc-slider div.slider').each(function() {
+            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+        });
+
+        jQuery('section.tabs-slider div.bloc-slider').height(maxHeight);
+
     }
 })

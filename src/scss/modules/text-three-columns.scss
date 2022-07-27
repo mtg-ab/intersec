@@ -3,15 +3,36 @@ section.txt-three-columns{
         div.blocks{
             display: flex;
             padding-top:190px;
+            @media(max-width:$size3){
+                flex-direction: column;
+                padding-top:0px;
+            }
             div.block{
                 width:calc(100% / 3 - 28px);
+                @media(max-width:$size3){
+                    width:100%;
+                    margin-bottom:60px;
+                    &:last-child{
+                        margin-bottom:0px;
+                    }
+                }
                 &:nth-child(3n+2){
                     margin-left:42px;
                     margin-right:42px;
                     transform: translateY(-95px);
+                    @media(max-width:$size3){
+                        width:100%;
+                        margin-left:0px;
+                        margin-right:0px;
+                        transform: translateY(0px);
+                    }
                 }
                 &:nth-child(3n+3){
                     transform: translateY(-190px);
+                    @media(max-width:$size3){
+                        width:100%;
+                        transform: translateY(0px);
+                    }
                 }
                 p{
                     margin-bottom:30px;

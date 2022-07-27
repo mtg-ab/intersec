@@ -1,7 +1,9 @@
 <section id="{{module.module_identity}}" class="tabs-logos {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         <div class="bloc-txt">
-            <h2>{{ module.title }}</h2>
+            {% if module.title %}
+                <h2>{{ module.title }}</h2>
+            {% endif %}
             <div class="bloc-txt-circle">
                 <svg width="635" height="635" viewBox="0 0 635 635" class="circle" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="317.5" cy="317.5" r="317" stroke="#F1762C"/>
@@ -18,13 +20,15 @@
                             </div>
                         {% else if item.button_url.url.href %}
                             <div class="row-btns">
-                                <a href="{{ item.button_url.url.href }}" {% if item.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg">
-                                        <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                                        <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                                    </svg>
-                                    {{ item.button_text }}
-                                </a>
+                                {% if item.button_url.url.href %}
+                                    <a href="{{ item.button_url.url.href }}" {% if item.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                        </svg>
+                                        {{ item.button_text }}
+                                    </a>
+                                {% endif %}
                             </div>
                         {% endif %}
                     </div>

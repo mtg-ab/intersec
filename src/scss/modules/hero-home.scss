@@ -1,9 +1,69 @@
-section.hero-home{
+div.loader{
+    position: fixed;
+    z-index:10000;
+    background-color: $color1;
+    width:100%;
+    height:100vh;
+    top:0px;
+    left:0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    @media(max-width:$size4){
+        display:none;
+    }
+    div.circle{
+        position: relative;
+        opacity:0;
+        transform:rotate(-140deg);
+        &:after{
+            display:block;
+            content:'';
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translateY(calc(-50% - 0.5px)) translateX(-50%);
+            border: 2px dashed rgba(#FFFFFF,0.5);
+            border-radius: 50%;
+            width:245px;
+            height:245px;
+        }
+        svg{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translateY(-50%) translateX(-50%) rotate(-90deg);
+            z-index:2;
+            circle{
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+            }
+        }
+        p{
+            color:$color2;
+            font-size: 25px;
+            line-height: 110%;
+            span{
+                opacity: 0;
+                display: inline-block;
+                position: relative;
+                //transform: translateY(15px);
+            }
+        }
+    }
+}
+section#hero-home{
     padding-top:325px;
     padding-bottom:210px;
     position: relative;
     background-color: $color1;
     overflow:hidden;
+    min-height:100vh;
+    @media(max-width:$size3){
+        padding-top:145px;
+        padding-bottom:18px;
+    }
     &:after{
         display:block;
         height:115px;
@@ -15,29 +75,106 @@ section.hero-home{
         background-color: $color1;
         z-index:1;
     }
-    svg{
-        position: absolute;
-        top:50%;
-        left:50%;
-        transform:translateX(-50%) translateY(-50%);
-        pointer-events: none;
-        &.active{
+    &.active{
+        svg{
             circle{
                 opacity:1;
                 &.rotate,&.reverse{
-                    transform: rotate(0deg);
+                    transform: rotate(0deg) scale(1);
                 }
             }
         }
+    }
+    div.bloc-imgs{
+        display:block;
+        position: absolute;
+        left:0px;
+        top:0px;
+        width:100%;
+        height:100%;
+        overflow: hidden;
+        div.bloc{
+            position: absolute;
+            border-radius:50%;
+            overflow:hidden;
+            border:10px solid #656565;
+            width:72px;
+            height:72px;
+            opacity:0;
+            @media(max-width:$size3){
+                display:none;
+            }
+            figure{
+                display:block;
+                width:100%;
+                height:100%;
+                img{
+                    display:block;
+                    object-fit: cover;
+                    object-position: center;
+                    width:100%;
+                    height:100%;
+                }
+            }
+            &:nth-child(1){
+                filter: blur(4px);
+                top:205px;
+                left:calc(50% - 660px);
+            }
+            &:nth-child(2){
+                filter: blur(4px);
+                top:150px;
+                left:calc(50% - 190px);
+                transform: scale(0.9);
+            }
+            &:nth-child(3){
+                filter: blur(1px);
+                top:277px;
+                right:calc(50% - 560px);
+                transform: scale(0.95);
+            }
+            &:nth-child(4){
+                filter: blur(1px);
+                top:63%;
+                left:calc(50% - 427px);
+                transform: scale(0.85);
+            }
+            &:nth-child(5){
+                filter: blur(2px);
+                bottom:33px;
+                left:calc(50% - 594px);
+                transform: scale(0.775);
+            }
+            &:nth-child(6){
+                filter: blur(2px);
+                right:calc(50% - 245px);
+                bottom:112px;
+                transform: scale(0.5);
+            }
+            &:nth-child(7){
+                filter: blur(2px);
+                right:calc(50% - 608px);
+                bottom:39px;
+                transform: scale(0.75);
+            }
+        }
+    }
+    svg{
+        position: absolute;
+        top:53%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%);
+        pointer-events: none;
         circle{
             transform-origin: 50% 50%;
             opacity:0;
+            transition-delay: 0.5s;
             &.rotate{
-                transform: rotate(-130deg);
+                transform: rotate(-130deg) scale(0.8);
                 transition: 2.5s;
             }
             &.reverse{
-                transform: rotate(130deg);
+                transform: rotate(130deg) scale(0.8);
                 transition: 4.5s;
             }
         }
@@ -53,6 +190,11 @@ section.hero-home{
             max-width:495px;
             margin:0 auto;
             color:#fff;
+            opacity:0;
+            @media(max-width:$size3){
+                text-align: center;
+                max-width:300px;
+            }
             &.subtitle{
                 text-align: center;
                 position: relative;
@@ -62,17 +204,30 @@ section.hero-home{
                 margin-bottom:45px;
                 padding-bottom:4px;
                 color:$color2;
+                @media(max-width:$size4){
+                    font-size:20px;
+                    line-height:22px;
+                }
             }
         }
         div.bloc-btns{
             display: flex;
             justify-content: center;
             margin-top:60px;
+            @media(max-width:$size3){
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
             div.row-btns{
                 a.btn{
                     margin:0px 15px;
                     background-color: $color2;
                     color:#fff;
+                    opacity:0;
+                    @media(max-width:$size3){
+                        margin:0px 0px 30px 0px;
+                    }
                     &:before,&:after{
                         background-color: #fff;
                     }
