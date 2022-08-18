@@ -1,11 +1,3 @@
-<div class="loader">
-    <div class="circle">
-        <p><span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span></p>
-        <svg width="246" height="246" viewBox="0 0 246 246" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="123" cy="123" r="122" stroke="#F1762C" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-    </div>
-</div>
 <section id="hero-home" class="hero-home {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         {% if module.subtitle %}
@@ -49,51 +41,6 @@
             {% endif %}
         </div>
     </div>
-    <svg width="1434" height="1434" data-speed="0.92" viewBox="0 0 1434 1434" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle class="reverse" opacity="0.5" cx="717" cy="717" r="271" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
-        <g filter="url(#filter0_f_3_49)">
-        <circle class="rotate" cx="717" cy="717" r="570" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
-        </g>
-        <g filter="url(#filter1_f_3_49)">
-        <circle class="reverse" cx="717" cy="717" r="712" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
-        </g>
-        <circle class="rotate" opacity="0.5" cx="717" cy="717" r="422" stroke="#F1762C" stroke-linecap="round"/>
-        <g filter="url(#filter2_f_3_49)">
-        <circle class="reverse" cx="717" cy="717" r="142" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
-        </g>
-        <g filter="url(#filter3_f_3_49)">
-        <circle r="57" transform="matrix(1 0 0 -1 717 717)" stroke="#F1762C" stroke-linecap="round"/>
-        </g>
-        <defs>
-        <filter id="filter0_f_3_49" x="144" y="144" width="1146" height="1146" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-        <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_3_49"/>
-        </filter>
-        <filter id="filter1_f_3_49" x="0" y="0" width="1434" height="1434" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-        <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_3_49"/>
-        </filter>
-        <filter id="filter2_f_3_49" x="570" y="570" width="294" height="294" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-        <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_3_49"/>
-        </filter>
-        <filter id="filter3_f_3_49" x="655.5" y="655.5" width="123" height="123" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-        <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_3_49"/>
-        </filter>
-        </defs>
-    </svg>
-    <div class="bloc-imgs">
-        {% for item in module.content_style.images %}
-            <div class="bloc">
-                <figure>
-                    <img src="{{ item.image.src }}" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}">
-                </figure>
-            </div>
-        {% endfor %}
+    <div class="bloc-squares" data-img="{{ module.image.src }}">
     </div>
 </section>

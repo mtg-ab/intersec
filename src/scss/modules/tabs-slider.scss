@@ -1,9 +1,20 @@
 section.tabs-slider{
-    background-color: $color1;
-    background-repeat: repeat-x;
-    background-position: center;
     position: relative;
-    background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+    &:after{
+        display:block;
+        content:'';
+        position: absolute;
+        background-color: $color1;
+        width:100%;
+        height:calc(100% + 2px);
+        top:50%;
+        left:0px;
+        transform: translateY(-50%);
+        z-index:0;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+    }
     span.bg-txt{
         position: absolute;
         top:0px;
@@ -16,6 +27,8 @@ section.tabs-slider{
         background-size: 100% auto;
     }
     div.container{
+        position: relative;
+        z-index:2;
         h2{
             color:#fff;
         }
@@ -179,6 +192,7 @@ section.tabs-slider{
                     width:160px;
                     height:100%;
                     z-index:6;
+                    pointer-events: none;
                     background: linear-gradient(268.47deg, #2F2F2F -2.41%, rgba(47, 47, 47, 0) 98.47%);
                 }
                 div.slider{
@@ -211,6 +225,7 @@ section.tabs-slider{
                         display: flex;
                         align-items: center;
                         margin:0px;
+                        padding:0px;
                         li{
                             list-style-type: none;
                             width:4px;

@@ -39,6 +39,7 @@ jQuery( document ).ready(function() {
         effects: true
     });
 
+
 })
 
 

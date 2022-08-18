@@ -1,0 +1,19 @@
+<section id="{{module.module_identity}}" class="txt-img {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+    </div>
+    <div class="container">
+        {% if module.image.src %}
+            <div class="bloc-img">
+                <figure>
+                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                </figure>
+            </div>
+        {% endif %}
+        <div class="bloc-txt">
+            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+        </div>
+    </div>
+</section>

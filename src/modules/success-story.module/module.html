@@ -1,26 +1,44 @@
+
 <section id="{{module.module_identity}}" class="success-story {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
+        {% set id = module.id_post %}
+        {% set results_global = hubdb_table_rows("Content") %}
         <div class="bloc-txt">
             {% if module.title %}
                 <h2>{{ module.title }}</h2>
             {% endif %}
-            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
-        </div>
-        <div class="bloc-testimonial">
-            {% if module.image.src %}
-                <a href="{{ module.button_url.href.url }}" class="bloc-img link-hover">
-                    <figure>
-                        <img loding="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
-                    </figure>
-                </a>
-                <a href="{{ module.button_url.href.url }}" class="link">{{ module.button_text }}</a>
-            {% endif %}
-            <div class="testimonial">
-                {% inline_rich_text field="rich_text" value="{{ module.testimonial }}" %}
-                {% if module.author %}
-                    <p class="author">{{ module.author }}</p>
+            {% for item in results_global %}
+                {% if item.hs_id == id %}
+                    {% if item.context %}
+                        <h3>Contexte</h3>
+                        {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
+                    {% endif %}
+                    {% if item.solution %}
+                        <h3>Solution</h3>
+                        {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
+                    {% endif %}
                 {% endif %}
-            </div>
+            {% endfor %}
         </div>
+        {% for item in results_global %}
+            {% if item.hs_id == id %}
+                <div class="bloc-testimonial">
+                    {% if item.image.url %}
+                        <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
+                            <figure>
+                                <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                            </figure>
+                        </a>
+                        <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
+                    {% endif %}
+                    <div class="testimonial">
+                        {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
+                        {% if item.name_testimonial or item.first_name_testimonial%}
+                            <p class="author">{{ item.first_name_testimonial }} {{ item.name_testimonial }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </section>

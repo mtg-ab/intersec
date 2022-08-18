@@ -1,0 +1,198 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name" : "blocks",
+        "label" : "Blocks",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "blocks.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "pictogram",
+                "label": "Pictogram",
+                "required": false,
+                "locked": false,
+                "responsive": true,
+                "resizable": true,
+                "type": "image",
+                "default": {
+                    "size_type": "auto",
+                    "src": "https://via.placeholder.com/600",
+                    "alt": "Example of an image used in your module"
+                }
+            },
+            {
+                "name" : "title",
+                "label" : "Title",
+                "required" : false,
+                "locked" : false,
+                "validation_regex" : "",
+                "allow_new_line" : false,
+                "show_emoji_picker" : false,
+                "type" : "text",
+                "default" : "Lorem ipsum dolor"
+            },
+            {
+                "name" : "text",
+                "label" : "Text",
+                "required" : false,
+                "locked" : false,
+                "validation_regex" : "",
+                "allow_new_line" : false,
+                "show_emoji_picker" : false,
+                "type" : "richtext",
+                "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque scelerisque donec aliquam adipiscing. Mattis ligula purus phasellus et posuere aliquam orci sed.</p>"
+            },
+            {
+                "name": "button_type",
+                "id":"button_type_id",
+                "label": "Button type",
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "inline_help_text": "",
+                "help_text": "",
+                "choices": [
+                [
+                    "btn",
+                    "Classic button"
+                ],
+                [
+                    "cta",
+                    "Hubspot Cta"
+                ]
+                ],
+                "type": "choice",
+                "placeholder": "",
+                "default": "cta" 
+            },
+            {
+                "name": "button_text",
+                "label": "Texte button",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "Let's talk",
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name": "button_url",
+                "label": "URL button",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                "EXTERNAL",
+                "CONTENT",
+                "FILE",
+                "EMAIL_ADDRESS",
+                "BLOG"
+                ],
+                "type": "link",
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                } 
+            },
+            {
+                "name": "cta_field",
+                "label": "CTA field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "type": "cta",
+                "default": null,
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "cta",
+                    "operator": "EQUAL"
+                } 
+            }
+        ],
+        "type" : "group"
+    }
+]

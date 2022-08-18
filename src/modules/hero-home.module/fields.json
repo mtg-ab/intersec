@@ -63,30 +63,6 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
-            },
-            {
-                "name" : "images",
-                "label" : "Images",
-                "required" : false,
-                "locked" : false,
-                "occurrence" : {
-                  "min" : null,
-                  "max" : null,
-                  "sorting_label_field" : "steps.item",
-                  "default" : null
-                },
-                "children" : [
-                    {
-                        "name": "image",
-                        "label": "Image",
-                        "required": false,
-                        "locked": false,
-                        "responsive": true,
-                        "resizable": true,
-                        "type": "image"
-                    }
-                ],
-                "type" : "group"
             }
         ]
     },
@@ -125,6 +101,15 @@
         "type": "richtext",
         "help_text": "",
         "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non risus gravida platea vel sed suscipit. Eget arcu lectus dictumst turpis et sed euismod. Venenatis cras orci auctor vel viverra pellentesque enim.</p>"
+    },
+    {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image"
     },
     {
         "name": "button_type",

@@ -67,6 +67,18 @@
         ]
     },
     {
+        "name": "title_bg",
+        "label": "Title background",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Intersec"
+    },
+    {
         "name": "title",
         "label": "Title",
         "required": false,

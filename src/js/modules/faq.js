@@ -10,15 +10,15 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
         let tl = gsap.timeline({
             scrollTrigger: {
-                trigger: "section.tabs-slider",
-                start:"-=450",
+                trigger: "section.faq",
+                start:"-=850",
             }
         });
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.faq div.items div.item",0, { opacity:1,y:0,stagger:0.15,ease: "power2.inOut" });
-        tl.to("section.faq p.title_bg",0, { opacity:1,y:0,delay:-0.5,ease: "power2.inOut" });
+        tl.staggerTo("section.faq div.items div.item",1, { opacity:1,y:0,stagger:0.15,ease: "power2.inOut" });
+        tl.to("section.faq p.title_bg",0.75, { opacity:1,y:0,delay:-1,ease: "power2.inOut" });
         //INIT ANIM
         
         jQuery("section.faq div.items div.item").each(function() {

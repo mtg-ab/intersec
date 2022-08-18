@@ -11,6 +11,7 @@ jQuery( document ).ready(function() {
                     jQuery( "section.tabs-toggle div.items div.item div.item-txt" ).css("height",0);
                     jQuery(this).addClass('open')
                     var h = jQuery(this).find("div.item-txt div.contain-txt").height();
+                    var h = h + 20;
                     jQuery(this).find("div.item-txt").css("height",h);
                     var id = jQuery(this).data("id");
                     jQuery("section.tabs-toggle div.bloc-imgs a.bloc-img").each(function() {

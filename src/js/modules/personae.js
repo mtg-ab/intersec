@@ -42,7 +42,11 @@ jQuery( document ).ready(function() {
             .to(jQuery(this).parent(), {
                 height: 0,
                 duration: 0.05, ease: "none",
-            })             
+            })  
+            .to(jQuery(this).parent(), {
+                height: 0,
+                duration: 0.05, ease: "none",
+            })            
         })
     
         //INIT PIN

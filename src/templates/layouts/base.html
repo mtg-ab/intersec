@@ -23,14 +23,16 @@
 
 <body>
   <div id="contain-cursor">
-    <div class="cursor">
+    <div class="cursor-circle">
       <span></span>
     </div>
   </div>
+  {% module_block module "categories" path="../../modules/categories.module", label="Categories"%}{% end_module_block %}
+
   <div id="smooth-wrapper" class="body-wrapper {{ builtin_body_classes }}">
     <div id="smooth-content">
       {% block header %}
-      {% global_partial path="../partials/header.html" %}
+        {% module "header" path="../../modules/header.module", label="Header"%}
       {% endblock header %}
   
       {# The main-content ID is used for the navigation skipper in the header.html file. More information on the
@@ -42,8 +44,8 @@
       </main>
   
       {% block footer %}
-      {% global_partial path="../partials/footer.html" %}
-      {% endblock footer %}
+      {% module "footer" path="../../modules/footer.module", label="Footer"%}
+    {% endblock footer %}
     </div>
   </div>
   {{ require_js(get_asset_url("../../js/main.js")) }}

@@ -1,13 +1,82 @@
 <!--
   templateType: blog
   isAvailableForNewContent: true
-  label: Boilerplate V3 - Blog Post
+  label: Intersec - Blog Post
 -->
 {% extends '../layouts/base-blog.html' %}
 {% block body %}
 
 <div class="blog-post-template">
-  {{ content.post_body }}
+  <section class="blog-post-hero">
+    <div class="bloc-bg-lines">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div> 
+      <div class="line line-3"></div> 
+    </div>
+    <div class="container">
+      <div class="bloc-txt">
+        <div class="infos">
+          <div class="tags">
+            {% if content.topic_list %}
+            {% for tags in content.topic_list %}
+            {% if tags.name|lower != "featured" %}
+            <a href="{{ blog_tag_url(group.id, tags.slug) }}">{{tags|replace('-', ' ') }}</a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+          </div>
+          {% if content.publish_date %}
+          <span>- {{ content.publish_date|datetimeformat('%d / %F / %Y') }}</span>
+          {% endif %}
+        </div>
+        <h1>{{ content.name }}</h1>
+      </div>
+      <div class="bloc-img">
+        <figure>
+          <img src="{{ content.featured_image }}" loading="lazy" alt="{{ content.name }}" />        
+        </figure>
+      </a>
+    </div>
+  </section>
+  <section class="breadcrumb">
+    <div class="container">
+      <div class="bloc-breadcrumb">
+        <nav>
+          <ul itemscope itemtype="https://schema.org/BreadcrumbList"
+            class="breadcrumb d-flex flex-wrap align-items-center list-unstyled p-0 m-0">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="/"><span itemprop="name">Accueil</span></a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="{{ content.absolute_url }}">
+                <span itemprop="name">{{ content.name|truncatehtml(39, '...' , false)}}</span></a>
+              <meta itemprop="position" content="4" />
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <section class="contain-post">
+    <div class="container">
+      <div class="bloc-contain">
+        {{ content.post_body }}
+        {% module_block module "blog-post-cta" path="../../modules/blog-post-cta.module", label="Blog
+        post CTA"%}{% end_module_block %}
+      </div>
+      <div class="bloc-anchor">
+        <ul>
+
+        </ul>
+      </div>
+    </div>
+  </section>
+  {% module_block module "blog-post-other-posts" path="../../modules/blog-post-other-posts.module", label="Blog post other posts"%}{% end_module_block %}
 </div>
 
 {% endblock body %}

@@ -159,5 +159,74 @@
             "controlling_value_regex": "cta",
             "operator": "EQUAL"
         } 
+    },
+    {
+        "name" : "items",
+        "label" : "Items",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "logos.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text": "",
+                "default": "Featured content"
+            },
+            {
+                "name": "description",
+                "label": "Description",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "richtext",
+                "help_text": "",
+                "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+            },
+            {
+                "name": "image",
+                "label": "Image",
+                "required": false,
+                "locked": false,
+                "responsive": true,
+                "resizable": true,
+                "type": "image",
+                "default": {
+                    "size_type": "auto",
+                    "src": "https://via.placeholder.com/600",
+                    "alt": "Example of an image used in your module"
+                }
+            },
+            {
+                "name": "link",
+                "label": "Link",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                "EXTERNAL",
+                "CONTENT",
+                "FILE",
+                "EMAIL_ADDRESS",
+                "BLOG"
+                ],
+                "type": "url"
+            }
+        ],
+        "type" : "group"
     }
 ]

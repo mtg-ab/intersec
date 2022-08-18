@@ -19,7 +19,7 @@
     "watch": "gulp watch",
     "watch:webpack": "webpack --watch --progress",
     "hs:auth": "hs auth personalaccesskey",
-    "hs:sync-prod": "hs upload --overwrite --portal=Intersec dist Intersec",
+    "hs:sync-prod": "hs upload --overwrite --portal=intersec dist Intersec",
     "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-andrew  dist Intersec",
     "hs:module": "yarn plop;",
     "hs:watch": "hs watch --portal=$npm_package_env_dev dist MTG",

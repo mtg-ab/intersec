@@ -1,4 +1,4 @@
-section.latest-news{
+section.featured{
     div.container{
         div.row-btns{
             display: flex;
@@ -17,7 +17,6 @@ section.latest-news{
         }
         div.bloc-posts{
             display:flex;
-            justify-content: space-between;
             margin-top:45px;
             @media(max-width:$size3){
                 flex-direction: column;
@@ -29,6 +28,14 @@ section.latest-news{
                 @media(max-width:$size3){
                    width:100%;
                    margin-bottom:40px;
+                }
+                &:nth-child(3n+2){
+                    margin-left:30px;
+                    margin-right:30px;
+                    @media(max-width:$size3){
+                        margin-left:0px;
+                        margin-right:0px;
+                    }
                 }
                 a.bloc-img{
                     width:100%;

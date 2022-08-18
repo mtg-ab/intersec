@@ -194,6 +194,50 @@
                 "type" : "group"
             },
             {
+                "name" : "features",
+                "label" : "Features",
+                "required" : false,
+                "locked" : false,
+                "occurrence" : {
+                  "min" : null,
+                  "max" : null,
+                  "sorting_label_field" : "features.link",
+                  "default" : null
+                },
+                "children" : [
+                    {
+                        "name" : "title_features",
+                        "label" : "Title menu",
+                        "required" : false,
+                        "locked" : false,
+                        "validation_regex" : "",
+                        "allow_new_line" : false,
+                        "show_emoji_picker" : false,
+                        "type" : "text"
+                    },
+                    {
+                        "name" : "text_features",
+                        "label" : "Text menu",
+                        "required" : false,
+                        "locked" : false,
+                        "validation_regex" : "",
+                        "allow_new_line" : false,
+                        "show_emoji_picker" : false,
+                        "type" : "richtext"
+                    },
+                    {
+                        "name" : "link_features",
+                        "label" : "Link",
+                        "required" : false,
+                        "locked" : false,
+                        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                        "type" : "link",
+                        "show_advanced_rel_options" : false
+                    }
+                ],
+                "type" : "group"
+            },
+            {
                 "name": "image_cta",
                 "label": "Image CTA",
                 "required": false,
@@ -372,6 +416,84 @@
         "default": null,
         "visibility": {
             "controlling_field": "button_type_id",
+            "controlling_value_regex": "cta",
+            "operator": "EQUAL"
+        } 
+    },
+    {
+        "name": "button_type_2",
+        "id":"button_type_id_2",
+        "label": "Button type 2",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+        [
+            "btn",
+            "Classic button"
+        ],
+        [
+            "cta",
+            "Hubspot Cta"
+        ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "btn" 
+    },
+    {
+        "name": "button_text_2",
+        "label": "Texte button 2",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Let's talk",
+        "visibility": {
+            "controlling_field": "button_type_id_2",
+            "controlling_value_regex": "btn",
+            "operator": "EQUAL"
+        }
+    },
+    {
+        "name": "button_url_2",
+        "label": "URL button 2",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "supported_types": [
+        "EXTERNAL",
+        "CONTENT",
+        "FILE",
+        "EMAIL_ADDRESS",
+        "BLOG"
+        ],
+        "type": "link",
+        "visibility": {
+            "controlling_field": "button_type_id_2",
+            "controlling_value_regex": "btn",
+            "operator": "EQUAL"
+        } 
+    },
+    {
+        "name": "cta_field_2",
+        "label": "CTA field 2",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "cta",
+        "default": null,
+        "visibility": {
+            "controlling_field": "button_type_id_2",
             "controlling_value_regex": "cta",
             "operator": "EQUAL"
         } 

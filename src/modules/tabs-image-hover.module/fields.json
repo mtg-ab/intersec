@@ -115,73 +115,14 @@
                 "default": "Evaluate"
             },
             {
-                "name" : "subitems",
-                "label" : "Sub items",
+                "name" : "categories",
+                "label" : "Categories",
                 "required" : false,
                 "locked" : false,
-                "occurrence" : {
-                  "min" : null,
-                  "max" : null,
-                  "sorting_label_field" : "pages.item",
-                  "default" : null
-                },
-                "children" : [
-                    {
-                        "name": "title",
-                        "label": "Title",
-                        "required": false,
-                        "locked": false,
-                        "validation_regex": "",
-                        "allow_new_line": false,
-                        "show_emoji_picker": false,
-                        "type": "text",
-                        "help_text": "",
-                        "default": "Evaluate"
-                    },
-                    {
-                        "name": "image",
-                        "label": "Image",
-                        "required": false,
-                        "locked": false,
-                        "responsive": true,
-                        "resizable": true,
-                        "type": "image",
-                        "default": {
-                            "size_type": "auto",
-                            "src": "https://via.placeholder.com/600",
-                            "alt": "Example of an image used in your module"
-                        }
-                    },
-                    {
-                        "name": "text",
-                        "label": "Text",
-                        "required": false,
-                        "locked": false,
-                        "validation_regex": "",
-                        "allow_new_line": false,
-                        "show_emoji_picker": false,
-                        "type": "richtext",
-                        "help_text": "",
-                        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque</p>"
-                    },
-                    {
-                        "name": "link",
-                        "label": "URL",
-                        "required": false,
-                        "locked": false,
-                        "inline_help_text": "",
-                        "help_text": "",
-                        "supported_types": [
-                            "EXTERNAL",
-                            "CONTENT",
-                            "FILE",
-                            "EMAIL_ADDRESS",
-                            "BLOG"
-                        ],
-                        "type": "link" 
-                    }
-                ],
-                "type" : "group"
+                "multiple":"false",
+                "display" : "select",
+                "choices" : [ [ "public-safety", "Public safety" ], [ "app-builder", "App builder" ], [ "geolocalisation", "Geolocalisation" ], [ "data-monetisation", "Data monetisation" ] ],
+                "type" : "choice"
             }
         ],
         "type" : "group"

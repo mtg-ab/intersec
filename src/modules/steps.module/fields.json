@@ -79,6 +79,15 @@
         "default": "Méthodologie process"
     },
     {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image"
+    },
+    {
         "name" : "steps",
         "label" : "Steps",
         "required" : false,

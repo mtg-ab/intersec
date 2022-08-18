@@ -127,6 +127,84 @@
                 "type": "richtext",
                 "help_text": "",
                 "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque scelerisque donec aliquam adipiscing. Mattis ligula purus phasellus et posuere aliquam orci sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            },
+            {
+                "name": "button_type",
+                "id":"button_type_id",
+                "label": "Button type",
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "inline_help_text": "",
+                "help_text": "",
+                "choices": [
+                [
+                    "btn",
+                    "Classic button"
+                ],
+                [
+                    "cta",
+                    "Hubspot Cta"
+                ]
+                ],
+                "type": "choice",
+                "placeholder": "",
+                "default": "btn" 
+            },
+            {
+                "name": "button_text",
+                "label": "Texte button",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "",
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name": "button_url",
+                "label": "URL button",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "supported_types": [
+                "EXTERNAL",
+                "CONTENT",
+                "FILE",
+                "EMAIL_ADDRESS",
+                "BLOG"
+                ],
+                "type": "link",
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "btn",
+                    "operator": "EQUAL"
+                } 
+            },
+            {
+                "name": "cta_field",
+                "label": "CTA field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "type": "cta",
+                "default": null,
+                "visibility": {
+                    "controlling_field": "button_type_id",
+                    "controlling_value_regex": "cta",
+                    "operator": "EQUAL"
+                } 
             }
         ],
         "type" : "group"

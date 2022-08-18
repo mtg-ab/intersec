@@ -18,8 +18,8 @@ jQuery( document ).ready(function() {
 
         //INIT ANIM
         tl.to("section.tabs-logos p.title_bg",0, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
-        tl.to("section.tabs-logos svg.circle circle",0.5, { strokeDashoffset:'0',delay:0,ease: "power2.inOut" });
-
+        tl.staggerTo("section.tabs-logos div.bloc-logos div.bloc-logo",0.5, { opacity:1,stagger:0.15,delay:0.15,ease: "power2.inOut" });
+        tl.to("section.tabs-logos svg.circle circle",0.5, { strokeDashoffset:'0',delay:-1,ease: "power2.inOut" });
         //INIT ANIM
     
         jQuery("section.tabs-logos div.bloc-logos div.bloc-logo").each(function() {

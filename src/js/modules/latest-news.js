@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("section").hasClass("latest-news")){
+    if(jQuery("section").hasClass("featured")){
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
@@ -10,14 +10,14 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
         let tl = gsap.timeline({
             scrollTrigger: {
-                trigger: "section.latest-news",
+                trigger: "section.featured",
                 start:"-=450",
             }
         });
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.latest-news .bloc",1.25, { opacity:1,x:0,stagger:0.15,ease: "power2.inOut" });
+        tl.staggerTo("section.featured .bloc",1.25, { opacity:1,x:0,stagger:0.15,ease: "power2.inOut" });
         //INIT ANIM
     }
 })

@@ -1,0 +1,43 @@
+<section id="{{module.module_identity}}" class="success-story-slider{% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+        <div class="contain-arrows">
+            <span class="arrow arrow-left">arrow-left</span>
+            <span class="arrow arrow-right">arrow-right</span>
+        </div>
+    </div>
+    <div class="container container-slider">
+        {% set query_params = "typology__eq=4" %}
+        {% set results_global = hubdb_table_rows("Content",query_params) %}
+        {% for item in results_global %}
+            <div class="bloc">
+                {% if item.title %}
+                    <h3><a href="{{ item.title }}">{{ item.title }}</a></h3>
+                {% endif %}
+                {% if item.image.url %}
+                    <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
+                        <figure>
+                            <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.title }}" />
+                        </figure>
+                    </a>
+                {% endif %}
+                {% if item.description %}
+                    <div class="bloc-txt">{{ item.description }}</div>
+                {% endif %}
+                {% if item.link %}
+                    <div class="row-btns">
+                        <a href="{{ item.link }}" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                            </svg>
+                            {{ item.button }}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</section>

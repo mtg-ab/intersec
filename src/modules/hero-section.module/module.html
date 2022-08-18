@@ -1,0 +1,91 @@
+<section id="hero-section" class="hero-section {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.subtitle %}
+            <p class="subtitle">{{ module.subtitle }}</p>
+        {% endif %}
+        {% if  module.title %}
+            <h1 class="loader">{{ module.title }}</h1>
+        {% endif %}
+        {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+        <div class="bloc-btns">
+            {% if module.cta_field %}
+                <div class="row-btns">
+                    {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+                </div>
+            {% else if module.button_url.url.href %}
+                <div class="row-btns">
+                    <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg">
+                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                        </svg>
+                        {{ module.button_text }}
+                    </a>
+                </div>
+            {% endif %}
+
+            {% if module.cta_field_2 %}
+                <div class="row-btns">
+                    {% cta "cta" label='Select a CTA', guid='{{ module.cta_field_2 }}' %}
+                </div>
+            {% else if module.button_url_2.url.href %}
+                <div class="row-btns">
+                    <a href="{{ module.button_url_2.url.href }}" {% if module.button_url_2.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg">
+                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                        </svg>
+                        {{ module.button_text_2 }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <svg width="1434" height="1434" data-speed="0.92" viewBox="0 0 1434 1434" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle class="reverse" opacity="0.5" cx="717" cy="717" r="271" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+        <g filter="url(#filter0_f_3_49)">
+        <circle class="rotate" cx="717" cy="717" r="570" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+        </g>
+        <g filter="url(#filter1_f_3_49)">
+        <circle class="reverse" cx="717" cy="717" r="712" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+        </g>
+        <circle class="rotate" opacity="0.5" cx="717" cy="717" r="422" stroke="#F1762C" stroke-linecap="round"/>
+        <g filter="url(#filter2_f_3_49)">
+        <circle class="reverse" cx="717" cy="717" r="142" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+        </g>
+        <g filter="url(#filter3_f_3_49)">
+        <circle r="57" transform="matrix(1 0 0 -1 717 717)" stroke="#F1762C" stroke-linecap="round"/>
+        </g>
+        <defs>
+        <filter id="filter0_f_3_49" x="144" y="144" width="1146" height="1146" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_3_49"/>
+        </filter>
+        <filter id="filter1_f_3_49" x="0" y="0" width="1434" height="1434" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_3_49"/>
+        </filter>
+        <filter id="filter2_f_3_49" x="570" y="570" width="294" height="294" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_3_49"/>
+        </filter>
+        <filter id="filter3_f_3_49" x="655.5" y="655.5" width="123" height="123" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_3_49"/>
+        </filter>
+        </defs>
+    </svg>
+    <div class="bloc-imgs">
+        {% for item in module.content_style.images %}
+            <div class="bloc">
+                <figure>
+                    <img src="{{ item.image.src }}" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}">
+                </figure>
+            </div>
+        {% endfor %}
+    </div>
+</section>

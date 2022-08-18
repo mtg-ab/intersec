@@ -1,0 +1,140 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Solutions"
+    },
+    {
+        "name" : "items",
+        "label" : "Items",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "items.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text": "",
+                "default": "Adipiscing elit"
+            },
+            {
+                "name": "subtitle",
+                "label": "subtitle",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text": "",
+                "default": "Facilisis orci purus turpis."
+            },
+            {
+                "name" : "categories",
+                "label" : "Categories",
+                "required" : false,
+                "locked" : false,
+                "multiple":"false",
+                "display" : "select",
+                "choices" : [ [ "public-safety", "Public safety" ], [ "app-builder", "App builder" ], [ "geolocalisation", "Geolocalisation" ], [ "data-monetisation", "Data monetisation" ] ],
+                "type" : "choice"
+            },
+            {
+                "name" : "typologie",
+                "label" : "Typologie",
+                "required" : false,
+                "locked" : false,
+                "multiple":"false",
+                "display" : "select",
+                "choices" : [ [ "public-safety", "Public safety" ], [ "app-builder", "App builder" ], [ "geolocalisation", "Geolocalisation" ], [ "data-monetisation", "Data monetisation" ] ],
+                "type" : "choice"
+            }
+        ],
+        "type" : "group"
+    }
+]

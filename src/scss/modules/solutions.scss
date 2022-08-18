@@ -1,0 +1,158 @@
+section.solutions{
+    div.container{
+        display: flex;
+        justify-content: space-between;
+        div.bloc-left{
+            width:50%;
+            padding-bottom:50px;
+            div.bloc-tabs{
+                display:flex;
+                width:100%;
+                flex-wrap: wrap;
+                flex-grow: 2;
+                margin-top:247px;
+                padding-left:52px;
+                @media(max-width:$size3){
+                    flex-direction: column;
+                }
+                div.bloc{
+                    width:calc(100% / 2 - 20px);
+                    display:flex;
+                    align-items: center;
+                    transition: 0.5s;
+                    margin:0px 10px;
+                    cursor: pointer;
+                    opacity:0.35;
+                    position: relative;
+                    margin-bottom:60px;
+                    @media(max-width:$size3){
+                        margin:0px 0px 25px 0px;
+                        width:100%;
+                        &:last-child{
+                            margin-bottom:0px;
+                        }
+                    }
+                    &:hover{
+                        opacity:0.65;
+                        div.circles{
+                            svg.line-outline{
+                                transform:scale(0.65);
+                            }
+                        }
+                    }
+                    &.selected{
+                        opacity:1 !important;
+                        div.circles{
+                            position: relative;
+                            svg.line-outline{
+                                transform: rotate(180deg) scale(0.35);
+                                
+                                circle{
+                                    stroke:$color2;
+                                    stroke-width: 2px;
+                                }
+                            }
+                            svg.line-dashed{
+                                opacity:1;
+                                transform: translateY(-50%) translateX(-50%) scale(1);
+                            }
+                        }
+                        p.title{
+                            color:$color2
+                        }
+                    }
+                    div.circles{
+                        position: relative;
+                        height:25px;
+                        width:25px;
+                        @media(max-width:$size3){
+                            margin-left:30px;
+                         }
+                         div.item-title{
+                             @media(max-width:$size3){
+                                 margin-left:10px;
+                             }
+                         }
+                        svg.line-outline{
+                            transition: 0.5s;
+                        }
+                        svg.line-dashed{
+                            position: absolute;
+                            left:50%;
+                            top:50%;
+                            opacity:0;
+                            transition: 0.75s;
+                            transform: translateY(-50%) translateX(-50%) scale(0.7);
+                            @media(max-width:$size3){
+                                width:100px;
+                                height:100px;
+                            }
+                            circle{
+                                stroke:$color2;
+                            }
+                        }
+                    }
+                    div.item-title{
+                        margin-left:20px;
+                        p{
+                            font-size:16px;
+                            margin:0px;
+                            &.subtitle{
+                                color:$color1;
+                            }
+                            &.title{
+                                font-weight:500;
+                                margin-bottom:6px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        div.bloc-right{
+            width:50%;
+            position: relative;
+            
+            div.blocs{
+                opacity:0;
+                pointer-events: none;
+                transition: 0.5s;
+                position: absolute;
+                left:0px;
+                top:0px;
+                padding-left:35px;
+                height:100%;
+                &.selected{
+                    opacity:1;
+                    pointer-events: inherit;
+                }
+                div.bloc{ 
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;  
+                    height:100%; 
+                    opacity:0;            
+                    div.bloc-txt{
+                        max-width:380px;
+                    }
+                    div.bloc-img{
+                        height:280px;
+                        max-width:493px;
+                        figure{
+                            display:block;
+                            width: 100%;
+                            height:100%;
+                            img{
+                                display:block;
+                                width: 100%;
+                                height:100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}

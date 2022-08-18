@@ -3,6 +3,13 @@
         {% if module.title %}
             <h2>{{ module.title }}</h2>
         {% endif %}
+        {% if module.image.src %}
+            <div class="bloc-img">
+                <figure>
+                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                </figure>
+            </div>
+        {% endif %}
     </div>
     <div class="steps grab-hover">
         {% for item in module.steps %}

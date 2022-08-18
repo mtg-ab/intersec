@@ -1,6 +1,9 @@
 <section id="{{module.module_identity}}" class="faq {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
-        <p class="title_bg" data-speed="0.95">{{ module.title }}</p>
+        <p class="title_bg" data-speed="0.95">{{ module.title_bg }}</p>
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
         <div class="items">
             {% for item in module.faqs %}
                 <div class="item {% if loop.index == 1 %}open{% endif %}" data-id="{{ loop.index }}">

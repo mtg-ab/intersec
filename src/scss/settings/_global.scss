@@ -151,7 +151,7 @@ a:not([href]):hover {
     padding-bottom: 0px;
   }
   @media(max-width:$size4){
-      padding:40px 0px;
+      padding:30px 0px;
   }
 }
 .section-md, .section{
@@ -163,7 +163,7 @@ a:not([href]):hover {
     padding-bottom: 0px;
   }
   @media(max-width:$size4){
-      padding:60px 0px;
+      padding:40px 0px;
   }
 }
 .section-lg {
@@ -175,7 +175,7 @@ a:not([href]):hover {
     padding-bottom: 0px;
   }
   @media(max-width:$size4){
-      padding:90px 0px;
+      padding:70px 0px;
   }
 
 }
@@ -188,7 +188,7 @@ a:not([href]):hover {
     padding-bottom: 0px;
   }
   @media(max-width:$size4){
-      padding:120px 0px;
+      padding:110px 0px;
   }
 }
 
@@ -206,7 +206,7 @@ div#contain-cursor{
 	@media(max-width:$size4){
 		display:none;
 	}
-	div.cursor{
+	div.cursor-circle{
 		width:10px;
 		height:10px;
 		background-color:  $color2;
@@ -235,7 +235,7 @@ div#contain-cursor{
 		}
 	}
 	&.ui-state-hovered{
-		div.cursor{
+		div.cursor-circle{
       width:30px;
       height:30px;
       cursor: none;
@@ -249,7 +249,7 @@ div#contain-cursor{
 		}
 	}
   &.ui-link-hovered{
-    div.cursor{
+    div.cursor-circle{
       width:85px;
       height:85px;
       cursor: none;
@@ -263,7 +263,7 @@ div#contain-cursor{
 		}
   }
   &.ui-grab-hovered{
-    div.cursor{
+    div.cursor-circle{
       width:85px;
       height:85px;
       cursor: none;
@@ -277,7 +277,7 @@ div#contain-cursor{
 		}
   }
   &.ui-left-hovered{
-    div.cursor{
+    div.cursor-circle{
       width:85px;
       height:85px;
       cursor: none;
@@ -291,7 +291,7 @@ div#contain-cursor{
 		}
   }
   &.ui-right-hovered{
-    div.cursor{
+    div.cursor-circle{
       width:85px;
       height:85px;
       cursor: none;

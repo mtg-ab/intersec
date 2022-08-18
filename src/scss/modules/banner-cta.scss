@@ -1,5 +1,6 @@
 section.banner-cta{
     position: relative;
+    overflow:hidden;
     &:before{
         content:'';
         display:block;
@@ -33,6 +34,82 @@ section.banner-cta{
                 }
             }
         }
+        div.bloc-bg-lines{
+            div.line{
+                transform: translateY(-100%);
+                opacity:0.5;
+                &:nth-child(2){
+                    transform: rotate(-180deg) translateY(-100%);
+                }
+            }
+        }
+    }
+    div.bloc-bg-lines{
+        display:block;
+        position: absolute;
+        width:100%;
+        height:100%;
+        top:0px;
+        left:0px;
+        overflow:hidden;
+        div.line{
+            width:6px;
+            height:478px;
+            position: absolute;
+            z-index:2;
+            background-repeat: no-repeat;
+            background-position: 50% 0%;
+            background-size: 4px;
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='482' viewBox='0 0 6 482' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 0.333333C1.52724 0.333333 0.333333 1.52724 0.333333 3C0.333333 4.47276 1.52724 5.66667 3 5.66667C4.47276 5.66667 5.66667 4.47276 5.66667 3C5.66667 1.52724 4.47276 0.333333 3 0.333333ZM2.50002 481C2.50002 481.276 2.72388 481.5 3.00002 481.5C3.27616 481.5 3.50002 481.276 3.50002 481L2.50002 481ZM2.5 3L2.50002 481L3.50002 481L3.5 3L2.5 3Z' fill='url(%23paint0_linear_313_949)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_313_949' x1='2.00035' y1='72.5' x2='2.00035' y2='242' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23F1762C'/%3E%3Cstop offset='1' stop-color='%23F1762C' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");            
+            opacity: 0.5;
+            
+            transform: translateY(100%);
+            transition-timing-function: cubic-bezier(.26,0,.14,.95);
+            &.line-1{
+                left:calc(50% - 708px);
+                bottom:-100px;
+                transition: 6.75s;
+            }
+            &.line-2{
+                right:calc(50% + 97px);
+                bottom:0px;
+                transition-delay: 0.35s;
+                transition: 6.25s;
+                transform: rotate(-180deg) translateY(140%);
+            }
+            &.line-3{
+                right:calc(50% - 708px);
+                bottom:-100px;
+                transition: 4.35s;
+                transition-delay: 1.35s;
+            }
+            &:after{
+                display:block;
+                content:'';
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                top:-12px;
+                background: rgba(241, 118, 44, 0.5);
+                filter: blur(4px);
+                width:24px;
+                height:24px;
+                border-radius:50%;
+            }
+            &:before{
+                border: 0.5px solid #F1762C;
+                display:block;
+                content:'';
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 50px;
+                top:-25px;
+                border-radius:50%;
+                
+            }
+        }
     }
     div.container{
         display:flex;
@@ -50,12 +127,14 @@ section.banner-cta{
                 position: relative;
                 z-index:2;
                 margin-bottom:0px;
+                min-height:120px;
                 @media(max-width:$size3){
                     position: absolute;
                     top:-30px;
                     left:0px;
                     font-size: 60px;
                     line-height: 100%;
+                    min-height: inherit;
                 }
             }
             div.bloc-img{
@@ -63,7 +142,7 @@ section.banner-cta{
                 height:416px;
                 border-radius:50%;
                 position: absolute;
-                top:0px;
+                top:-20%;
                 right:0px;
                 padding:25px;
                 @media(max-width:$size3){

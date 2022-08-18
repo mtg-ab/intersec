@@ -14,44 +14,65 @@
                             {% if item.title_cta %}
                             <div class="sub-menu">
                                 <div class="container">
-                                    <div class="bloc-menu">
-                                        <div class="col">
-                                            {% for links in item.links %}
-                                                {% if loop.index is odd %}
-                                                    {% if links.title_links %}
-                                                        <p class="title">{{ links.title_links }}</p>
+                                    {% if item.links %}
+                                        <div class="bloc-menu">
+                                            <div class="col">
+                                                {% for links in item.links %}
+                                                    {% if loop.index is odd %}
+                                                        {% if links.title_links %}
+                                                            <p class="title">{{ links.title_links }}</p>
+                                                        {% endif %}
+                                                        <ul>
+                                                            {% for item in links.items %}
+                                                                {% if item.text_menu_items %}
+                                                                    <li>
+                                                                        <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </ul>
                                                     {% endif %}
-                                                    <ul>
-                                                        {% for item in links.items %}
-                                                            {% if item.text_menu_items %}
-                                                                <li>
-                                                                    <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
-                                                                </li>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </ul>
-                                                {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                                {% for links in item.links %}
+                                                    {% if loop.index is even %}
+                                                        {% if links.title_links %}
+                                                            <p class="title">{{ links.title_links }}</p>
+                                                        {% endif %}
+                                                        <ul>
+                                                            {% for item in links.items %}
+                                                                {% if item.text_menu_items %}
+                                                                    <li>
+                                                                        <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </ul>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="bloc-menu">
+                                            {% for feature in item.features %}
+                                                <a href="{{ feature.link_features.url.href }}" class="bloc bloc-liquid-menu">
+                                                    <svg width="85" class="line-dashed" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <defs>
+                                                            <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+                                                            filterUnits="objectBoundingBox">
+                                                                <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+                                                                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+                                                            </filter>
+                                                        </defs>
+                                                        <circle cx="42" cy="42" r="41" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="1.5px" stroke-linecap="round" stroke-dasharray="1 5"/>
+                                                    </svg> 
+                                                    <p class="title">{{ feature.title_features }}</p>
+                                                    {{ feature.text_features }}
+                                                </a>
                                             {% endfor %}
                                         </div>
-                                        <div class="col">
-                                            {% for links in item.links %}
-                                                {% if loop.index is even %}
-                                                    {% if links.title_links %}
-                                                        <p class="title">{{ links.title_links }}</p>
-                                                    {% endif %}
-                                                    <ul>
-                                                        {% for item in links.items %}
-                                                            {% if item.text_menu_items %}
-                                                                <li>
-                                                                    <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
-                                                                </li>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </ul>
-                                                {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
+                                    {% endif %}
                                     <div class="bloc-cta">
                                         <div class="bloc-img">
                                             <figure>
@@ -93,16 +114,126 @@
                 <span class="switcher"></span>
             </div>
             {% if module.cta_field %}
-                <div class="row-btns">
+                <div class="row-btns white">
                     {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
                 </div>
             {% else if module.button_url.url.href %}
-                <div class="row-btns">
-                    <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
-                        {{ module.button_text }}
-                    </a>
-                </div>
+                {% if module.button_url.url.href %}
+                    <div class="row-btns white">
+                        <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                            {{ module.button_text }}
+                        </a>
+                    </div>
+                {% endif %}
             {% endif %}
+            {% if module.cta_field_2 %}
+                <div class="row-btns">
+                    {% cta "cta" label='Select a CTA', guid='{{ module.cta_field_2 }}' %}
+                </div>
+            {% else if module.button_url_2.url.href %}
+                {% if module.button_url_2.url.href %}
+                    <div class="row-btns">
+                        <a href="{{ module.button_url_2.url.href }}" {% if module.button_url_2.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                            {{ module.button_text_2 }}
+                        </a>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="burger-menu">
+            <div class="btn-open"></div>
+            <div class="btn-close"></div>
         </div>
     </div>
 </header>
+<div class="contain-menu-mobile">
+    <nav>
+        <ul>
+            {% for item in module.menu_header %}
+                <li class="menu-parent {% if item.links or item.features %}sub-menu{% endif %}">
+                    <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
+                    {% if item.title_cta %}
+                    <div class="sub-menu">
+                        {% if item.links %}
+                            <div class="bloc-menu">
+                                <div class="col">
+                                    {% for links in item.links %}
+                                        {% if loop.index is odd %}
+                                            {% if links.title_links %}
+                                                <p class="title">{{ links.title_links }}</p>
+                                            {% endif %}
+                                            <ul>
+                                                {% for item in links.items %}
+                                                    {% if item.text_menu_items %}
+                                                        <li>
+                                                            <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="col">
+                                    {% for links in item.links %}
+                                        {% if loop.index is even %}
+                                            {% if links.title_links %}
+                                                <p class="title">{{ links.title_links }}</p>
+                                            {% endif %}
+                                            <ul>
+                                                {% for item in links.items %}
+                                                    {% if item.text_menu_items %}
+                                                        <li>
+                                                            <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="bloc-menu">
+                                {% for feature in item.features %}
+                                    <a href="{{ feature.link_features.url.href }}" class="bloc bloc-liquid-menu">
+                                        <svg width="85" class="line-dashed" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+                                                filterUnits="objectBoundingBox">
+                                                    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+                                                    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+                                                </filter>
+                                            </defs>
+                                            <circle cx="42" cy="42" r="41" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="1.5px" stroke-linecap="round" stroke-dasharray="1 5"/>
+                                        </svg> 
+                                        <p class="title">{{ feature.title_features }}</p>
+                                        {{ feature.text_features }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <div class="contact">
+        <div class="switch-language">
+            <span class="lang">FR</span>
+            <span class="switcher"></span>
+        </div>
+        {% if module.cta_field %}
+            <div class="row-btns">
+                {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+            </div>
+        {% else if module.button_url.url.href %}
+            <div class="row-btns">
+                <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                    {{ module.button_text }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>

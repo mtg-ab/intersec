@@ -1,0 +1,73 @@
+<section id="{{module.module_identity}}" class="txt-waves {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <svg width="862" height="862" viewBox="0 0 862 862" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.7" filter="url(#filter3_f_248_648)">
+                <circle r="24.6463" transform="matrix(1 0 0 -1 431 431)" stroke="#F1762C" stroke-linecap="round"/>
+            </g>
+            <g filter="url(#filter0_f_248_648)">
+                <circle cx="431" cy="431" r="61.3293" stroke="#F1762C" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+            </g>
+            <circle opacity="0.7" cx="431" cy="431" r="155.329" stroke="#F1762C" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+            <circle opacity="0.5" cx="431" cy="431" r="241.878" stroke="#F1762C" stroke-linecap="round"/>
+            <g filter="url(#filter1_f_248_648)">
+            <circle cx="431" cy="431" r="326.707" stroke="#F1762C" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+            </g>
+            <g filter="url(#filter2_f_248_648)">
+            <circle cx="431" cy="431" r="423" stroke="#F1762C" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+            </g>
+            
+            <defs>
+            <filter id="filter0_f_248_648" x="364.671" y="364.671" width="132.659" height="132.659" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_248_648"/>
+            </filter>
+            <filter id="filter1_f_248_648" x="99.2927" y="99.2927" width="663.415" height="663.415" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_248_648"/>
+            </filter>
+            <filter id="filter2_f_248_648" x="0" y="0" width="862" height="862" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="3.5" result="effect1_foregroundBlur_248_648"/>
+            </filter>
+            <filter id="filter3_f_248_648" x="401.854" y="401.854" width="58.2927" height="58.2927" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_248_648"/>
+            </filter>
+            </defs>
+        </svg>
+        <div class="blocks">
+            {% for item in module.blocks %}
+                <div class="block">
+                    {% if item.pictogram.src %}
+                        <figure>
+                            <img loading="lazy" src="{{ item.pictogram.src }}" alt="{{ item.pictogram.alt }}" />
+                        </figure>
+                    {% endif %}
+                    <p class="title">{{ item.title }}</p>
+                    {{ item.text }}
+                    {% if item.cta_field %}
+                        <div class="row-btns">
+                            {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+                        </div>
+                    {% else if item.button_url.url.href %}
+                        {% if item.button_url.url.href %}
+                            <div class="row-btns">
+                                <a href="{{ item.button_url.url.href }}" {% if item.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                        <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                    </svg>
+                                    {{ item.button_text }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -15,6 +15,7 @@ jQuery( document ).ready(function() {
             selectedAttraction: 0.01,
             friction: 0.15,
             prevNextButtons: false,
+            draggable:true,
         });
         flickity.x = 0;
 

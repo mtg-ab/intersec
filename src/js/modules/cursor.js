@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("div").hasClass("cursor")){
+    if(jQuery("div").hasClass("cursor-circle")){
 
         //CURSOR
     var mouseX=window.innerWidth/2,

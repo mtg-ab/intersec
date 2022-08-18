@@ -1,7 +1,7 @@
 <!--
   templateType: blog
   isAvailableForNewContent: true
-  label: Boilerplate V3 - Blog Listing
+  label: Intersec - Blog Listing
 -->
 
 <!-- End of HubSpot code snippet -->
@@ -12,13 +12,45 @@
     {% if blog_author %}
     {# Author Block Listing - You can manage it here #}
     {% elif tag %}
+        {% module "Blog listing hero" path="../../modules/blog-listing-hero.module", label="Blog listing hero" %}
     {# Tag Listing - You can manage it here #}
     {% else %}
-    <!--Classic Listing - You can manage it here -->
-    {% for post in contents %}
-    <h1>{{post.name}}</h1>
-    {% endfor %}
+        <!--Classic Listing - You can manage it here -->
+        {% module "Blog listing hero" path="../../modules/blog-listing-hero.module", label="Blog listing hero" %}
     {% endif %}
+    <section class="listing-posts">
+        <div class="container">
+            {% for post in contents %}
+                {% if loop.index > 1 %}
+                    <a href="{{ post.url }}" class="bloc">
+                        <div class="bloc-img link-hover">
+                            <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
+                                <img src="{{ post.featured_image }}" loading="lazy" alt="{{ post.featured_image_alt }}">
+                            </figure>
+                        </div>
+                        <div class="bloc-txt">
+                            <div class="infos">
+                                <div class="tags">
+                                    {% if post.topic_list %}
+                                        {% for tags in post.topic_list %}
+                                            <span>{{tags|replace('-', ' ') }}</span>
+                                        {% endfor %}
+                                    {% endif %}
+                                    
+                                </div>
+                                {% if post.publish_date %}
+                                    <span>- {{ post.publish_date|datetimeformat('%d / %B / %Y') }}</span>
+                                {% endif %}
+                            </div>
+                            {% if post.name %}
+                                <p class="title"><span>{{ post.name }}</span></p>
+                            {% endif %}                      
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
     <!-- Pagination -->
     {% if contents.total_page_count > 1 %}
     <nav class="container-blog-pagination">
@@ -81,5 +113,6 @@
             {% endif %}
     </nav>
     {% endif %}
+    {% module_block module "blog-listing-other-posts" path="../../modules/blog-listing-other-posts.module", label="Blog listing other posts"%}{% end_module_block %}
 </div>
 {% endblock body %}

@@ -66,7 +66,6 @@
             }
         ]
     },
-    
     {
         "name": "title",
         "label": "Title",
@@ -80,76 +79,8 @@
         "default": "Client success story"
     },
     {
-        "name": "text",
-        "label": "Text",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "richtext",
-        "help_text": "",
-        "default": ""
-    },
-    {
-        "name": "image",
-        "label": "Image",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "type": "image",
-        "default": {
-            "size_type": "auto",
-            "src": "https://via.placeholder.com/600",
-            "alt": "Example of an image used in your module"
-        }
-    },
-    {
-        "name": "button_text",
-        "label": "Texte button",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "placeholder": "",
-        "inline_help_text": "",
-        "help_text": "",
-        "default": "Let's talk"
-    },
-    {
-        "name": "button_url",
-        "label": "URL button",
-        "required": false,
-        "locked": false,
-        "inline_help_text": "",
-        "help_text": "",
-        "supported_types": [
-        "EXTERNAL",
-        "CONTENT",
-        "FILE",
-        "EMAIL_ADDRESS",
-        "BLOG"
-        ],
-        "type": "link"
-    },
-    {
-        "name": "testimonial",
-        "label": "Testimonial",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "richtext",
-        "help_text": "",
-        "default": ""
-    },
-    {
-        "name": "author",
-        "label": "Author",
+        "name": "id_post",
+        "label": "ID post",
         "required": false,
         "locked": false,
         "validation_regex": "",

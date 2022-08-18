@@ -91,7 +91,7 @@ section.tabs-txt-img{
                         top:50%;
                         opacity:0;
                         transition: 0.75s;
-                        transform: translateY(-50%) translateX(-50%) scale(0.8);
+                        transform: translateY(-50%) translateX(-50%) scale(0.7);
                         @media(max-width:$size3){
                             width:100px;
                             height:100px;
@@ -156,7 +156,7 @@ section.tabs-txt-img{
                         width:100%;
                         max-width:420px;
                     }
-                    a.bloc-img{
+                    a.bloc-img,div.bloc-img{
                         width:100%;
                         max-width:390px;
                         height:247px;

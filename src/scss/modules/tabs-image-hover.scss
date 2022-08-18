@@ -36,13 +36,8 @@ section.tabs-image-hover{
                     }
                     &.selected{
                         opacity:1 !important;
-
-                         div.item-title{
-                             @media(max-width:$size3){
-                                 margin-left:10px;
-                             }
-                        }
                         div.circles{
+                            position: relative;
                             svg.line-outline{
                                 transform: rotate(180deg) scale(0.35);
                                 
@@ -53,6 +48,7 @@ section.tabs-image-hover{
                             }
                             svg.line-dashed{
                                 opacity:1;
+                                transform: translateY(-50%) translateX(-50%) scale(1);
                             }
                         }
                         p.title{
@@ -78,8 +74,9 @@ section.tabs-image-hover{
                             position: absolute;
                             left:50%;
                             top:50%;
-                            transform: translateY(-50%) translateX(-50%);
                             opacity:0;
+                            transition: 0.75s;
+                            transform: translateY(-50%) translateX(-50%) scale(0.7);
                             @media(max-width:$size3){
                                 width:100px;
                                 height:100px;
@@ -115,8 +112,76 @@ section.tabs-image-hover{
                     transition: 0.75s;
                     position: absolute;
                     width:100%;
+                    pointer-events: none;
                     @media(max-width:$size3){
                         display:flex;
+                    }
+                    &.selected{
+                        opacity:1;
+                        z-index:2;
+                        pointer-events: inherit;
+                    }
+                    &:hover{
+                        div.bloc-imgs-hover{
+                            opacity:1;
+                            div.bloc-img{
+                                opacity:1;
+                            }
+                        }
+                    }
+                    div.bloc-imgs-hover{
+                        position: absolute;
+                        width:278px;
+                        height:278px;
+                        display:none;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        transform: translateY(-50%) translateX(-50%);
+                        pointer-events: none;
+                        z-index:-1;
+                        @media(max-width:$size3){
+                            display:none;
+                        }
+                        div.bloc-img{
+                            position: absolute;
+                            top:0px;
+                            left:0px;
+                            width:100%;
+                            height:100%;
+                            transform: scale(1.1);
+                            &.show{
+                                figure{
+                                    height:100%;
+                                    img{
+                                        opacity:1;
+                                        transform: scale(1);
+                                    }
+                                }
+                                
+                            }
+                            figure{
+                                width:100%;
+                                height:100%;
+                                transition: 0.55s;
+                                overflow:hidden;
+                                display:block;
+                                img{
+                                    width:278px;
+                                    height:278px;
+                                    display:block;
+                                    object-fit: cover;
+                                    object-position: center;
+                                    opacity: 0;
+                                    transition: 0.5s;
+                                    transform: scale(1.2);
+                                    @media(max-width:$size3){
+                                        opacity:1;
+                                        transform: scale(1);
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
                     div.flickity-viewport{
                         width:100%;
@@ -126,10 +191,7 @@ section.tabs-image-hover{
                             height:100%;
                         }
                     }
-                    &.selected{
-                        opacity:1;
-                        z-index:2;
-                    }
+                    
                     a.row{
                         display:flex;
                         justify-content: space-between;
@@ -196,6 +258,7 @@ section.tabs-image-hover{
                             transform: translateY(-50%) translateX(-50%);
                             pointer-events: none;
                             z-index:-1;
+                            display: none;
                             @media(max-width:$size3){
                                 width:250px;
                                 height:250px;
@@ -203,6 +266,7 @@ section.tabs-image-hover{
                                 margin:0 auto;
                                 margin-top:30px;
                                 margin-bottom: 30px;
+                                display: block;
                                 transform: translateY(0px) translateX(0px);
                             }
                             figure{
@@ -232,6 +296,7 @@ section.tabs-image-hover{
                             }
                             p{
                                 margin:0px;
+                                mix-blend-mode: multiply;
                             }
                         }
                         div.step{

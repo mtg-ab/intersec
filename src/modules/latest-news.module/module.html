@@ -1,4 +1,4 @@
-<section id="{{module.module_identity}}" class="latest-news {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+<section id="{{module.module_identity}}" class="featured {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         <div class="bloc-title">
             <h2>{{ module.title }}</h2>
@@ -19,19 +19,16 @@
             {% endif %}
         </div>
         <div class="bloc-posts">
-            {% set rec_posts = blog_recent_posts("", 3) %}
-            {% set i = 0 %}
-            {% for rec_post in rec_posts %}
-                {% set i = i + 1 %}
-                <div class="bloc" data-id="{{ i }}">
-                    <a href="{{ rec_post.absolute_url }}" class="bloc-img link-hover">
+            {% for item in module.items %}
+                <div class="bloc" data-id="{{ loop.index }}">
+                    <a href="{{ item.link.href }}" class="bloc-img link-hover">
                         <figure>
-                            <img loading="lazy" src="{{ rec_post.featured_image }}" width="{{ rec_post.featured_image.width }}" height="{{ irec_post.featured_image.height }}" alt="{{ rec_post.featured_image_alt }}">
+                            <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}">
                         </figure>
                     </a>
-                    <a href="{{ rec_post.absolute_url }}" class="bloc-txt">
-                        <h4>{{ rec_post.name }}</h4>
-                        {{ rec_post.post_summary }} 
+                    <a href="{{ item.link.href }}" class="bloc-txt">
+                        <h4>{{ item.title }}</h4>
+                        {{ item.description }} 
                     </a>
                 </div>
             {% endfor %}
