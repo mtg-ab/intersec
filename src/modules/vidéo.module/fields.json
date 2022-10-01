@@ -86,5 +86,14 @@
         "type" : "file",
         "picker" : "file",
         "default" : null
+    },
+    {
+        "name": "autoplay",
+        "label": "Autoplay",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
     }
 ]

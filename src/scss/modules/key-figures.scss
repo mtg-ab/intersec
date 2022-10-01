@@ -1,8 +1,43 @@
 section.key-figures{
     position: relative;
-    
-    &.active{
+    &.bg-black{
+        background-color: $color1;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+        div.container{
+            div.bloc{
+                span.figure,div.bloc-txt{
+                    color:#fff;
+                    *{
+                        color:#fff;
+                    }
+                }
+            }
+        }
         div.bloc-svg{
+            svg{
+                circle,ellipse{
+                    stroke:$color2;
+                }
+            }
+        }
+    }
+
+    &.active{
+        &.bg-black{
+            div.bloc-bg-lines{
+                div.line{
+                    transform: translateY(-140%);
+                    opacity:0.5;
+                    &:nth-child(2){
+                        transform: rotate(-180deg) translateY(-100%);
+                    }
+                }
+            }
+        }
+        div.bloc-svg{
+            z-index:0;
             svg{
                 circle,ellipse{
                     opacity:1;
@@ -43,16 +78,14 @@ section.key-figures{
         flex-grow: 2;
         position: relative;
         z-index:2;
+        gap:165px 0px;
+        @media(max-width:$size3){
+            gap:90px 0px;
+        }
         div.bloc{
             max-width:495px;
             width:100%;
-            margin-bottom:165px;
-            opacity:0;
-            @media(max-width:$size3){
-                &:last-child{
-                    margin-bottom: 0px;
-                }
-            }
+            
             span.figure{
                 font-size:140px;
                 line-height:145px;
@@ -66,6 +99,9 @@ section.key-figures{
                 padding-top:20px;
                 border-top:1px solid $color2;
                 font-size:20px;
+                @media(max-width:$size3){
+                    padding-top:15px;
+                }
             }
         }
     }

@@ -31,7 +31,7 @@
         {% block header %}
           {% module "header" path="../../modules/header.module", label="Header"%}
         {% endblock header %}
-    
+
         {# The main-content ID is used for the navigation skipper in the header.html file. More information on the
         navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
     
@@ -39,10 +39,11 @@
           {% block body %}
           {% endblock body %}
         </main>
-    
+
         {% block footer %}
-        {% module "footer" path="../../modules/footer.module", label="Footer"%}
-      {% endblock footer %}
+          {% module "footer" path="../../modules/footer.module", label="Footer"%}
+        {% endblock footer %}
+    
       </div>
     </div>
     {{ require_js(get_asset_url("../../js/main.js")) }}

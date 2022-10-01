@@ -1,0 +1,21 @@
+<section id="{{module.module_identity}}" class="clients-listing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <h2>{{ module.title }}</h2>
+        {% if module.text %}
+            <div class="bloc-txt">
+                <div class="txt">
+                    {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <div class="bloc-logos">
+        {% for item in module.logos %}
+            {% if item.logo.src %}
+                <figure>
+                    <img loding="lazy" src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" />
+                </figure>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<footer id="{{module.module_identity}}"
+    class="footer-landing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.logo.logo_src.src %}
+            <a href="{{ module.logo.logo_link.href }}" class="logo">
+                <img src="{{ module.logo.logo_src.src }}" loading="lazy" alt="{{ module.logo.logo_src.alt }}" width="{{ module.logo.logo_src.width }}" height="{{ module.logo.logo_src.height }}" />
+            </a>
+        {% endif %}
+        <div class="bloc-nav">
+            <nav>
+                {% menu "footer_menu_landing" id={{ module.footer_menu_landing }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+                © {{ local_dt|datetimeformat('%Y') }}
+            </nav>
+        </div>
+    </div>
+</section>

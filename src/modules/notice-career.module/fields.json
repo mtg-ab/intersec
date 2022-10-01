@@ -1,0 +1,138 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name" : "note",
+        "label" : "Note",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : 0,
+        "max" : 5,
+        "step" : 0.1,
+        "type" : "number",
+        "prefix": "",
+        "suffix" : "",
+        "default" : null,
+        "placeholder": "4.1"
+    },
+    {
+        "name" : "notes",
+        "label" : "Notes",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "notes.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name" : "note",
+                "label" : "Note",
+                "required" : false,
+                "locked" : false,
+                "display" : "slider",
+                "min" : 0,
+                "max" : 100,
+                "step" : 1,
+                "type" : "number",
+                "prefix": "",
+                "suffix" : "",
+                "default" : null,
+                "placeholder": "50"
+            },
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text": "",
+                "default": "Approve of CEO"
+            },
+            {
+                "name": "text",
+                "label": "Text",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text": "",
+                "default": "34 ratings"
+            }
+        ],
+        "type" : "group"
+    }
+]

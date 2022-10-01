@@ -17,8 +17,8 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.faq div.items div.item",1, { opacity:1,y:0,stagger:0.15,ease: "power2.inOut" });
-        tl.to("section.faq p.title_bg",0.75, { opacity:1,y:0,delay:-1,ease: "power2.inOut" });
+        tl.staggerTo("section.faq div.items div.item",0, { opacity:1,y:0,stagger:0.15,ease: "power2.inOut" });
+        tl.to("section.faq p.title_bg",0.65, { opacity:1,y:0,delay:-1,ease: "power2.inOut" });
         //INIT ANIM
         
         jQuery("section.faq div.items div.item").each(function() {

@@ -1,0 +1,77 @@
+section.txt-img-download{
+    &.txt-img-right{
+        div.container{
+            div.bloc-img{
+                order:2;
+                a.link{
+                    left:-43px;
+                    right: inherit;
+                }
+            }
+            div.bloc-txt{
+                order:1;
+            }
+        }
+    }
+    div.container{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width:810px;
+        @media(max-width:$size3){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        h2{
+            margin-bottom:60px;
+        }
+        div.bloc-img{
+            max-width:calc(285px);
+            height: 398px;
+            position: relative;
+            @media(max-width:$size3){
+                max-width:100%;
+                min-height: inherit;
+                height:300px;
+                width:100%;
+                margin-bottom:30px;
+            }
+            @media(max-width:$size5){
+                height:170px;
+            }
+            a.link{
+                background-color: $color2;
+                border-radius: 50%;
+                width:85px;
+                height:85px;
+                top:55px;
+                right:-43px;
+                position: absolute;
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='21' viewBox='0 0 16 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99257 0.999786C8.99257 0.483577 8.5741 0.065106 8.05789 0.0651062C7.54168 0.0651058 7.12321 0.483576 7.12321 0.999787L8.99257 0.999786ZM7.39697 16.0137C7.76199 16.3787 8.3538 16.3787 8.71881 16.0137L14.6671 10.0654C15.0321 9.70039 15.0321 9.10858 14.6671 8.74356C14.3021 8.37855 13.7103 8.37855 13.3452 8.74356L8.05789 14.0309L2.77054 8.74356C2.40553 8.37855 1.81372 8.37855 1.4487 8.74356C1.08369 9.10858 1.08369 9.70039 1.4487 10.0654L7.39697 16.0137ZM7.12321 0.999787V15.3528L8.99257 15.3528V0.999786L7.12321 0.999787Z' fill='white'/%3E%3Cline x1='1' y1='19.0586' x2='15' y2='19.0586' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: center;
+                text-indent: -9999px;
+                transition: 0.75s;
+                &:hover{
+                    background-color: $color1;
+                }
+            }
+            figure{
+                display:block;
+                width:100%;
+                height:100%;
+                img{
+                    object-fit: cover;
+                    width:100%;
+                    height:100%;
+                }
+            }
+        }
+        div.bloc-txt{
+            max-width:415px;
+            @media(max-width:$size3){
+                max-width:100%;
+            }
+        }
+    }
+}

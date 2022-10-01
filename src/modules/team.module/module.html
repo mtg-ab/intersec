@@ -1,0 +1,85 @@
+<section id="{{module.module_identity}}" class="team {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+    </div>
+    <div class="container">
+        <div class="bloc-tabs">
+            {% for item in module.items %}
+                {% if item.title %}
+                    <div class="bloc bloc-liquid {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        <div class="circles">
+                            <svg width="25" class="line-outline" height="25" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="11" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                            </svg>
+                            
+                            <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+                                    filterUnits="objectBoundingBox">
+                                        <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+                                        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+                                    </filter>
+                                </defs>
+                                <circle cx="66" cy="66" r="61" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="1.5px" stroke-linecap="round" stroke-dasharray="1 5"/>
+                            </svg> 
+                            
+                        </div>
+                        <div class="item-title">
+                            <p class="title">{{ item.title }}</p>
+                            <p class="subtitle">{{ item.subtitle }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container container-infos">
+            <div class="contain-slider">
+                <div class="bloc-slider" data-flickity='{"fade": true, "autoPlay": false,"pageDots": false}'>
+                    {% for item in module.teams %}
+                        <div class="bloc-txt">
+                            {% if item.job %}
+                                <p class="job">{{ item.job }}</p>
+                            {% endif %}
+                            {% if item.statut %}
+                                <p class="category">{{ item.statut }}</p>
+                            {% endif %}
+                            <h3>{{ item.firstname }} {{ item.nom }}</h3>
+                            <div class="txt">
+                                {{ item.text }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+    <div class="bloc-slider-img">
+        <svg width="425" height="846" viewBox="0 0 425 846" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="2.00043" cy="423" r="422.475" stroke="#F1762C" stroke-linecap="round"/>
+        </svg>
+        <svg width="560" height="1116" viewBox="0 0 560 1116" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="2" cy="558" r="557" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="0.5 7"/>
+        </svg> 
+        
+            <div class="circular-slider circular-slider-1" data-id="{{ loop.index }}">
+                <div class="wrapper">
+                    <div class="slides-holder">
+                        {% for item in module.teams %}
+                            <div class="slides-holder__item {% if loop.index == 1 %}slides-holder__item_active{% endif %}">
+                                <img src="{{ item.image.src }}" alt="{{ item.title }}"/>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="descriptions">
+                        {% for item in module.teams %}
+                            <div class="descriptions__item {% if loop.index == 1 %}descriptions__item_visible{% endif %}">
+                                
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>

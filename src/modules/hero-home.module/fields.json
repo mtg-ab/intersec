@@ -79,6 +79,33 @@
         "default": "Flowing without any loss of consect."
     },
     {
+        "name" : "words",
+        "label" : "Words",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "words.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "name": "word",
+                "label": "Word",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "help_text": "",
+                "default": ""
+            }
+        ],
+        "type" : "group"
+    },
+    {
         "name": "subtitle",
         "label": "Subtitle",
         "required": false,

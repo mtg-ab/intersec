@@ -78,6 +78,7 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "flickity": "^2.3.0",
     "flickity-fade": "^1.0.0",
     "flickity-fullscreen": "^1.1.1",

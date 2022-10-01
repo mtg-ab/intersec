@@ -17,7 +17,7 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.featured .bloc",1.25, { opacity:1,x:0,stagger:0.15,ease: "power2.inOut" });
+        tl.staggerTo("section.featured .bloc",1.25, { opacity:1,x:0,y:0,stagger:0.15,ease: "power2.inOut" });
         //INIT ANIM
     }
 })

@@ -18,11 +18,11 @@
         <div class="infos">
           <div class="tags">
             {% if content.topic_list %}
-            {% for tags in content.topic_list %}
-            {% if tags.name|lower != "featured" %}
-            <a href="{{ blog_tag_url(group.id, tags.slug) }}">{{tags|replace('-', ' ') }}</a>
-            {% endif %}
-            {% endfor %}
+              {% for tags in content.topic_list %}
+                {% if tags.name|lower != "featured" %}
+                  <a href="{{ blog_tag_url(group.id, tags.slug) }}">{{tags|replace('-', ' ') }}</a>
+                {% endif %}
+              {% endfor %}
             {% endif %}
           </div>
           {% if content.publish_date %}
@@ -49,7 +49,11 @@
               <meta itemprop="position" content="1" />
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a>
+              {% if blog.name == "Intersec Presse" %}
+                  <a itemprop="item" href="/press"><span itemprop="name">Press</span></a> 
+              {% else %}
+                  <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a> 
+              {% endif %}
               <meta itemprop="position" content="2" />
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -68,6 +72,8 @@
         {{ content.post_body }}
         {% module_block module "blog-post-cta" path="../../modules/blog-post-cta.module", label="Blog
         post CTA"%}{% end_module_block %}
+        {% module_block module "blog-post-testimonial" path="../../modules/blog-post-testimonial.module", label="Blog
+        post testimonial"%}{% end_module_block %}
       </div>
       <div class="bloc-anchor">
         <ul>

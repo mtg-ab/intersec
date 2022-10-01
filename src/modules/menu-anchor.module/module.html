@@ -1,0 +1,15 @@
+<section id="{{module.module_identity}}" class="menu-anchor {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <nav>
+            <ul>
+                {% for item in module.menu %}
+                    <li>
+                        <span class="menu-primary" id="{{ item.url_menu }}" data-url="{{ item.url_menu }}">
+                            {{ item.text_menu }}
+                        </span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</section>

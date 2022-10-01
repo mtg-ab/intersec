@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom:140px;
   .blog-pagination {
     display: flex;
     justify-content: center;
@@ -12,16 +13,32 @@
       align-items: center;
       margin: 0 5px;
       text-decoration: none;
-      color: #fff;
-      background-color: $color1;
-      height: 50px;
-      width: 50px;
-      opacity: 0.5;
+      color: $color1;
       border-radius: 4px;
       transition: all 0.3s ease;
-      &--active,
+      position: relative;
+      margin:0px 10px;
+      &:after{
+        display:block;
+        border:1px solid $color2;
+        border-radius: 50%;
+        width:42px;
+        height:42px;
+        content:'';
+        position: absolute;
+        left:50%;
+        top:50%;
+        opacity:0;
+        transform: translateY(-50%) scale(0.9) translateX(-50%);
+      }
       &:hover {
         opacity: 1;
+      }
+      &.blog-pagination__link--active{
+        &:after{
+          opacity:1;
+          transform: translateY(-50%) scale(1) translateX(-50%);
+        }
       }
     }
   }
@@ -30,9 +47,9 @@
     justify-content: center;
     align-items: center;
     margin: 0 5px;
-    height: 50px;
-    width: 50px;
-    opacity: 0.5;
+    height: 30px;
+    width: 30px;
+    opacity: 1;
     transition: all 0.3s ease;
     &:hover {
       opacity: 1;
@@ -40,8 +57,6 @@
     &.next {
       transform: rotate(0);
     }
-    &.previous {
-      transform: rotate(-180deg);
-    }
+
   }
 }

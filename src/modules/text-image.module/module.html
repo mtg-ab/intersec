@@ -1,4 +1,4 @@
-<section id="{{module.module_identity}}" class="txt-img {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+<section id="{{module.module_identity}}" class="txt-img txt-img-{{ module.content_style.img_position }} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         {% if module.title %}
             <h2>{{ module.title }}</h2>

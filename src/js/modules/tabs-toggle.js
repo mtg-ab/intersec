@@ -1,5 +1,26 @@
 jQuery( document ).ready(function() {
     if(jQuery("section").hasClass("tabs-toggle")){
+
+        //INIT GSAP
+        const { gsap } = require("gsap/dist/gsap");
+        var ScrollTrigger = require('gsap/ScrollTrigger');
+        gsap.registerPlugin(ScrollTrigger);
+        //INIT GSAP
+
+        //INIT TIMELINE
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "section.tabs-toggle",
+                start:"-=450",
+            }
+        });
+        //INIT TIMELINE
+
+        //INIT ANIM
+        tl.staggerTo("section.tabs-toggle div.items div.item",1, { opacity:1,y:0,delay:0,stagger:0.15,ease: "power2.inOut" });
+        tl.to("section.tabs-toggle div.bloc-imgs",1, { opacity:1,y:0,delay:0,delay:-0.85,ease: "power2.inOut" });
+
+        //INIT ANIM
         
         jQuery("section.tabs-toggle div.items div.item").each(function() {
             jQuery(this).click(function() {

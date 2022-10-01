@@ -1,0 +1,51 @@
+<section id="{{module.module_identity}}" class="hero-landing {% if module.content_style.background_black %}bg-black{% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="bloc-bg-lines">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div> 
+        <div class="line line-3"></div> 
+    </div>
+    <div class="container container-title {% if module.content_style.image_circle %}container-title-circle{% endif %}">
+        {% if module.image.src %}
+            {% if module.content_style.image_circle %}
+                <div class="bloc-img-circle" data-speed="1.1">
+                    <figure>
+                        <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                    </figure>
+                    <div class="bloc-line">
+                        <svg width="388" height="388" viewBox="0 0 388 388" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="194" cy="194" r="193" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 0"/>
+                        </svg>
+                    </div>
+                    <svg width="418" class="dashed-circle" height="418" viewBox="0 0 418 418" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="209" cy="209" r="208" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 10"/>
+                    </svg>
+                </div>  
+            {% else %}  
+                <div class="bloc-img" data-speed="1.1">
+                    <figure>
+                        <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                    </figure>
+                </div>              
+            {% endif %}              
+        {% endif %}
+        {% if module.title %}
+            <h1>{{ module.title }}</h1>
+        {% endif %}
+    </div>
+    <div class="container container-form">
+        <div class="bloc-form">
+            {% form
+                form_key="{{ module.form.form_id }}"
+                form_to_use="{{ module.form.form_id }}"
+                response_response_type="{{ module.form.response_type }}"
+                response_message="{{ module.form.message }}"
+                response_redirect_id="{{ module.form.redirect_id }}"
+                response_redirect_url="{{ module.form.redirect_url}}"
+                gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+            %}
+        </div>
+        <div class="bloc-txt">
+            {{ module.text }}
+        </div>
+    </div>
+</section>

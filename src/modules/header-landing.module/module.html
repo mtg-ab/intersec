@@ -1,0 +1,9 @@
+<header id="{{module.module_identity}}" class="header-landing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.logo.logo_src.src %}
+            <a href="{{ module.logo.logo_link.href }}" class="logo">
+                <img src="{{ module.logo.logo_src.src }}" loading="lazy" alt="{{ module.logo.logo_src.alt }}" width="{{ module.logo.logo_src.width }}" height="{{ module.logo.logo_src.height }}" />
+            </a>
+        {% endif %}
+    </div>
+</header>

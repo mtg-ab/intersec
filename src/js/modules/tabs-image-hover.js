@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("section").hasClass("tabs-toggle")){
+    if(jQuery("section").hasClass("tabs-image-hover")){
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");

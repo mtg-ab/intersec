@@ -242,6 +242,9 @@ section.technology{
                                     }
                                 }
                             }
+                            p{
+                                color:$color2;
+                            }
                         }
                         svg{
                             position: absolute;
@@ -280,11 +283,13 @@ section.technology{
                         p{
                             font-size:19px;
                             line-height:22px;
-                            font-weight: bold;
+                            font-weight: 500;
                             position: relative;
                             z-index:2;
                             margin-bottom:0px;
                             color:$color1;
+                            text-align: center;
+                            transition: 0.55s;
                         }
                     }
                     div.bloc-txt{

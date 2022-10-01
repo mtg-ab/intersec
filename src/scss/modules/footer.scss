@@ -1,6 +1,5 @@
 footer{
     position: relative;
-    padding-top:60px;
     &:after{
         display:block;
         content:'';
@@ -179,12 +178,15 @@ footer{
         }
     }
     div.contain-sub-footer{
+        position: relative;
+        z-index: 2;
         div.container{
             font-size:16px;
             line-height:28px;
             padding-top:25px;
-            padding-bottom:80px;
             border-top: 1px solid rgba(255, 255, 255, 0.5);
+            display:flex;
+            justify-content: space-between;
             @media(max-width:$size1){
                 max-width:calc(100% - 66px);
                 padding:30px 0px 65px 0px;
@@ -194,6 +196,22 @@ footer{
                 font-size: 13px;
                 line-height: 20px;
                 margin:0px;
+            }
+            ul{
+                margin:0px;
+                padding:0px;
+                display:flex;
+                li{
+                    list-style-type: none;
+                    margin-left: 60px;
+                    a{
+                        color:#fff;
+                        text-decoration: none;
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                }
             }
         }
     }

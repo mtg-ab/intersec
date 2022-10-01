@@ -81,6 +81,7 @@ header{
                             top:105px;
                             z-index:0;
                             transition: 0.45s;
+                            pointer-events: none;
                             &:after{
                                 display:block;
                                 content:'';

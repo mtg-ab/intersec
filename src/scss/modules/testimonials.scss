@@ -1,5 +1,25 @@
 section.testimonials{
     overflow:hidden;
+    &.bg-black{
+        background-color: $color1;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+        div.container{
+            h2{
+                color:#fff;
+            }
+            div.txt{
+                color:#fff;
+                *{
+                    color:#fff;
+                }
+            }
+            p{
+                color:#fff;
+            }
+        }
+    }
     div.container{
         div.bloc-testimonials{
             display:flex;

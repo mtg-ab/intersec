@@ -1,0 +1,17 @@
+<section id="{{module.module_identity}}" class="txt-img-download txt-img-{{ module.content_style.img_position }} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.image.src %}
+            <div class="bloc-img">
+                <figure>
+                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                </figure>
+                {% if module.file %}
+                    <a href="{{ module.file }}" target="_blank" class="link">link</a>
+                {% endif %}
+            </div>
+        {% endif %}
+        <div class="bloc-txt">
+            {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,64 @@
+<section id="{{module.module_identity}}" class="hero-career {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="bloc-bg-lines">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div> 
+        <div class="line line-3"></div> 
+    </div>
+    <div class="container">
+        <div class="bloc-txt">
+            <p class="figure"></p>
+            {% if module.subtitle %}
+                <p class="subtitle">{{ module.subtitle }}</p>
+            {% endif %}
+            {% if module.title %}
+                <h1>{{ module.title }}</h1>
+            {% endif %}
+            {% if module.cta_field %}
+                <div class="row-btns">
+                    {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
+                </div>
+            {% else if module.button_url.url.href %}
+                <div class="row-btns">
+                    <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg">
+                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                        </svg>
+                        {{ module.button_text }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="bloc-imgs">
+            {% for item in module.images %}
+                <div class="bloc">
+                    <figure>
+                        <img loading="lazy"  src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                    </figure>
+                    <div class="bloc-video">
+                        {% if module.youtube == 'true' %}
+                            <iframe width="560" height="315" data-src="{{ module.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        {% else if {{ module.video}} %}
+                            <video controls>
+                                <source src="{{ module.video}}" type="video/mp4">
+                            </video>
+                        {% endif %}
+                    </div>
+                    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{{ module.button_url_team.url.href }}" {% if module.button_url_team.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}  class="container-btn-join">
+        <div class="btn-join">
+            <span>Join our team</span>
+            <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="54.5" cy="54.5" r="53.5" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+            </svg>
+            <svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50.5" cy="50.5" r="50" stroke="#F1762C" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </a>
+</section>
+

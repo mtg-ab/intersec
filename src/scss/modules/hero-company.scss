@@ -1,0 +1,51 @@
+section.hero-company{
+    padding-top:250px;
+    @media(max-width:$size3){
+        overflow:hidden;
+    }
+    div.container{
+        position: relative;
+        p.title_bg{
+            position: absolute;
+            color:#F9F9F9;
+            right:0px;
+            top:40%;
+            font-weight: 700;
+            font-size:280px;
+            line-height:280px;
+            letter-spacing: 0.075em;
+            margin:0px;
+            opacity:0;
+            text-align: right;
+            z-index:-1;
+            @media(max-width:$size4){
+                font-size:200px;
+                line-height:200px;
+            }
+        }
+        h1{
+            font-weight: 500;
+            font-size: 70px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            max-width:880px;
+            @media(max-width:$size3){
+                font-size:55px;
+                line-height:60px;
+            }
+        }
+        div.bloc-txt{
+            display:flex;
+            justify-content: flex-end;
+            padding-right:105px;
+            position: relative;
+            @media(max-width:$size3){
+                padding-right:0px;
+            }
+            div.txt{
+                max-width:495px;
+                opacity:0;
+            }
+        }
+    }
+}

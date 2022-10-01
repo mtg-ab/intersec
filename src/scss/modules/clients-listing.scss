@@ -1,0 +1,77 @@
+section.clients-listing{
+
+    div.container{
+        position: relative;
+       
+        div.bloc-txt{
+            display:flex;
+            justify-content: flex-end;
+            padding-right:105px;
+            position: relative;
+            margin-top:75px;
+            @media(max-width:$size3){
+                margin-top:0px;
+                padding-right:0px;
+            }
+            div.txt{
+                max-width:495px;
+                padding-bottom: 20px;
+                position: relative;
+                opacity:0;
+                @media(max-width:$size3){
+                    max-width:100%;
+                }
+                &.active{
+                    &:after{
+                        width:100px;
+                    }
+                }
+                &:after{
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    left:0px;
+                    bottom:0px;
+                    height:2px;
+                    width:0px;
+                    background-color: $color2;
+                    transition: 0.75s;
+                }
+            }
+        }
+    }
+    div.bloc-logos{
+        display:flex;
+        flex-wrap: wrap;
+        flex-grow: 6;
+        margin-top:65px;
+        @media(max-width:$size3){
+            justify-content: center;
+            flex-grow: 3;
+        }
+        @media(max-width:$size4){
+            flex-grow: 2;
+        }
+        figure{
+            width:auto;
+            margin:55px 75px;
+            max-width:calc(100% / 6 - 150px);
+            width:100%;
+            display: flex;
+            justify-content: center;
+            opacity:0;
+            transform: translateY(20px);
+            @media(max-width:$size3){
+                margin:30px 25px;
+                max-width:calc(100% / 3 - 50px);
+            }
+            img{
+                max-height:40px;
+                max-width: 160px;
+                @media(max-width:$size3){
+                    max-width:calc(100%);
+                }
+            }
+        }
+    }
+}

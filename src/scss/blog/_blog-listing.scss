@@ -4,17 +4,20 @@ section.listing-posts{
         display:flex;
         flex-wrap: wrap;
         flex-grow: 3;
+        gap:32px 32px;
+        @media(max-width:$size3){
+            flex-grow: 2;
+            justify-content: space-between;
+        }
         a.bloc{
             width:calc(100% / 3 - 22px);
             display:block;
             text-decoration: none;
             @media(max-width:$size3){
-                width:210px;
-                margin-right:35px;
+                width:calc(100% / 2 - 22px);
             }
-            &:nth-child(3n+2){
-                margin-left:32px;
-                margin-right:32px;
+            @media(max-width:$size4){
+                width:100%;
             }
             div.bloc-img{
                 display: block;

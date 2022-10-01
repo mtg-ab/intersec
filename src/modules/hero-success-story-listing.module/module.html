@@ -1,0 +1,25 @@
+<section id="{{module.module_identity}}" class="hero-success-story-listing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="bloc-bg-lines">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div> 
+        <div class="line line-3"></div> 
+    </div>
+    <div class="container">
+        {% if module.image.src %}
+            <div class="bloc-img" data-speed="1.1">
+                <figure>
+                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                </figure>
+            </div>
+        {% endif %}
+        <div class="bloc-txt">
+            {% if module.title %}
+                <h1>{{ module.title }}</h1>
+            {% endif %}
+            <div class="txt">
+                {{ module.text }}
+            </div>
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+section.image{
+    div.container{
+        h2{
+            text-align: center;
+            width:100%;
+            margin-bottom:60px;
+        }
+        figure{
+            height:600px;
+            width:100%;
+            overflow:hidden;
+            @media(max-width:$size3){
+                height:250px;
+            }
+            &.cover{
+                img{
+                    object-fit: cover;
+                    width:110%;
+                    height:110%;
+                    max-height:inherit;
+                    max-width:inherit;
+                }
+                
+            }
+            img{
+                display:block;
+                max-height:100%;
+                max-width:100%;
+                position: relative;
+                width:auto;
+                height:auto;
+                margin:0 auto;
+            }
+        }
+    }
+}

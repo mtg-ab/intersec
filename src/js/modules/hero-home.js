@@ -1,6 +1,8 @@
 jQuery( document ).ready(function() {
     if(jQuery("section").hasClass("hero-home")){
 
+        var Flickity = require('flickity');
+
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
         var ScrollTrigger = require('gsap/ScrollTrigger');
@@ -55,14 +57,19 @@ jQuery( document ).ready(function() {
         });
         //INIT TIMELINE
 
-        
-
         //INIT ANIM
         tl.staggerTo("section.hero-home h1 span.char",0.35, { opacity:1,x:0,y:0,stagger:0.025,ease: "power2.Out" });
         tl.to("section.hero-home p",1, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
         tl.to("section.hero-home a.btn",0.75, { opacity:1,y:0,delay:-0.75,ease: "power2.inOut" });
         tl.set("section.hero-home", { className: 'active',delay:-0.75},"+=0");
         //INIT ANIM
+
+        var flickity = new Flickity( 'section.hero-home div.slider-words', {
+            prevNextButtons: false,
+            pageDots: false,
+            cellAlign: "left",
+            wrapAround: true
+        })
         
     }
 })

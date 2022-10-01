@@ -38,9 +38,6 @@
                                     {% endif %}
                                     
                                 </div>
-                                {% if post.publish_date %}
-                                    <span>- {{ post.publish_date|datetimeformat('%d / %B / %Y') }}</span>
-                                {% endif %}
                             </div>
                             {% if post.name %}
                                 <p class="title"><span>{{ post.name }}</span></p>

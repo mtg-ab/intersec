@@ -1,0 +1,12 @@
+<section id="{{module.module_identity}}" class="image {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+        {% if module.image.src %}
+            <figure {% if module.content_style.img_cover %}class="cover"{% endif %}>
+                <img loading="lazy"  {% if module.content_style.img_cover %}data-speed="1.1"{% endif %} src="{{ module.image.src }}" width="{{ module.image.width }}" height="{{ module.image.height }}" alt="{{ module.image.alt }}" />
+            </figure>
+        {% endif %}
+    </div>
+</section>

@@ -63,6 +63,24 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
+            },
+            {
+                "name": "background_black",
+                "label": "Background black",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": false
+            },
+            {
+                "name": "background_circle",
+                "label": "Background circle",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": false
             }
         ]
     },

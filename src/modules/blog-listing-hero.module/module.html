@@ -61,9 +61,14 @@
                       <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
                       <meta itemprop="position" content="1" />
                   </li>
+                   
                   <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                      <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a> 
-                      <meta itemprop="position" content="2" />
+                        {% if blog.name == "Intersec Presse" %}
+                            <a itemprop="item" href="/press"><span itemprop="name">Press</span></a> 
+                        {% else %}
+                            <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a> 
+                        {% endif %}
+                        <meta itemprop="position" content="2" />
                   </li>
               </ul>
             </nav>
@@ -82,7 +87,6 @@
                                 {% for tag in post.tag_list %}
                                     <a class="tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
                                 {% endfor %}
-                                <span>- {{ post.publish_date|datetimeformat('%d / %B / %Y') }}</span>
                             </div>
                             <h3>
                                 <a href="{{ post.absolute_url }}">{{ post.name }}</a>

@@ -102,6 +102,13 @@
         "type" : "menu"
     },
     {
+        "name" : "footer_submenu",
+        "label" : "Footer submenu",
+        "required" : false,
+        "locked" : false,
+        "type" : "menu"
+    },
+    {
         "name" : "youtube_link",
         "label" : "Youtube link",
         "required" : false,

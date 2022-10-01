@@ -20,7 +20,7 @@ import { gsap } from "gsap";
 
 
 Splitting({
-    target: "h2, [data-splitting], h1, div.testimonial p",
+    target: "h2, [data-splitting], h1, div.testimonial p,.figure-anim",
     by: "chars",
     key: null
 }); 

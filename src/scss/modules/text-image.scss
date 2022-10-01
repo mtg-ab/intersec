@@ -1,4 +1,19 @@
 section.txt-img{
+    &.txt-img-right{
+        div.container{
+            div.bloc-img{
+                order:2;
+            }
+            div.bloc-txt{
+                order:1;
+                padding-right:inherit;
+                padding-left:80px;
+                @media(max-width:$size3){
+                    padding-left:0px;
+                }
+            }
+        }
+    }
     div.container{
         display:flex;
         justify-content: space-between;

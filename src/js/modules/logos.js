@@ -43,7 +43,7 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.to("section.logos-row figure",0.75, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
+        tl.to("section.logos-row figure",1, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
         //INIT ANIM
         
     }

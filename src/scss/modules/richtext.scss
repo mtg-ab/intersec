@@ -1,4 +1,38 @@
 section.richtext{
+    position: relative;
+    &.bg-black{
+        background-color: $color1;
+        &:after{
+            display:block;
+            content:'';
+            position: absolute;
+            background-color: $color1;
+            width:100%;
+            height:calc(100% + 2px);
+            top:50%;
+            left:0px;
+            transform: translateY(-50%);
+            z-index:0;
+            background-repeat: repeat-x;
+            background-position: center;
+            background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
+        }
+        div.container{
+            position: relative;
+            z-index:2;
+            h2{
+                color:#fff;
+            }
+            div.bloc-txt{
+                div{
+                    color:#fff;
+                    *{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
     div.container{
         display: flex;
         flex-direction: column;

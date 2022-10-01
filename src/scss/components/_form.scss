@@ -55,6 +55,7 @@ form {
                     margin: 0px;
                     box-sizing: border-box;
                     color:#fff;
+                    font-family: $font1;
                     &::placeholder{
                         color:#fff;
                         opacity: 1;
@@ -68,7 +69,7 @@ form {
                 select {
                     -webkit-appearance: none;
                     appearance: none;
-                    background-image: url("data:image/svg+xml,%3Csvg width='8px' height='14px' viewBox='0 0 8 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg fill='%23000000'%3E %3Cpolygon transform='translate(4.000000, 11.500000) scale(1, -1) translate(-4.000000, -11.500000) ' points='4 9 8 14 0 14'%3E%3C/polygon%3E %3Cpolygon points='4 0 8 5 0 5'%3E%3C/polygon%3E %3C/g%3E %3C/svg%3E");
+                    background-image: url("data:image/svg+xml,%3Csvg width='32' height='30' viewBox='0 0 32 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0L1 30' stroke='%232C4C66' stroke-opacity='0.2'/%3E%3Cpath d='M24 24L17.0718 12L30.9282 12L24 24Z' fill='%23D9DADD'/%3E%3C/svg%3E");                    
                     background-repeat: no-repeat;
                     background-position: right 15px top 50%;
                     background-size: 8px auto;

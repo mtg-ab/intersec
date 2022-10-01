@@ -132,9 +132,12 @@ section.faq{
                     div.contain-txt{
                         position: relative;
                         display:block;
-                        p{
+                        p,ul{
                             margin:0px;
-                            padding:10px 0px;
+                            padding:10px 30px;
+                        }
+                        a{
+                            color:$text-color1;
                         }
                     }
                 }

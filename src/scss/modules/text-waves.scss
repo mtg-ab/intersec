@@ -28,6 +28,7 @@ section.txt-waves{
     }
     div.container{
         position: relative;
+        width:100%;
         svg{
             position: absolute;
             left:50%;
@@ -45,6 +46,7 @@ section.txt-waves{
         div.blocks{
             display: flex;
             padding-bottom:190px;
+            width:100%;
             justify-content: center;
             @media(max-width:$size3){
                 flex-direction: column;
@@ -53,10 +55,10 @@ section.txt-waves{
             div.block{
                 width:calc(100% / 3 - 28px);
                 max-width:280px;
-                //opacity:0;
                 position: relative;
-                top:30px;
+                top:0px;
                 opacity:0;
+                
                 @media(max-width:$size3){
                     width:100%;
                     margin-bottom:60px;
@@ -72,14 +74,14 @@ section.txt-waves{
                         width:100%;
                         margin-left:0px;
                         margin-right:0px;
-                        transform: translateY(0px);
+                        padding-top:0px;
                     }
                 }
                 &:nth-child(3n+1){
                     transform: translateY(190px);
                     @media(max-width:$size3){
                         width:100%;
-                        transform: translateY(0px);
+                        padding-top:0px;
                     }
                 }
                 figure{

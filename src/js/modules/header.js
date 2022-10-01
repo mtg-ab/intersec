@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("header").length){
+    if(jQuery("header").hasClass("header")){
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
@@ -7,7 +7,7 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
-        var wh = jQuery("body").height();
+        //var wh = jQuery("body").height();
         /*
         ScrollTrigger.create({
             trigger: "header",

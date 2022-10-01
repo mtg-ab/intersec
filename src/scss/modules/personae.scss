@@ -205,8 +205,8 @@ section.personae{
             width:100%;
             overflow:hidden;
             max-height:470px;
-            mask-image:linear-gradient(0deg,transparent,#000 430px,#000 90%,transparent);
-            -webkit-mask-image:linear-gradient(0deg,transparent,#000 430px,#000 90%,transparent);
+            mask-image:linear-gradient(0deg,transparent,#000 230px,#000 90%,transparent);
+            -webkit-mask-image:linear-gradient(0deg,transparent,#000 230px,#000 90%,transparent);
             opacity:0;
             @media(max-width:$size3){
                 max-width:100%;
@@ -232,9 +232,6 @@ section.personae{
                         overflow:hidden;
                         max-height:180px;
                         margin-top:20px;
-                        div.title{
-
-                        }
                     }
                     div.row-btns{
                         margin-top:12px;

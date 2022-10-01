@@ -37,5 +37,14 @@ jQuery( document ).ready(function() {
             })
         })
 
+        if (jQuery(window).width() < 768) {
+            var maxHeight = -1;
+            jQuery('section.solutions div.bloc-right div.blocs').each(function() {
+                maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+            });
+
+            jQuery('section.solutions div.bloc-right').height(maxHeight);
+        }
+
     }
 })

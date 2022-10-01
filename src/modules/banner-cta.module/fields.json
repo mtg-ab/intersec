@@ -76,7 +76,7 @@
         "show_emoji_picker": false,
         "type": "text",
         "help_text": "",
-        "default": "Request a demo / Contact us"
+        "default": "Reach out to us"
     },
     {
         "name": "text",
@@ -87,8 +87,8 @@
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "richtext",
-        "help_text": "Title can describe your content properly.",
-        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas congue sed mattis lectus. Cursus morbi urna, lacus duis vulputate sapien pellentesque laoreet viverra. Aliquam aliquet .</p>"
+        "help_text": "",
+        "default": "<p>Interested in addressing your challenges, modernizing your systems, or seizing new revenue opportunities with Intersec?</p>"
     },
     {
         "name": "image",
@@ -100,7 +100,7 @@
         "type": "image",
         "default": {
             "size_type": "auto",
-            "src": "https://via.placeholder.com/600",
+            "src": "https://20078549.fs1.hubspotusercontent-na1.net/hubfs/20078549/photos/internal%204.png",
             "alt": "Example of an image used in your module"
         }
     },

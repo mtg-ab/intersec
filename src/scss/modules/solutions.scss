@@ -2,9 +2,15 @@ section.solutions{
     div.container{
         display: flex;
         justify-content: space-between;
+        @media(max-width:$size3){
+            flex-direction: column;
+        }
         div.bloc-left{
             width:50%;
             padding-bottom:50px;
+            @media(max-width:$size3){
+                width:100%;
+            }
             div.bloc-tabs{
                 display:flex;
                 width:100%;
@@ -14,6 +20,8 @@ section.solutions{
                 padding-left:52px;
                 @media(max-width:$size3){
                     flex-direction: column;
+                    padding-left:0px;
+                    margin-top:45px;
                 }
                 div.bloc{
                     width:calc(100% / 2 - 20px);
@@ -113,7 +121,9 @@ section.solutions{
         div.bloc-right{
             width:50%;
             position: relative;
-            
+            @media(max-width:$size3){
+                width:100%;
+            }
             div.blocs{
                 opacity:0;
                 pointer-events: none;
@@ -123,6 +133,11 @@ section.solutions{
                 top:0px;
                 padding-left:35px;
                 height:100%;
+                pointer-events: inherit;
+                @media(max-width:$size3){
+                    height:auto;
+                    padding-left:0px;
+                }
                 &.selected{
                     opacity:1;
                     pointer-events: inherit;
@@ -135,10 +150,19 @@ section.solutions{
                     opacity:0;            
                     div.bloc-txt{
                         max-width:380px;
+                        @media(max-width:$size3){
+                            order:2;
+                            max-width:100%;
+                        }
                     }
                     div.bloc-img{
                         height:280px;
                         max-width:493px;
+                        @media(max-width:$size3){
+                            height:292px;
+                            order:1;
+                            margin-bottom:60px;
+                        }
                         figure{
                             display:block;
                             width: 100%;

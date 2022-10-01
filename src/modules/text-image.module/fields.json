@@ -63,6 +63,26 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
+            },
+            {
+                "name": "img_position",
+                "label": "Image position",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "left",
+                        "Left"
+                    ],
+                    [
+                        "right",
+                        "Right"
+                    ]
+                ],
+                "type": "choice",
+                "default": "left"
             }
         ]
     },

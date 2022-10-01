@@ -1,0 +1,39 @@
+div.pin-spacer{
+    z-index:inherit !important;
+}
+section.menu-anchor{
+    position: absolute;
+    width:100%;
+    z-index:200;
+    background-color: #fff;
+    &.active{
+        box-shadow:1px 1px 8px rgba(#000,0.2)
+    }
+    div.container{
+        nav{
+            padding:30px 0px;
+            ul{
+                margin:0px;
+                padding:0px;
+                display: flex;
+                li{
+                    list-style: none;
+                    margin-right:45px;
+                    span{
+                        color:$color1;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 120%;
+                        transition: 0.5s;
+                        text-decoration: none;
+                        cursor: pointer;
+                        &:hover{
+                            color:$color2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

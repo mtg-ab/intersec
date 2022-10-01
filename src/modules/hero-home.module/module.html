@@ -4,7 +4,18 @@
             <p class="subtitle">{{ module.subtitle }}</p>
         {% endif %}
         {% if  module.title %}
-            <h1 class="loader">{{ module.title }}</h1>
+            <h1 class="loader">
+                {{ module.title }}
+            </h1>
+            {#
+            {% if module.words %}
+                <div class="slider-words">
+                    {% for item in module.words %}
+                        <span class="word">{{ item.word }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            #}
         {% endif %}
         {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
         <div class="bloc-btns">
