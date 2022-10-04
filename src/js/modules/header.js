@@ -7,16 +7,26 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
-        //var wh = jQuery("body").height();
-        /*
-        ScrollTrigger.create({
-            trigger: "header",
-            pin: true,
-            start: 'top 0px',
-            scrub:1,
-            end: () =>  '+='+wh+'',
-        })
-        */
+        var wh = jQuery("body").height();
+
+        if (jQuery(window).width() > 768) {
+            ScrollTrigger.create({
+                trigger: "header",
+                pin: true,
+                start: 'top 0px',
+                scrub:1,
+                end: () =>  '+='+wh+'',
+            })
+            
+            ScrollTrigger.create({
+                trigger: "body",
+                start: 'top -100px',
+                scrub:1,
+                end: () =>  '+='+wh+'',
+                toggleClass: {targets: "header", className: "sticky"}
+            })
+        }
+        
         jQuery("div.switch-language ").click(function() {
             jQuery(this).toggleClass('en')
             if(jQuery(this).hasClass('en')){

@@ -158,6 +158,10 @@ a:not([href]):hover {
   text-decoration: none;
 }
 
+div.pin-spacer{
+  z-index:inherit !important;
+}
+
 // SECTION MANAGING
 .section-sm {
   padding: 60px 0;

@@ -36,11 +36,11 @@
                         <img loading="lazy"  src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
                     </figure>
                     <div class="bloc-video">
-                        {% if module.youtube == 'true' %}
-                            <iframe width="560" height="315" data-src="{{ module.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        {% if item.youtube == 'true' %}
+                            <iframe width="560" height="315" data-src="{{ item.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         {% else if {{ module.video}} %}
                             <video controls>
-                                <source src="{{ module.video}}" type="video/mp4">
+                                <source src="{{ item.video}}" type="video/mp4">
                             </video>
                         {% endif %}
                     </div>

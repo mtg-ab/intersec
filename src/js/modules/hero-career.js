@@ -39,8 +39,29 @@ jQuery( document ).ready(function() {
                 jQuery("section.hero-career div.bloc-imgs").addClass("videoPlay");
                 jQuery("section.hero-career div.bloc").removeClass('selected');
                 jQuery(this).addClass('selected');
+                var $iframe = jQuery(this).find('iframe');
+                mrUtil.activateIframeSrc($iframe);
+                var symbol = jQuery(this).find("iframe")[0].src.indexOf("?") > -1 ? "&" : "?";
+                //modify source to autoplay and start video
+                jQuery(this).find("iframe")[0].src += symbol + "autoplay=1";
             })
         })
+
+        var mrUtil = function ($) {
+            var Util = {
+                activateIframeSrc: function activateIframeSrc(iframe) {
+                    var $iframe = $(iframe);
+                    if ($iframe.attr('data-src')) {
+                        $iframe.attr('src', $iframe.attr('data-src'));
+                    }
+                },
+                idleIframeSrc: function idleIframeSrc(iframe) {
+                    var $iframe = $(iframe);
+                    $iframe.attr('data-src', $iframe.attr('src')).attr('src', '');
+                }
+            };
+            return Util;
+        }(jQuery);
 
         jQuery(document).mouseup(function(e) {
             var container = jQuery("section.hero-career div.bloc");
@@ -48,6 +69,14 @@ jQuery( document ).ready(function() {
             {
                 container.removeClass('selected')
                 jQuery("section.hero-career div.bloc-imgs").removeClass("videoPlay");
+                jQuery("section.hero-career div.bloc").removeClass("play");
+                var stopVideo = function(player) {
+                    var vidSrc = player.prop('src').replace('autoplay=1','autoplay=0');
+                    player.prop('src', vidSrc);
+                };
+            
+                stopVideo($('section.hero-career div.bloc iframe'));
+
             }
         });
 

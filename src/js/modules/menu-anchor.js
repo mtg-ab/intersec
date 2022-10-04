@@ -13,7 +13,7 @@ jQuery( document ).ready(function() {
         ScrollTrigger.create({
             trigger: "section.menu-anchor",
             pin: true,
-            start: 'top 0px',
+            start: 'top 115px',
             scrub:1,
             end: () =>  '+='+wh+'',
             toggleClass: {targets: "section.menu-anchor", className: "active"}
@@ -28,9 +28,9 @@ jQuery( document ).ready(function() {
 
                         ScrollTrigger.create({
                             trigger: jQuery(this),
-                            start: 'top 0px',
+                            start: 'top 160px',
                             scrub:1,
-                            end: () =>  'bottom 0px',
+                            end: () =>  'bottom 160px',
                             toggleClass: {targets: "span#"+url+"", className: "active"},
                         })
 

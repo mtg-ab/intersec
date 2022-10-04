@@ -109,7 +109,7 @@ section.hero-career{
         align-items: flex-end;
         position: relative;
         z-index:3;
-        padding-top:250px;
+        padding-top:150px;
         padding-bottom: 130px;
         @media(max-width:$size3){
             flex-direction: column;
@@ -186,7 +186,6 @@ section.hero-career{
                 background-color: rgba($color1,0.5);
                 opacity:0;
                 transition: 0.75s;
-                pointer-events: none;
             }
             div.bloc{
                 display:block;
@@ -229,7 +228,7 @@ section.hero-career{
                     width: 237px;
                     height: 237px;
                     left:0px;
-                    top:300px;
+                    top:200px;
                     &.selected{
                         width:550px;
                         height:550px;
@@ -242,7 +241,7 @@ section.hero-career{
                     width: 206px;
                     height: 206px;
                     right:100px;
-                    top:150px;
+                    top:100px;
                     &.selected{
                         width:550px;
                         height:550px;
@@ -255,7 +254,7 @@ section.hero-career{
                     width: 206px;
                     height: 206px;
                     left:80px;
-                    bottom:54px;
+                    bottom:30px;
                     &.selected{
                         width:550px;
                         height:550px;
@@ -268,7 +267,7 @@ section.hero-career{
                     width: 275px;
                     height: 275px;   
                     right:0px;
-                    bottom:140px;  
+                    bottom:100px;  
                     &.selected{
                         width:550px;
                         height:550px;
@@ -280,13 +279,34 @@ section.hero-career{
                 &.selected{
                     z-index:100;
                     figure{
+                        opacity:0;
+                        pointer-events: none;
+                        &:before{
+                            opacity:0;
+                        }
                         &:before{
                             width:63px;
                             height:63px;
                             mask-size: contain;
                         }
                     }
-
+                    div.bloc-video{
+                        opacity:1;
+                        pointer-events: inherit;
+                    }
+                }
+                &.play{
+                    figure{
+                        opacity:0;
+                        pointer-events: none;
+                        &:before{
+                            opacity:0;
+                        }
+                    }
+                    div.bloc-video{
+                        opacity:1;
+                        pointer-events: inherit;
+                    }
                 }
                 figure{
                     display:block;
@@ -322,15 +342,18 @@ section.hero-career{
                 }
                 div.bloc-video{
                     position: absolute;
-                    width:100%;
-                    height:100%;
-                    top:0px;
-                    left:0px;
+                    width:700px;
+                    height:430px;
+                    height:auto;
+                    top:50%;
+                    left:50%;
+                    transform: translateY(-50%) translateX(-50%);
                     z-index:0;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     opacity: 0;
+                    pointer-events: none;
                 }
             }
         }
