@@ -6,6 +6,7 @@ section.menu-anchor{
     width:100%;
     z-index:200;
     background-color: #fff;
+    height:84px;
     &.active{
         box-shadow:1px 1px 8px rgba(#000,0.2)
     }

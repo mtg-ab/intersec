@@ -27,7 +27,7 @@ Splitting({
 
 
 const { ScrollSmoother } = require('gsap/dist/ScrollSmoother.js');
-const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+const { ScrollTrigger } = require('gsap/ScrollTrigger');
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
 jQuery( document ).ready(function() {
@@ -38,7 +38,17 @@ jQuery( document ).ready(function() {
         smooth: 0.5,
         effects: true
     });
-
+    
+    jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
+        jQuery(this).click(function() {
+            gsap.to(smoother, {
+                // don't let it go beyond the maximum scrollable area
+                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('body', 'top 0px')),
+                duration: 0.75,
+                ease: "power2.inOut"
+            });
+        })
+    })
 
 })
 

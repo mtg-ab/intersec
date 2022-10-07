@@ -1,43 +1,87 @@
-<section id="{{module.module_identity}}" class="hero-v6 {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
-    <div class="bloc-bg-lines">
-        <div class="line line-1"></div>
-        <div class="line line-2"></div> 
-        <div class="line line-3"></div> 
-    </div>
-    {% if module.title_bg %}
-        <p class="title_bg" data-speed="1.1">{{ module.title_bg }}</p>
-    {% endif %}
-    <div class="container">
-        {% if module.title %}
-            <h1>{{ module.title }}</h1>
+<div class="hero-v6 contain-anim">
+    <section id="{{module.module_identity}}" class="hero-v6 {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+        <div class="bloc-bg-lines">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div> 
+            <div class="line line-3"></div> 
+        </div>
+        {% if module.title_bg %}
+            <p class="title_bg">{{ module.title_bg }}</p>
         {% endif %}
-        {% if module.text %}
-            <div class="bloc-txt">
-                <div class="txt">
-                    {{ module.text }}
+        <div class="container">
+            {% if module.title %}
+                <h1>{{ module.title }}</h1>
+            {% endif %}
+            {% if module.text %}
+                <div class="bloc-txt">
+                    <div class="txt">
+                        {{ module.text }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        
+    </section>
+    <section class="items">
+        <div class="container container-items">
+            <div class="bloc-items">
+                {% for item in module.items %}
+                    <div class="container-bloc-item">
+                        <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                            <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
+                            <p>{{ item.title }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="bloc-imgs">
+                {% for item in module.items %}
+                    <div class="bloc-img {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        <figure>
+                            <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" data-speed="auto" alt="{{ item.image.alt }}" />
+                        </figure>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="contain-technology">
+        {% if module.subtitle %}
+            <div class="container">
+                <div class="bloc-title">
+                    <h2>{{ module.subtitle }}</h2>
                 </div>
             </div>
         {% endif %}
-    </div>
-    <div class="container container-items">
-        <div class="bloc-items">
-            {% for item in module.items %}
-                <div class="container-bloc-item">
-                    <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                        <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
-                        <p>{{ item.title }}</p>
+        <div class="container">
+            <aside>
+                <div class="bloc-items">
+                    <div class="col">
+                        {% for item in module.items %}
+                            {% if loop.index is even %}
+                                <div class="container-bloc-item">
+                                    <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                        <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
+                                        <p>{{ item.title }}</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col">
+                        {% for item in module.items %}
+                            {% if loop.index is odd %}
+                                <div class="container-bloc-item">
+                                    <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                        <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
+                                        <p>{{ item.title }}</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
-            {% endfor %}
+            </aside>
         </div>
-        <div class="bloc-imgs">
-            {% for item in module.items %}
-                <div class="bloc-img {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                    <figure>
-                        <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" data-speed="auto" alt="{{ item.image.alt }}" />
-                    </figure>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
+    </section>
+</div>

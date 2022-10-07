@@ -1,13 +1,8 @@
 <section id="{{module.module_identity}}" class="hero-company {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <p class="title_bg" data-speed="1.1">{{ module.title_bg }}</p>
     <div class="container">
-        <p class="title_bg" data-speed="1.1">{{ module.title_bg }}</p>
         <h1>{{ module.title }}</h1>
-        {% if module.text %}
-            <div class="bloc-txt">
-                <div class="txt">
-                    {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
-                </div>
-            </div>
-        {% endif %}
+        <div class="bloc-squares" data-img="{{ module.image.src }}">
+        </div>
     </div>
 </section>

@@ -1,28 +1,33 @@
 section.hero-company{
     padding-top:250px;
+    position: relative;
     @media(max-width:$size3){
         overflow:hidden;
     }
+    p.title_bg{
+        position: absolute;
+        color:#F9F9F9;
+        left:-5%;
+        top:26%;
+        font-weight: 700;
+        font-size:280px;
+        line-height:280px;
+        letter-spacing: 0.075em;
+        margin:0px;
+        opacity:0;
+        z-index:-1;
+        width:100%;
+        display:block;
+        white-space: nowrap;
+        text-transform: uppercase;
+        @media(max-width:$size4){
+            font-size:200px;
+            line-height:200px;
+        }
+    }
     div.container{
         position: relative;
-        p.title_bg{
-            position: absolute;
-            color:#F9F9F9;
-            right:0px;
-            top:40%;
-            font-weight: 700;
-            font-size:280px;
-            line-height:280px;
-            letter-spacing: 0.075em;
-            margin:0px;
-            opacity:0;
-            text-align: right;
-            z-index:-1;
-            @media(max-width:$size4){
-                font-size:200px;
-                line-height:200px;
-            }
-        }
+        
         h1{
             font-weight: 500;
             font-size: 70px;
@@ -34,17 +39,31 @@ section.hero-company{
                 line-height:60px;
             }
         }
-        div.bloc-txt{
-            display:flex;
-            justify-content: flex-end;
-            padding-right:105px;
+        div.bloc-squares{
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 6;
             position: relative;
-            @media(max-width:$size3){
-                padding-right:0px;
-            }
-            div.txt{
-                max-width:495px;
-                opacity:0;
+            height:600px;
+            width:100%;
+            margin-top:160px;
+            //opacity:0;
+            span.square{
+                width:calc(100% / 6);
+                height:calc(100% / 3);
+                position: absolute;
+                left:calc(50% - ((100% / 6) / 2));
+                top:calc(50% - ((100% / 4) / 3) );
+                transform: scale(0.15);
+                background-color: $color1;
+                span.bg-square{
+                    background-repeat: no-repeat;
+                    width:100%;
+                    height:100%;
+                    display: block;
+                    text-indent: -9999px;
+                    opacity:0;
+                }
             }
         }
     }

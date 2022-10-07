@@ -67,7 +67,6 @@ jQuery( document ).ready(function() {
                     jQuery( "section.job div.bloc-tags p.title" ).removeClass("selected");
                     jQuery(this).addClass("selected");
                     var type = jQuery(this).data("type");
-                    console.log(type);
                     jQuery( "section.job div.bloc-offers a.bloc" ).each(function( index ) {
                         if(jQuery(this).data('type') == type){
                             jQuery(this).addClass('selected')

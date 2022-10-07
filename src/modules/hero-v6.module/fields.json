@@ -103,6 +103,18 @@
         "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque scelerisque donec aliquam adipiscing. Mattis ligula purus phasellus et posuere aliquam orci sed.</p>"
     },
     {
+        "name": "subtitle",
+        "label": "Subtitle",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Our technology with 5G"
+    },
+    {
         "name" : "items",
         "label" : "Items",
         "required" : false,

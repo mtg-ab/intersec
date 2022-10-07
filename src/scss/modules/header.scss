@@ -26,6 +26,8 @@ header{
         align-items: center;
         justify-content: space-between;
         height:100%;
+        opacity: 0;
+        transform: translateY(-30px);
         div.contain-nav{
             display: flex;
             align-items: center;    

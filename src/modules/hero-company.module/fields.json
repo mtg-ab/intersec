@@ -79,16 +79,18 @@
         "default": "Intersec is a global leader in activity and mobility data solutions"
     },
     {
-        "name": "text",
-        "label": "Text",
+        "name": "image",
+        "label": "image",
         "required": false,
         "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "richtext",
-        "help_text": "",
-        "default": ""
+        "responsive": true,
+        "resizable": true,
+        "type": "image",
+        "default": {
+            "size_type": "auto",
+            "src": "https://via.placeholder.com/600",
+            "alt": "Example of an image used in your module"
+        }
     },
     {
         "name": "title_bg",

@@ -3,7 +3,7 @@ jQuery( document ).ready(function() {
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+        const { ScrollTrigger } = require('gsap/ScrollTrigger');
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
@@ -52,6 +52,19 @@ jQuery( document ).ready(function() {
                 }
             })
         })
+
+        //INIT TIMELINE
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "header",
+                start:"-=450",
+            }
+        });
+        //INIT TIMELINE
+
+        //INIT ANIM
+        tl.to("header div.container",0.85, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
+        //INIT ANIM
 
 
     }

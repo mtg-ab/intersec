@@ -10,7 +10,6 @@ jQuery( document ).ready(function() {
         jQuery('section.team div.container-infos div.contain-slider').each(function() {
             maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
         });
-        console.log(maxHeight);
         jQuery('section.team div.container-infos').height(maxHeight);
 
         ( function() {

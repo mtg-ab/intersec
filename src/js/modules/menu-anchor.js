@@ -4,7 +4,7 @@ jQuery( document ).ready(function() {
 
         ///INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+        const { ScrollTrigger } = require('gsap/ScrollTrigger');
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
@@ -38,7 +38,7 @@ jQuery( document ).ready(function() {
                             if(jQuery(this).hasClass('active')){
                                 jQuery(this).css('color','#f1762c');
                             }else{
-                                jQuery(this).css('color','#001436');
+                                jQuery(this).css('color','#2f2f2f');
                             }
                         })                            
 
