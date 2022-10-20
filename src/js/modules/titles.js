@@ -1,8 +1,8 @@
 jQuery( document ).ready(function() {
 
     const { gsap } = require("gsap/dist/gsap");
-    var ScrollTrigger = require('gsap/ScrollTrigger');
-    gsap.registerPlugin(ScrollTrigger);
+    var scrollTrigger = require('gsap/scrollTrigger');
+    gsap.registerPlugin(scrollTrigger);
 
     jQuery( "h2" ).each(function( index ) {
         //INIT TIMELINE

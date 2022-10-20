@@ -22,13 +22,13 @@
         <div class="container">
             {% for post in contents %}
                 {% if loop.index > 1 %}
-                    <a href="{{ post.url }}" class="bloc">
-                        <div class="bloc-img link-hover">
+                    <div class="bloc">
+                        <a href="{{ post.url }}" class="bloc-img link-hover">
                             <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
                                 <img src="{{ post.featured_image }}" loading="lazy" alt="{{ post.featured_image_alt }}">
                             </figure>
-                        </div>
-                        <div class="bloc-txt">
+                        </a>
+                        <a href="{{ post.url }}" class="bloc-txt">
                             <div class="infos">
                                 <div class="tags">
                                     {% if post.topic_list %}
@@ -42,8 +42,8 @@
                             {% if post.name %}
                                 <p class="title"><span>{{ post.name }}</span></p>
                             {% endif %}                      
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 {% endif %}
             {% endfor %}
         </div>

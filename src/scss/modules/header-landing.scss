@@ -3,4 +3,55 @@ header.header-landing{
     top:0px;
     left:0px;
     background-color: transparent;
+    div.container{
+        opacity:1;
+        transform: translateY(0px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a.logo{
+            img{
+                max-height:35px;
+            }
+        }
+        div.switch-language{
+            display: flex;
+            align-items: center;
+            font-size: 14.439px;
+            line-height: 17px;
+            margin-right:20px;
+            cursor: pointer;
+            color:$text-color1; 
+            &.en{
+                span.switcher{
+                    &:before{
+                        transform: translateY(-50%) translateX(calc(100% - 1px));
+                    }
+                }
+            }
+            span.switcher{
+                width: 16px;
+                height: 10px;    
+                border: 0.451219px solid $text-color1; 
+                border-radius: 4.5122px;
+                position: relative;
+                display:block;
+                margin-left:5px;
+                
+                &:before{
+                    display:block;
+                    content:'';
+                    position: absolute;
+                    left:1px;
+                    width:7px;
+                    height:7px;
+                    border-radius: 50%;
+                    background-color: $color2;
+                    top:50%;
+                    transform: translateY(-50%);
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
 }

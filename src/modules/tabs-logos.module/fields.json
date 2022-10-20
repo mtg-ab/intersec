@@ -97,7 +97,7 @@
         "locked" : false,
         "multiple":"false",
         "display" : "select",
-        "choices" : [ [ "public-safety", "Public safety" ], [ "app-builder", "App builder" ], [ "geolocalisation", "Geolocalisation" ], [ "data-monetisation", "Data monetisation" ] ],
+        "choices" : [ [ "public-safety", "Public safety" ],[ "location-intelligence", "Location intelligence" ],[ "data-monetization", "Data Monetization" ], [ "app-builder", "App builder" ]   ],
         "type" : "choice"
     }
 ]

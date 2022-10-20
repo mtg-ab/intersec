@@ -11,31 +11,31 @@
                 {% if module.categories %}
                     {% set val = module.categories %}
                     {% if val == "public-safety" %}
-                        {% set query_params = "&limit=7&categories__eq=1" %}
+                        {% set query_params = "&typology=5&category=1" %}
                     {% endif %} 
-                    {% if val == "geolocalisation" %}
-                        {% set query_params = "&limit=7&categories__eq=2" %}
+                    {% if val == "location-intelligence" %}
+                        {% set query_params = "&typology=5&category=2" %}
                     {% endif %} 
-                    {% if val == "data-monetisation" %}
-                        {% set query_params = "&limit=7&categories__eq=3" %}
+                    {% if val == "data-monetization" %}
+                        {% set query_params = "&typology=5&category=3" %}
                     {% endif %} 
                     {% if val == "app-builder" %}
-                        {% set query_params = "&limit=7&categories__eq=4" %}
+                        {% set query_params = "&typology=5&category=4" %}
                     {% endif %}  
                 {% else %}    
                     {% if content.widgets.categories.body.categories %}
                         {% set val = content.widgets.categories.body.categories %}
                         {% if val == "public-safety" %}
-                            {% set query_params = "&limit=7&categories__eq=1" %}
+                            {% set query_params = "&typology__eq=5&category__eq=1" %}
                         {% endif %}
-                        {% if val == "geolocalisation" %}
-                            {% set query_params = "&limit=7&categories__eq=2" %}
+                        {% if val == "location-intelligence" %}
+                            {% set query_params = "&typology__eq=5&category__eq=2" %}
                         {% endif %}
-                        {% if val == "data-monetisation" %}
-                            {% set query_params = "&limit=7&categories__eq=3" %}
+                        {% if val == "data-monetization" %}
+                            {% set query_params = "&typology__eq=5&category__eq=3" %}
                         {% endif %}
                         {% if val == "app-builder" %}
-                            {% set query_params = "&limit=7&categories__eq=4" %}
+                            {% set query_params = "&typology__eq=2&category__eq=4" %}
                         {% endif %}   
                     {% endif %}                 
                 {% endif %}
@@ -44,7 +44,7 @@
                     <div class="bloc {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
                         {{ item.testimonial }}
                         {% if item.first_name_testimonial or item.name_testimonial %}
-                            <p class="subtitle">{{ item.first_name_testimonial }} {{ item.name_testimonial }}</p>
+                            <p class="subtitle">{{ item.first_name_testimonial }} {{ item.last_name_testimonial }}</p>
                         {% endif %}
                         {% if item.job_testimonial %}
                             <p class="subtitle"><strong>{{ item.job_testimonial }}</strong></p>

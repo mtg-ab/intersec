@@ -29,8 +29,8 @@ jQuery( document ).ready(function() {
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        var ScrollTrigger = require('gsap/ScrollTrigger');
-        gsap.registerPlugin(ScrollTrigger);
+        var scrollTrigger = require('gsap/scrollTrigger');
+        gsap.registerPlugin(scrollTrigger);
         //INIT GSAP
 
         //INIT TIMELINE

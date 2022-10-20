@@ -117,6 +117,16 @@
                 }
             },
             {
+                "name" : "categories",
+                "label" : "Categories",
+                "required" : false,
+                "locked" : false,
+                "multiple":"false",
+                "display" : "select",
+                "choices" : [ [ "public-safety", "Public safety" ], [ "app-builder", "App builder" ], [ "location-intelligence", "Location intelligence" ], [ "data-monetisation", "Data monetisation" ] ],
+                "type" : "choice"
+            },
+            {
                 "name" : "pages",
                 "label" : "Pages",
                 "required" : false,

@@ -3,8 +3,8 @@ jQuery( document ).ready(function() {
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        var ScrollTrigger = require('gsap/ScrollTrigger');
-        gsap.registerPlugin(ScrollTrigger);
+        var scrollTrigger = require('gsap/scrollTrigger');
+        gsap.registerPlugin(scrollTrigger);
         //INIT GSAP
 
         //INIT TIMELINE
@@ -26,7 +26,7 @@ jQuery( document ).ready(function() {
             pageDots: false,
             fade:true,
             draggable:false,
-            autoPlay: 10500,
+            autoPlay: 6500,
             prevNextButtons: false
         })
 

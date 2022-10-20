@@ -24,19 +24,21 @@
             {% set slug = request.path|split('/', 3)|last %}
             {% set slugTag = request.path|split('/', 2)|last %}
             {% set my_tags = blog_tags("default", 250) %}
-            <a href="/blog" class="tag bloc-liquid {% if slugTag == 'blog-intersec' or slugTag == 'blog' %}selected{% endif %}">
-                <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
-                        filterUnits="objectBoundingBox">
-                            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
-                            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
-                        </filter>
-                    </defs>
-                    <circle cx="66" cy="66" r="61" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="2px" stroke-linecap="round" stroke-dasharray="2 5"/>
-                </svg>
-                <span>All</span>
-            </a>
+            {% if blog.name != "Intersec Presse" %}
+                <a href="/blog" class="tag bloc-liquid {% if slugTag == 'blog-intersec' or slugTag == 'blog' %}selected{% endif %}">
+                    <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+                            filterUnits="objectBoundingBox">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+                                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+                            </filter>
+                        </defs>
+                        <circle cx="66" cy="66" r="61" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="2px" stroke-linecap="round" stroke-dasharray="2 5"/>
+                    </svg>
+                    <span>All</span>
+                </a>
+            {% endif %}
             {% for item in my_tags %}
                 <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag bloc-liquid {% if slug == item.slug %}selected{% endif %}">
                     <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">

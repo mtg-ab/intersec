@@ -22,6 +22,26 @@ section.txt-img-download{
             flex-direction: column;
             align-items: flex-start;
         }
+        &.landscape{
+            max-width:940px;
+            div.bloc-img{
+                max-width:calc(400px);
+                @media(max-width:$size3){
+                    max-width:100%;
+                }
+                figure{
+                    img{
+                        object-fit: inherit;
+                        height: auto;
+                        @media(max-width:$size3){
+                            width:auto;
+                            display:block;
+                            margin:0 auto;
+                        }
+                    }
+                }
+            }
+        }
         h2{
             margin-bottom:60px;
         }
@@ -37,7 +57,12 @@ section.txt-img-download{
                 margin-bottom:30px;
             }
             @media(max-width:$size5){
-                height:170px;
+                height:360px;
+                figure{
+                    img{
+                        max-height:100%;
+                    }
+                }
             }
             a.link{
                 background-color: $color2;
@@ -52,6 +77,9 @@ section.txt-img-download{
                 background-position: center;
                 text-indent: -9999px;
                 transition: 0.75s;
+                @media(max-width:$size3){
+                    right:15px;
+                }
                 &:hover{
                     background-color: $color1;
                 }

@@ -3,8 +3,9 @@ jQuery( document ).ready(function() {
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
-        gsap.registerPlugin(ScrollTrigger);
+        const { ScrollTrigger } = require('gsap/ScrollTrigger');
+        var scrollTrigger = require('gsap/scrollTrigger');
+        gsap.registerPlugin(ScrollTrigger,scrollTrigger);
         //INIT GSAP
 
         //INIT PIN

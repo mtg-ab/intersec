@@ -50,6 +50,15 @@ jQuery( document ).ready(function() {
         })
     })
 
+    jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
+        jQuery(this).click(function() {
+            gsap.to(smoother, {
+                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.hero-v6', 'top -600px')),
+                duration: 0.65
+            });; 
+        })
+    })
+
 })
 
 

@@ -10,23 +10,30 @@
                 <ul>
                     {% for item in module.menu_header %}
                         <li class="menu-parent">
+                            {% if item.link.url.href %}
                             <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
-                            {% if item.title_cta %}
-                            <div class="sub-menu">
+                            {% else %}
+                            <span>{{ item.text_menu }}</span>
+                            {% endif %}
+
+                            {% if item.links %}
+                            <div class="sub-menu {% if item.button_url_cta.url.href %}cta{% endif %}">
                                 <div class="container">
                                     {% if item.links %}
                                         <div class="bloc-menu">
                                             <div class="col">
                                                 {% for links in item.links %}
                                                     {% if loop.index is odd %}
-                                                        {% if links.title_links %}
+                                                        {% if links.link_title_links.url.href %}
+                                                            <a href="{{ links.link_title_links.url.href }}" class="title" {% if links.link_title_links.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ links.title_links }}</a>
+                                                        {% else %}
                                                             <p class="title">{{ links.title_links }}</p>
                                                         {% endif %}
                                                         <ul>
                                                             {% for item in links.items %}
                                                                 {% if item.text_menu_items %}
                                                                     <li>
-                                                                        <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                                        <a href="{{ links.link_items.url.href }}" {% if links.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
                                                                     </li>
                                                                 {% endif %}
                                                             {% endfor %}
@@ -38,7 +45,11 @@
                                                 {% for links in item.links %}
                                                     {% if loop.index is even %}
                                                         {% if links.title_links %}
-                                                            <p class="title">{{ links.title_links }}</p>
+                                                            {% if links.link_title_links.url.href %}
+                                                                <a href="{{ item.link_title_links.url.href }}" class="title" {% if item.link_title_links.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ links.title_links }}</a>
+                                                            {% else %}
+                                                                <p class="title">{{ links.title_links }}</p>
+                                                            {% endif %}
                                                         {% endif %}
                                                         <ul>
                                                             {% for item in links.items %}
@@ -73,33 +84,37 @@
                                             {% endfor %}
                                         </div>
                                     {% endif %}
-                                    <div class="bloc-cta">
-                                        <div class="bloc-img">
-                                            <figure>
-                                                <img loading="lazy" src="{{ item.image_cta.src }}" width="{{ item.image_cta.width }}" height="{{ item.image_cta.height }}" alt="{{ item.image_cta.alt }}" />
-                                            </figure>
-                                        </div>
-                                        {% if item.title_cta %}
-                                            <p class="title">{{ item.title_cta }}</p>
-                                        {% endif %}
-                                        {% if item.cta_field_cta %}
-                                            <div class="row-btns">
-                                                {% cta "cta" label='Select a CTA', guid='{{ item.cta_field_cta }}' %}
-                                            </div>
-                                        {% else if item.button_text_cta %}
-                                            {% if item.button_text_cta %}
-                                            <div class="row-btns">
-                                                <a href="{{ item.button_url_cta.url.href }}" {% if item.button_url_cta.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
-                                                    <svg xmlns="http://www.w3.org/2000/svg">
-                                                        <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                                                        <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                                                    </svg>
-                                                    {{ item.button_text_cta }}
-                                                </a>
-                                            </div>
+                                    {% if item.button_url_cta.url.href %}
+                                        <div class="bloc-cta">
+                                            {% if item.image_cta.src %}
+                                                <div class="bloc-img">
+                                                    <figure>
+                                                        <img loading="lazy" src="{{ item.image_cta.src }}" width="{{ item.image_cta.width }}" height="{{ item.image_cta.height }}" alt="{{ item.image_cta.alt }}" />
+                                                    </figure>
+                                                </div>
                                             {% endif %}
-                                        {% endif %}
-                                    </div>
+                                            {% if item.title_cta %}
+                                                <p class="title">{{ item.title_cta }}</p>
+                                            {% endif %}
+                                            {% if item.cta_field_cta %}
+                                                <div class="row-btns">
+                                                    {% cta "cta" label='Select a CTA', guid='{{ item.cta_field_cta }}' %}
+                                                </div>
+                                            {% else if item.button_text_cta %}
+                                                {% if item.button_url_cta.url.href %}
+                                                <div class="row-btns">
+                                                    <a href="{{ item.button_url_cta.url.href }}" {% if item.button_url_cta.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                        </svg>
+                                                        {{ item.button_text_cta }}
+                                                    </a>
+                                                </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </div>
                             {% endif %}
@@ -109,10 +124,17 @@
             </nav>
         </div>
         <div class="contact">
-            <div class="switch-language">
-                <span class="lang">FR</span>
-                <span class="switcher"></span>
-            </div>
+            {% if content.translated_content.values()|selectattr('published')|length %}
+                <div class="switch-language {{ content.language.languageTag }}">
+                    {% if content.language.languageTag == 'en' %}
+                        <span class="lang">EN</span>
+                    {% else if content.language.languageTag == 'fr' %}
+                        <span class="lang">FR</span>
+                    {% endif %}
+                    <span class="switcher"></span>
+                    {% language_switcher "language_switcher" %}
+                </div>
+            {% endif %}
             {% if module.cta_field %}
                 <div class="row-btns white">
                     {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
@@ -220,10 +242,17 @@
         </ul>
     </nav>
     <div class="contact">
-        <div class="switch-language">
-            <span class="lang">FR</span>
-            <span class="switcher"></span>
-        </div>
+        {% if content.translated_content.values()|selectattr('published')|length %}
+            <div class="switch-language {{ content.language.languageTag }}">
+                {% if content.language.languageTag == 'en' %}
+                    <span class="lang">EN</span>
+                {% else if content.language.languageTag == 'fr' %}
+                    <span class="lang">FR</span>
+                {% endif %}
+                <span class="switcher"></span>
+                {% language_switcher "language_switcher" %}
+            </div>
+        {% endif %}
         {% if module.cta_field %}
             <div class="row-btns">
                 {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}

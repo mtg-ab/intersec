@@ -152,8 +152,8 @@ jQuery( document ).ready(function() {
                 //var btnRight = document.querySelector( '.controls .controls__right' );
                 var btnLeft = document.querySelector( 'button.previous' );
                 var btnRight = document.querySelector( 'button.next' );
-                btnLeft.onclick  = function() { _this.rotate(-1) };
-                btnRight.onclick = function() { _this.rotate(1) };
+                btnLeft.onclick  = function() { _this.rotate(1) };
+                btnRight.onclick = function() { _this.rotate(-1) };
             };
         
             Slider.prototype.disableNav = function() {

@@ -1,4 +1,5 @@
 <div class="hero-v6 contain-anim">
+
     <section id="{{module.module_identity}}" class="hero-v6 {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
         <div class="bloc-bg-lines">
             <div class="line line-1"></div>
@@ -8,80 +9,97 @@
         {% if module.title_bg %}
             <p class="title_bg">{{ module.title_bg }}</p>
         {% endif %}
-        <div class="container">
-            {% if module.title %}
-                <h1>{{ module.title }}</h1>
-            {% endif %}
-            {% if module.text %}
-                <div class="bloc-txt">
-                    <div class="txt">
-                        {{ module.text }}
-                    </div>
-                </div>
-            {% endif %}
-        </div>
-        
-    </section>
-    <section class="items">
-        <div class="container container-items">
-            <div class="bloc-items">
-                {% for item in module.items %}
-                    <div class="container-bloc-item">
-                        <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                            <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
-                            <p>{{ item.title }}</p>
+        <div class="contain-hero">
+            <div class="container">
+                {% if module.title %}
+                    <h1>{{ module.title }}</h1>
+                {% endif %}
+                {% if module.text %}
+                    <div class="bloc-txt">
+                        <div class="txt">
+                            {{ module.text }}
                         </div>
                     </div>
-                {% endfor %}
+                {% endif %}
             </div>
-            <div class="bloc-imgs">
-                {% for item in module.items %}
-                    <div class="bloc-img {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                        <figure>
-                            <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" data-speed="auto" alt="{{ item.image.alt }}" />
-                        </figure>
-                    </div>
-                {% endfor %}
+            <div class="container container-items">
+                <div class="bloc-items">
+                    {% for item in module.items %}
+                        <div class="container-bloc-item">
+                            <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
+                                <p>{{ item.title }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="bloc-imgs">
+                    {% for item in module.items %}
+                        <div class="bloc-img {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                            <figure>
+                                <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" data-speed="auto" alt="{{ item.image.alt }}" />
+                            </figure>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
+        
+        
     </section>
     <section class="contain-technology">
-        {% if module.subtitle %}
+        <div class="contain-technology">
+            {% if module.subtitle %}
+                <div class="container">
+                    <div class="bloc-title">
+                        <h2>{{ module.subtitle }}</h2>
+                    </div>
+                </div>
+            {% endif %}
             <div class="container">
-                <div class="bloc-title">
-                    <h2>{{ module.subtitle }}</h2>
+                <aside>
+                    <div class="bloc-items">
+                        <div class="col">
+                            {% for item in module.items %}
+                                {% if loop.index is even %}
+                                    <div class="container-bloc-item">
+                                        <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                            <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
+                                            <p>{{ item.title }}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col">
+                            {% for item in module.items %}
+                                {% if loop.index is odd %}
+                                    <div class="container-bloc-item">
+                                        <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                            <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
+                                            <p>{{ item.title }}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </aside>
+                <div class="contain-infos">
+                    <div class="contain"></div>
                 </div>
             </div>
-        {% endif %}
-        <div class="container">
-            <aside>
-                <div class="bloc-items">
-                    <div class="col">
-                        {% for item in module.items %}
-                            {% if loop.index is even %}
-                                <div class="container-bloc-item">
-                                    <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                                        <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
-                                        <p>{{ item.title }}</p>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="col">
-                        {% for item in module.items %}
-                            {% if loop.index is odd %}
-                                <div class="container-bloc-item">
-                                    <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                                        <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
-                                        <p>{{ item.title }}</p>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </aside>
-        </div>
+        </div>        
     </section>
+    <a href="{{ module.button_url_team.url.href }}" {% if module.button_url_team.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}  class="container-btn-join">
+        <div class="btn-join">
+            <span>{{ module.button_txt_team }}</span>
+            <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="54.5" cy="54.5" r="53.5" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+            </svg>
+            <svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50.5" cy="50.5" r="50" stroke="#F1762C" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </a>
 </div>

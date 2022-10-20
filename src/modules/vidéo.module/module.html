@@ -3,10 +3,15 @@
         {% if module.title %}
             <h2>{{ module.title }}</h2>
         {% endif %}
-        <div class="bloc-video {% if module.autoplay !=" true" %}btn-play{% endif %}">
-            <video muted {% if module.autoplay %}preload="none"{% endif %} {% if module.autoplay !=" true" %}class="btn-play"{% endif %} loop playsinline>            
-                <source src="{{ module.video }}" type="video/mp4">            
-            </video>
+        <div class="bloc-video {% if module.autoplay !=" true" %}btn-play{% endif %} {% if module.youtube ==" true" %}btn-play{% endif %}">
+            <img loading="lazy" src="{{ module.poster.src }}" width="{{ module.poster.width }}" height="{{ module.poster.height }}" alt="Video cover">
+            {% if module.youtube == 'true' %}
+                <iframe width="560" height="315" data-src="{{ module.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {% else %}
+                <video muted {% if module.autoplay %}preload="none"{% endif %} {% if module.autoplay !=" true" %}class="btn-play"{% endif %} loop playsinline>  
+                    <source src="{{ module.video }}" type="video/mp4">
+                </video>
+            {% endif %}
         </div>
     </div>
 </section>

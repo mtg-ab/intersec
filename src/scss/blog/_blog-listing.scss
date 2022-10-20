@@ -1,5 +1,7 @@
 section.listing-posts{
     padding:105px 0px;
+    position: relative;
+    z-index:2;
     div.container{
         display:flex;
         flex-wrap: wrap;
@@ -9,7 +11,7 @@ section.listing-posts{
             flex-grow: 2;
             justify-content: space-between;
         }
-        a.bloc{
+        div.bloc{
             width:calc(100% / 3 - 22px);
             display:block;
             text-decoration: none;
@@ -19,7 +21,7 @@ section.listing-posts{
             @media(max-width:$size4){
                 width:100%;
             }
-            div.bloc-img{
+            a.bloc-img{
                 display: block;
                 width:100%;
                 height:250px;
@@ -35,9 +37,10 @@ section.listing-posts{
                     }
                 }
             }
-            div.bloc-txt{
+            a.bloc-txt{
                 padding-bottom:30px;
                 border-bottom: 1px solid rgba($color1,0.35);
+                text-decoration: none;
                 div.infos{
                     margin-bottom:5px;
                     display:flex;
@@ -47,11 +50,10 @@ section.listing-posts{
                         align-items: center;
                     }
                     div.tags{
-                        color: rgba($color1,0.65);
                         *{
                             font-size: 18px;
                             line-height: 130%;
-                            color: rgba($color1,0.35);
+                            color: rgba($color1,0.65);
                             text-decoration: none;
                             @media(max-width:$size3){
                                 font-size:12px;
@@ -59,7 +61,6 @@ section.listing-posts{
                         }
                     }
                     span{
-                        color: rgba($color1,0.65);
                         display: inline-block;
                         margin-right:7px;
                         @media(max-width:$size3){

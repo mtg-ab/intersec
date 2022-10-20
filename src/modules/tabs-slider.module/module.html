@@ -31,33 +31,44 @@
             <div class="bloc-slider">
                 {% for item in module.items %}
                     <div class="slider {% if loop.index == 1 %}selected{% endif %} grab-hover" data-id="{{ loop.index }}" data-flickity='{"contain": true,"pageDots": true,"prevNextButtons": false,"cellAlign": "left","selectedAttraction": "0.01","friction": "0.15"}'>
-                        {% for page in item.pages %}
+                        {% set val = item.categories %}
+                        {% if val == "public-safety" %}
+                            {% set category = "1" %}
+                        {% endif %}
+                        {% if val == "location-intelligence" %}
+                            {% set category = "2" %}
+                        {% endif %}
+                        {% if val == "data-monetisation" %}
+                            {% set category = "3" %}
+                        {% endif %}
+                        {% if val == "app-builder" %}
+                            {% set category = "4" %}
+                        {% endif %}
+                        {% set query_params = "typology__eq=1&category__eq="+category %}
+                        {% set results_global = hubdb_table_rows("5461290",query_params) %}
+                        {% for page in results_global %}
                             <div class="bloc">
                                 {% if page.title %}
-                                    <h3><a href="page.button_url.href">{{ page.title }}</a></h3>
+                                    <h3><a href="{{ page.link }}">{{ page.title }}</a></h3>
                                 {% endif %}
-                                {% if page.image.src %}
-                                    <a href="page.button_url.href" class="bloc-img">
+                                {% if page.image.url %}
+                                    <a href="{{ page.link }}" class="bloc-img">
                                         <figure>
-                                            <img loading="lazy" src="{{ page.image.src }}" alt="{{ page.image.alt }}" />
+                                            <img loading="lazy" src="{{ page.image.url }}" alt="{{ page.image.alt }}" />
                                         </figure>
                                     </a>
                                 {% endif %}
-                                {% if page.text %}
-                                    <div class="bloc-txt">{{ page.text }}</div>
+                                {% if page.description %}
+                                    <div class="bloc-txt">{{ page.description }}</div>
                                 {% endif %}
-                                {% if page.cta_field %}
+                                {% if page.link %}
                                     <div class="row-btns">
-                                        {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
-                                    </div>
-                                {% else if page.button_url.href %}
-                                    <div class="row-btns">
-                                        <a href="{{ page.button_url.href }}" {% if page.button_url.open_in_new_tab %}target="_blank" rel=""{% endif %} class="btn">
+                                        <a href="{{ page.link }}" class="btn">
                                             <svg xmlns="http://www.w3.org/2000/svg">
                                                 <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
                                                 <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
                                             </svg>
-                                            {{ page.button_text }}
+                                            {{ page.button }}
                                         </a>
                                     </div>
                                 {% endif %}

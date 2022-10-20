@@ -5,5 +5,11 @@
                 <img src="{{ module.logo.logo_src.src }}" loading="lazy" alt="{{ module.logo.logo_src.alt }}" width="{{ module.logo.logo_src.width }}" height="{{ module.logo.logo_src.height }}" />
             </a>
         {% endif %}
+        {% if content.translated_content.values()|selectattr('published')|length %}
+        <div class="switch-language">
+            <span class="lang">FR</span>
+            <span class="switcher"></span>
+        </div>
+        {% endif %}
     </div>
 </header>

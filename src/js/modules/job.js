@@ -3,8 +3,8 @@ jQuery( document ).ready(function() {
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        var ScrollTrigger = require('gsap/ScrollTrigger');
-        gsap.registerPlugin(ScrollTrigger);
+        var scrollTrigger = require('gsap/scrollTrigger');
+        gsap.registerPlugin(scrollTrigger);
         //INIT GSAP
 
         const settings = {
@@ -21,6 +21,7 @@ jQuery( document ).ready(function() {
           
         $.ajax(settings).done(function (response) {
             jQuery("section.hero-career p.figure").html(response.jobs.length)
+            console.log(response)
             var my_categories = { };
             var counterList = [];
             $.each(response.jobs, function(i, obj) {

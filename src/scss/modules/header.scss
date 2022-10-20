@@ -62,7 +62,7 @@ header{
                                 pointer-events: all;
                                 top:115px;
                             }
-                            a{
+                            a,span{
                                 &:after{
                                     -webkit-transform-origin: 0% 50%;
                                     transform-origin: 0% 50%;
@@ -87,16 +87,19 @@ header{
                             z-index:0;
                             transition: 0.45s;
                             pointer-events: none;
-                            &:after{
-                                display:block;
-                                content:'';
-                                position: absolute;
-                                right:0px;
-                                top:0px;
-                                height:100%;
-                                background-color: #fff;
-                                width:calc(50% - 612.5px);
+                            &.cta{
+                                &:after{
+                                    display:block;
+                                    content:'';
+                                    position: absolute;
+                                    right:0px;
+                                    top:0px;
+                                    height:100%;
+                                    background-color: #fff;
+                                    width:calc(50% - 612.5px);
+                                }
                             }
+                            
                             div.container{
                                 display: flex;
                                 justify-content: space-between;
@@ -150,12 +153,52 @@ header{
                                     div.col{
                                         max-width:350px;
                                         width:100%;
-                                        p.title{
+                                        p.title,a.title{
                                             font-weight: 500;
                                             font-size: 16px;
                                             line-height: 19px;
                                             color:#fff;
                                             margin-top:0px;
+                                            display:inline-block;
+                                            margin-bottom:6px;
+                                            padding-bottom:5px;
+                                        }
+                                        a.title{
+                                            &:after{
+                                                display:block;
+                                                content:'';
+                                                background-color: #fff;
+                                                position: absolute;
+                                                bottom:0px;
+                                                width:100%;
+                                                height:1px;
+                                                left:0px;
+                                                -webkit-transform: translateX(100%);
+                                                transform: translateX(100%);
+                                                -webkit-transform-origin: 100% 50%;
+                                                transform-origin: 100% 50%;
+                                                -webkit-transform: scale3d(0, 1, 1);
+                                                transform: scale3d(0, 1, 1);
+                                                -webkit-transition: -webkit-transform 0.5s;
+                                                transition: -webkit-transform 0.5s;
+                                                transition: transform 0.5s;
+                                                transition: transform 0.5s, -webkit-transform 0.5s;
+                                                -webkit-transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+                                                transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+                                            }
+                                            &:hover{
+                                                &:after{
+                                                    -webkit-transform-origin: 0% 50%;
+                                                    transform-origin: 0% 50%;
+                                                    -webkit-transition: -webkit-transform 0.5s;
+                                                    transition: -webkit-transform 0.5s;
+                                                    transition: transform 0.5s;
+                                                    transition: transform 0.5s, -webkit-transform 0.5s;
+                                                    -webkit-transform: scale3d(1, 1, 1);
+                                                    transform: scale3d(1, 1, 1);
+                                                }
+                                            }
+                                            
                                         }
                                         ul{
                                             margin:0px 0px 50px 0px;
@@ -221,10 +264,15 @@ header{
                                         font-size: 32px;
                                         line-height: 120%;
                                     }
+                                    a.btn{
+                                        color:$text-color1;
+                                        line-height: inherit;
+                                        padding: 14px 58px 14px 28px;
+                                    }
                                 }
                             }
                         }
-                        a{
+                        a,span{
                             color:#fff;
                             font-size: 16px;
                             line-height: 20px;
@@ -232,6 +280,7 @@ header{
                             transition: 0.5s;
                             position: relative;
                             padding-bottom:6px;
+                            cursor: pointer;
                             &:after{
                                 display:block;
                                 content:'';
@@ -302,6 +351,9 @@ header{
                         transform: translateY(-50%);
                         transition: 0.5s;
                     }
+                }
+                div.lang_switcher_class{
+                    display:none;
                 }
             }
             div.row-btns{

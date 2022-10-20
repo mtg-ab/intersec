@@ -1,6 +1,6 @@
 section.hero-landing{
     
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@ section.hero-landing{
         }
         div.bloc-bg-lines{
             div.line{
-                transform: translateY(-140%);
+                transform: translateY(-200%);
                 opacity:0.5;
                 &:nth-child(2){
                     transform: rotate(-180deg) translateY(-100%);
@@ -217,7 +217,7 @@ section.hero-landing{
             }
         }
         &.container-form{
-            margin-top:30px;
+            margin-top:90px;
             display:flex;
             justify-content: space-between;
             div.bloc-form{
@@ -235,9 +235,12 @@ section.hero-landing{
                             color:$text-color1;
                         }
                     }
-                    input,textarea{
+                    input,textarea,select{
                         border-bottom: 1px solid rgba(47, 47, 47, 0.5) !important;
                         color:$color1 !important;
+                    }
+                    select{
+                        
                     }
                     label{
                         color:$color1;

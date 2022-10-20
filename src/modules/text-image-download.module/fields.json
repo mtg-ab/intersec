@@ -113,6 +113,26 @@
         }
     },
     {
+        "name": "picture_size",
+        "label": "Picture size",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+            [
+                "vertical",
+                "A4"
+            ],
+            [
+                "landscape",
+                "Landscape format"
+            ]
+        ],
+        "type": "choice",
+        "default": "vertical"
+    },
+    {
         "name" : "file",
         "label" : "File",
         "required" : false,

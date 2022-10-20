@@ -3,8 +3,8 @@ jQuery( document ).ready(function() {
 
         //INIT GSAP
         const { gsap } = require("gsap/dist/gsap");
-        var ScrollTrigger = require('gsap/ScrollTrigger');
-        gsap.registerPlugin(ScrollTrigger);
+        var scrollTrigger = require('gsap/scrollTrigger');
+        gsap.registerPlugin(scrollTrigger);
         //INIT GSAP
 
         //INIT TIMELINE
@@ -18,7 +18,7 @@ jQuery( document ).ready(function() {
 
         //INIT ANIM
         tl.to("section.clients-listing div.txt",0.75, { opacity:1,className: 'txt active',ease: "power2.inOut" });
-        tl.staggerTo("section.clients-listing figure",0.75, { opacity:1,y:0,delay:0,stagger:0.125,ease: "power2.inOut" });
+        tl.staggerTo("section.clients-listing figure",0.55, { opacity:1,y:0,delay:0,stagger:0.055,ease: "power2.inOut" });
         //INIT ANIM
 
     }

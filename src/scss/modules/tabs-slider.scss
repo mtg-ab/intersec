@@ -92,6 +92,10 @@ section.tabs-slider{
                     &:nth-child(4){
                         z-index:7;
                     }
+                    p{
+                        padding:0px 20px;
+                        text-align: center;
+                    }
                     &:hover,&.selected{
                         z-index:11;
                         div.bloc-img{
@@ -117,6 +121,7 @@ section.tabs-slider{
                         }
                         p{
                             color:$color2;
+                            text-align: center;
                         }
                     }
                     svg{

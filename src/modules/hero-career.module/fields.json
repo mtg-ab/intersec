@@ -235,11 +235,20 @@
         "EMAIL_ADDRESS",
         "BLOG"
         ],
-        "type": "link",
-        "visibility": {
-            "controlling_field": "button_type_id",
-            "controlling_value_regex": "btn",
-            "operator": "EQUAL"
-        } 
+        "type": "link"
+    },
+    {
+        "name": "button_txt_team",
+        "label": "Text button join our team",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Join our team"
     }
 ]

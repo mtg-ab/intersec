@@ -18,8 +18,10 @@ section.featured{
         div.bloc-posts{
             display:flex;
             margin-top:45px;
+            gap:0px 30px;
             @media(max-width:$size3){
                 flex-direction: column;
+                gap:0px;
             }
             div.bloc{
                 width:calc(100% / 3 - 20px);
@@ -28,14 +30,6 @@ section.featured{
                 @media(max-width:$size3){
                    width:100%;
                    margin-bottom:40px;
-                }
-                &:nth-child(3n+2){
-                    margin-left:30px;
-                    margin-right:30px;
-                    @media(max-width:$size3){
-                        margin-left:0px;
-                        margin-right:0px;
-                    }
                 }
                 a.bloc-img{
                     width:100%;

@@ -142,7 +142,6 @@
                 "occurrence" : {
                   "min" : null,
                   "max" : null,
-                  "sorting_label_field" : "links.item",
                   "default" : null
                 },
                 "children" : [
@@ -157,6 +156,15 @@
                         "type" : "text"
                     },
                     {
+                        "name" : "link_title_links",
+                        "label" : "Link",
+                        "required" : false,
+                        "locked" : false,
+                        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                        "type" : "link",
+                        "show_advanced_rel_options" : false
+                    },
+                    {
                         "name" : "items",
                         "label" : "Items",
                         "required" : false,
@@ -164,7 +172,6 @@
                         "occurrence" : {
                           "min" : null,
                           "max" : null,
-                          "sorting_label_field" : "items.link",
                           "default" : null
                         },
                         "children" : [
@@ -244,12 +251,7 @@
                 "locked": false,
                 "responsive": true,
                 "resizable": true,
-                "type": "image",
-                "default": {
-                    "size_type": "auto",
-                    "src": "https://via.placeholder.com/600",
-                    "alt": "Example of an image used in your module"
-                }
+                "type": "image"
             },
             {
                 "name" : "title_cta",
