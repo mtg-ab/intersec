@@ -50,12 +50,38 @@ jQuery( document ).ready(function() {
         })
     })
 
+    
+    if(jQuery("div").hasClass("hero-v6")){
+        var hV6 = jQuery("section.hero-v6").height() + jQuery("div.contain-technology").height();
+        jQuery("div.hero-v6").css("height",3000);
+        console.log(hV6);
+        smoother.refresh();
+    }
+    
+
+    
     jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
         jQuery(this).click(function() {
             gsap.to(smoother, {
-                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.hero-v6', 'top -600px')),
-                duration: 0.65
-            });; 
+                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.hero-v6', 'top -=200px')),
+                duration: 1.35,
+                ease : 'power2'
+            });
+            gsap.to(smoother, {
+                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.contain-technology', 'top +=0px')),
+                duration: 1.35,
+                ease : 'power2'
+            });
+        })
+    })
+
+    jQuery("section.contain-technology div.bloc-items div.container-bloc-item").each(function() {
+        jQuery(this).click(function() {
+            gsap.to(smoother, {
+                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.contain-technology', 'top +=0px')),
+                duration: 1.35,
+                ease : 'power2'
+            });
         })
     })
 

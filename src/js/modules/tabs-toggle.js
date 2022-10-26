@@ -17,8 +17,8 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.tabs-toggle div.items div.item",1, { opacity:1,y:0,delay:0,stagger:0.15,ease: "power2.inOut" });
-        tl.to("section.tabs-toggle div.bloc-imgs",1, { opacity:1,y:0,delay:0,delay:-0.85,ease: "power2.inOut" });
+        tl.staggerTo("section.tabs-toggle div.items div.item",0.75, { opacity:1,y:0,delay:0,stagger:0.1,ease: "power2.inOut" });
+        tl.to("section.tabs-toggle div.bloc-imgs",0.75, { opacity:1,y:0,delay:0,delay:-0.8,ease: "power2.inOut" });
 
         //INIT ANIM
         
@@ -35,7 +35,7 @@ jQuery( document ).ready(function() {
                     var h = h + 20;
                     jQuery(this).find("div.item-txt").css("height",h);
                     var id = jQuery(this).data("id");
-                    jQuery("section.tabs-toggle div.bloc-imgs a.bloc-img").each(function() {
+                    jQuery("section.tabs-toggle div.bloc-imgs .bloc-img").each(function() {
                         if(jQuery(this).data("id") == id){
                             jQuery(this).addClass('selected')
                         }else{

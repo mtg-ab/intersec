@@ -28,7 +28,7 @@
     </div>
     <div class="contain-sub-footer">
         <div class="container">
-            <p>@{{ local_dt|datetimeformat('%Y') }} - Intersec - Tous droits réservés</p>
+            <p>@{{ local_dt|datetimeformat('%Y') }} {{ module.text_copyrighting }}</p>
             {% menu "footer_submenu" id={{ module.footer_submenu }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
         </div>
     </div>

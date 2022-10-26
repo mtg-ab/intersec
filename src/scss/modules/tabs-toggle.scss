@@ -190,7 +190,7 @@ section.tabs-toggle{
             @media(max-width:$size5){
                 height:260px;
             }
-            a.bloc-img{
+            a.bloc-img,div.bloc-img{
                 width:100%;
                 height:100%;
                 display: block;
@@ -198,9 +198,11 @@ section.tabs-toggle{
                 opacity: 0;
                 transition: 0.5s;
                 transform: translateY(25px);
+                pointer-events: none;
                 &.selected{
                     opacity: 1;
                     transform: translateY(0px);
+                    pointer-events: inherit;
                 }
                 figure{
                     width:100%;

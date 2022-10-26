@@ -15,7 +15,7 @@ section.tabs-logos{
         p.title_bg{
             position: absolute;
             color:#F9F9F9;
-            bottom:0px;
+            top:25%;
             font-weight: 700;
             font-size:24em;
             line-height:280px;
@@ -97,7 +97,7 @@ section.tabs-logos{
                             color:$color1;
                             font-size:18px;
                             line-height:23px;
-                            max-width:200px;
+                            max-width:220px;
                             margin:0 auto;
                             margin-top:20px;
                             font-weight: 400;
@@ -160,16 +160,16 @@ section.tabs-logos{
                     left:0px;
                     top:0px;
                     rect{
-                        stroke-dasharray: 1250;
-                        stroke-dashoffset: 1300;
-                        transition: 3s;
+                        stroke-dasharray: 490;
+                        stroke-dashoffset: 490;
+                        transition: 2s;
                         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
                     }
                 }
                 &.selected{
                     rect{
                         stroke-dashoffset: 0;
-                        transition: 3s;
+                        transition: 2s;
                     }
                 }
                 figure{

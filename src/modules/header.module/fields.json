@@ -104,6 +104,25 @@
         ]
     },
     {
+        "name" : "text_menu_contact",
+        "label" : "Text menu contact",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+    },
+    {
+        "name" : "link_contact",
+        "label" : "Link contact",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+        "type" : "link",
+        "show_advanced_rel_options" : false
+    },
+    {
         "name" : "menu_header",
         "label" : "Menu header",
         "required" : false,
@@ -133,6 +152,17 @@
                 "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
                 "type" : "link",
                 "show_advanced_rel_options" : false
+            },
+            {
+                "name" : "hiring",
+                "label" : "Hiring",
+                "required" : false,
+                "locked" : false,
+                "type" : "boolean",
+                "display":"checkbox",
+                "inline_help_text" : "",
+                "help_text" : "",
+                "default" : false
             },
             {
                 "name" : "links",

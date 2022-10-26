@@ -25,8 +25,8 @@
             <div class="container container-items">
                 <div class="bloc-items">
                     {% for item in module.items %}
-                        <div class="container-bloc-item">
-                            <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        <div class="container-bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                            <div class="bloc-item" data-id="{{ loop.index }}">
                                 <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
                                 <p>{{ item.title }}</p>
                             </div>
@@ -62,8 +62,8 @@
                         <div class="col">
                             {% for item in module.items %}
                                 {% if loop.index is even %}
-                                    <div class="container-bloc-item">
-                                        <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                    <div class="container-bloc-item" data-id="{{ loop.index }}">
+                                        <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}">
                                             <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
                                             <p>{{ item.title }}</p>
                                         </div>
@@ -74,7 +74,7 @@
                         <div class="col">
                             {% for item in module.items %}
                                 {% if loop.index is odd %}
-                                    <div class="container-bloc-item">
+                                    <div class="container-bloc-item {% if loop.index == 1 %}selected{% endif %}"  data-id="{{ loop.index }}">
                                         <div class="bloc-item {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
                                             <img loading="lazy"  src="{{ item.pictogram.src }}" width="{{ item.pictogram.width }}" height="{{ item.pictogram.height }}" alt="{{ item.pictogram.alt }}" />
                                             <p>{{ item.title }}</p>
@@ -86,7 +86,41 @@
                     </div>
                 </aside>
                 <div class="contain-infos">
-                    <div class="contain"></div>
+                    {% for item in module.items %}
+                        <div class="contain {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                            <div class="bloc-contain">
+                                {% for field in item.contents.repeater %}
+                                    {% if field.content_type == 'text' %}
+                                        <div class="bloc bloc-txt">
+                                            {{ field.text }}
+                                        </div>
+                                    {% endif %}
+                                    {% if field.content_type == 'image' %}
+                                        <div class="bloc bloc-img">
+                                            <figure>
+                                                <img loading="lazy" src="{{ field.image.src }}" width="{{ field.image.width }}" height="{{ field.image.height }}" alt="{{ field.image.alt }}" />
+                                            </figure>
+                                        </div>
+                                    {% endif %}
+                                    {% if field.content_type == 'text_image' %}
+                                        <div class="bloc bloc-txt-img {{ field.picture_size }}">
+                                            <div class="bloc-img">
+                                                <figure>
+                                                    <img loading="lazy" src="{{ field.text_image_image.src }}" width="{{ field.text_image_image.width }}" height="{{ field.text_image_image.height }}" alt="{{ field.text_image_image.alt }}" />
+                                                </figure>
+                                                {% if field.file %}
+                                                    <a href="{{ field.file }}" target="_blank" class="link">link</a>
+                                                {% endif %}
+                                            </div>
+                                            <div class="bloc-txt">
+                                                {{ field.text_image_text }}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>        

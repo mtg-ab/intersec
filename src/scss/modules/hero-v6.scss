@@ -1,7 +1,6 @@
 div.hero-v6{
-    //position: relative;
+    position: relative;
     background-color: $color1;
-    height:3000px;
     background-repeat: repeat;
     background-position: center;
     background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");    
@@ -61,9 +60,6 @@ div.hero-v6{
         @media(max-width:$size3){
             padding-top:170px;
         }
-        div.container{
-            //transition:0.75s;
-        }
         &.desactivate{
             div.container{
                 transform: scale(0.95);
@@ -116,7 +112,7 @@ div.hero-v6{
             }
             div.bloc-bg-lines{
                 div.line{
-                    transform: translateY(-200%);
+                    transform: translateY(-260%);
                     opacity:0.5;
                     &:nth-child(2){
                         transform: rotate(-180deg) translateY(-100%);
@@ -397,31 +393,29 @@ div.hero-v6{
     }
     section.contain-technology{
         position: absolute;
-        z-index:20;
         width:calc(100%);
         left:0px;
-        top:calc(100vh + 500px);
-        height:100vh;
+        top:calc(100vh + 580px);
         overflow:hidden;
         div.contain-technology{
-            padding:160px 0px 140px 0px;
+            padding:160px 0px 0px 0px;
             background-color: #fff;
             opacity:0;
             left:50%;
             position: relative;
-            transform: translateX(-50%) scale(0.6);
-            transition: .75s;
+            transform: translateX(-50%) translateY(200px) scale(0.6);
+            transition: .55s;
             height:100%;
             transition-timing-function: cubic-bezier(.29,0,.33,.99);
             width:calc(100%);
             box-shadow: 0px 0px 100px rgba(#000,0.6);     
         }
-        
         div.contain-technology{
             &.active{
                 opacity:1;
-                transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) translateY(0px) scale(1);
                 transition: 1.35s;
+                transition-delay: 0s;
                 div.container{
                     div.bloc-title{
                         h2{
@@ -467,14 +461,14 @@ div.hero-v6{
                             padding-top:80px;
                         }
                         div.container-bloc-item{
-                            width:calc(125px);
+                            width:calc(115px);
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            height:130px;
+                            height:120px;
                             transition: 0.75s;
                             margin-bottom:30px;
-                            &.selected,&:hover{
+                            &:hover,&.selected{
                                 div.bloc-item{
                                     background-color: $color2;
                                     border: 1px solid rgba($color2,0);
@@ -580,9 +574,94 @@ div.hero-v6{
                 width:100%;
                 max-width:810px;
                 overflow:hidden;
+                position: relative;
+                height:calc(100vh - 250px);
+                margin-top:40px;
                 div.contain{
-                    height:3000px;
-                    background-color: red;
+                    position: absolute;
+                    left:0px;
+                    top:0px;
+                    opacity:0;
+                    transition: 3.75s;
+                    pointer-events: none;
+                    &.selected{
+                        opacity: 1;
+                        top:0px;
+                        pointer-events: inherit;
+                    }
+                    div.bloc-contain{
+                        position: relative;
+                        div.bloc{
+                            margin-bottom:75px;
+                            &.bloc-img{                                
+                                figure{
+                                    width:100%;
+                                    img{
+                                        width:100%;
+                                        height:auto;
+                                    }
+                                }
+                            }
+                            &.bloc-txt-img{
+                                display:flex;
+                                justify-content: space-between;
+                                &.right{
+                                    div.bloc-img{
+                                        order:2;
+                                        a.link{
+                                            left:-43px;
+                                            right: inherit;
+                                        }
+                                    }
+                                    div.bloc-txt{
+                                        order:1;
+                                    }
+                                }
+                                div.bloc-img{
+                                    max-width:285px;
+                                    min-height:400px;
+                                    position: relative;
+                                    figure{
+                                        display: block;
+                                        width:100%;
+                                        height:100%;
+                                        img{
+                                            object-fit: cover;
+                                            display: block;
+                                            width:100%;
+                                            height:100%;
+                                        }
+                                    }
+                                    a.link{
+                                        background-color: $color2;
+                                        border-radius: 50%;
+                                        width:85px;
+                                        height:85px;
+                                        top:55px;
+                                        right:-43px;
+                                        position: absolute;
+                                        background-image: url("data:image/svg+xml,%3Csvg width='16' height='21' viewBox='0 0 16 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99257 0.999786C8.99257 0.483577 8.5741 0.065106 8.05789 0.0651062C7.54168 0.0651058 7.12321 0.483576 7.12321 0.999787L8.99257 0.999786ZM7.39697 16.0137C7.76199 16.3787 8.3538 16.3787 8.71881 16.0137L14.6671 10.0654C15.0321 9.70039 15.0321 9.10858 14.6671 8.74356C14.3021 8.37855 13.7103 8.37855 13.3452 8.74356L8.05789 14.0309L2.77054 8.74356C2.40553 8.37855 1.81372 8.37855 1.4487 8.74356C1.08369 9.10858 1.08369 9.70039 1.4487 10.0654L7.39697 16.0137ZM7.12321 0.999787V15.3528L8.99257 15.3528V0.999786L7.12321 0.999787Z' fill='white'/%3E%3Cline x1='1' y1='19.0586' x2='15' y2='19.0586' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        text-indent: -9999px;
+                                        transition: 0.75s;
+                                        @media(max-width:$size3){
+                                            right:15px;
+                                        }
+                                        &:hover{
+                                            background-color: $color1;
+                                        }
+                                    }
+                                }
+                                
+                                div.bloc-txt{
+                                    max-width:420px;
+                                }
+                            }
+                        }
+                    }
+                    
+                    
                 }
             }
         }

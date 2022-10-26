@@ -45,7 +45,7 @@ jQuery( document ).ready(function() {
             position = position * 10;
             jQuery( "div.bloc-squares" ).append( "<span class='square square-"+n+"' style='top:"+position+"%;left:"+position+"%'><span class='bg-square' data-speed='0.95' style='background-image:url("+img+");background-position:-"+left+"px -"+top+"px;background-size:1225px'>square</span></span>" );
             //tlImgs.to("section.hero-home div.bloc-squares",1, {opacity:1,delay:1.9,ease: "power2.Out" });
-            tl.to("section.hero-company div.bloc-squares span.square-"+n+"",1.25, {scale:1,top:top+"px",left:left+"px",delay:-1.35,ease: "power2.Out" });
+            tl.to("section.hero-company div.bloc-squares span.square-"+n+"",1.25, {scale:1,top:top+"px",opacity:1,left:left+"px",delay:-1.35,ease: "power2.Out" });
             tl.to("section.hero-company div.bloc-squares span.square-"+n+" span.bg-square",1.25, {opacity:"0."+rndInt+"",delay:-1.35,ease: "power2.Out" });
             tl.to("section.hero-company div.bloc-squares",1.25, {scale:1,opacity:"1",delay:-1.2,ease: "power2.Out" });
 

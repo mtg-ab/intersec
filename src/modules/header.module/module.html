@@ -1,4 +1,24 @@
 <header id="{{module.module_identity}}" class="header {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container container-pre-header">
+        {% if content.translated_content.values()|selectattr('published')|length %}
+            <div class="switch-language {{ content.language.languageTag }}">
+                {% if content.language.languageTag == 'en' %}
+                    <span class="lang">EN</span>
+                {% else if content.language.languageTag == 'fr' %}
+                    <span class="lang">FR</span>
+                {% endif %}
+                <span class="switcher"></span>
+                {% language_switcher "language_switcher" %}
+            </div>
+        {% endif %}
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ module.link_contact.url.href }}" {% if module.link_contact.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ module.text_menu_contact }}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <div class="container">
         <div class="contain-nav">
             {% if module.logo.logo_src.src %}
@@ -11,12 +31,11 @@
                     {% for item in module.menu_header %}
                         <li class="menu-parent">
                             {% if item.link.url.href %}
-                            <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
+                                <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if item.hiring %}class="hiring"{% endif %}>{{ item.text_menu }} {% if item.hiring %}<span>hiring</span>{% endif %}</a>
                             {% else %}
-                            <span>{{ item.text_menu }}</span>
+                                <span>{{ item.text_menu }}</span>
                             {% endif %}
-
-                            {% if item.links %}
+                            {% if item.links or item.features %}
                             <div class="sub-menu {% if item.button_url_cta.url.href %}cta{% endif %}">
                                 <div class="container">
                                     {% if item.links %}
@@ -65,7 +84,7 @@
                                             </div>
                                         </div>
                                     {% else %}
-                                        <div class="bloc-menu">
+                                        <div class="bloc-menu bloc-menu-features">
                                             {% for feature in item.features %}
                                                 <a href="{{ feature.link_features.url.href }}" class="bloc bloc-liquid-menu">
                                                     <svg width="85" class="line-dashed" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +98,7 @@
                                                         <circle cx="42" cy="42" r="41" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="1.5px" stroke-linecap="round" stroke-dasharray="1 5"/>
                                                     </svg> 
                                                     <p class="title">{{ feature.title_features }}</p>
-                                                    {{ feature.text_features }}
+                                                    <div class="txt">{{ feature.text_features }}</div>
                                                 </a>
                                             {% endfor %}
                                         </div>
@@ -124,17 +143,7 @@
             </nav>
         </div>
         <div class="contact">
-            {% if content.translated_content.values()|selectattr('published')|length %}
-                <div class="switch-language {{ content.language.languageTag }}">
-                    {% if content.language.languageTag == 'en' %}
-                        <span class="lang">EN</span>
-                    {% else if content.language.languageTag == 'fr' %}
-                        <span class="lang">FR</span>
-                    {% endif %}
-                    <span class="switcher"></span>
-                    {% language_switcher "language_switcher" %}
-                </div>
-            {% endif %}
+            
             {% if module.cta_field %}
                 <div class="row-btns white">
                     {% cta "cta" label='Select a CTA', guid='{{ module.cta_field }}' %}
@@ -174,7 +183,7 @@
             {% for item in module.menu_header %}
                 <li class="menu-parent {% if item.links or item.features %}sub-menu{% endif %}">
                     <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
-                    {% if item.title_cta %}
+                    {% if item.title_cta or item.features %}
                     <div class="sub-menu">
                         {% if item.links %}
                             <div class="bloc-menu">

@@ -67,48 +67,6 @@
         ]
     },
     {
-        "name": "title_bg",
-        "label": "Title background",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "help_text": "",
-        "default": "Intersec"
-    },
-    {
-        "name": "button_url_team",
-        "label": "URL button join our team",
-        "required": false,
-        "locked": false,
-        "inline_help_text": "",
-        "help_text": "",
-        "supported_types": [
-        "EXTERNAL",
-        "CONTENT",
-        "FILE",
-        "EMAIL_ADDRESS",
-        "BLOG"
-        ],
-        "type": "link"
-    },
-    {
-        "name": "button_txt_team",
-        "label": "Text button join our team",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "placeholder": "",
-        "inline_help_text": "",
-        "help_text": "",
-        "default": "Join our team"
-    },
-    {
         "name": "title",
         "label": "Title",
         "required": false,
@@ -166,7 +124,7 @@
                 "show_emoji_picker": false,
                 "type": "text",
                 "help_text": "",
-                "default": "It is expected to break ground in Summer"
+                "default": "Fast Data DNA"
             },
             {
                 "name": "text",
@@ -207,8 +165,206 @@
                     "src": "https://via.placeholder.com/600",
                     "alt": "Example of an image used in your module"
                 }
+            },
+            {
+                "type": "group",
+                "name": "contents",
+                "label": "Contents",
+                "children": [
+                    {
+                        "name" : "repeater",
+                        "label" : "Repeater",
+                        "required" : false,
+                        "locked" : false,
+                        "occurrence" : {
+                          "min" : null,
+                          "max" : null,
+                          "sorting_label_field" : "items.item",
+                          "default" : null
+                        },
+                        "children" : [
+                            {
+                                "name" : "content_type",
+                                "id" : "content_type",
+                                "label" : "Type de contenu",
+                                "required" : false,
+                                "locked" : false,
+                                "multiple":"false",
+                                "display" : "select",
+                                "choices" : [ [ "text", "Text" ], [ "image", "Image" ], [ "text_image", "Text Image" ] ],
+                                "type" : "choice"
+                            },
+                            {
+                                "name": "text",
+                                "label": "Text",
+                                "required": false,
+                                "locked": false,
+                                "validation_regex": "",
+                                "allow_new_line": false,
+                                "show_emoji_picker": false,
+                                "type": "richtext",
+                                "help_text": "",
+                                "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque scelerisque donec aliquam adipiscing. Mattis ligula purus phasellus et posuere aliquam orci sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+                                "visibility" : {
+                                    "controlling_field" : "content_type",
+                                    "controlling_value_regex" : "text",
+                                    "operator" : "EQUAL",
+                                    "access" : null,
+                                    "hidden_subfields" : null
+                                }
+                            },
+                            {
+                                "name": "image",
+                                "label": "Image",
+                                "required": false,
+                                "locked": false,
+                                "responsive": true,
+                                "resizable": true,
+                                "type": "image",
+                                "default": {
+                                    "size_type": "auto",
+                                    "src": "https://via.placeholder.com/600",
+                                    "alt": "Example of an image used in your module"
+                                },
+                                "visibility" : {
+                                    "controlling_field" : "content_type",
+                                    "controlling_value_regex" : "image",
+                                    "operator" : "EQUAL",
+                                    "access" : null,
+                                    "hidden_subfields" : null
+                                }
+                            },
+                            {
+                                "name": "text_image_text",
+                                "label": "Text",
+                                "required": false,
+                                "locked": false,
+                                "validation_regex": "",
+                                "allow_new_line": false,
+                                "show_emoji_picker": false,
+                                "type": "richtext",
+                                "help_text": "",
+                                "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus ac integer sed integer scelerisque scelerisque donec aliquam adipiscing. Mattis ligula purus phasellus et posuere aliquam orci sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+                                "visibility" : {
+                                    "controlling_field" : "content_type",
+                                    "controlling_value_regex" : "text_image",
+                                    "operator" : "EQUAL",
+                                    "access" : null,
+                                    "hidden_subfields" : null
+                                }
+                            },
+                            {
+                                "name": "text_image_image",
+                                "label": "Image",
+                                "required": false,
+                                "locked": false,
+                                "responsive": true,
+                                "resizable": true,
+                                "type": "image",
+                                "default": {
+                                    "size_type": "auto",
+                                    "src": "https://via.placeholder.com/600",
+                                    "alt": "Example of an image used in your module"
+                                },
+                                "visibility" : {
+                                    "controlling_field" : "content_type",
+                                    "controlling_value_regex" : "text_image",
+                                    "operator" : "EQUAL",
+                                    "access" : null,
+                                    "hidden_subfields" : null
+                                }
+                            },
+                            {
+                                "name": "img_position",
+                                "label": "Image position",
+                                "sortable": false,
+                                "required": false,
+                                "locked": false,
+                                "display": "select",
+                                "choices": [
+                                    [
+                                        "left",
+                                        "Left"
+                                    ],
+                                    [
+                                        "right",
+                                        "Right"
+                                    ]
+                                ],
+                                "type": "choice",
+                                "default": "left",
+                                "visibility" : {
+                                    "controlling_field" : "content_type",
+                                    "controlling_value_regex" : "text_image",
+                                    "operator" : "EQUAL",
+                                    "access" : null,
+                                    "hidden_subfields" : null
+                                }
+                            },
+                            {
+                                "name" : "file",
+                                "label" : "File",
+                                "required" : false,
+                                "locked" : false,
+                                "type" : "file",
+                                "picker" : "file",
+                                "default" : null,
+                                "visibility" : {
+                                    "controlling_field" : "content_type",
+                                    "controlling_value_regex" : "text_image",
+                                    "operator" : "EQUAL",
+                                    "access" : null,
+                                    "hidden_subfields" : null
+                                }
+                            }
+                        ],
+                        "type" : "group"
+                    }
+                ]
             }
         ],
         "type" : "group"
+    },
+    {
+        "name": "title_bg",
+        "label": "Title background",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Intersec"
+    },
+    {
+        "name": "button_url_team",
+        "label": "URL button join our team",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "supported_types": [
+        "EXTERNAL",
+        "CONTENT",
+        "FILE",
+        "EMAIL_ADDRESS",
+        "BLOG"
+        ],
+        "type": "link"
+    },
+    {
+        "name": "button_txt_team",
+        "label": "Text button join our team",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Join our team"
     }
 ]

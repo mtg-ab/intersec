@@ -26,16 +26,16 @@ section.split-images{
             margin-top:60px;
             display:flex;
             padding-left:70px;
+            gap:0px 30px;
             div.bloc{
                 height:430px;
-                max-width:75px;
-                width:100%;
-                margin-left:30px;
+                width:calc(100% / 7);
                 transition: 0.35s;
                 opacity:0;
                 position: relative;
                 transform: translateX(40px);
                 transition-timing-function: ease-in-out;
+                transition: .75s;
                 figure{
                     display:block;
                     width:100%;
@@ -47,9 +47,8 @@ section.split-images{
                         object-fit: cover;
                     }
                 }
-                &.selected{
-                    max-width:700px;
-                    transition: 0.8s;
+                &:hover{
+                    width:100%;
                 }
             }
         }

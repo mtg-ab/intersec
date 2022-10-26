@@ -16,37 +16,52 @@ jQuery( document ).ready(function() {
         ScrollTrigger.create({
             trigger: "section.personae",
             pin: true,
-            start: 'top 0',
-            scrub:1.15,
+            start: 'top top',
             anticipatePin: 1,
-            end: () =>  '+='+H+'',
+            scrub: 1.55,
+            end: () =>  '+='+BlocH+'',
             toggleClass: {targets: "section.personae", className: "active"},
         })
 
-        jQuery("section.personae div.bloc-txt div.txt div").each(function() {
-            let BlocTxt = jQuery(this).height();
+        jQuery("section.personae div.bloc").each(function() {
+            let BlocTxt = jQuery(this).find("div.txt div").height();
+            let scroll = jQuery(this).height();
+            var id = jQuery(this).data('id');
             gsap.timeline({
-                y: "-"+BlocTxt+"",
                 ease: "none",
                 scrollTrigger: {
                     trigger: jQuery(this),
-                    start: "top 35%",
-                    scrub: 1.15,
-                    end: () =>  "+=" + BlocTxt +"",
+                    start:'top +=0%',
+                    end:'top -=15%',
+                    scrub: 1.55,
+                    onEnter:function(){
+                        jQuery("section.personae figure").each(function() {
+                            if(jQuery(this).data("id") == id){
+                                jQuery(this).addClass('selected')
+                            }else{
+                                jQuery(this).removeClass('selected')
+                            }
+                        })
+                    },
+                    onEnterBack:function(){
+                        jQuery("section.personae figure").each(function() {
+                            if(jQuery(this).data("id") == id){
+                                jQuery(this).addClass('selected')
+                            }else{
+                                jQuery(this).removeClass('selected')
+                            }
+                        })
+                    }                  
                 }
             })
-            .to(jQuery(this), {
-                y: "-"+BlocTxt+"",
-                duration: 0.5, ease: "none",
-                stagger: 3 // try diff options here
+            .to(jQuery(this).find("div.txt div"), {
+                yPercent: "-100",
+                ease: "none",
             })  
-            .to(jQuery(this).parent(), {
+            .to(jQuery(this).find("div.txt"), {
                 height: 0,
-                duration: 0.05, ease: "none",
-            })  
-            .to(jQuery(this).parent(), {
-                height: 0,
-                duration: 0.05, ease: "none",
+                duration: 0.05, 
+                ease: "none",
             })            
         })
     
@@ -62,7 +77,7 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.to("section.personae div.bloc-img",0.75, { opacity:1,delay:0,ease: "power2.inOut" });
+        tl.to("section.personae div.bloc-img",0.75, { opacity:1,top:0,delay:0,ease: "power2.inOut" });
         tl.to("section.personae div.bloc-txt",0.75, { opacity:1,y:0,delay:-0.55,ease: "power2.inOut" });
         //INIT ANIM
 

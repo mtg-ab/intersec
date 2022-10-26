@@ -76,6 +76,9 @@ section.success-story-slider{
                 }
                 h3{
                     margin-bottom:30px;
+                    &.title-solutuon{
+                        margin-top:30px;
+                    }
                     a{
                         color:$color1;
                         font-weight: 500;

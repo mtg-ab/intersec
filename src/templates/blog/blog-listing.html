@@ -22,6 +22,123 @@
         <div class="container">
             {% for post in contents %}
                 {% if loop.index > 1 %}
+                    {% if loop.index == 6 %}
+                        <div class="bloc-white-paper">
+                            {% set query_params = "typology__eq=8&limit=2&blog_listing_cta=2" %}
+                            {% set results_global = hubdb_table_rows("Content",query_params) %}
+                            {% for item in results_global %}
+                                <div class="bloc">
+                                    <div class="bloc-txt">
+                                        {% if content.language.languageTag == 'en' %}
+                                            <h3>{{ item.title }}</h3>
+                                        {% else if content.language.languageTag == 'fr' %}
+                                            <h3>{{ item.fr_title }}</h3>
+                                        {% endif %}
+                                        <div class="txt">
+                                            {% if content.language.languageTag == 'en' %}
+                                                {{ item.description }}
+                                            {% else if content.language.languageTag == 'fr' %}
+                                                {{ item.fr_description }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% if content.language.languageTag == 'en' %}
+                                        <a href="{{ item.link }}" class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            </svg>
+                                            {{ item.button }}                                            
+                                        </a>
+                                    {% else if content.language.languageTag == 'fr' %}
+                                        <a href="{{ item.fr_link }}" class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            </svg>
+                                            {{ item.fr_button }}                                            
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% set query_params = "typology__eq=8&limit=1&blog_listing_cta=1" %}
+                        {% set results_global = hubdb_table_rows("Content",query_params) %}
+                        {% for item in results_global %}
+                            <div class="bloc-cta">
+                                {% if content.language.languageTag == 'en' %}
+                                    <h3>{{ item.title }}</h3>
+                                {% else if content.language.languageTag == 'fr' %}
+                                    <h3>{{ item.fr_title }}</h3>
+                                {% endif %}
+                                <div class="txt">
+                                    {% if content.language.languageTag == 'en' %}
+                                        {{ item.description }}
+                                    {% else if content.language.languageTag == 'fr' %}
+                                        {{ item.fr_description }}
+                                    {% endif %}
+                                </div>
+                                {% if content.language.languageTag == 'en' %}
+                                    <a href="{{ item.link }}" class="btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                        </svg>
+                                        {{ item.button }}                                            
+                                    </a>
+                                {% else if content.language.languageTag == 'fr' %}
+                                    <a href="{{ item.fr_link }}" class="btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                        </svg>
+                                        {{ item.fr_button }}                                            
+                                    </a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if loop.index == 8 %}
+                        {% set query_params = "typology__eq=8&blog_listing_cta=2" %}
+                        {% set results_global = hubdb_table_rows("Content",query_params) %}
+                        {% for item in results_global %}
+                            {% if loop.index > 2 && loop.index < 6 %}
+                                <div class="bloc-white-paper-inline">
+                                    <div class="bloc-txt">
+                                        {% if content.language.languageTag == 'en' %}
+                                            <h3>{{ item.title }}</h3>
+                                        {% else if content.language.languageTag == 'fr' %}
+                                            <h3>{{ item.fr_title }}</h3>
+                                        {% endif %}
+                                        <div class="txt">
+                                            {% if content.language.languageTag == 'en' %}
+                                                {{ item.description }}
+                                            {% else if content.language.languageTag == 'fr' %}
+                                                {{ item.fr_description }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% if content.language.languageTag == 'en' %}
+                                        <a href="{{ item.link }}" class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            </svg>
+                                            {{ item.button }}                                            
+                                        </a>
+                                    {% else if content.language.languageTag == 'fr' %}
+                                        <a href="{{ item.fr_link }}" class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                            </svg>
+                                            {{ item.fr_button }}                                            
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                     <div class="bloc">
                         <a href="{{ post.url }}" class="bloc-img link-hover">
                             <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">

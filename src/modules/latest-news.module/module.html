@@ -20,17 +20,41 @@
         </div>
         <div class="bloc-posts">
             {% for item in module.items %}
-                <div class="bloc" data-id="{{ loop.index }}">
-                    <a href="{{ item.link.href }}" class="bloc-img link-hover">
-                        <figure>
-                            <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}">
-                        </figure>
-                    </a>
-                    <a href="{{ item.link.href }}" class="bloc-txt">
-                        <h4>{{ item.title }}</h4>
-                        {{ item.description }} 
-                    </a>
-                </div>
+                {% if item.blog_post %}
+                {% set id = item.blog_post %}
+                    {% set contents = content_by_id(id) %}
+                    {% for item in contents %}
+                        <div class="bloc" data-id="{{ loop.index }}">
+                            <a href="{{ item.absolute_url }}" class="bloc-img link-hover">
+                                <figure>
+                                    <img src="{{ item.featured_image }}" loading="lazy" width="{{ item.featured_image.width }}" height="{{ item.featured_image.height }}" alt="{{ item.featured_image_alt }}">
+                                </figure>
+                            </a>
+                            <a href="{{ item.absolute_url }}" class="bloc-txt">
+                                <h4>{{ item.title }}</h4>
+                                <div class="txt">
+                                    {{ item.post_summary }} 
+                                </div>
+                                
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="bloc" data-id="{{ loop.index }}">
+                        <a href="{{ item.link.href }}" class="bloc-img link-hover">
+                            <figure>
+                                <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}">
+                            </figure>
+                        </a>
+                        <a href="{{ item.link.href }}" class="bloc-txt">
+                            <h4>{{ item.title }}</h4>
+                            <div class="txt">
+                                {{ item.description }} 
+                            </div>
+                        </a>
+                    </div>
+                {% endif %}
+                
             {% endfor %}
         </div>
     </div>

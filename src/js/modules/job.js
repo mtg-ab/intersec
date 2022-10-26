@@ -91,7 +91,7 @@ jQuery( document ).ready(function() {
 
             //INIT ANIM
             tl.staggerTo("section.job div.bloc-tags p.title",0.45, { opacity:1,y:0,stagger:0.1,ease: "power2.inOut" });
-            tl.staggerTo("section.job div.bloc-offers a.bloc",0.75, { opacity:1,y:0,stagger:0.1,ease: "power2.inOut" });
+            tl.staggerTo("section.job div.bloc-offers a.bloc",0.55, { opacity:1,y:0,stagger:0.1,ease: "power2.inOut" });
             //INIT ANIM
 
         });

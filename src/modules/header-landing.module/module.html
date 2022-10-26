@@ -6,10 +6,15 @@
             </a>
         {% endif %}
         {% if content.translated_content.values()|selectattr('published')|length %}
-        <div class="switch-language">
-            <span class="lang">FR</span>
-            <span class="switcher"></span>
-        </div>
+            <div class="switch-language {{ content.language.languageTag }}">
+                {% if content.language.languageTag == 'en' %}
+                    <span class="lang">EN</span>
+                {% else if content.language.languageTag == 'fr' %}
+                    <span class="lang">FR</span>
+                {% endif %}
+                <span class="switcher"></span>
+                {% language_switcher "language_switcher" %}
+            </div>
         {% endif %}
     </div>
 </header>

@@ -5,6 +5,31 @@ section.video{
             width:100%;
             margin-bottom:60px;
         }
+        div.bloc-img{
+            margin:0 auto;
+            max-width:1020px;
+            width:100%;
+            height:547px;
+            position: relative;
+            cursor: pointer;
+            overflow:hidden;
+            @media(max-width:$size3){
+                height:auto;
+            }
+            figure{
+                display:block;
+                width:100%;
+                height:100%;
+                transform: scale(1.1);
+                img{
+                    object-fit: cover;
+                    display:block;
+                    width:100%;
+                    height:100%;
+                    object-position: center;
+                }
+            }
+        }
         div.bloc-video{
             margin:0 auto;
             max-width:1020px;

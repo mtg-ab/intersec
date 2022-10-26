@@ -47,32 +47,61 @@
                         {% set query_params = "typology__eq=1&category__eq="+category %}
                         {% set results_global = hubdb_table_rows("5461290",query_params) %}
                         {% for page in results_global %}
-                            <div class="bloc">
-                                {% if page.title %}
-                                    <h3><a href="{{ page.link }}">{{ page.title }}</a></h3>
-                                {% endif %}
-                                {% if page.image.url %}
-                                    <a href="{{ page.link }}" class="bloc-img">
-                                        <figure>
-                                            <img loading="lazy" src="{{ page.image.url }}" alt="{{ page.image.alt }}" />
-                                        </figure>
-                                    </a>
-                                {% endif %}
-                                {% if page.description %}
-                                    <div class="bloc-txt">{{ page.description }}</div>
-                                {% endif %}
-                                {% if page.link %}
-                                    <div class="row-btns">
-                                        <a href="{{ page.link }}" class="btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg">
-                                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                                            </svg>
-                                            {{ page.button }}
+                            {% if content.language.languageTag == 'en' %}
+                                <div class="bloc">
+                                    {% if page.title %}
+                                        <h3><a href="{{ page.link }}">{{ page.title }}</a></h3>
+                                    {% endif %}
+                                    {% if page.image.url %}
+                                        <a href="{{ page.link }}" class="bloc-img">
+                                            <figure>
+                                                <img loading="lazy" src="{{ page.image.url }}" alt="{{ page.image.alt }}" />
+                                            </figure>
                                         </a>
-                                    </div>
-                                {% endif %}
-                            </div>
+                                    {% endif %}
+                                    {% if page.description %}
+                                        <div class="bloc-txt">{{ page.description }}</div>
+                                    {% endif %}
+                                    {% if page.link %}
+                                        <div class="row-btns">
+                                            <a href="{{ page.link }}" class="btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                    <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                </svg>
+                                                {{ page.button }}
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% else if content.language.languageTag == 'fr' %}
+                                <div class="bloc">
+                                    {% if page.fr_title %}
+                                        <h3><a href="{{ page.fr_link }}">{{ page.fr_title }}</a></h3>
+                                    {% endif %}
+                                    {% if page.image.url %}
+                                        <a href="{{ page.fr_link }}" class="bloc-img">
+                                            <figure>
+                                                <img loading="lazy" src="{{ page.image.url }}" alt="{{ page.image.alt }}" />
+                                            </figure>
+                                        </a>
+                                    {% endif %}
+                                    {% if page.fr_description %}
+                                        <div class="bloc-txt">{{ page.fr_description }}</div>
+                                    {% endif %}
+                                    {% if page.fr_link %}
+                                        <div class="row-btns">
+                                            <a href="{{ page.fr_link }}" class="btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                    <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                                </svg>
+                                                {{ page.fr_button }}
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 {% endfor %}

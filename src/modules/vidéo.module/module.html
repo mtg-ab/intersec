@@ -3,15 +3,23 @@
         {% if module.title %}
             <h2>{{ module.title }}</h2>
         {% endif %}
-        <div class="bloc-video {% if module.autoplay !=" true" %}btn-play{% endif %} {% if module.youtube ==" true" %}btn-play{% endif %}">
-            <img loading="lazy" src="{{ module.poster.src }}" width="{{ module.poster.width }}" height="{{ module.poster.height }}" alt="Video cover">
-            {% if module.youtube == 'true' %}
-                <iframe width="560" height="315" data-src="{{ module.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            {% else %}
-                <video muted {% if module.autoplay %}preload="none"{% endif %} {% if module.autoplay !=" true" %}class="btn-play"{% endif %} loop playsinline>  
-                    <source src="{{ module.video }}" type="video/mp4">
-                </video>
-            {% endif %}
-        </div>
+        {% if module.video %}
+            <div class="bloc-video {% if module.autoplay !=" true" %}btn-play{% endif %} {% if module.youtube ==" true" %}btn-play{% endif %}">
+                <img loading="lazy" src="{{ module.poster.src }}" width="{{ module.poster.width }}" height="{{ module.poster.height }}" alt="Video cover">
+                {% if module.youtube == 'true' %}
+                    <iframe width="560" height="315" data-src="{{ module.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% else %}
+                    <video muted {% if module.autoplay %}preload="none"{% endif %} {% if module.autoplay !=" true" %}class="btn-play"{% endif %} loop playsinline>  
+                        <source src="{{ module.video }}" type="video/mp4">
+                    </video>
+                {% endif %}
+            </div>
+        {% else if module.image.src %}
+            <div class="bloc-img">
+                <figure>
+                    <img loading="lazy" data-speed="1.1" src="{{ module.image.src }}" width="{{ module.image.width }}" height="{{ module.image.height }}" alt="{{ module.image.alt }}" />
+                </figure>
+            </div>
+        {% endif %}
     </div>
 </section>

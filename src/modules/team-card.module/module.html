@@ -1,0 +1,47 @@
+<section id="{{module.module_identity}}" class="team-card {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <h2>{{ module.title }}</h2>
+        <div class="blocs">
+            <div class="col">
+                {% for item in module.teams %}
+                    {% if loop.index is odd  %}
+                        <div class="bloc">
+                            <div class="bloc-img">
+                                <figure>
+                                    <img src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" loading="lazy" alt="{{ item.image.alt }}"/>
+                                </figure>
+                                <h3>{{ item.firstname }}<br/>{{ item.nom }}</h3>
+                            </div>
+                            <div class="bloc-txt">
+                                <h3>{{ item.firstname }}<br/>{{ item.nom }}</h3>
+                                <div class="txt">
+                                    {{ item.text }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="col">
+                {% for item in module.teams %}
+                {% if loop.index is even  %}
+                    <div class="bloc">
+                        <div class="bloc-img">
+                            <figure>
+                                <img src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" loading="lazy" alt="{{ item.image.alt }}"/>
+                            </figure>
+                            <h3>{{ item.firstname }}<br/>{{ item.nom }}</h3>
+                        </div>
+                        <div class="bloc-txt">
+                            <h3>{{ item.firstname }}<br/>{{ item.nom }}</h3>
+                            <div class="txt">
+                                {{ item.text }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

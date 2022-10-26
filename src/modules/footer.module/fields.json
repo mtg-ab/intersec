@@ -167,5 +167,17 @@
         "sponsored" : false,
         "user_generated_content" : false
         }
+    },
+    {
+        "name": "text_copyrighting",
+        "label": "Text copyrighting",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "- Intersec - Tous droits réservés"
     }
 ]

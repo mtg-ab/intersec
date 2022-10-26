@@ -44,11 +44,19 @@
         {% if module.items %}
             <div class="bloc-imgs">
                 {% for item in module.items %}
-                <a href="{{ item.link.href }}" class="bloc-img {% if loop.index == 1 %}selected{% endif %} link-hover" data-id="{{ loop.index }}">
-                    <figure>
-                        <img loading="lazy" src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
-                    </figure>
-                </a>
+                    {% if item.link.href %}
+                        <a href="{{ item.link.href }}" class="bloc-img {% if loop.index == 1 %}selected{% endif %} link-hover" data-id="{{ loop.index }}">
+                            <figure>
+                                <img loading="lazy" src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                            </figure>
+                        </a>
+                    {% else %}
+                        <div class="bloc-img {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                            <figure>
+                                <img loading="lazy" src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                            </figure>
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         {% endif %}

@@ -42,7 +42,7 @@
                 {% set results_global = hubdb_table_rows("Content", query_params) %}
                 {% for item in results_global %}
                     <div class="bloc {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                        {{ item.testimonial }}
+                        {{ item.context }}
                         {% if item.first_name_testimonial or item.name_testimonial %}
                             <p class="subtitle">{{ item.first_name_testimonial }} {{ item.last_name_testimonial }}</p>
                         {% endif %}

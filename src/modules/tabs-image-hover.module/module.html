@@ -54,9 +54,11 @@
                         {% set query_params = "typology__eq=1&category__eq="+category %}
                         {% set results_global = hubdb_table_rows("Content",query_params) %}
                         {% for item in results_global %}
-                            <a href="{{ item.link.url.href }}" data-id="{{ loop.index }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="row link-hover">
-                                {% if item.title %}
+                            <a href="{{ item.link }}" data-id="{{ loop.index }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="row link-hover">
+                                {% if content.language.languageTag == 'en' %}
                                     <h3>{{ item.title }}</h3>
+                                {% else if content.language.languageTag == 'fr' %}
+                                    <h3>{{ item.fr_title }}</h3>
                                 {% endif %}
                                 {% if item.image.url %}
                                     <div class="bloc-img">
@@ -66,7 +68,13 @@
                                     </div>
                                 {% endif %}
                                 {% if item.description %}
-                                    <div class="bloc-txt">{{ item.description }}</div>
+                                    <div class="bloc-txt">
+                                        {% if content.language.languageTag == 'en' %}
+                                            {{ item.description }}
+                                        {% else if content.language.languageTag == 'fr' %}
+                                            {{ item.fr_description }}
+                                        {% endif %}
+                                    </div>
                                 {% endif %}
                                 <div class="step">(0{{ loop.index }})</div>
                             </a>

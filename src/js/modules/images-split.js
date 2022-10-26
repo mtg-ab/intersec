@@ -17,7 +17,7 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.split-images div.bloc ",0, { opacity:1,x:0,stagger:0.15,ease: "power2.inOut" });
+        tl.staggerTo("section.split-images div.bloc ",0, { opacity:1,x:0,stagger:0.1,ease: "power2.inOut" });
         tl.to("section.split-images p.title_bg",0.75, { opacity:1,y:0,delay:-1,ease: "power2.inOut" });
         //INIT ANIM
 

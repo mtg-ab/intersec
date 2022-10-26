@@ -1,44 +1,62 @@
 
 <section id="{{module.module_identity}}" class="success-story {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
-        {% set id = module.id_post %}
-        {% set results_global = hubdb_table_rows("Content") %}
-        <div class="bloc-txt">
+        <div class="bloc-title">
             {% if module.title %}
                 <h2>{{ module.title }}</h2>
             {% endif %}
-            {% for item in results_global %}
-                {% if item.hs_id == id %}
-                    {% if item.context %}
-                        <h3>Contexte</h3>
-                        {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
-                    {% endif %}
-                    {% if item.solution %}
-                        <h3>Solution</h3>
-                        {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-        </div>
-        {% for item in results_global %}
-            {% if item.hs_id == id %}
-                <div class="bloc-testimonial">
-                    {% if item.image.url %}
-                        <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
-                            <figure>
-                                <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
-                            </figure>
-                        </a>
-                        <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
-                    {% endif %}
-                    <div class="testimonial">
-                        {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
-                        {% if item.name_testimonial or item.first_name_testimonial%}
-                            <p class="author">{{ item.first_name_testimonial }} {{ item.name_testimonial }}</p>
-                        {% endif %}
-                    </div>
+            {% if module.success_stories|length > 1  %}
+                <div class="arrows">
+                    <span class="arrow arrow-left">left</span>
+                    <span class="arrow arrow-right">right</span>
                 </div>
             {% endif %}
-        {% endfor %}
+        </div>
+    </div>
+    <div class="container container-slider">
+        <div class="bloc-slider">
+            {% for field in module.success_stories  %}
+                {% set id = field.id_post %}
+                {% set results_global = hubdb_table_rows("Content") %}
+                {% for item in results_global %}
+                    {% if item.hs_id == id %}
+                        <div class="slide">
+                            <div class="bloc-txt">
+                                {% if item.context %}
+                                    {% if content.language.languageTag == 'en' %}
+                                        <h3 class="title-context">Context</h3>
+                                    {% else %}
+                                        <h3 class="title-context">Contexte</h3>
+                                    {% endif %}
+                                    {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
+                                {% endif %}
+                                {% if item.solution %}
+                                    <h3 class="title-solution">Solution</h3>
+                                    {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
+                                {% endif %}
+                            </div>
+                            <div class="bloc-img">
+                                <div class="bloc-testimonial">
+                                    {% if item.image.url %}
+                                        <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
+                                            <figure>
+                                                <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                                            </figure>
+                                        </a>
+                                        <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
+                                    {% endif %}
+                                    <div class="testimonial">
+                                        {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
+                                        {% if item.last_name_testimonial or item.first_name_testimonial%}
+                                            <p class="author">{{ item.first_name_testimonial }} {{ item.last_name_testimonial }}</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </section>

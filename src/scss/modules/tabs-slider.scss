@@ -76,6 +76,7 @@ section.tabs-slider{
                     transition: 0.75s;
                     opacity:0;
                     transform: translateY(40px);
+                    cursor: pointer;
                     @media(max-width:$size3){
                         width:calc(100% / 2);
                         max-width:217px;

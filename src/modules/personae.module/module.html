@@ -10,11 +10,12 @@
         {% endif %}
     </div>
     <div class="container container-txt-img">
-        {% if module.image.src %}
-            <div class="bloc-img" data-speed="1.1">
-                <figure>
-                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
-                </figure>
+            <div class="bloc-img">
+                {% for item in module.texts %}
+                    <figure {% if loop.index == 1 %}class="selected"{% endif %} data-id="{{ loop.index }}">
+                        <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}" />
+                    </figure>
+                {% endfor %}
                 <div class="bloc-line">
                     <svg width="448" height="448" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="224" cy="224" r="223" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 0"/>
@@ -24,12 +25,11 @@
                     <circle cx="224" cy="224" r="223" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="1 10"/>
                 </svg>
             </div>                
-        {% endif %}
         {% if module.texts %}
             <div class="bloc-txt">
                 <div class="contain-txt">
                     {% for item in module.texts %}
-                        <div class="bloc">
+                        <div class="bloc" data-id="{{ loop.index }}">
                             <h3>{{ item.title }}</h3>
                             <div class="txt">
                                 <div>

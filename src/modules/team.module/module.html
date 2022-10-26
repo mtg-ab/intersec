@@ -68,7 +68,7 @@
                     <div class="slides-holder">
                         {% for item in module.teams %}
                             <div class="slides-holder__item {% if loop.index == 1 %}slides-holder__item_active{% endif %}">
-                                <img src="{{ item.image.src }}" alt="{{ item.title }}"/>
+                                <img src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" loading="lazy" alt="{{ item.title }}"/>
                             </div>
                         {% endfor %}
                     </div>

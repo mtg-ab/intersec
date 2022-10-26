@@ -14,7 +14,12 @@
     <div class="steps grab-hover">
         {% for item in module.steps %}
             <div class="bloc-step">
-                <p class="title"><span class="picto" style="background-image:url({{ item.pictogram.src }})"></span>{{ item.title }}</p>
+                <p class="title">
+                    {% if item.pictogram.src %}
+                        <span class="picto" style="background-image:url({{ item.pictogram.src }})"></span>
+                    {% endif %}
+                    {{ item.title }}
+                </p>
                 {{ item.text }}
             </div>
         {% endfor %}

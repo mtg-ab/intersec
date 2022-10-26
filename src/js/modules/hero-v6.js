@@ -8,19 +8,14 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(ScrollTrigger,scrollTrigger);
         //INIT GSAP   
 
-        var wh = jQuery("body").height();
-
         ScrollTrigger.create({
             trigger: "a.container-btn-join",
             pin: true,
             start: 'top 50%',
             scrub:1,
-            end: () =>  '+='+wh+'',
+            end: () =>  '+=3000',
             toggleClass: {targets: "div.btn-join", className: "active"}
         })
-
-        
-                
 
         ScrollTrigger.create({
             trigger: "div.hero-v6 section.hero-v6",
@@ -34,37 +29,29 @@ jQuery( document ).ready(function() {
         let tlhero = gsap.timeline({
             scrollTrigger: {
                 trigger: "div.hero-v6 section.hero-v6",
-                scrub: true,
+                scrub: 1.1,
                 start: "top top", 
             }
         })
 
-        tlhero.to("div.hero-v6 section.hero-v6 div.contain-hero", 5,{ yPercent:-70,ease: "power2.Out" });
-
+        tlhero.to("div.hero-v6 section.hero-v6 div.contain-hero", 5,{ yPercent:-80,ease: "power2.Out" });
 
         ScrollTrigger.create({
             trigger: "div.hero-v6 section.contain-technology",
             start: "top top", 
             pin: true, 
-            scrub: 1,
-            //markers:true,
             pinSpacing: false 
         });
 
-    
-
-        /*
-
-        var wh = jQuery("body").height();
-
-        ScrollTrigger.create({
-            trigger: "section.contain-technology",
-            pin: true,
-            start: 'top 0px',
-            //markers:true,
-            end: () =>  '+=4000',
+        let tlContent = gsap.timeline({
+            scrollTrigger: {
+                trigger: "div.hero-v6 section.contain-technology",
+                scrub: 1.1,
+                start: "top -=90" 
+            }
         })
-        */
+
+        tlContent.to("div.hero-v6 section.contain-technology div.contain-infos div.contain div.bloc-contain", 5,{ yPercent:-70,ease: "power2.Out" });
 
         function animItems(){
             //INIT TIMELINE
@@ -73,6 +60,7 @@ jQuery( document ).ready(function() {
 
             //INIT ANIM
             tlTranslate.staggerTo("section.contain-technology div.container-bloc-item div.bloc-item",0.75, { opacity:1,y:0,stagger:0.1,ease: "power2.inOut" });
+            //gsap.to( window, { duration : 1.5, scrollTo : { y: 600 }, ease : 'power2' } )
             //INIT ANIM
         }
         
@@ -90,7 +78,7 @@ jQuery( document ).ready(function() {
         tl.staggerTo("section.hero-v6 div.container-bloc-item div.bloc-item",0.75, { opacity:1,y:0,stagger:0.1,ease: "power2.inOut" });
         tl.to("section.hero-v6 div.bloc-imgs",0.75, { opacity:1,y:0,stagger:0.1,delay:-0.85,ease: "power2.inOut" });
         tl.to("section.hero-v6 div.txt",0.75, { opacity:1,delay:-0.75,ease: "power2.inOut" });
-        tl.to("section.hero-v6 p.title_bg",0, { opacity:1,y:0,stagger:0.1,delay:-1.15,ease: "power2.inOut" });
+        tl.to("section.hero-v6 p.title_bg",0.75, { opacity:1,y:0,stagger:0.1,delay:-1.15,ease: "power2.inOut" });
         //INIT ANIM
 
         
@@ -175,12 +163,67 @@ jQuery( document ).ready(function() {
                 })
             })
             jQuery(this).click(function() {
-                //animItems()
-                
+                var id = jQuery(this).data("id");
+                jQuery("section.contain-technology div.bloc-items div.container-bloc-item").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        console.log('test')
+                        jQuery(this).addClass('selected')
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
+                jQuery("section.contain-technology div.contain-infos div.contain").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        jQuery(this).addClass('selected')
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
             })
         })
-        
-        
+
+        jQuery("section.contain-technology div.bloc-items div.container-bloc-item").each(function() {
+            jQuery(this).click(function() {
+                var id = jQuery(this).data("id");
+                jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        jQuery(this).addClass('selected')
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
+                jQuery("section.hero-v6 div.bloc-imgs div.bloc-img").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        jQuery(this).addClass('selected')
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
+                jQuery("section.contain-technology div.bloc-items div.container-bloc-item").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        jQuery(this).addClass('selected')
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
+                jQuery("section.contain-technology div.contain-infos div.contain").each(function() {
+                    if(jQuery(this).data("id") == id){
+                        jQuery(this).addClass('selected')
+                        //INIT TIMELINE
+                        const tlContain = gsap.timeline();
+                        //INIT TIMELINE
+
+                        //INIT ANIM
+                        tl.to("section.contain-technology div.contain-infos",0, { opacity:0,ease: "power2.inOut" });
+                        tl.to("section.contain-technology div.contain-infos",0.55, { opacity:1,ease: "power2.inOut" });
+                        //INIT ANIM
+                    }else{
+                        jQuery(this).removeClass('selected')
+                    }
+                })
+            })
+
+        })        
         
     }
 })
