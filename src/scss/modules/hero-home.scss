@@ -60,6 +60,10 @@ section#hero-home{
                 height:100%;
                 display: block;
                 text-indent: -9999px;
+                background-size: 100vw;
+                @media(max-width:$size3){
+
+                }
             }
         }
     }

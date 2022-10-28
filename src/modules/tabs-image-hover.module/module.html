@@ -51,7 +51,7 @@
                         {% if val == "app-builder" %}
                             {% set category = "4" %}
                         {% endif %}
-                        {% set query_params = "typology__eq=1&category__eq="+category %}
+                        {% set query_params = "typology__eq=1&orderBy=priority_order&category__eq="+category %}
                         {% set results_global = hubdb_table_rows("Content",query_params) %}
                         {% for item in results_global %}
                             <a href="{{ item.link }}" data-id="{{ loop.index }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="row link-hover">

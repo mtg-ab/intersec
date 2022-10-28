@@ -52,9 +52,8 @@ jQuery( document ).ready(function() {
 
     
     if(jQuery("div").hasClass("hero-v6")){
-        var hV6 = jQuery("section.hero-v6").height() + jQuery("div.contain-technology").height();
-        jQuery("div.hero-v6").css("height",3000);
-        console.log(hV6);
+        var hV6 = jQuery("section.hero-v6").height() + jQuery("div.contain-technology").height()*3 - 300;
+        jQuery("div.hero-v6").css("height",hV6);
         smoother.refresh();
     }
     

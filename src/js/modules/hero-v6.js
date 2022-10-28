@@ -13,7 +13,7 @@ jQuery( document ).ready(function() {
             pin: true,
             start: 'top 50%',
             scrub:1,
-            end: () =>  '+=3000',
+            end: () =>  '+=3200',
             toggleClass: {targets: "div.btn-join", className: "active"}
         })
 
@@ -40,7 +40,7 @@ jQuery( document ).ready(function() {
             trigger: "div.hero-v6 section.contain-technology",
             start: "top top", 
             pin: true, 
-            pinSpacing: false 
+            pinSpacing: false,
         });
 
         let tlContent = gsap.timeline({
@@ -88,7 +88,7 @@ jQuery( document ).ready(function() {
             scrollTrigger: {
                 trigger: "section.hero-v6",
                 start:"top top",
-                end:"bottom +=500",
+                end:"bottom +=600",
                 onLeave:function(){
                     animItems()
                     jQuery("section.contain-technology div.contain-technology").addClass('active')

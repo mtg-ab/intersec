@@ -90,6 +90,9 @@ section.job{
             margin-right:150px;
             max-width:340px;
             width:100%;
+            @media(max-width:$size3){
+                flex-direction: column;
+            }
             p.title{
                 display:flex;
                 align-items: center;
@@ -128,6 +131,9 @@ section.job{
         div.bloc-offers{
             width:100%;
             max-width: 350px;
+            @media(max-width:$size3){
+                max-width:100%;
+            }
             a.bloc{
                 position: relative;
                 padding-left:45px;
@@ -206,6 +212,10 @@ section.job{
         div.bloc-btn{
             max-width:290px;
             margin-left:125px;
+            @media(max-width:$size3){
+                max-width:100%;
+                margin-left:0px;
+            }
             h3{
                 color:#fff;
                 font-weight: 500;

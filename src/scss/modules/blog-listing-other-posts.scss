@@ -13,7 +13,7 @@ section.listing-other-posts{
         max-width:1230px;
         display:flex;
         justify-content: space-between;
-        @media(max-width:$size3){
+        @media(max-width:$size2){
             flex-direction: column;
         }
         h2{
@@ -28,8 +28,13 @@ section.listing-other-posts{
             justify-content: space-between;
             margin-bottom:100px;
             padding-right:40px;
+            @media(max-width:$size2){
+                max-width:100%;
+                padding-right:0px;
+            }
             @media(max-width:$size4){
                 flex-direction: column;
+                
             }
             div.flickity-viewport{
                 width:100%;
@@ -115,7 +120,7 @@ section.listing-other-posts{
         div.bloc-newsletter{
             max-width:290px;
             padding-top:45px;
-            @media(max-width:$size3){
+            @media(max-width:$size2){
                 max-width:100%;
             }
             form{

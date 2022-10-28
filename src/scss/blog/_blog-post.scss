@@ -141,14 +141,21 @@ section.blog-post-hero{
             left:50%;
             top:230px;
             //opacity:0;
+            @media(max-width:$size1){
+                right:30px;
+                left: inherit;
+            }
             @media(max-width:$size3){
-                width:320px;
+                width:100%;
                 height:320px;
                 position: relative;
                 margin:0 auto;
-                margin-top:50px;
                 left:inherit;
+                right: inherit;
                 top:0px;
+            }
+            @media(max-width:$size4){
+                height:230px;
             }
             figure{
                 display: block;
@@ -231,13 +238,13 @@ section.contain-post{
         display:flex;
         justify-content: space-between;
         max-width:1230px;
-        @media(max-width:$size3){
+        @media(max-width:$size2){
             flex-direction: column;
         }
         div.bloc-contain{
             width:100%;
             max-width:810px;
-            @media(max-width:$size3){
+            @media(max-width:$size2){
                 max-width:100%;
             }
             h2{
@@ -320,7 +327,7 @@ section.contain-post{
         div.bloc-anchor{
             width:100%;
             max-width:285px;
-            @media(max-width:$size3){
+            @media(max-width:$size2){
                 max-width:100%;
                 display:none;
             }

@@ -40,7 +40,7 @@ jQuery( document ).ready(function() {
             const rndInt = Math.floor(Math.random() * 10) + 1;
             const position = Math.floor(Math.random() * 9) + 1;
             position = position * 10;
-            jQuery( "div.bloc-squares" ).append( "<span class='square square-"+n+"' style='top:"+position+"%;left:"+position+"%'><span class='bg-square' data-speed='0.95' style='background-image:url("+img+");background-position:-"+left+"px -"+top+"px;background-size:100vw'>square</span></span>" );
+            jQuery( "div.bloc-squares" ).append( "<span class='square square-"+n+"' style='top:"+position+"%;left:"+position+"%'><span class='bg-square' data-speed='0.95' style='background-image:url("+img+");background-position:-"+left+"px -"+top+"px;'>square</span></span>" );
             //tlImgs.to("section.hero-home div.bloc-squares",1, {opacity:1,delay:1.9,ease: "power2.Out" });
             tlImgs.to("section.hero-home div.bloc-squares span.square-"+n+"",1.25, {scale:1,opacity:"0."+rndInt+"",top:top+"px",left:left+"px",delay:-1.35,ease: "power2.Out" });
             tlImgs.to("section.hero-home div.bloc-squares",1.25, {scale:1,opacity:"1",delay:-1.2,ease: "power2.Out" });

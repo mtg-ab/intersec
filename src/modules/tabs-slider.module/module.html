@@ -44,7 +44,7 @@
                         {% if val == "app-builder" %}
                             {% set category = "4" %}
                         {% endif %}
-                        {% set query_params = "typology__eq=1&category__eq="+category %}
+                        {% set query_params = "typology__eq=1&orderBy=priority_order&category__eq="+category %}
                         {% set results_global = hubdb_table_rows("5461290",query_params) %}
                         {% for page in results_global %}
                             {% if content.language.languageTag == 'en' %}

@@ -10,7 +10,7 @@ jQuery( document ).ready(function() {
         const settings = {
             async: true,
             crossDomain: true,
-            url: 'https://www.workable.com/api/accounts/intersec-group',
+            url: 'https://www.workable.com/api/accounts/intersec-group/',
             method: 'GET',
             dataType: "jsonp",
             headers: {
@@ -21,7 +21,6 @@ jQuery( document ).ready(function() {
           
         $.ajax(settings).done(function (response) {
             jQuery("section.hero-career p.figure").html(response.jobs.length)
-            console.log(response)
             var my_categories = { };
             var counterList = [];
             $.each(response.jobs, function(i, obj) {

@@ -17,8 +17,8 @@ jQuery( document ).ready(function() {
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.to("section.clients-listing div.txt",0.75, { opacity:1,className: 'txt active',ease: "power2.inOut" });
         tl.staggerTo("section.clients-listing figure",0.55, { opacity:1,y:0,delay:0,stagger:0.055,ease: "power2.inOut" });
+        tl.to("section.clients-listing div.txt",0.75, { opacity:1,className: 'txt active',delay:-2,ease: "power2.inOut" });
         //INIT ANIM
 
     }

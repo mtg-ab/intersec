@@ -1,5 +1,6 @@
 section.split-images{
     position: relative;
+    overflow:hidden;
     p.title_bg{
         position: absolute;
         color:#F9F9F9;
@@ -27,6 +28,12 @@ section.split-images{
             display:flex;
             padding-left:70px;
             gap:0px 30px;
+            @media(max-width:$size4){
+                padding-left:0px;
+                flex-wrap: wrap;
+                flex-grow: 2;
+                gap:30px 30px;
+            }
             div.bloc{
                 height:430px;
                 width:calc(100% / 7);
@@ -36,6 +43,13 @@ section.split-images{
                 transform: translateX(40px);
                 transition-timing-function: ease-in-out;
                 transition: .75s;
+                @media(max-width:$size4){
+                    width:calc(100% / 2 - 15px);
+                    height:240px;
+                }
+                @media(max-width:$size5){
+                    height:180px;
+                }
                 figure{
                     display:block;
                     width:100%;

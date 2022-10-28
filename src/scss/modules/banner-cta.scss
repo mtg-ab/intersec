@@ -122,6 +122,9 @@ section.banner-cta{
             width:100%;
             max-width:680px;
             padding-top:60px;
+            @media(max-width:$size3){
+                padding-top:80px;
+            }
             h2{
                 color:#fff;
                 position: relative;
@@ -130,8 +133,7 @@ section.banner-cta{
                 min-height:120px;
                 max-width:360px;
                 @media(max-width:$size3){
-                    position: absolute;
-                    top:-30px;
+                    top:0px;
                     left:0px;
                     font-size: 60px;
                     line-height: 100%;

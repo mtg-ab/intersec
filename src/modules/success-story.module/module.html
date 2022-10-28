@@ -5,58 +5,96 @@
             {% if module.title %}
                 <h2>{{ module.title }}</h2>
             {% endif %}
-            {% if module.success_stories|length > 1  %}
-                <div class="arrows">
-                    <span class="arrow arrow-left">left</span>
-                    <span class="arrow arrow-right">right</span>
-                </div>
-            {% endif %}
         </div>
     </div>
-    <div class="container container-slider">
-        <div class="bloc-slider">
-            {% for field in module.success_stories  %}
-                {% set id = field.id_post %}
-                {% set results_global = hubdb_table_rows("Content") %}
-                {% for item in results_global %}
-                    {% if item.hs_id == id %}
-                        <div class="slide">
-                            <div class="bloc-txt">
-                                {% if item.context %}
-                                    {% if content.language.languageTag == 'en' %}
-                                        <h3 class="title-context">Context</h3>
-                                    {% else %}
-                                        <h3 class="title-context">Contexte</h3>
-                                    {% endif %}
-                                    {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
-                                {% endif %}
-                                {% if item.solution %}
-                                    <h3 class="title-solution">Solution</h3>
-                                    {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
-                                {% endif %}
-                            </div>
-                            <div class="bloc-img">
-                                <div class="bloc-testimonial">
-                                    {% if item.image.url %}
-                                        <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
-                                            <figure>
-                                                <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
-                                            </figure>
-                                        </a>
-                                        <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
-                                    {% endif %}
-                                    <div class="testimonial">
-                                        {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
-                                        {% if item.last_name_testimonial or item.first_name_testimonial%}
-                                            <p class="author">{{ item.first_name_testimonial }} {{ item.last_name_testimonial }}</p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
+    <div class="container container-tabs">
+        <div class="bloc-tabs">
+            {% for item in module.items %}
+                {% if item.title %}
+                    <div class="bloc bloc-liquid {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                        <div class="circles">
+                            <svg width="25" class="line-outline" height="25" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="11" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                            </svg>
+                            
+                            <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+                                    filterUnits="objectBoundingBox">
+                                        <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+                                        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+                                    </filter>
+                                </defs>
+                                <circle cx="66" cy="66" r="61" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="1.5px" stroke-linecap="round" stroke-dasharray="1 5"/>
+                            </svg> 
+                            
                         </div>
-                    {% endif %}
-                {% endfor %}
+                        <div class="item-title">
+                            <p class="title">{{ item.title }}</p>
+                            <p class="subtitle">{{ item.subtitle }}</p>
+                        </div>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
+        
     </div>
+    <div class="contain-slider">
+        {% for item in module.items %}
+            <div class="container container-slider container-slider-{{ loop.index }} {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                {% if item.success_stories|length > 1  %}
+                    <div class="arrows">
+                        <span class="arrow arrow-left">left</span>
+                        <span class="arrow arrow-right">right</span>
+                    </div>
+                {% endif %}
+                <div class="bloc-slider bloc-slider-{{ loop.index }}">
+                    
+                    {% for field in item.success_stories  %}
+                        {% set id = field.id_post %}
+                        {% set results_global = hubdb_table_rows("Content") %}
+                        {% for item in results_global %}
+                            {% if item.hs_id == id %}
+                                <div class="slide">
+                                    <div class="bloc-txt">
+                                        {% if item.context %}
+                                            {% if content.language.languageTag == 'en' %}
+                                                <h3 class="title-context">Context</h3>
+                                            {% else %}
+                                                <h3 class="title-context">Contexte</h3>
+                                            {% endif %}
+                                            {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
+                                        {% endif %}
+                                        {% if item.solution %}
+                                            <h3 class="title-solution">Solution</h3>
+                                            {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
+                                        {% endif %}
+                                    </div>
+                                    <div class="bloc-img">
+                                        <div class="bloc-testimonial">
+                                            {% if item.image.url %}
+                                                <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
+                                                    <figure>
+                                                        <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                                                    </figure>
+                                                </a>
+                                                <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
+                                            {% endif %}
+                                            <div class="testimonial">
+                                                {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
+                                                {% if item.last_name_testimonial or item.first_name_testimonial%}
+                                                    <p class="author">{{ item.first_name_testimonial }} {{ item.last_name_testimonial }}</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
 </section>

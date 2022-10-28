@@ -21,6 +21,9 @@ section.steps{
     div.container{
         display: flex;
         align-items: center;
+        @media(max-width:$size3){
+            flex-direction: column;
+        }
         div.bloc-img{
             height:180px;
             width:100%;
@@ -28,6 +31,10 @@ section.steps{
             margin-left:80px;
             opacity:0;
             transform: translateY(30px);
+            @media(max-width:$size3){
+                margin-left:0px;
+                height:120px;
+            }
             figure{
                 display:block;
                 width:100%;
@@ -37,6 +44,10 @@ section.steps{
                     height:100%;
                     object-fit: cover;
                     display:block;
+                    @media(max-width:$size3){
+                        width:auto;
+                        object-fit: inherit;
+                    }
                 }
             }
         }
@@ -93,6 +104,9 @@ section.steps{
                     z-index:2;
                     opacity:0;
                     left:90px;
+                    @media(max-width:$size3){
+                        max-width:265px;
+                    }
                     &:after{
                         display:block;
                         content:'';
@@ -135,7 +149,7 @@ section.steps{
                             opacity:1;
                         }
                     }
-                    p{
+                    p,ul,a{
                         opacity:0.35;
                         position: relative;
                         z-index:2;

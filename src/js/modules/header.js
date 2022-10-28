@@ -10,7 +10,7 @@ jQuery( document ).ready(function() {
 
         var wh = jQuery("body").height();
 
-        if (jQuery(window).width() > 768) {
+        if (jQuery(window).width() > 1080) {
             ScrollTrigger.create({
                 trigger: "header",
                 pin: true,

@@ -91,5 +91,30 @@
         "gotowebinar_webinar_key" : null,
         "form_type" : "HUBSPOT"
         }
+    },
+    {
+        "name" : "tags",
+        "label" : "Tags",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "tags.item",
+          "default" : null
+        },
+        "children" : [
+            {
+                "id" : "c3395cd3-8e60-7e47-2f1b-b7ccf4d669c9",
+                "name" : "tag",
+                "label" : "Blog Tag",
+                "required" : false,
+                "locked" : false,
+                "tag_value" : "SLUG",
+                "type" : "tag",
+                "default" : null
+            }
+        ],
+        "type" : "group"
     }
 ]

@@ -79,20 +79,20 @@
         "default": "Client success story"
     },
     {
-        "name" : "success_stories",
-        "label" : "Success stories",
+        "name" : "items",
+        "label" : "Items",
         "required" : false,
         "locked" : false,
         "occurrence" : {
           "min" : null,
           "max" : null,
-          "sorting_label_field" : "steps.item",
+          "sorting_label_field" : "items.item",
           "default" : null
         },
         "children" : [
             {
-                "name": "id_post",
-                "label": "ID post",
+                "name": "title",
+                "label": "Title",
                 "required": false,
                 "locked": false,
                 "validation_regex": "",
@@ -100,10 +100,36 @@
                 "show_emoji_picker": false,
                 "type": "text",
                 "help_text": "",
-                "default": ""
+                "default": "Evaluate"
+            },
+            {
+                "name" : "success_stories",
+                "label" : "Success stories",
+                "required" : false,
+                "locked" : false,
+                "occurrence" : {
+                  "min" : null,
+                  "max" : null,
+                  "sorting_label_field" : "steps.item",
+                  "default" : null
+                },
+                "children" : [
+                    {
+                        "name": "id_post",
+                        "label": "ID post",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "help_text": "",
+                        "default": ""
+                    }
+                ],
+                "type" : "group"
             }
         ],
         "type" : "group"
     }
-    
 ]

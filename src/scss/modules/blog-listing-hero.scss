@@ -3,9 +3,6 @@ section.blog-listing-hero{
     position: relative;
     padding:220px 0px 165px 0px;
     overflow:hidden;
-    @media(max-width:$size3){
-        padding:220px 0px 65px 0px;
-    }
     &:before{
         content:'';
         display:block;
@@ -128,12 +125,15 @@ section.blog-listing-hero{
             z-index:2;
             display: flex;
             justify-content: space-between;
-            @media(max-width:$size3){
+            @media(max-width:$size2){
                 flex-direction: column;
             }
             h1{
                 color:#fff;
                 max-width: 630px;
+                @media(max-width:$size2){
+                    max-width: 100%;
+                }
                 @media(max-width:$size3){
                     margin-bottom:0px;
                 }
@@ -154,7 +154,7 @@ section.blog-listing-hero{
                     div.hs_submit{
                         position: absolute;
                         right: 0px;
-                        bottom:10px;
+                        bottom:34px;
                         div.actions{
                             input{
                                 width:40px;
@@ -182,6 +182,7 @@ section.blog-listing-hero{
             justify-content: center;
             flex-wrap: wrap;
             margin-top:170px;
+            gap:40px 0px;
             @media(max-width:$size3){
                 margin-top:65px;
                 justify-content: flex-start;
@@ -193,10 +194,15 @@ section.blog-listing-hero{
                 margin:0px 22px;
                 text-decoration: none;
                 position: relative;
+                transition: 0.65s;
                 @media(max-width:$size3){
                     margin:0px 22px 10px 22px;
                 }
+                &:hover{
+                    opacity: 1;
+                }
                 &.selected{
+                    opacity: 1;
                     svg.line-dashed{
                         opacity:1;
                     }

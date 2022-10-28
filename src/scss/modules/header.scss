@@ -14,10 +14,12 @@ header{
     width:100%;
     height:125px;
     background-color: $color1;
-    @media(max-width:$size4){
+    @media(max-width:$size2){
         height:100px;
         top:0px !important;
         position: fixed;
+        display: flex;
+        align-items: center;
     }
     &.sticky{
         box-shadow:0px 0px 10px rgba(#000,0.45);
@@ -31,12 +33,19 @@ header{
         @media(max-width:$size1){
             padding:0px 30px 0px 30px;
         }
+        @media(max-width:$size2){
+            width:100%;
+            align-items: center;
+        }
         &.container-pre-header{
             justify-content: flex-end;
             align-items: center;
             height:auto;
             padding:15px 0px 0px 0px;
-            @media(max-width:$size3){
+            @media(max-width:$size1){
+                padding:15px 30px 0px 30px;
+            }
+            @media(max-width:$size2){
                 display: none;
             }
             div.switch-language{
@@ -140,8 +149,10 @@ header{
             a.logo{
                 margin-top:22px;
                 display: inline-block;
-                @media(max-width:$size4){
+                @media(max-width:$size2){
                     margin-top:0px;
+                }
+                @media(max-width:$size4){
                     img{
                         width:100%;
                         max-width:143px;
@@ -152,7 +163,7 @@ header{
             nav{
                 margin-left:65px;
                 padding-top:28px;
-                @media(max-width:$size3){
+                @media(max-width:$size2){
                     display:none;
                 }
                 ul{
@@ -541,7 +552,7 @@ header{
         div.contact{
             display:flex;
             padding-top:18px;
-            @media(max-width:$size3){
+            @media(max-width:$size2){
                 display:none;
             }
             
@@ -576,7 +587,7 @@ header{
             position: relative;
             overflow:hidden;
             display:none;
-            @media(max-width:$size3){
+            @media(max-width:$size2){
                 display: block;
             }
             &.open{
@@ -694,7 +705,7 @@ div.contain-menu-mobile{
     transform: translateX(-100%);
     z-index:20;
     display:none;
-    @media(max-width:$size3){
+    @media(max-width:$size2){
         display:block;
     }
     &.open{
