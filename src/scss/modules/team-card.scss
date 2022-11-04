@@ -4,12 +4,12 @@ section.team-card{
     div.container{
         display:flex;
         justify-content: space-between;
-        @media(max-width:$size3){
+        @media(max-width:900px){
             flex-direction: column;
         }
         h2{
             max-width: 380px;
-            @media(max-width:$size3){
+            @media(max-width:900px){
                 max-width:100%;
             }
         }
@@ -18,7 +18,7 @@ section.team-card{
             justify-content: space-between;
             max-width:870px;
             width:100%;
-            @media(max-width:$size3){
+            @media(max-width:900px){
                 max-width:100%;
             }
             @media(max-width:$size3){

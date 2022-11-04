@@ -3,20 +3,22 @@
         {% if module.title %}
             <h2>{{ module.title }}</h2>
         {% endif %}
-        {% if module.image.src %}
-            <div class="bloc-img">
-                <figure>
-                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
-                </figure>
-            </div>
-        {% endif %}
+        <div class="bloc-img">
+            {% for item in module.steps %}
+                {% if item.image.src %}
+                    <figure {% if loop.index == 1 %}class="selected"{% endif %} data-id="{{ loop.index }}">
+                        <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}" />
+                    </figure>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    <div class="steps grab-hover">
+    <div class="steps">
         {% for item in module.steps %}
-            <div class="bloc-step">
+            <div class="bloc-step" data-id="{{ loop.index }}">
                 <p class="title">
                     {% if item.pictogram.src %}
-                        <span class="picto" style="background-image:url({{ item.pictogram.src }})"></span>
+                        <span class="picto" style="background-image:url('{{ item.pictogram.src }}')"></span>
                     {% endif %}
                     {{ item.title }}
                 </p>

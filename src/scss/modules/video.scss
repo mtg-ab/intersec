@@ -1,4 +1,7 @@
 section.video{
+    position: relative;
+    z-index:2;
+    overflow: hidden;
     div.container{
         h2{
             text-align: center;
@@ -14,7 +17,10 @@ section.video{
             cursor: pointer;
             overflow:hidden;
             @media(max-width:$size3){
-                height:auto;
+                height:350px;
+            }
+            @media(max-width:$size4){
+                height:230px;
             }
             figure{
                 display:block;
@@ -38,7 +44,10 @@ section.video{
             position: relative;
             cursor: pointer;
             @media(max-width:$size3){
-                height:auto;
+                height:350px;
+            }
+            @media(max-width:$size4){
+                height:230px;
             }
             &.btn-play{
                 &:hover{
@@ -63,6 +72,12 @@ section.video{
                     background-repeat: no-repeat;
                     cursor: pointer;
                     pointer-events: none;
+                    @media(max-width:$size3){
+                        width:65px;
+                        height:65px;
+                        background-position: 50% 50%;
+                        background-size: 18px;
+                    }
                 }
             }
             img{

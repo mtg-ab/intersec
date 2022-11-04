@@ -1,6 +1,7 @@
 section.hero-career{    
     background-color: $color1;
     position: relative;
+    overflow: hidden;
     background-repeat: repeat-x;
     background-position: center;
     background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
@@ -139,6 +140,9 @@ section.hero-career{
                 font-size: 18px;
                 line-height: 120%;
                 text-transform: uppercase;
+                @media(max-width:$size3){
+                    pointer-events: none;
+                }
             }
             h1{
                 color:#fff;
@@ -150,6 +154,7 @@ section.hero-career{
                 @media(max-width:$size3){
                     font-size:50px;
                     line-height:55px;
+                    pointer-events: none;
                 }
             }
             a.btn{
@@ -168,7 +173,13 @@ section.hero-career{
             top:0px;
             left:0px;
             z-index:3;
+            @media(max-width:$size3){
+                z-index:0;
+            }
             &.videoPlay{
+                @media(max-width:$size3){
+                    z-index:5;
+                }
                 &:before{
                     opacity:1;
                     z-index:20;
@@ -199,6 +210,10 @@ section.hero-career{
                 z-index:10;
                 opacity:0;
                 transform: translateY(20px);
+                @media(max-width:$size3){
+                    padding:17px;
+                    z-index:3;
+                }
                 &:hover{
                     &:before{
                         transform: scale(0.9);
@@ -224,18 +239,37 @@ section.hero-career{
                     background: rgba(255, 255, 255, 0.07);
                     transition: 0.55s;
                     backdrop-filter: blur(8px);
+                    @media(max-width:$size3){
+                        max-width:250px;
+                        max-height:250px;
+                        display: none;
+                    }
                 }
                 &:nth-child(1){
                     width: 237px;
                     height: 237px;
                     left:0px;
                     top:200px;
+                    @media(max-width:$size1){
+                        left:30px;
+                    }
+                    @media(max-width:$size3){
+                        width:120px;
+                        height:120px;
+                        left:30px;
+                    }
                     &.selected{
                         width:550px;
                         height:550px;
                         left:calc(50% - 275px);
                         top:calc(50% - 275px);
                         padding:77px;
+                        @media(max-width:$size3){
+                            width:100%;
+                            height:100%;
+                            left:calc(0%);
+                            top:calc(0%);
+                        }
                     }
                 }
                 &:nth-child(2){
@@ -243,12 +277,25 @@ section.hero-career{
                     height: 206px;
                     right:100px;
                     top:100px;
+                    @media(max-width:$size1){
+                        right:30px;
+                    }
+                    @media(max-width:$size3){
+                        width:120px;
+                        height:120px;
+                    }
                     &.selected{
                         width:550px;
                         height:550px;
                         right:calc(50% - 275px);
                         top:calc(50% - 275px);
                         padding:77px;
+                        @media(max-width:$size3){
+                            width:100%;
+                            height:100%;
+                            left:calc(0%);
+                            top:calc(0%);
+                        }
                     }
                 }
                 &:nth-child(3){
@@ -256,25 +303,51 @@ section.hero-career{
                     height: 206px;
                     left:80px;
                     bottom:30px;
+                    @media(max-width:$size1){
+                        left:30px;
+                    }
+                    @media(max-width:$size3){
+                        width:120px;
+                        height:120px;
+                    }
                     &.selected{
                         width:550px;
                         height:550px;
                         left:calc(50% - 275px);
                         bottom:calc(50% - 275px);
                         padding:77px;
+                        @media(max-width:$size3){
+                            width:100%;
+                            height:100%;
+                            left:calc(0%);
+                            top:calc(0%);
+                        }
                     }
                 }
                 &:nth-child(4){
                     width: 275px;
                     height: 275px;   
                     right:0px;
-                    bottom:100px;  
+                    bottom:100px; 
+                    @media(max-width:$size1){
+                        right:30px;
+                    }
+                    @media(max-width:$size3){
+                        width:120px;
+                        height:120px;
+                    } 
                     &.selected{
                         width:550px;
                         height:550px;
                         right:calc(50% - 275px);
                         bottom:calc(50% - 275px);
                         padding:77px;
+                        @media(max-width:$size3){
+                            width:100%;
+                            height:100%;
+                            left:calc(0%);
+                            top:calc(0%);
+                        }
                     } 
                 }
                 &.selected{
@@ -355,6 +428,13 @@ section.hero-career{
                     align-items: center;
                     opacity: 0;
                     pointer-events: none;
+                    @media(max-width:$size3){
+                        width:calc(100% - 40px);
+                        max-width:450px;
+                        iframe{
+                            height: 240px;
+                        }
+                    }
                 }
             }
         }

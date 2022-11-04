@@ -461,6 +461,7 @@ header{
                                             width:12px;
                                             height:12px;
                                             right:24px;
+                                            left:inherit;
                                             top:calc(50% - 6px);
                                             background-color: $color2;
                                             transition: 0.35s;
@@ -697,7 +698,7 @@ header{
 div.contain-menu-mobile{
     position: fixed;
     top:100px;
-    height:calc(100vh - 100px);
+    height:calc(100vh);
     background-color: $color1;
     left:0px;
     width:100%;
@@ -730,7 +731,7 @@ div.contain-menu-mobile{
                         display:block;
                     }
                 }
-                a{
+                a,span{
                     color:#fff;
                     font-size: 16px;
                     line-height: 20px;
@@ -918,6 +919,9 @@ div.contain-menu-mobile{
             margin-right:20px;
             cursor: pointer;
             color:#fff;
+            div.lang_switcher_class{
+                display: none;
+            }
             &.en{
                 span.switcher{
                     &:before{

@@ -119,6 +119,7 @@ section.listing-other-posts{
         }
         div.bloc-newsletter{
             max-width:290px;
+            width:100%;
             padding-top:45px;
             @media(max-width:$size2){
                 max-width:100%;
@@ -126,10 +127,13 @@ section.listing-other-posts{
             form{
                 margin-top:0px;
                 position: relative;
+                h3,p,h2,h4,h5{
+                    color:#fff;
+                }
                 div.hs_submit{
                     position: absolute;
                     right: 0px;
-                    bottom:10px;
+                    bottom:31px;
                     div.actions{
                         input{
                             width:40px;

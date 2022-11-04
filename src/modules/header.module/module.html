@@ -182,7 +182,11 @@
         <ul>
             {% for item in module.menu_header %}
                 <li class="menu-parent {% if item.links or item.features %}sub-menu{% endif %}">
-                    <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
+                    {% if item.link.url.href %}
+                        <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
+                    {% else %}
+                        <span>{{ item.text_menu }}</span>
+                    {% endif %}
                     {% if item.title_cta or item.features %}
                     <div class="sub-menu">
                         {% if item.links %}

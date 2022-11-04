@@ -1,6 +1,7 @@
 section.success-story{
     position: relative;
     z-index:2;
+    overflow: hidden;
     div.container-slider{
         max-width:100%;
     }
@@ -191,7 +192,10 @@ section.success-story{
                         height:100%;
                         div.slide{
                             opacity:0.35;
-                            margin-right:60px;
+                            padding-right:60px;
+                            @media(max-width:$size3){
+                                padding-right:30px;
+                            }
                             &.is-selected{
                                 opacity: 1;
                             }
@@ -204,6 +208,10 @@ section.success-story{
                     width:100%;
                     max-width:1225px;
                     margin:0 auto;
+                    @media(max-width:$size3){
+                        flex-direction: column;
+                        width:320px;
+                    }
                     div.bloc-txt{
                         max-width:495px;
                         h3{
@@ -213,8 +221,12 @@ section.success-story{
                     div.bloc-img{
                         width:50%;
                         max-width:495px;
+                        @media(max-width:$size3){
+                            width:100%;
+                            max-width:100%;
+                            margin-top:30px;
+                        }
                         div.bloc-testimonial{
-                            
                             @media(max-width:$size3){
                                 width:100%;
                                 max-width:100%;
@@ -266,6 +278,7 @@ section.success-story{
                                     background-image: url("data:image/svg+xml,%3Csvg width='49' height='30' viewBox='0 0 49 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0769 30L22.3641 0H12.6897L0 30H15.0769ZM41.8385 30L49 0H39.4513L26.7615 30H41.8385Z' fill='%23F1762C'/%3E%3C/svg%3E");
                                     @media(max-width:$size3){
                                         left:-15px;
+                                        top:-35px;
                                     }
                                 }
                                 div{
@@ -274,6 +287,10 @@ section.success-story{
                                         font-size: 32px;
                                         line-height: 120%;
                                         color:#000;
+                                        @media(max-width:$size3){
+                                            font-size:22px;
+                                            line-height:26px;
+                                        }
                                     }
                                 }
                                 p.author{

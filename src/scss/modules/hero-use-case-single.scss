@@ -9,6 +9,7 @@ section.hero-use-case-single{
     background-image: url("data:image/svg+xml,%3Csvg width='201' height='2354' viewBox='0 0 201 2354' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.25' y1='1.09278e-08' x2='0.249897' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3Cline x1='200.25' y1='1.09278e-08' x2='200.25' y2='2354' stroke='%23474747' stroke-width='0.5'/%3E%3C/svg%3E");
     @media(max-width:$size3){
         padding-top:170px;
+        padding-bottom: 70px;
     }
     &:before{
         display: block;
@@ -113,9 +114,10 @@ section.hero-use-case-single{
         position: absolute;
         bottom:0px;
         left:0px;
-        z-index:0;
+        z-index:2;
         @media(max-width:$size3){
             display:block;
+            height:90px;
         }
     }
     div.container{
@@ -126,6 +128,7 @@ section.hero-use-case-single{
         z-index:3;
         @media(max-width:$size3){
             flex-direction: column;
+            align-items: flex-start;
         }
         div.bloc-txt{
             max-width:670px;
@@ -134,6 +137,7 @@ section.hero-use-case-single{
             min-height:400px;
             @media(max-width:$size3){
                 min-height: inherit;
+                max-width:100%;
             }
             h1{
                 color:#fff;
@@ -148,6 +152,10 @@ section.hero-use-case-single{
             div.btns{
                 display: flex;
                 gap:0px 30px;
+                @media(max-width:$size3){
+                    flex-direction: column;
+                    gap:15px 0px;
+                }
                 a.btn{
                     background-color: transparent;
                     color:$color2;

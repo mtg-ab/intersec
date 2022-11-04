@@ -80,7 +80,7 @@ section.key-figures{
         z-index:2;
         gap:165px 0px;
         @media(max-width:$size3){
-            gap:90px 0px;
+            gap:55px 0px;
         }
         div.bloc{
             max-width:495px;
@@ -101,6 +101,7 @@ section.key-figures{
                 font-size:20px;
                 @media(max-width:$size3){
                     padding-top:15px;
+                    margin-top:5px;
                 }
             }
         }

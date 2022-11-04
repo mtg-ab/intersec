@@ -79,6 +79,9 @@ section.job{
         position: relative;
         z-index:2;
         display:flex;
+        @media(max-width:$size3){
+            flex-direction: column;
+        }
         h2{
             color:#fff;
             margin-bottom:80px;
@@ -92,6 +95,8 @@ section.job{
             width:100%;
             @media(max-width:$size3){
                 flex-direction: column;
+                margin-right:0px;
+                order:2;
             }
             p.title{
                 display:flex;
@@ -133,6 +138,8 @@ section.job{
             max-width: 350px;
             @media(max-width:$size3){
                 max-width:100%;
+                margin-bottom:40px;
+                order:1;
             }
             a.bloc{
                 position: relative;
@@ -154,7 +161,7 @@ section.job{
                     transform: translateY(-50%);
                     left:0px;
                     @media(max-width:$size3){
-                        margin-left:30px;
+                        margin-left:9px;
                      }
                      div.item-title{
                          @media(max-width:$size3){
@@ -215,6 +222,8 @@ section.job{
             @media(max-width:$size3){
                 max-width:100%;
                 margin-left:0px;
+                order:3;
+                margin-top:65px;
             }
             h3{
                 color:#fff;

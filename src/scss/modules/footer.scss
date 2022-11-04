@@ -49,6 +49,8 @@ footer{
                 margin-right:65px;
                 @media(max-width:$size3){
                     margin-top:0px;
+                    margin-right:0px;
+                    gap:0px 25px;
                 }
                 a{
                     width:20px;
@@ -58,10 +60,6 @@ footer{
                     text-indent: -9999px;
                     position: relative;
                     transition: 0.5s;
-                    @media(max-width:$size3){
-                        margin-left:45px;
-                        margin-right:0px;
-                    }
                     &:hover{
                         &:after{
                             background-color: #fff;
@@ -133,7 +131,7 @@ footer{
                         max-width:160px;
                         @media(max-width:$size3){
                             margin-right:0px;
-                            max-width:120px;
+                            max-width:150px;
                             width:50%;
                             margin-bottom:20px;
                         }
@@ -213,7 +211,7 @@ footer{
                     margin-left: 60px;
                     @media(max-width:$size4){
                         margin-left: 0px;
-                        margin-right: 60px;
+                        margin-right: 35px;
                     }
                     a{
                         color:#fff;

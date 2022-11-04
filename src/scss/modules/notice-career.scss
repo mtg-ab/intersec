@@ -3,11 +3,20 @@ section.notice-career{
         display:flex;
         justify-content: space-between;
         align-items:center;
+        @media(max-width:$size3){
+            flex-direction: column;
+            padding-bottom:70px;
+        }
         &.container-powered{
             display:flex;
             align-items: center;
             justify-content: flex-end;
             padding-bottom:20px;
+            @media(max-width:$size3){
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
             span{
                 color: rgba(47, 47, 47, 0.5);
                 margin-right:15px;
@@ -57,11 +66,21 @@ section.notice-career{
             width:calc(100% - 400px);
             display:flex;
             justify-content: space-between;
+            @media(max-width:$size3){
+                width:100%;
+                flex-direction: column;
+                margin-top:30px;
+                gap:20px 0px;
+            }
             div.pie-txt{
                 width:50%;
                 position: relative;
                 display: flex;
                 align-items: center;
+                @media(max-width:$size3){
+                    width:100%;
+                    min-height:135px;
+                }
                 &:after{
                     content:'';
                     display:block;
@@ -92,6 +111,8 @@ section.notice-career{
                     font-size:25px;
                     font-weight:bold;
                     margin-right:30px;
+                    width:135px;
+                    height:135px;
                     &:before,&:after{
                         content:"";
                         position:absolute;

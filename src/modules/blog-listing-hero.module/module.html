@@ -20,7 +20,11 @@
                 %}
             </div>
         </div>
-        {% set slug = request.path|split('/', 3)|last %}
+        {% if content.language.languageTag == 'en' %}
+            {% set slug = request.path|split('/', 3)|last %}
+        {% else %}
+            {% set slug = request.path|split('/', 4)|last %}
+        {% endif %}
         {% set slugTag = request.path|split('/', 2)|last %}
         {% set my_tags = blog_tags("default", 250) %}
         <div class="tags">
@@ -43,7 +47,7 @@
             {% for field in module.tags %}
                 {% for item in my_tags %}
                     {% if item.slug == field.tag %}
-                        <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag bloc-liquid {% if slug == item.slug %}selected{% endif %}">
+                        <a href="{{ blog_tag_url(group.id, item.slug) }}" class="tag bloc-liquid {% if tag == item.slug %}selected{% endif %}">
                             <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 

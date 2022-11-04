@@ -136,6 +136,9 @@ section.technology{
                         line-height:22px;
                         font-weight: bold;
                         position: relative;
+                        position: relative;
+                        left:50%;
+                        transform: translateX(-50%);
                         z-index:2;
                         margin-bottom:0px;
                         color:$color1;
@@ -285,6 +288,8 @@ section.technology{
                             line-height:22px;
                             font-weight: 500;
                             position: relative;
+                            left:50%;
+                            transform: translateX(-50%);
                             z-index:2;
                             margin-bottom:0px;
                             color:$color1;

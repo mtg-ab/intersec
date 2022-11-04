@@ -40,6 +40,11 @@ section.logos-row{
             width:100%;
             max-width:205px;
             opacity:0;
+            @media(max-width:$size3){
+                max-width:155px;
+                max-height: 85px;
+                margin:0px 20px;
+            }
             &:before{
                 display:block;
                 content:'';
@@ -51,11 +56,11 @@ section.logos-row{
                 transform: translateY(-50%);
                 width:14px;
                 height:14px;
+                @media(max-width:$size3){
+                    left:-25px;
+                }
             }
-            @media(max-width:$size3){
-                max-width:155px;
-                max-height: 55px;
-            }
+            
             img{
                 max-height: 100px;
                 display: block;
@@ -65,7 +70,7 @@ section.logos-row{
                 object-fit: contain;
                 object-position: center;
                 @media(max-width:$size3){
-                    max-height: 55px;
+                    max-height: 85px;
                 }
             }
         }

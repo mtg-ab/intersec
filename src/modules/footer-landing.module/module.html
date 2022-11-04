@@ -8,7 +8,7 @@
         {% endif %}
         <div class="bloc-nav">
             <nav>
-                {% menu "footer_menu_landing" id={{ module.footer_menu_landing }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+                {% menu "footer_menu" id={{ module.footer_menu }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
                 © {{ local_dt|datetimeformat('%Y') }}
             </nav>
         </div>

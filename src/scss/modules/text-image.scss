@@ -1,4 +1,6 @@
 section.txt-img{
+    position: relative;
+    z-index:2;
     &.txt-img-right{
         div.container{
             div.bloc-img{
@@ -24,6 +26,9 @@ section.txt-img{
         }
         h2{
             margin-bottom:60px;
+            @media(max-width:$size3){
+                margin-bottom:35px;
+            }
         }
         div.bloc-img{
             max-width:calc(595px);
@@ -33,7 +38,7 @@ section.txt-img{
                 min-height: inherit;
                 height:300px;
                 width:100%;
-                margin-bottom:30px;
+                margin-bottom:45px;
             }
             @media(max-width:$size4){
                 height:220px;

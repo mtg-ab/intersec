@@ -110,16 +110,20 @@ section.other-posts{
         div.bloc-newsletter{
             max-width:290px;
             padding-top:45px;
+            width:100%;
             @media(max-width:$size3){
                 max-width:100%;
             }
             form{
                 margin-top:0px;
                 position: relative;
+                h3,p,h2,h4,h5{
+                    color:#fff;
+                }
                 div.hs_submit{
                     position: absolute;
                     right: 0px;
-                    bottom:10px;
+                    bottom:31px;
                     div.actions{
                         input{
                             width:40px;

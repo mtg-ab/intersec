@@ -34,10 +34,16 @@ section.newsletter{
             max-width:600px;
             width:100%;
             opacity:0;
+            form{
+                h3,h4,h5,p,li{
+                    color:#fff;
+                }
+            }
             @media(max-width:$size3){
                 max-width: 100%;
                 form{
                     margin-top:45px;
+                    
                 }
             }
             div.actions{

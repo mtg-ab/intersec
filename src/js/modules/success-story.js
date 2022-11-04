@@ -17,37 +17,36 @@ jQuery( document ).ready(function() {
             })
         })
 
-        var Flickity = require('flickity');
-        jQuery('section.success-story div.contain-slider div.container-slider').each(function(index) {
-            index + 1;
-            jQuery(this).parent().find('span.arrow-left').on( 'click', function() {
-                flickity.previous();
+        jQuery('section.success-story').each(function(index) {
+            var i = index + 1
+            jQuery(this).addClass("success-story-"+i+"")
+            var Flickity = require('flickity');
+            jQuery(this).find('div.container-slider').each(function(index) {
+                var index = index + 1;
+                jQuery(this).parent().find('span.arrow-left').on( 'click', function() {
+                    flickity.previous();
+                });
+                
+                jQuery(this).parent().find('span.arrow-right').on( 'click', function() {
+                    flickity.next();
+                });
+                
+                var flickity = new Flickity('section.success-story-'+i+' div.bloc-slider-'+index+'', {
+                    prevNextButtons: false,
+                    pageDots: false,
+                    cellAlign: "center",
+                    //wrapAround: true
+                }) 
+            })
+    
+            var maxHeight = -1;
+            jQuery(this).find('div.container-slider').each(function() {
+                maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
             });
-            
-            jQuery(this).parent().find('span.arrow-right').on( 'click', function() {
-                flickity.next();
-            });
-            
-            var flickity = new Flickity('div.bloc-slider-'+index+'', {
-                prevNextButtons: false,
-                pageDots: false,
-                cellAlign: "center",
-                //wrapAround: true
-            }) 
+    
+            jQuery(this).find('div.contain-slider').height(maxHeight);
         })
-
-        var maxHeight = -1;
-        jQuery('section.success-story div.contain-slider div.container-slider').each(function() {
-            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
-        });
-
-        jQuery('section.success-story div.contain-slider').height(maxHeight);
         
-
-        
-
-        
-
 
     }
 })

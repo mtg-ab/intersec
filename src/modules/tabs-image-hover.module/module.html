@@ -6,35 +6,37 @@
     </div>
     <div class="container">
         <div class="bloc-tabs-columns">
-            <div class="bloc-tabs">
-                {% for item in module.items %}
-                    {% if item.title %}
-                        <div class="bloc bloc-liquid {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
-                            <div class="circles">
-                                <svg width="25" class="line-outline" height="25" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="11" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
-                                </svg>
-                                
-                                <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
-                                        filterUnits="objectBoundingBox">
-                                            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
-                                            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
-                                        </filter>
-                                    </defs>
-                                    <circle cx="66" cy="66" r="61" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="1.5px" stroke-linecap="round" stroke-dasharray="1 5"/>
-                                </svg> 
-                                
+            {% if module.items %}
+                <div class="bloc-tabs">
+                    {% for item in module.items %}
+                        {% if item.title %}
+                            <div class="bloc bloc-liquid {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
+                                <div class="circles">
+                                    <svg width="25" class="line-outline" height="25" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="11" stroke="#2F2F2F" stroke-linecap="round" stroke-dasharray="1 0"/>
+                                    </svg>
+                                    
+                                    <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+                                            filterUnits="objectBoundingBox">
+                                                <feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+                                                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+                                            </filter>
+                                        </defs>
+                                        <circle cx="66" cy="66" r="61" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="1.5px" stroke-linecap="round" stroke-dasharray="1 5"/>
+                                    </svg> 
+                                    
+                                </div>
+                                <div class="item-title">
+                                    <p class="title">{{ item.title }}</p>
+                                    <p class="subtitle">{{ item.subtitle }}</p>
+                                </div>
                             </div>
-                            <div class="item-title">
-                                <p class="title">{{ item.title }}</p>
-                                <p class="subtitle">{{ item.subtitle }}</p>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
             <div class="bloc-columns">
                 {% for item in module.items %}
                     <div class="blocs {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
