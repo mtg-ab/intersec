@@ -16,7 +16,7 @@ section.solutions{
                 width:100%;
                 flex-wrap: wrap;
                 flex-grow: 2;
-                margin-top:247px;
+                margin-top:130px;
                 padding-left:52px;
                 @media(max-width:$size3){
                     flex-direction: column;
@@ -133,6 +133,8 @@ section.solutions{
                 top:0px;
                 padding-left:35px;
                 height:100%;
+                width:100%;
+                max-width:500px;
                 pointer-events: inherit;
                 @media(max-width:$size3){
                     height:auto;
@@ -141,11 +143,14 @@ section.solutions{
                 &.selected{
                     opacity:1;
                     pointer-events: inherit;
+                    z-index:2;
+                    div.bloc{
+                        opacity:1;
+                    }
                 }
                 div.bloc{ 
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;  
                     height:100%; 
                     opacity:0;            
                     div.bloc-txt{
@@ -155,7 +160,8 @@ section.solutions{
                             max-width:100%;
                         }
                     }
-                    div.bloc-img{
+                    a.bloc-img{
+                        display:block;
                         height:280px;
                         max-width:493px;
                         @media(max-width:$size3){

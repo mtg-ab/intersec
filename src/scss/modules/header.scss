@@ -27,7 +27,6 @@ header{
     div.container{
         display: flex;
         justify-content: space-between;
-        padding:0px 0px 0px 30px;
         opacity: 0;
         transform: translateY(-30px);
         @media(max-width:$size1){
@@ -161,7 +160,7 @@ header{
                 }
             }        
             nav{
-                margin-left:65px;
+                margin-left:39px;
                 padding-top:28px;
                 @media(max-width:$size2){
                     display:none;
@@ -172,7 +171,7 @@ header{
                     padding:0px;
                     li.menu-parent{
                         list-style-type: none;
-                        margin-right:45px;
+                        padding:0px 26px;
                         display:flex;
                         align-items: center;
                         padding-bottom:32px;
@@ -228,7 +227,7 @@ header{
                                 align-items: inherit;
                                 div.bloc-menu{
                                     width:70%;
-                                    padding:45px 90px 45px 0px;
+                                    padding:45px 45px 45px 0px;
                                     display:flex;
                                     justify-content: space-between;
                                     align-items: flex-start;
@@ -742,6 +741,8 @@ div.contain-menu-mobile{
                     padding-bottom:6px;
                     padding:0px 35px;
                     margin-bottom:10px;
+                    display:block;
+                    width:100%;
                     &:after{
                         display:block;
                         content:'';
@@ -776,6 +777,7 @@ div.contain-menu-mobile{
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: 10px;
+                    pointer-events: none;
                     background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L1 0.999999' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
                 }
                 div.sub-menu{
@@ -850,7 +852,6 @@ div.contain-menu-mobile{
                             }
                         }
                         div.col{
-                            max-width:350px;
                             width:100%;
                             p.title{
                                 font-weight: 500;

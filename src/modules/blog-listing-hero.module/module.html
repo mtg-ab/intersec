@@ -29,7 +29,7 @@
         {% set my_tags = blog_tags("default", 250) %}
         <div class="tags">
             {% if blog.name != "Intersec Presse" %}
-                <a href="/blog" class="tag bloc-liquid {% if slugTag == 'blog-intersec' or slugTag == 'blog' %}selected{% endif %}">
+                <a href="{% if content.language.languageTag == 'fr' %}/fr{% endif %}/blog" class="tag bloc-liquid {% if slugTag == 'blog-intersec' or slugTag == 'blog' %}selected{% endif %}">
                     <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
@@ -40,7 +40,11 @@
                         </defs>
                         <circle cx="66" cy="66" r="61" stroke="#2F2F2F" class="cursor__inner" fill="transparent" stroke="#f1762c" style="filter:url('#filter-1')" stroke-width="2px" stroke-linecap="round" stroke-dasharray="2 5"/>
                     </svg>
-                    <span>All</span>
+                    {% if content.language.languageTag == 'fr' %}
+                        <span>Tous nos articles</span>
+                    {% else %}
+                        <span>All</span>
+                    {% endif %}
                 </a>
             {% endif %}
             
@@ -66,22 +70,28 @@
         </div>
         <div class="breadcrumb">
             <nav>
-              <ul itemscope itemtype="https://schema.org/BreadcrumbList"
-                  class="breadcrumb d-flex flex-wrap align-items-center list-unstyled p-0 m-0">
-                  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                      <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
-                      <meta itemprop="position" content="1" />
-                  </li>
-                   
-                  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <ul itemscope itemtype="https://schema.org/BreadcrumbList"
+                    class="breadcrumb d-flex flex-wrap align-items-center list-unstyled p-0 m-0">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         {% if blog.name == "Intersec Presse" %}
                             <a itemprop="item" href="/press"><span itemprop="name">Press</span></a> 
                         {% else %}
                             <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a> 
                         {% endif %}
+                        
                         <meta itemprop="position" content="2" />
-                  </li>
-              </ul>
+                    </li>
+                    {% if tag %}
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span>{{ page_meta.html_title|split(' | ')|last }}</span>
+                        </li>
+                    {% endif %}
+                </ul>
             </nav>
         </div>
         <div class="bloc-sticky">

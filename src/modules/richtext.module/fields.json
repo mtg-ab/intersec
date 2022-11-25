@@ -72,6 +72,15 @@
                 "locked": false,
                 "type": "boolean",
                 "default": false
+            },
+            {
+                "name": "text_align",
+                "label": "Left-aligned text",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": false
             }
         ]
     },

@@ -7,6 +7,7 @@
             {% endif %}
         </div>
     </div>
+    {% if module.items|length > 1 %}
     <div class="container container-tabs">
         <div class="bloc-tabs">
             {% for item in module.items %}
@@ -37,8 +38,8 @@
                 {% endif %}
             {% endfor %}
         </div>
-        
     </div>
+    {% endif %}
     <div class="contain-slider">
         {% for item in module.items %}
             <div class="container container-slider container-slider-{{ loop.index }} {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
@@ -63,25 +64,49 @@
                                             {% else %}
                                                 <h3 class="title-context">Contexte</h3>
                                             {% endif %}
-                                            {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
+                                            {% if content.language.languageTag == 'en' %}
+                                                {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
+                                            {% else %}
+                                                {% inline_rich_text field="rich_text" value="{{ item.fr_context }}" %}
+                                            {% endif %}
                                         {% endif %}
                                         {% if item.solution %}
                                             <h3 class="title-solution">Solution</h3>
-                                            {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
+                                            {% if content.language.languageTag == 'en' %}
+                                                {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
+                                            {% else %}
+                                                {% inline_rich_text field="rich_text" value="{{ item.fr_solution }}" %}
+                                            {% endif %}
                                         {% endif %}
                                     </div>
                                     <div class="bloc-img">
                                         <div class="bloc-testimonial">
                                             {% if item.image.url %}
-                                                <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
-                                                    <figure>
-                                                        <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
-                                                    </figure>
-                                                </a>
-                                                <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
+                                                {% if content.language.languageTag == 'en' %}
+                                                    <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
+                                                        <figure>
+                                                            <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                                                        </figure>
+                                                    </a>
+                                                {% else %}
+                                                    <a href="{{ item.fr_link.url.href }}" class="bloc-img link-hover">
+                                                        <figure>
+                                                            <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                                                        </figure>
+                                                    </a>
+                                                {% endif %}
+                                                {% if content.language.languageTag == 'en' %}
+                                                    <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
+                                                {% else %}
+                                                    <a href="{{ item.fr_link.url.href }}" class="link">{{ item.fr_button }}</a>
+                                                {% endif %}
                                             {% endif %}
                                             <div class="testimonial">
-                                                {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
+                                                {% if content.language.languageTag == 'en' %}
+                                                    {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
+                                                {% else %}
+                                                    {% inline_rich_text field="rich_text" value="{{ item.fr_testimonial }}" %}
+                                                {% endif %}
                                                 {% if item.last_name_testimonial or item.first_name_testimonial%}
                                                     <p class="author">{{ item.first_name_testimonial }} {{ item.last_name_testimonial }}</p>
                                                 {% endif %}

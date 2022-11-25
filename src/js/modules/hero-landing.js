@@ -20,6 +20,10 @@ jQuery( document ).ready(function() {
         //INIT ANIM
         tl.to("section.hero-landing div.bloc-img",0.75, { opacity:1,delay:0,ease: "power2.inOut" });
         //INIT ANIM
+
+        if(jQuery("section.hero-landing").hasClass("bg-black")){
+            jQuery("header").addClass('bg-black');
+        }
         
     }
 })

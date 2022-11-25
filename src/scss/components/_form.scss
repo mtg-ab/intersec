@@ -72,7 +72,7 @@ form {
                     background-image: url("data:image/svg+xml,%3Csvg width='32' height='30' viewBox='0 0 32 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0L1 30' stroke='%232C4C66' stroke-opacity='0.2'/%3E%3Cpath d='M24 24L17.0718 12L30.9282 12L24 24Z' fill='%23D9DADD'/%3E%3C/svg%3E");                    
                     background-repeat: no-repeat;
                     background-position: right 15px top 50%;
-                    background-size: 8px auto;
+                    background-size: 24px auto;
                     padding-right: 38px;
                     height: 40px;
 
@@ -104,7 +104,9 @@ form {
                         list-style-type: none;
                         margin-right: 20px;
                         margin-bottom: 0px;
-
+                        label{
+                            opacity:1;
+                        }
                         &:last-child {
                             margin-right: 0px;
                         }
@@ -141,6 +143,7 @@ form {
                             cursor: pointer;
                             padding: 0;
                             margin-left:0px;
+                            text-transform: none;
                             &::before {
                                 content: '';
                                 margin-right: 6px;

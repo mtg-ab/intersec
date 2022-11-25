@@ -63,13 +63,6 @@ jQuery( document ).ready(function() {
         tl.to("section.hero-home a.btn",0.75, { opacity:1,y:0,delay:-0.75,ease: "power2.inOut" });
         tl.set("section.hero-home", { className: 'active',delay:-0.75},"+=0");
         //INIT ANIM
-
-        var flickity = new Flickity( 'section.hero-home div.slider-words', {
-            prevNextButtons: false,
-            pageDots: false,
-            cellAlign: "left",
-            wrapAround: true
-        })
         
     }
 })

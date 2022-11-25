@@ -67,41 +67,48 @@
         ]
     },
     {
-        "type": "group",
-        "name": "logo",
-        "label": "Logo",
-        "children": [
+        "name" : "links",
+        "label" : "Links",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "logos.item",
+          "default" : null
+        },
+        "children" : [
             {
-                "name": "logo_src",
-                "label": "Logo",
+                "name": "url_text",
+                "label": "Text url",
                 "required": false,
                 "locked": false,
-                "responsive": true,
-                "resizable": true,
-                "type": "image",
-                "default": {
-                    "size_type": "auto",
-                    "src": "https://via.placeholder.com/600",
-                    "alt": "Example of an image used in your module"
-                }
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "Let's talk"
             },
             {
-                "name": "logo_link",
-                "label": "URL du logo",
+                "name": "url",
+                "label": "URL",
                 "required": false,
                 "locked": false,
                 "inline_help_text": "",
                 "help_text": "",
                 "supported_types": [
-                  "EXTERNAL",
-                  "CONTENT",
-                  "FILE",
-                  "EMAIL_ADDRESS",
-                  "BLOG"
+                "EXTERNAL",
+                "CONTENT",
+                "FILE",
+                "EMAIL_ADDRESS",
+                "BLOG"
                 ],
-                "type": "url"
+                "type": "link"
             }
-           
-        ]
+        ],
+        "type" : "group"
     }
 ]

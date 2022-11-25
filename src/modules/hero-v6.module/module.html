@@ -103,7 +103,7 @@
                                         </div>
                                     {% endif %}
                                     {% if field.content_type == 'text_image' %}
-                                        <div class="bloc bloc-txt-img {{ field.picture_size }}">
+                                        <div class="bloc bloc-txt-img {{ field.img_position }}">
                                             <div class="bloc-img">
                                                 <figure>
                                                     <img loading="lazy" src="{{ field.text_image_image.src }}" width="{{ field.text_image_image.width }}" height="{{ field.text_image_image.height }}" alt="{{ field.text_image_image.alt }}" />

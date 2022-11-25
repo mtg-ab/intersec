@@ -1,9 +1,11 @@
-section.search-page{
+section.search-result{
     padding:250px 0px;
+    background-color: $color1;
     div.container{
         h1{
             text-align: center;
             display:block;
+            color:#fff;
         }
         div.bloc-results-seach{
             .hs-search-results__pagination  {

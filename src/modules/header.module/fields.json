@@ -94,12 +94,7 @@
                   "EMAIL_ADDRESS",
                   "BLOG"
                 ],
-                "type": "url",
-                "default": {
-                  "content_id": null,
-                  "href": "https://www.makethegrade.fr/",
-                  "type": "EXTERNAL"
-                } 
+                "type": "url"
             }
         ]
     },

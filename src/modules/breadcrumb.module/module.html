@@ -1,0 +1,17 @@
+<section id="{{module.module_identity}}" class="breadcrumb {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <nav>
+            <ul>
+                {% for item in module.links %}
+                    <li>
+                        {% if item.url.url.href %}
+                            <a href="{{ item.url.url.href }}">{{ item.url_text }}</a>
+                        {% else %}
+                            <span>{{ item.url_text }}</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</section>

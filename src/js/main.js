@@ -38,6 +38,10 @@ jQuery( document ).ready(function() {
         smooth: 0.5,
         effects: true
     });
+
+    setTimeout(() => {
+        smoother.refresh();
+    }, 1000)
     
     jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
         jQuery(this).click(function() {
@@ -52,7 +56,7 @@ jQuery( document ).ready(function() {
 
     
     if(jQuery("div").hasClass("hero-v6")){
-        var hV6 = jQuery("section.hero-v6").height() + jQuery("div.contain-technology").height()*3 - 300;
+        var hV6 = jQuery("section.hero-v6").height() + 1900 + 50;
         jQuery("div.hero-v6").css("height",hV6);
         smoother.refresh();
     }
@@ -71,6 +75,12 @@ jQuery( document ).ready(function() {
                 duration: 1.35,
                 ease : 'power2'
             });
+        })
+    })
+
+    jQuery("section.faq div.items div.item").each(function() {
+        jQuery(this).click(function() {
+            smoother.refresh();
         })
     })
 

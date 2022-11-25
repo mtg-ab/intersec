@@ -40,6 +40,9 @@ section.richtext{
         h2{
             max-width:400px;
             margin-bottom:0px;
+            &.left{
+                max-width:100%;
+            }
         }
         div.bloc-txt{
             display: flex;
@@ -49,6 +52,11 @@ section.richtext{
             opacity:0;
             @media(max-width:$size3){
                 padding-left:45px;
+            }
+            &.left{
+                div{
+                    max-width:100%;
+                }
             }
             div{
                 max-width:495px;

@@ -11,7 +11,7 @@ jQuery( document ).ready(function() {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "section.clients-listing",
-                start:"-=450",
+                start:"-=750",
             }
         });
         //INIT TIMELINE

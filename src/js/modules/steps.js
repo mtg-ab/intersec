@@ -49,21 +49,6 @@ jQuery( document ).ready(function() {
             }
         });
 
-        /*
-        jQuery("section.steps div.bloc-step").each(function() {
-            if(jQuery(this).hasClass('is-selected')){
-                var id = jQuery(this).data('id');
-                jQuery("section.steps div.bloc-img figure").each(function() {
-                    if(jQuery(this).data("id") == id){
-                        jQuery(this).addClass('selected')
-                    }else{
-                        jQuery(this).removeClass('selected')
-                    }
-                })
-            }
-        })
-        */
-
         $("section.steps").on('mousemove', function(e) {
             var mouseSide;
             if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {

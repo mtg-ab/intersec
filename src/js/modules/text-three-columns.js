@@ -11,13 +11,13 @@ jQuery( document ).ready(function() {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "section.txt-three-columns",
-                start:"-=450",
+                start:"-=650",
             }
         });
         //INIT TIMELINE
 
         //INIT ANIM
-        tl.staggerTo("section.txt-three-columns div.block",1, { opacity:1,top:0,stagger:0.15,delay:0,ease: "power2.inOut" });
+        tl.staggerTo("section.txt-three-columns div.block",0.75, { opacity:1,top:0,stagger:0.15,delay:0,ease: "power2.inOut" });
         //INIT ANIM
     }
 })

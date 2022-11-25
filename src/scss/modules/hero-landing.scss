@@ -1,5 +1,4 @@
 section.hero-landing{
-    
     background-repeat: repeat;
     background-position: center;
     display: flex;
@@ -32,10 +31,10 @@ section.hero-landing{
         }
         div.bloc-bg-lines{
             div.line{
-                transform: translateY(-200%);
+                transform: translateY(-260%);
                 opacity:0.5;
                 &:nth-child(2){
-                    transform: rotate(-180deg) translateY(-100%);
+                    transform: rotate(-180deg) translateY(-150%);
                 }
             }
         }

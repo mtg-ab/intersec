@@ -33,7 +33,7 @@
                             <a href="{{ item.absolute_url }}" class="bloc-txt">
                                 <h4>{{ item.title }}</h4>
                                 <div class="txt">
-                                    {{ item.post_summary }} 
+                                    {{ item.post_summary|truncatehtml(132, '..' , false) }} 
                                 </div>
                                 
                             </a>

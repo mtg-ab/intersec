@@ -33,7 +33,7 @@ jQuery( document ).ready(function() {
                     trigger: jQuery(this),
                     start:'top +=0%',
                     end:'top -=15%',
-                    scrub: 1.55,
+                    scrub: 1.15,
                     onEnter:function(){
                         jQuery("section.personae figure").each(function() {
                             if(jQuery(this).data("id") == id){
@@ -60,7 +60,8 @@ jQuery( document ).ready(function() {
             })  
             .to(jQuery(this).find("div.txt"), {
                 height: 0,
-                duration: 0.05, 
+                duration: 0.015, 
+                
                 ease: "none",
             })            
         })

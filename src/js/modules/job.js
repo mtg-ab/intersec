@@ -13,10 +13,12 @@ jQuery( document ).ready(function() {
             url: 'https://www.workable.com/api/accounts/intersec-group/',
             method: 'GET',
             dataType: "jsonp",
+            /*
             headers: {
                 Accept: 'application/json',
                 Authorization: '9b103ea17c955cdea2c42e8459d9f68f2263f82003f741f7231f92e4c7bdf33f'
             }
+            */
         };
           
         $.ajax(settings).done(function (response) {

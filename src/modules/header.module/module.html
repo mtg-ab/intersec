@@ -40,48 +40,24 @@
                                 <div class="container">
                                     {% if item.links %}
                                         <div class="bloc-menu">
-                                            <div class="col">
-                                                {% for links in item.links %}
-                                                    {% if loop.index is odd %}
-                                                        {% if links.link_title_links.url.href %}
-                                                            <a href="{{ links.link_title_links.url.href }}" class="title" {% if links.link_title_links.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ links.title_links }}</a>
-                                                        {% else %}
-                                                            <p class="title">{{ links.title_links }}</p>
-                                                        {% endif %}
-                                                        <ul>
-                                                            {% for item in links.items %}
-                                                                {% if item.text_menu_items %}
-                                                                    <li>
-                                                                        <a href="{{ links.link_items.url.href }}" {% if links.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
-                                                                    </li>
-                                                                {% endif %}
-                                                            {% endfor %}
-                                                        </ul>
+                                            {% for links in item.links %}
+                                                <div class="col">
+                                                    {% if links.link_title_links.url.href %}
+                                                        <a href="{{ links.link_title_links.url.href }}" class="title" {% if links.link_title_links.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ links.title_links }}</a>
+                                                    {% else %}
+                                                        <p class="title">{{ links.title_links }}</p>
                                                     {% endif %}
-                                                {% endfor %}
-                                            </div>
-                                            <div class="col">
-                                                {% for links in item.links %}
-                                                    {% if loop.index is even %}
-                                                        {% if links.title_links %}
-                                                            {% if links.link_title_links.url.href %}
-                                                                <a href="{{ item.link_title_links.url.href }}" class="title" {% if item.link_title_links.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ links.title_links }}</a>
-                                                            {% else %}
-                                                                <p class="title">{{ links.title_links }}</p>
+                                                    <ul>
+                                                        {% for item in links.items %}
+                                                            {% if item.text_menu_items %}
+                                                                <li>
+                                                                    <a href="{{ item.link_items.url.href }}" {% if links.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                                </li>
                                                             {% endif %}
-                                                        {% endif %}
-                                                        <ul>
-                                                            {% for item in links.items %}
-                                                                {% if item.text_menu_items %}
-                                                                    <li>
-                                                                        <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
-                                                                    </li>
-                                                                {% endif %}
-                                                            {% endfor %}
-                                                        </ul>
-                                                    {% endif %}
-                                                {% endfor %}
-                                            </div>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            {% endfor %}
                                         </div>
                                     {% else %}
                                         <div class="bloc-menu bloc-menu-features">
@@ -185,7 +161,7 @@
                     {% if item.link.url.href %}
                         <a href="{{ item.link.url.href }}" {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu }}</a>
                     {% else %}
-                        <span>{{ item.text_menu }}</span>
+                        <span class="more">{{ item.text_menu }}</span>
                     {% endif %}
                     {% if item.title_cta or item.features %}
                     <div class="sub-menu">
@@ -198,10 +174,10 @@
                                                 <p class="title">{{ links.title_links }}</p>
                                             {% endif %}
                                             <ul>
-                                                {% for item in links.items %}
-                                                    {% if item.text_menu_items %}
+                                                {% for field in links.items %}
+                                                    {% if field.text_menu_items %}
                                                         <li>
-                                                            <a href="{{ item.link_items.url.href }}" {% if item.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ item.text_menu_items }}</a>
+                                                            <a href="{{ field.link_items.url.href }}" {% if field.link_items.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>{{ field.text_menu_items }}</a>
                                                         </li>
                                                     {% endif %}
                                                 {% endfor %}

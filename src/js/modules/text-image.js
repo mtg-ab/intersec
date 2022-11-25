@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    if(jQuery("section").hasClass("video")){
+    if(jQuery("section").hasClass("txt-img")){
 
         var mrUtil = function ($) {
             var Util = {
@@ -17,12 +17,12 @@ jQuery( document ).ready(function() {
             return Util;
         }(jQuery);
 
-        jQuery("section.video div.btn-play").click(function( index ) {        
+        jQuery("section.txt-img div.btn-play").click(function( index ) {        
             jQuery(this).toggleClass('play');
             jQuery(this).parent().find("img").fadeOut();
         })
 
-        jQuery("section.video div.btn-play-youtube").click(function( index ) { 
+        jQuery("section.txt-img div.btn-play-youtube").click(function( index ) { 
             var $iframe = jQuery(this).parent().find('iframe');
             mrUtil.activateIframeSrc($iframe);
             var symbol = jQuery(this).parent().find("iframe")[0].src.indexOf("?") > -1 ? "&" : "?";
@@ -34,12 +34,12 @@ jQuery( document ).ready(function() {
             setTimeout(
                 function() 
                 {
-                    jQuery('section.video video').trigger('play');
+                    jQuery('section.txt-img video').trigger('play');
                 }, 50
             );
             
         }else{
-            jQuery("section.video div.bloc-video video").click(function() {
+            jQuery("section.txt-img div.bloc-video video").click(function() {
                 this.paused ? this.play() : this.pause();
             })
         }

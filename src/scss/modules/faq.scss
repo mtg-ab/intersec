@@ -6,22 +6,26 @@ section.faq{
         @media(max-width:$size3){
             padding-top:0px;
         }
-        p.title_bg{
+        div.title_bg{
+            left:50%;
+            transform: translateX(-50%);
             position: absolute;
-            color:#F9F9F9;
-            left:0px;
-            bottom:0px;
-            font-weight: 700;
-            font-size:280px;
-            line-height:280px;
-            letter-spacing: 0.075em;
-            margin:0px;
-            opacity:0;
-            @media(max-width:$size4){
-                font-size:200px;
-                line-height:200px;
+            bottom:20%;
+            p.title_bg{
+                color:#F9F9F9;                
+                font-weight: 700;
+                font-size:280px;
+                line-height:280px;
+                letter-spacing: 0.075em;
+                margin:0px;
+                opacity:0;
+                @media(max-width:$size4){
+                    font-size:200px;
+                    line-height:200px;
+                }
             }
         }
+        
         h2{
             margin-bottom:100px;
         }

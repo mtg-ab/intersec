@@ -3,6 +3,16 @@ header.header-landing{
     top:0px;
     left:0px;
     background-color: transparent;
+    &.bg-black{
+        div.container{
+            div.switch-language{
+                color:#fff;
+                span.switcher{   
+                    border: 0.451219px solid #fff; 
+                }
+            }
+        }
+    }
     div.container{
         opacity:1;
         transform: translateY(0px);
@@ -12,6 +22,7 @@ header.header-landing{
         a.logo{
             img{
                 max-height:35px;
+                width: auto;
             }
         }
         div.switch-language{

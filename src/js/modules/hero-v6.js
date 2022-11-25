@@ -13,7 +13,7 @@ jQuery( document ).ready(function() {
             pin: true,
             start: 'top 50%',
             scrub:1,
-            end: () =>  '+=3200',
+            end: () =>  '+=4200',
             toggleClass: {targets: "div.btn-join", className: "active"}
         })
 
@@ -47,7 +47,7 @@ jQuery( document ).ready(function() {
             scrollTrigger: {
                 trigger: "div.hero-v6 section.contain-technology",
                 scrub: 1.1,
-                start: "top -=90" 
+                start: "top -=160",
             }
         })
 

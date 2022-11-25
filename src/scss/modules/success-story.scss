@@ -214,6 +214,7 @@ section.success-story{
                     }
                     div.bloc-txt{
                         max-width:495px;
+                        order:2;
                         h3{
                             font-size:32px;
                         }
@@ -225,6 +226,7 @@ section.success-story{
                             width:100%;
                             max-width:100%;
                             margin-top:30px;
+                            order:1;
                         }
                         div.bloc-testimonial{
                             @media(max-width:$size3){
@@ -283,6 +285,9 @@ section.success-story{
                                 }
                                 div{
                                     font-weight: 500;
+                                    font-size: 32px;
+                                    line-height: 120%;
+                                    color:#000;
                                     > *{
                                         font-size: 32px;
                                         line-height: 120%;

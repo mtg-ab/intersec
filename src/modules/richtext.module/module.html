@@ -1,9 +1,9 @@
 <section id="{{module.module_identity}}" class="richtext {% if module.content_style.background_black %}bg-black{% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         {% if module.title %}
-            <h2>{{ module.title }}</h2>
+            <h2 class="{% if module.content_style.text_align %}left{% endif %}">{{ module.title }}</h2>
         {% endif %}
-        <div class="bloc-txt">
+        <div class="bloc-txt {% if module.content_style.text_align %}left{% endif %}">
             <div>
                 {% inline_rich_text field="rich_text" value="{{ module.text }}" %}
             </div>

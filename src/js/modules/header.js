@@ -49,7 +49,7 @@ jQuery( document ).ready(function() {
 
         jQuery('div.contain-menu-mobile ul li.sub-menu').each(function(){
             jQuery(this).append("<span class='btn-more'></span>")
-            jQuery(this).find('span.btn-more').click(function(){
+            jQuery(this).find('span.more').click(function(){
                 if(jQuery(this).parent().hasClass('open')){
                     jQuery(this).parent().removeClass('open')
                 }else{

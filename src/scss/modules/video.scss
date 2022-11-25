@@ -79,9 +79,12 @@ section.video{
                         background-size: 18px;
                     }
                 }
+                img{
+                    display: block;
+                }
             }
             img{
-                display: block;
+                display: none;
                 object-fit: cover;
                 position: absolute;
                 width:100%;

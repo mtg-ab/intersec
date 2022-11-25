@@ -133,6 +133,8 @@ section.blog-listing-hero{
                 max-width: 630px;
                 @media(max-width:$size2){
                     max-width: 100%;
+                    font-size:30px;
+                    line-height:35px;
                 }
                 @media(max-width:$size3){
                     margin-bottom:0px;
@@ -144,13 +146,13 @@ section.blog-listing-hero{
                 opacity:0;
                 @media(max-width:$size3){
                     max-width: 100%;
-                    form{
-                        margin-top:45px;
-                    }
                 }
                 form{
                     margin-top:130px;
                     position: relative;
+                    @media(max-width:$size3){
+                        margin-top:30px;
+                    }
                     h3,h4,h5,p,li{
                         color:#fff;
                     }
@@ -188,6 +190,7 @@ section.blog-listing-hero{
             gap:40px 0px;
             @media(max-width:$size3){
                 margin-top:65px;
+                gap:10px 0px;
                 justify-content: flex-start;
             }
             a{
@@ -199,13 +202,16 @@ section.blog-listing-hero{
                 position: relative;
                 transition: 0.65s;
                 @media(max-width:$size3){
-                    margin:0px 22px 10px 22px;
+                    margin:0px 25px 10px 0px;
                 }
                 &:hover{
                     opacity: 1;
                 }
                 &.selected{
                     opacity: 1;
+                    @media(max-width:$size3){
+                        margin:0px 25px 10px 0px;
+                    }
                     svg.line-dashed{
                         opacity:1;
                     }
@@ -220,6 +226,7 @@ section.blog-listing-hero{
                     @media(max-width:$size3){
                         width:100px;
                         height:100px;
+                        transform: translateY(-50%) scale(0.5);
                     }
                     circle{
                         stroke:$color2;
@@ -267,7 +274,7 @@ section.blog-listing-hero{
                             display:none;
                         }
                     }
-                    a{
+                    a,span{
                         letter-spacing: 0.06em;
                         text-decoration: none;
                         font-weight: 500;
@@ -279,7 +286,7 @@ section.blog-listing-hero{
                         text-transform: uppercase;
                         color:#fff;
                         &:hover{
-                            color:$color1;
+                            color:$color2;
                         }
                     }
                 }

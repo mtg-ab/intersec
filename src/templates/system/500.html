@@ -5,15 +5,21 @@
   screenshotPath: ../../images/template-previews/500.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
-{% extends "../layouts/base.html" %}
+{% extends "../layouts/base-system.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
 {% set pageTitle = "Error 500 | Server error" %}
 
 {% block body %}
 <section class="error-page content-wrapper">
   <div class="container" data-error="500">
-    <h1>Something isn\'t quite right.</h1>
-    <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
+    {% if content.language.languageTag == 'en' %}
+      <h1>Something isn't quite right.</h1>
+      <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
+    {% else if content.language.languageTag == 'fr' %}
+      <h1>Quelque chose ne va pas.</h1>
+      <p>Désolé, une erreur de serveur interne s'est produite. Mais n'ayez crainte, nous sommes sur l'affaire !</p>
+    {% endif %}
+    
   </div>
 </section>
 {% endblock body %}

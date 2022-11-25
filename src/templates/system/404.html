@@ -4,15 +4,29 @@
   label: Intersec - 404 error
   screenshotPath: ../../images/template-previews/404.png
 -->
-{% extends "../layouts/base.html" %}
+{% extends "../layouts/base-system.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
 {% set pageTitle = "Error 404 | Page not found" %}
 
 {% block body %}
 <section class="error-page content-wrapper">
   <div class="container" data-error="404">
-    <h1>Page not found.</h1>
-    <a href="/" class="btn">Home</a>
+    {% if content.language.languageTag == 'en' %}
+      <h1>Page introuvable.</h1>
+    {% else if content.language.languageTag == 'fr' %}
+      <h1>Page not found.</h1>
+    {% endif %}
+    <a href="/" class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg">
+          <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+          <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+      </svg>
+      {% if content.language.languageTag == 'en' %}
+        Home
+      {% else if content.language.languageTag == 'fr' %}
+        Accueil
+      {% endif %}
+    </a>
   </div>
 </section>
 {% endblock body %}

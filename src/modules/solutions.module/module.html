@@ -40,54 +40,41 @@
                         {% set val = item.categories %}
                         {% if val == "public-safety" %}
                             {% set category = "1" %}
-                        {% elif val == "geolocalisation" %}
+                        {% endif %}
+                        {% if val == "location-intelligence" %}
                             {% set category = "2" %}
-                        {% elif val == "data-monetisation" %}
+                        {% endif %}
+                        {% if val == "data-monetisation" %}
                             {% set category = "3" %}
-                        {% elif val == "app-builder" %}
+                        {% endif %}
+                        {% if val == "app-builder" %}
                             {% set category = "4" %}
-                        {% endif %}  
-                    {% else %}    
-                        {% if content.widgets.categories.body.categories %}
-                            {% set val = content.widgets.categories.body.categories %}
-                            {% if val == "public-safety" %}
-                                {% set category = "1" %}
-                            {% endif %}
-                            {% if val == "geolocalisation" %}
-                                {% set category = "2" %}
-                            {% endif %}
-                            {% if val == "data-monetisation" %}
-                                {% set category = "3" %}
-                            {% endif %}
-                            {% if val == "app-builder" %}
-                                {% set category = "4" %}
-                            {% endif %}   
-                        {% endif %}                 
-                    {% endif %}
-                    {% if item.typologie %}
-                        {% set val = item.typologie %}
-                        {% if val == "public-safety" %}
-                            {% set category = "1" %}
-                        {% elif val == "geolocalisation" %}
-                            {% set category = "2" %}
-                        {% elif val == "data-monetisation" %}
-                            {% set category = "3" %}
-                        {% elif val == "app-builder" %}
-                            {% set category = "4" %}
-                        {% endif %} 
-                    {% endif %}                  
-                    {% set query_params = "&limit=1&categories__eq="+category %}
+                        {% endif %}   
+                    {% endif %}  
+                    {% set query_params = "orderBy=priority_order&limit=1&category__eq="+category %}
                     {% set results_global = hubdb_table_rows("Content", query_params) %}
                     {% for bloc in results_global %}
                         <div class="bloc" data-t="{{ i }}">
                             <div class="bloc-txt">
-                                {{ bloc.description }}
+                                {% if content.language.languageTag == 'en' %}
+                                    {{ bloc.description }}
+                                {% else if content.language.languageTag == 'fr' %}
+                                    {{ bloc.fr_description }}
+                                {% endif %}
                             </div>
-                            <div class="bloc-img">
-                                <figure>
-                                    <img loading="lazy" src="{{ bloc.image.url }}" alt="{{ bloc.name }}" />
-                                </figure>
-                            </div>
+                            {% if content.language.languageTag == 'en' %}
+                                <a href="{{ bloc.link }}" class="bloc-img link-hover">
+                                    <figure>
+                                        <img loading="lazy" src="{{ bloc.image.url }}" alt="{{ bloc.name }}" />
+                                    </figure>
+                                </a>
+                            {% else if content.language.languageTag == 'fr' %}
+                                <a href="{{ bloc.fr_link }}" class="bloc-img link-hover">
+                                    <figure>
+                                        <img loading="lazy" src="{{ bloc.image.url }}" alt="{{ bloc.name }}" />
+                                    </figure>
+                                </a>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>
