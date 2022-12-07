@@ -26,6 +26,7 @@
                     {% for item in contents %}
                         <div class="bloc" data-id="{{ loop.index }}">
                             <a href="{{ item.absolute_url }}" class="bloc-img link-hover">
+                                <span>{{ item.title }}</span>
                                 <figure>
                                     <img src="{{ item.featured_image }}" loading="lazy" width="{{ item.featured_image.width }}" height="{{ item.featured_image.height }}" alt="{{ item.featured_image_alt }}">
                                 </figure>

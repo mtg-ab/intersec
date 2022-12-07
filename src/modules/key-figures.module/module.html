@@ -6,6 +6,11 @@
         <div class="line line-3"></div> 
     </div>
     {% endif %}
+    {% if module.title %}
+        <div class="container">
+            <h2>{{ module.title }}</h2>
+        </div>
+    {% endif %}
     <div class="container">
         {% for item in module.figures %}
             <div class="bloc" data-t="{{ i }}">

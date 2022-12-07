@@ -60,8 +60,8 @@ jQuery( document ).ready(function() {
         //INIT ANIM
         tl.staggerTo("section.hero-home h1 span.char",0.35, { opacity:1,x:0,y:0,stagger:0.025,ease: "power2.Out" });
         tl.to("section.hero-home p",1, { opacity:1,y:0,delay:0,ease: "power2.inOut" });
-        tl.to("section.hero-home a.btn",0.75, { opacity:1,y:0,delay:-0.75,ease: "power2.inOut" });
-        tl.set("section.hero-home", { className: 'active',delay:-0.75},"+=0");
+        tl.to("section.hero-home a.btn",0.75, { opacity:1,y:0,delay:-1.25,ease: "power2.inOut" });
+        tl.set("section.hero-home", { className: 'active',delay:-1.25},"+=0");
         //INIT ANIM
         
     }

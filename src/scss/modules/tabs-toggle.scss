@@ -204,6 +204,9 @@ section.tabs-toggle{
                     transform: translateY(0px);
                     pointer-events: inherit;
                 }
+                span{
+                    display: none;
+                }
                 figure{
                     width:100%;
                     height:100%;

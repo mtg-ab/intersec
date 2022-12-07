@@ -792,7 +792,7 @@ div.contain-menu-mobile{
                     flex-direction: column;
                     height:275px;
                     overflow-y: scroll;
-                    margin-top:10px;
+                    margin-top:20px;
                     display:none;
                     &:after{
                         display:block;
@@ -836,6 +836,9 @@ div.contain-menu-mobile{
                                 top:-10px;
                                 transform: scale(0.6);
                                 transition: 0.65s;
+                                @media(max-width:$size3){
+                                    display:none;
+                                }
                             }
                             p{
                                 font-weight: 400;
@@ -927,6 +930,13 @@ div.contain-menu-mobile{
                 span.switcher{
                     &:before{
                         transform: translateY(-50%) translateX(calc(100% - 1px));
+                    }
+                }
+            }
+            &.fr{
+                span.switcher{
+                    &:before{
+                        transform: translateY(-50%) translateX(calc(0px));
                     }
                 }
             }

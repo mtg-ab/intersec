@@ -46,33 +46,8 @@ jQuery( document ).ready(function() {
     jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
         jQuery(this).click(function() {
             gsap.to(smoother, {
-                // don't let it go beyond the maximum scrollable area
-                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('body', 'top 0px')),
-                duration: 0.75,
-                ease: "power2.inOut"
-            });
-        })
-    })
-
-    
-    if(jQuery("div").hasClass("hero-v6")){
-        var hV6 = jQuery("section.hero-v6").height() + 1900 + 50;
-        jQuery("div.hero-v6").css("height",hV6);
-        smoother.refresh();
-    }
-    
-
-    
-    jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
-        jQuery(this).click(function() {
-            gsap.to(smoother, {
-                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.hero-v6', 'top -=200px')),
-                duration: 1.35,
-                ease : 'power2'
-            });
-            gsap.to(smoother, {
-                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.contain-technology', 'top +=0px')),
-                duration: 1.35,
+                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('body', 'top -700px')),
+                duration: 0.55,
                 ease : 'power2'
             });
         })
@@ -84,15 +59,29 @@ jQuery( document ).ready(function() {
         })
     })
 
-    jQuery("section.contain-technology div.bloc-items div.container-bloc-item").each(function() {
-        jQuery(this).click(function() {
-            gsap.to(smoother, {
-                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('section.contain-technology', 'top +=0px')),
-                duration: 1.35,
-                ease : 'power2'
-            });
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        jQuery("section.contain-technology div.bloc-items div.container-bloc-item").each(function() {
+            jQuery(this).click(function() {
+                gsap.to(smoother, {
+                    scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('body', 'top -1000px')),
+                    duration: 0.55,
+                    ease : 'power2'
+                });
+            })
         })
-    })
+    }else{
+        jQuery("section.contain-technology div.bloc-items div.container-bloc-item").each(function() {
+            jQuery(this).click(function() {
+                gsap.to(smoother, {
+                    scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset('body', 'top -700px')),
+                    duration: 0.55,
+                    ease : 'power2'
+                });
+            })
+        })
+    }
+
+    document.addEventListener('touchstart', onTouchStart, {passive: true});
 
 })
 

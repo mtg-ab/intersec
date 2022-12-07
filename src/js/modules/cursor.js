@@ -35,10 +35,10 @@ jQuery( document ).ready(function() {
     }
 
     jQuery("a.btn").mouseenter(function(){
-        jQuery("#contain-cursor").addClass("ui-state-hovered");
+        jQuery("#contain-cursor").addClass("ui-state-hide");
     })
     jQuery("a.btn").mouseleave(function(){
-        jQuery("#contain-cursor").removeClass("ui-state-hovered");
+        jQuery("#contain-cursor").removeClass("ui-state-hide");
     });
 
     jQuery(".link-hover").mouseenter(function(){

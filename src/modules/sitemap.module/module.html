@@ -1,0 +1,51 @@
+<section id="{{module.module_identity}}" class="sitemap {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% if module.title %}
+            <h2>{{ module.title }}</h2>
+        {% endif %}
+        {% if module.page_title %}
+            <p class="title">{{ module.page_title }}</p>
+        {% endif %}
+        <nav>
+            {% menu "sitemap_menu" id={{ module.sitemap_menu }}, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+        </nav>
+        {% if module.show_blog %}
+            {% if module.blog_title %}
+                <p class="title">{{ module.blog_title }}</p>
+            {% endif %}
+            {% if content.language.languageTag == 'en' %}
+                {% set rec_posts = blog_recent_posts("81737876589", 200) %}
+            {% else %}
+                {% set rec_posts = blog_recent_posts("82117668881", 200) %}
+            {% endif %}
+        {% endif %}
+        <nav>
+            <ul>
+                {% for rec_post in rec_posts %}
+                    <li>
+                        <a href="">{{ rec_post.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>        
+        </nav>
+        {% if module.show_press %}
+            {% if module.press_title %}
+                <p class="title">{{ module.press_title }}</p>
+            {% endif %}
+            {% if content.language.languageTag == 'en' %}
+                {% set rec_posts = blog_recent_posts("81741710735", 200) %}
+            {% else %}
+                {% set rec_posts = blog_recent_posts("85857236278", 200) %}
+            {% endif %}
+            <nav>
+                <ul>
+                    {% for rec_post in rec_posts %}
+                        <li>
+                            <a href="">{{ rec_post.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>        
+            </nav>
+        {% endif %}
+    </div>
+</section>

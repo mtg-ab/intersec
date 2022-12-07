@@ -6,11 +6,11 @@ jQuery( document ).ready(function() {
 
             var Flickity = require('flickity');
 
-            let tickerSpeed = 0;
-            
+            let tickerSpeed = 1;
+    
             let flickity = null;
             const slideshowEl = document.querySelector('section.logos-row div.container');
-
+    
             const update = () => {
             if (flickity.slides) {
                 flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
@@ -39,7 +39,8 @@ jQuery( document ).ready(function() {
             //////////////////////////////////////////////////////////////////////
     
             update();
-            console.log('ok')
+
+    
         } else {
             var Flickity = require('flickity');
             let flickity = null;

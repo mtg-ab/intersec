@@ -36,6 +36,9 @@ section.featured{
                     height:250px;
                     display:block;
                     overflow:hidden;
+                    span{
+                        display:none;
+                    }
                     figure{
                         display: block;
                         width:100%;

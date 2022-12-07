@@ -110,6 +110,15 @@
                                                 {% if item.last_name_testimonial or item.first_name_testimonial%}
                                                     <p class="author">{{ item.first_name_testimonial }} {{ item.last_name_testimonial }}</p>
                                                 {% endif %}
+                                                {% if content.language.languageTag == 'en' %}
+                                                    {% if item.job_testimonial %}
+                                                        <p class="job">{{ item.job_testimonial }}</p>
+                                                    {% endif %}
+                                                {% else %}
+                                                    {% if item.fr_job_testimonial %}
+                                                        <p class="job">{{ item.fr_job_testimonial }}</p>
+                                                    {% endif %}
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>

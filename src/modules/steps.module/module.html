@@ -3,15 +3,17 @@
         {% if module.title %}
             <h2>{{ module.title }}</h2>
         {% endif %}
-        <div class="bloc-img">
-            {% for item in module.steps %}
-                {% if item.image.src %}
-                    <figure {% if loop.index == 1 %}class="selected"{% endif %} data-id="{{ loop.index }}">
-                        <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}" />
-                    </figure>
-                {% endif %}
-            {% endfor %}
-        </div>
+        {% if module.steps.image %}
+            <div class="bloc-img">
+                {% for item in module.steps %}
+                    {% if item.image.src %}
+                        <figure {% if loop.index == 1 %}class="selected"{% endif %} data-id="{{ loop.index }}">
+                            <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}" />
+                        </figure>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
     <div class="steps">
         {% for item in module.steps %}
@@ -22,7 +24,9 @@
                     {% endif %}
                     {{ item.title }}
                 </p>
-                {{ item.text }}
+                <div class="txt">
+                    {{ item.text }}
+                </div>
             </div>
         {% endfor %}
     </div>

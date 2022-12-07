@@ -1,0 +1,32 @@
+section.sitemap{
+    position: relative;
+    z-index:2;
+    div.container{
+        p.title{
+            font-weight:bold;
+            font-size:20px;
+            margin-top:40px;
+        }
+        nav{
+            ul{
+                margin:0px;
+                padding:0px;
+                li{
+                    list-style-type: none;
+                    margin-bottom:6px;
+                    a{
+                        color:$text-color1;
+                        transition: 0.55s;
+                        text-decoration: none;
+                        &:hover{
+                            color:$color2;
+                        }
+                    }
+                }
+                ul{
+                    padding-left:25px;
+                }
+            }
+        }
+    }
+}

@@ -16,7 +16,7 @@ a.btn {
     &:hover{
         svg{
             rect.line-outline {
-                stroke-dasharray:480px;
+                stroke-dasharray:740px;
                 stroke-dashoffset: 0px;
             }
             rect.line-dashed {
@@ -55,8 +55,8 @@ a.btn {
                 stroke-dashoffset: 10px;
             }
             &.line-outline{
-                stroke-dasharray:480px;
-                stroke-dashoffset: 480px;
+                stroke-dasharray:740px;
+                stroke-dashoffset: 740px;
             }
         }
     }

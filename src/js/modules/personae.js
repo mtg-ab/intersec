@@ -24,15 +24,13 @@ jQuery( document ).ready(function() {
         })
 
         jQuery("section.personae div.bloc").each(function() {
-            let BlocTxt = jQuery(this).find("div.txt div").height();
-            let scroll = jQuery(this).height();
             var id = jQuery(this).data('id');
             gsap.timeline({
                 ease: "none",
                 scrollTrigger: {
-                    trigger: jQuery(this),
-                    start:'top +=0%',
-                    end:'top -=15%',
+                    trigger: jQuery(this).find('div.txt div'),
+                    start:'top +=20%',
+                    end:'top -=0%',
                     scrub: 1.15,
                     onEnter:function(){
                         jQuery("section.personae figure").each(function() {
@@ -60,8 +58,8 @@ jQuery( document ).ready(function() {
             })  
             .to(jQuery(this).find("div.txt"), {
                 height: 0,
-                duration: 0.015, 
-                
+                delay:-0.2,
+                duration: 0.35, 
                 ease: "none",
             })            
         })

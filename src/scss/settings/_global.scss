@@ -257,6 +257,11 @@ div#contain-cursor{
       transform:translateY(55px) skewY(20deg);
 		}
 	}
+  &.ui-state-hide{
+    div.cursor-circle{
+      opacity: 0;
+    }
+  }
 	&.ui-state-hovered{
 		div.cursor-circle{
       width:30px;

@@ -63,73 +63,81 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
-            },
-            {
-                "name": "background_black",
-                "label": "Background black",
-                "sortable": false,
-                "required": false,
-                "locked": false,
-                "type": "boolean",
-                "default": false
-            },
-            {
-                "name": "background_circle",
-                "label": "Background circle",
-                "sortable": false,
-                "required": false,
-                "locked": false,
-                "type": "boolean",
-                "default": false
             }
         ]
     },
     {
-        "name" : "title",
-        "label" : "Title",
-        "required" : false,
-        "locked" : false,
-        "validation_regex" : "",
-        "allow_new_line" : false,
-        "show_emoji_picker" : false,
-        "type" : "text",
-        "default" : ""
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Sitemap"
     },
     {
-        "name" : "figures",
-        "label" : "Figures",
+        "name": "page_title",
+        "label": "Page title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Pages"
+    },
+    {
+        "name" : "sitemap_menu",
+        "label" : "Sitemap",
         "required" : false,
         "locked" : false,
-        "occurrence" : {
-          "min" : null,
-          "max" : null,
-          "sorting_label_field" : "blocks.item",
-          "default" : null
-        },
-        "children" : [
-            {
-                "name" : "figure",
-                "label" : "Figure",
-                "required" : false,
-                "locked" : false,
-                "validation_regex" : "",
-                "allow_new_line" : false,
-                "show_emoji_picker" : false,
-                "type" : "text",
-                "default" : "145"
-            },
-            {
-                "name" : "text",
-                "label" : "Text",
-                "required" : false,
-                "locked" : false,
-                "validation_regex" : "",
-                "allow_new_line" : false,
-                "show_emoji_picker" : false,
-                "type" : "text",
-                "default" : "variation of the atmosphere"
-            }
-        ],
-        "type" : "group"
+        "type" : "menu",
+        "default" : 12345678911
+    },
+    {
+        "name": "blog_title",
+        "label": "Blog title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Blog"
+    },
+    {
+        "name": "show_blog",
+        "label": "Show blog",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+    },
+    {
+        "name": "press_title",
+        "label": "Press title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Press"
+    },
+    {
+        "name": "show_press",
+        "label": "Show press",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
     }
 ]

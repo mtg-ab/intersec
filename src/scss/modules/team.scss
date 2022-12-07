@@ -8,10 +8,18 @@ section.team{
         h2{
             margin-bottom:380px;
         }
+        div.bloc-tabs{
+            display: flex;
+            justify-content: flex-end;
+            div.row-btns{
+                max-width:420px;
+                width:100%;
+            }
+        }
         &.container-infos{
             display:flex;
             justify-content: flex-end;
-            margin-top:170px;
+            margin-top:100px;
             position: relative;
             z-index:2;
             margin-bottom:200px;

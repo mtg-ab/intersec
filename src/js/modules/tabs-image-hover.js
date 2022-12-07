@@ -37,12 +37,12 @@ jQuery( document ).ready(function() {
             })
         })
 
-        var maxHeight = -1;
+        var maxHeightMobile = -1;
         jQuery('section.tabs-image-hover div.bloc-columns div.blocs').each(function() {
-            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+            maxHeightMobile = maxHeightMobile > $(this).height() ? maxHeightMobile : $(this).height();
         });
 
-        jQuery('section.tabs-image-hover div.bloc-columns').height(maxHeight);
+        jQuery('section.tabs-image-hover div.bloc-columns').height(maxHeightMobile);
 
         var $mouseX = 0, $mouseY = 0;
         var $xp = 0, $yp =0;
@@ -80,12 +80,16 @@ jQuery( document ).ready(function() {
 
         if (jQuery(window).width() < 768) {
             var Flickity = require('flickity');
+            var flky = ""
 
-            var flky = new Flickity( 'section.tabs-image-hover div.bloc-columns div.blocs', {
-                prevNextButtons: false,
-                pageDots: false,
-                cellAlign: "left",
-            })            
+            jQuery('section.tabs-image-hover div.bloc-columns div.blocs').each(function() {
+                var flky = "";
+                var flky = new Flickity( this, {
+                    prevNextButtons: false,
+                    pageDots: false,
+                    cellAlign: "left",
+                })   
+            })          
         }
 
     }
