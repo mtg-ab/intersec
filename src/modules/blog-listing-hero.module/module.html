@@ -27,7 +27,7 @@
         {% endif %}
         {% set slugTag = request.path|split('/', 2)|last %}
         {% set my_tags = blog_tags("default", 250) %}
-        {% if blog.name != "Intersec Presse" %}
+        {% if blog.name != "Intersec Pressroom" %}
             <div class="tags">
                 <a href="{% if content.language.languageTag == 'fr' %}/fr{% endif %}/blog" class="tag bloc-liquid {% if slugTag == 'blog-intersec' or slugTag == 'blog' %}selected{% endif %}">
                     <svg width="137" class="line-dashed" height="137" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,8 +77,12 @@
                     </li>
                     
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        {% if blog.name == "Intersec Presse" %}
-                            <a itemprop="item" href="/press"><span itemprop="name">Press</span></a> 
+                        {% if blog.name == "Intersec Pressroom" %}
+                            {% if content.language.languageTag == 'en' %}
+                                <a itemprop="item" href="/press/"><span itemprop="name">Press</span></a> 
+                            {% else %}
+                                <a itemprop="item" href="/presse/"><span itemprop="name">Presse</span></a> 
+                            {% endif %}
                         {% else %}
                             <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a> 
                         {% endif %}
@@ -97,7 +101,7 @@
             {% for post in contents %}
                 {% if loop.index == 1 %}
                     <div class="bloc">
-                        <a class="bloc-img link-hover" href="{{ post.absolute_url }}">
+                        <a class="bloc-img" href="{{ post.absolute_url }}">
                             <figure>
                                 <img src="{{ post.featured_image }}" width="{{ post.featured_image.width }}" height="{{ post.featured_image.height }}" loading="lazy" alt="{{ post.name }}">
                             </figure>
@@ -108,12 +112,12 @@
                                     <a class="tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
                                 {% endfor %}
                             </div>
-                            <h3>
+                            <h2>
                                 <a href="{{ post.absolute_url }}">{{ post.name }}</a>
-                            </h3>
+                            </h2>
                             {% if post.post_summary %}
                                 <div class="text">
-                                {{ post.post_summary }}              
+                                {{ post.post_summary|striptags }}              
                                 </div>
                             {% endif %}
                         </div>

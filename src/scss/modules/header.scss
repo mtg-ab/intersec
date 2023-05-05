@@ -103,7 +103,6 @@ header{
                             transition: 0.5s;
                             position: relative;
                             padding-bottom:6px;
-                            cursor: pointer;                            
                             &:after{
                                 display:block;
                                 content:'';
@@ -234,6 +233,13 @@ header{
                                     &.bloc-menu-features{
                                         flex-wrap: wrap;
                                         flex-grow: 2;
+                                    }
+                                    &.bloc-menu-features-3{
+                                        flex-wrap: wrap;
+                                        flex-grow: 3;
+                                        a.bloc{
+                                            width:calc(100% / 3 - 20px);
+                                        }
                                     }
                                     a.bloc{
                                         width:calc(50% - 35px);
@@ -496,10 +502,7 @@ header{
                             text-decoration: none;
                             transition: 0.5s;
                             position: relative;
-                            padding-bottom:6px;
-                            cursor: pointer;
-                            
-                            
+                            padding-bottom:6px;                            
                             &:after{
                                 display:block;
                                 content:'';

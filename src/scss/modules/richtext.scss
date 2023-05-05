@@ -1,3 +1,15 @@
+main{
+    #hs_cos_wrapper_widget_1667914533418{
+        padding-bottom: 90px !important;
+        padding-left: 35px !important;
+        padding-right: 35px !important;
+        padding-top: 90px !important;
+        @media(max-width:$size3){
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+    }
+}
 section.richtext{
     position: relative;
     &.bg-black{
@@ -51,7 +63,7 @@ section.richtext{
             padding-top:20px;
             opacity:0;
             @media(max-width:$size3){
-                padding-left:45px;
+                padding-left:0px;
             }
             &.left{
                 div{

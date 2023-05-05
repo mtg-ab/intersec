@@ -26,6 +26,10 @@ body {
       position: absolute;
       right:30px;
       top:24px;
+      @media screen and (max-width: $size3) {
+        right:10px;
+        top:-5px;
+      }
     }
     div#hs-eu-cookie-confirmation-inner {
       position: relative;

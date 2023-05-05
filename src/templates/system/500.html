@@ -12,12 +12,14 @@
 {% block body %}
 <section class="error-page content-wrapper">
   <div class="container" data-error="500">
-    {% if content.language.languageTag == 'en' %}
-      <h1>Something isn't quite right.</h1>
-      <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
-    {% else if content.language.languageTag == 'fr' %}
+    {% set list = request.path|string %}
+    {% set fr = 'fr' %}      
+    {% if fr in list %}
       <h1>Quelque chose ne va pas.</h1>
       <p>Désolé, une erreur de serveur interne s'est produite. Mais n'ayez crainte, nous sommes sur l'affaire !</p>
+    {% else %}
+      <h1>Something isn't quite right.</h1>
+      <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
     {% endif %}
     
   </div>

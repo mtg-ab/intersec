@@ -79,6 +79,18 @@
         "default": "Technology / Key capabilities"
     },
     {
+        "name": "bg_title",
+        "label": "Title background",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "",
+        "default": "Technology"
+    },
+    {
         "name": "button_type",
         "id":"button_type_id",
         "label": "Button type",

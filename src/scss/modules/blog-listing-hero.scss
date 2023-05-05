@@ -158,8 +158,8 @@ section.blog-listing-hero{
                     }
                     div.hs_submit{
                         position: absolute;
-                        right: 0px;
-                        bottom:34px;
+                        right: 40px;
+                        bottom:9px;
                         div.actions{
                             input{
                                 width:40px;
@@ -346,7 +346,9 @@ section.blog-listing-hero{
                             color:#fff;
                         }
                     }
-                    h3{
+                    h2{
+                        font-size:30px;
+                        line-height:36px;
                         a{
                             color:#fff;
                             text-decoration: none;

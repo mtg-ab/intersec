@@ -15,7 +15,7 @@
                 {% endif %}
             </div>
         {% else if module.image.src %}
-            <div class="bloc-img">
+            <div class="bloc-img {% if module.content_style.img_cover %}cover{% endif %}">
                 <figure>
                     <img loading="lazy" data-speed="1.1" src="{{ module.image.src }}" width="{{ module.image.width }}" height="{{ module.image.height }}" alt="{{ module.image.alt }}" />
                 </figure>

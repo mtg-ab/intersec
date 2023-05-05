@@ -6,7 +6,7 @@
         <div class="blocs">
             {% for item in module.items %}
                 <div class="bloc">
-                    <img src="{{ item.pictogram.src }}">
+                    <img loading="lazy" src="{{ item.pictogram.src }}">
                     <p class="title">{{ item.title }}</p>
                 </div>
             {% endfor %}

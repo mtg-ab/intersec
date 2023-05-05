@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
     });
     
     if(jQuery('div.bloc-anchor ul li').length < 1){
-        jQuery('div.bloc-anchor').remove();
+        //jQuery('div.bloc-anchor').remove();
     }
 
     jQuery('div.bloc-anchor ul li').each(function(index) {
@@ -29,27 +29,27 @@ jQuery(document).ready(function() {
 
     if(jQuery("div").hasClass("blog-post-cta")){
 
-        
-        if(jQuery("div#bloc-cta").length > 0){
-            var el = document.querySelector('#cta');
-            el.innerHTML = el.innerHTML.replace(/&nbsp;/g, '');
-            let elem = document.querySelector('#bloc-cta');
-            elem.append(document.querySelector('#cta'));
-        }else{
-            jQuery("div.blog-post-cta").remove()
+
+        let cta = document.querySelector(".blog-post-cta")
+        if (document.querySelectorAll(".contain-post #cta").length > 0) {
+            document.querySelectorAll(".contain-post #cta").forEach(elem => {
+                elem.append(cta);
+            })
+        } else {
+            cta.remove()
         }
         
     }
 
     if(jQuery("div").hasClass("blog-post-testimonial")){
 
-        if(jQuery("div#bloc-testimonial").length > 0){
-            var el = document.querySelector('#testimonial');
-            el.innerHTML = el.innerHTML.replace(/&nbsp;/g, '');
-            let elem = document.querySelector('#bloc-testimonial');
-            elem.append(document.querySelector('#testimonial'));
-        }else{
-            jQuery("div.blog-post-testimonial").remove()
+        let testimonial = document.querySelector(".blog-post-testimonial")
+        if (document.querySelectorAll(".contain-post #testimonial").length > 0) {
+            document.querySelectorAll(".contain-post #testimonial").forEach(elem => {
+                elem.append(testimonial);
+            })
+        } else {
+            testimonial.remove()
         }
         
     }

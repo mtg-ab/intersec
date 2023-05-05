@@ -15,6 +15,7 @@
     </div>
     <div class="container">
       <div class="bloc-txt">
+        <h1>{{ content.name }}</h1>
         <div class="infos">
           <div class="tags">
             {% if content.topic_list %}
@@ -26,10 +27,13 @@
             {% endif %}
           </div>
           {% if content.publish_date %}
-          <span>- {{ content.publish_date|datetimeformat('%d / %F / %Y') }}</span>
+            {% if content.language.languageTag == 'en' %}
+                <span>Published on: {{content.publish_date|datetimeformat("%d/%m/%Y")}}</span>
+            {% else %}
+                <span>Publié le : {{content.publish_date|datetimeformat("%d/%m/%Y")}}</span>
+            {% endif %}
           {% endif %}
         </div>
-        <h1>{{ content.name }}</h1>
       </div>
       <div class="bloc-img">
         <figure>
@@ -49,8 +53,12 @@
               <meta itemprop="position" content="1" />
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              {% if blog.name == "Intersec Presse" %}
-                  <a itemprop="item" href="/press"><span itemprop="name">Press</span></a> 
+              {% if blog.name == "Intersec Pressroom" %}
+                  {% if content.language.languageTag == 'en' %}
+                    <a itemprop="item" href="/press/"><span itemprop="name">Press</span></a> 
+                  {% else %}
+                    <a itemprop="item" href="/fr/presse/"><span itemprop="name">Presse</span></a> 
+                  {% endif %}
               {% else %}
                   <a itemprop="item" href="/blog"><span itemprop="name">Blog</span></a> 
               {% endif %}
@@ -58,7 +66,7 @@
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <a itemprop="item" href="{{ content.absolute_url }}">
-                <span itemprop="name">{{ content.name|truncatehtml(39, '...' , false)}}</span></a>
+                {{ content.name|truncatehtml(39, '...' , false)}}</a>
               <meta itemprop="position" content="4" />
             </li>
           </ul>
@@ -79,6 +87,115 @@
         <ul>
 
         </ul>
+        {% if content.language.languageTag != 'en' %}
+            {% set lang = '_fr' %}
+        {% else %}
+            {% set lang = '' %}
+        {% endif %}
+        {% for tags in content.topic_list %}
+          {% set query_params = "typology__eq=10&orderBy=priority_order&limit=300" %}
+          {% set results_global = hubdb_table_rows("Content",query_params) %}
+          {% for item in results_global %}
+            {% if lang == '_fr' %}
+            
+              {% for field in item.blog_tags_fr %}
+                {% set tag = tags|replace('-', ' ') %}
+                {% if field.label|replace('-', ' ') == tag|lower %}
+                <div class="bloc-post-aside-cta">
+                  {% if item.image.url %}
+                      <div class="bloc-img">
+                          <picture>
+                            <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                          </picture>
+                      </div>
+                  {% endif %}
+                  <div class="bloc-txt">
+                      {% if content.language.languageTag == 'en' %}
+                        <p class="title">{{ item.title }}</p>
+                      {% else if content.language.languageTag == 'fr' %}
+                        <p class="title">{{ item.fr_title }}</p>
+                      {% endif %}
+                      <div class="txt">
+                        {% if content.language.languageTag == 'en' %}
+                            {{ item.description }}
+                        {% else if content.language.languageTag == 'fr' %}
+                            {{ item.fr_description }}
+                        {% endif %}
+                      </div>
+                      {% if content.language.languageTag == 'en' %}
+                          <a href="{{ item.link }}" class="btn">
+                              <svg xmlns="http://www.w3.org/2000/svg">
+                                  <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                  <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                              </svg>
+                              {{ item.button }}                                            
+                          </a>
+                      {% else if content.language.languageTag == 'fr' %}
+                          <a href="{{ item.fr_link }}" class="btn">
+                              <svg xmlns="http://www.w3.org/2000/svg">
+                                  <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                  <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                              </svg>
+                              {{ item.fr_button }}                                            
+                          </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              {% for field in item.blog_tags %}
+                {% set tag = tags|replace('-', ' ') %}
+                {% if field.name|lower == tag|lower %}
+                <div class="bloc-post-aside-cta">
+                  {% if item.image.url %}
+                      <div class="bloc-img">
+                          <picture>
+                            <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                          </picture>
+                      </div>
+                  {% endif %}
+                  <div class="bloc-txt">
+                      {% if content.language.languageTag == 'en' %}
+                        <p class="title">{{ item.title }}</p>
+                      {% else if content.language.languageTag == 'fr' %}
+                        <p class="title">{{ item.fr_title }}</p>
+                      {% endif %}
+                      <div class="txt">
+                        {% if content.language.languageTag == 'en' %}
+                            {{ item.description }}
+                        {% else if content.language.languageTag == 'fr' %}
+                            {{ item.fr_description }}
+                        {% endif %}
+                      </div>
+                      {% if content.language.languageTag == 'en' %}
+                          <a href="{{ item.link }}" class="btn">
+                              <svg xmlns="http://www.w3.org/2000/svg">
+                                  <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                  <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                              </svg>
+                              {{ item.button }}                                            
+                          </a>
+                      {% else if content.language.languageTag == 'fr' %}
+                          <a href="{{ item.fr_link }}" class="btn">
+                              <svg xmlns="http://www.w3.org/2000/svg">
+                                  <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                  <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                              </svg>
+                              {{ item.fr_button }}                                            
+                          </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            
+          {% endfor %}
+        {% endfor %}
+
+        {% module_block module "blog-post-aside-cta" path="../../modules/blog-post-aside-cta.module", label="Blog
+        post aside CTA"%}{% end_module_block %}
       </div>
     </div>
   </section>

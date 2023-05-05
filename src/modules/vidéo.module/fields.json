@@ -63,6 +63,15 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
+            },
+            {
+                "name": "img_cover",
+                "label": "Cover image",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
             }
         ]
     },

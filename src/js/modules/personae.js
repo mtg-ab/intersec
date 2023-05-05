@@ -16,9 +16,9 @@ jQuery( document ).ready(function() {
         ScrollTrigger.create({
             trigger: "section.personae",
             pin: true,
-            start: 'top top',
-            anticipatePin: 1,
-            scrub: 1.55,
+            start: 'top +=0',
+            scrub: 1,
+            invalidateOnRefresh: true,
             end: () =>  '+='+BlocH+'',
             toggleClass: {targets: "section.personae", className: "active"},
         })

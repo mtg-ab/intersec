@@ -140,6 +140,12 @@ p.subtitle{
   }
 }
 
+span.hs_cos_wrapper_type_rich_text{
+  display:block;
+  max-width:1100px;
+  margin:0 auto;
+}
+
 p{
   font-size:16px;
   line-height:20px;
@@ -245,6 +251,7 @@ div#contain-cursor{
     justify-content: center;
 		overflow:hidden;
     transition: 0.35s;
+    opacity:0;
 		@media(max-width:$size4){
 			display:none;
 		}
@@ -292,6 +299,7 @@ div#contain-cursor{
   }
   &.ui-grab-hovered{
     div.cursor-circle{
+      opacity:1;
       width:85px;
       height:85px;
       cursor: none;
@@ -309,6 +317,7 @@ div#contain-cursor{
       width:85px;
       height:85px;
       cursor: none;
+      opacity:1;
 			span{
 				opacity:1;
         transform:translateY(0px) skewY(0deg);
@@ -323,6 +332,7 @@ div#contain-cursor{
       width:85px;
       height:85px;
       cursor: none;
+      opacity:1;
 			span{
 				opacity:1;
         transform:translateY(0px) skewY(0deg);
@@ -336,6 +346,11 @@ div#contain-cursor{
 
 .grab-hover,.left-hover,.right-hover,.link-hover{
   &:hover{
+    div#contain-cursor{
+      div.cursor-circle{
+        opacity:1;
+      }
+    }
     cursor:none;
   }
 }

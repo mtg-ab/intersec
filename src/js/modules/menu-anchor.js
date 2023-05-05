@@ -8,7 +8,7 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
-        var wh = jQuery("body").height();
+        var wh = jQuery("body").height() + 1200;
 
         ScrollTrigger.create({
             trigger: "section.menu-anchor",

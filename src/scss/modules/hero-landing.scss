@@ -59,6 +59,9 @@ section.hero-landing{
                         input{
                             border-bottom: 1px solid rgba(255, 255, 255, 0.5);
                             color:#fff;
+                            &::placeholder{
+                                color:#fff;
+                            }
                         }
                         label{
                             color:#fff;
@@ -234,16 +237,42 @@ section.hero-landing{
                             color:$text-color1;
                         }
                     }
-                    input,textarea,select{
+                    input,textarea{
                         border-bottom: 1px solid rgba(47, 47, 47, 0.5) !important;
                         color:$color1 !important;
+                        &::placeholder{
+                            color:rgba($text-color1,0.5)!important;
+                        }
+                        option:disabled{
+                            color:rgba($text-color1,0.5);
+                        }
+                        [disabled] {
+                            color:rgba($text-color1,0.5);
+                        }
+                        &:invalid{
+                            color:rgba($text-color1,0.5);
+                        }
                     }
                     select{
+                        border-bottom: 1px solid rgba(47, 47, 47, 0.5) !important;
+                        color:$color1 !important;
+                        option{
+                            color:$text-color1 !important;
+                        }
+                        option:disabled{
+                            color:rgba($text-color1,0.5) !important;
+                        }
+                        [disabled] {
+                            color:rgba($text-color1,0.5) !important;
+                        }
+                        &:invalid{
+                            color:rgba($text-color1,0.5)!important;
+                        }
                         
                     }
                     label{
                         color:$color1;
-                        opacity:0.5;
+                        opacity:1;
                     }
                     div.actions{
                         justify-content: flex-start;

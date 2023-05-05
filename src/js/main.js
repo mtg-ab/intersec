@@ -15,6 +15,7 @@ var Flickity = require('flickity');
 var Flickity = require('flickity-fade');
 import Splitting from "splitting";
 import { gsap } from "gsap";
+
 //import * as THREE from 'three';
 
 
@@ -31,7 +32,7 @@ const { ScrollTrigger } = require('gsap/ScrollTrigger');
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
 jQuery( document ).ready(function() {
-    
+
     let smoother = ScrollSmoother.create({
         wrapper: "div#smooth-wrapper",
         content: "div#smooth-content",
@@ -41,6 +42,7 @@ jQuery( document ).ready(function() {
 
     setTimeout(() => {
         smoother.refresh();
+        ScrollTrigger.update( ) ;
     }, 1000)
     
     jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
@@ -80,8 +82,6 @@ jQuery( document ).ready(function() {
             })
         })
     }
-
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
 
 })
 

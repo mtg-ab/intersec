@@ -49,28 +49,26 @@ jQuery( document ).ready(function() {
             }
         });
 
-        $("section.steps").on('mousemove', function(e) {
-            var mouseSide;
+        $("section.steps div.steps").on('mousemove', function(e) {
             if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
-                jQuery("section.steps").mouseover(function(){
+                jQuery("section.steps div.steps").mouseover(function(){
                     jQuery("#contain-cursor").addClass("ui-left-hovered");
                     jQuery("#contain-cursor").removeClass("ui-right-hovered");
                 })
             } else {
-                jQuery("section.steps").mouseover(function(){
+                jQuery("section.steps div.steps").mouseover(function(){
                     jQuery("#contain-cursor").removeClass("ui-left-hovered");
                     jQuery("#contain-cursor").addClass("ui-right-hovered");
                 })
             }
         });
 
-        $("section.steps").mouseleave(function(){
+        $("section.steps div.steps").mouseleave(function(){
             jQuery("#contain-cursor").removeClass("ui-left-hovered");
             jQuery("#contain-cursor").removeClass("ui-right-hovered");
         })
 
-        $("section.steps div.flickity-slider").on('click', function(e) {
-            var mouseSide;
+        $("section.steps div.flickity-viewport").on('click', function(e) {
             if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
                 flickity.previous();
             } else {

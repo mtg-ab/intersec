@@ -11,7 +11,7 @@ jQuery( document ).ready(function() {
         var wh = jQuery("body").height();
 
         ScrollTrigger.create({
-            trigger: "a.container-btn-join",
+            trigger: ".container-btn-join",
             pin: true,
             start: 'top 50%',
             scrub:1,
@@ -31,7 +31,7 @@ jQuery( document ).ready(function() {
 
         //INIT ANIM
         tl.staggerTo("section.hero-career div.bloc-imgs div.bloc",0, { opacity:1,y:0,stagger:0.15,ease: "power2.inOut" });
-        tl.to("section.hero-career a.btn",0.75, { opacity:1,y:0,delay:-0.5,ease: "power2.inOut" });
+        tl.to("section.hero-career .btn",0.75, { opacity:1,y:0,delay:-0.5,ease: "power2.inOut" });
         tl.to("section.hero-career div.btn-join",0.75, { opacity:1,delay:-0.5,ease: "power2.inOut" });
         //INIT ANIM
         
@@ -88,6 +88,26 @@ jQuery( document ).ready(function() {
         $('.container-btn-join').mousemove( function(e){   
             parallaxIt(e, 80);
         });
+
+        console.log('ok')
+
+        jQuery(".container-btn-join").click(function() {
+            if(jQuery(this).data('url')){
+                var url = jQuery(this).data('url');
+                $('html, body').animate({
+                    scrollTop: jQuery("section"+url+"").offset().top - 150
+                }, 750);
+            }            
+        })
+
+        jQuery("section.hero-career .btn").click(function() {
+            if(jQuery(this).data('url')){
+                var url = jQuery(this).data('url');
+                $('html, body').animate({
+                    scrollTop: jQuery("section"+url+"").offset().top - 150
+                }, 750);
+            }            
+        })
                     
         function parallaxIt(e, movement){
              

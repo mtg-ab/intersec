@@ -55,8 +55,15 @@
                         {% endif %}
                         {% set query_params = "typology__eq=1&orderBy=priority_order&category__eq="+category %}
                         {% set results_global = hubdb_table_rows("Content",query_params) %}
+                        {% set url = "" %}
                         {% for item in results_global %}
-                            <a href="{{ item.link }}" data-id="{{ loop.index }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="row link-hover">
+                            {% if content.language.languageTag == 'en' %}
+                                {% set url = item.link %}
+                            {% else if content.language.languageTag == 'fr' %}
+                                {% set url = item.fr_link %}
+                            {% endif %}
+                                <a href="{{ url }}" data-id="{{ loop.index }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="row">
+                            
                                 {% if content.language.languageTag == 'en' %}
                                     <h3>{{ item.title }}</h3>
                                 {% else if content.language.languageTag == 'fr' %}
@@ -81,17 +88,6 @@
                                 <div class="step">(0{{ loop.index }})</div>
                             </a>
                         {% endfor %}
-                        <div class="bloc-imgs-hover">
-                            {% for item in results_global %}
-                                {% if item.image.url %}
-                                    <div class="bloc-img" data-id="{{ loop.index }}">
-                                        <figure>
-                                            <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.title }}" />
-                                        </figure>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
                     </div>
                 {% endfor %}
             </div>

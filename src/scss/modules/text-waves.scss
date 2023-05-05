@@ -6,7 +6,7 @@ section.txt-waves{
         div.container{
             svg{
                 circle{
-                    animation: 5s ease-in-out waves;
+                    animation: 3s ease-in-out waves;
                     animation-fill-mode:forwards;
                     @keyframes waves { 
                         0% { 

@@ -52,9 +52,11 @@
     </div>
     <div class="container container-infos">
             <div class="contain-slider">
-                <div class="bloc-slider" data-flickity='{"fade": true,"wrapAround": true,"autoPlay": false,"pageDots": false,"adaptiveHeight": true }'>
+                <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>
+                <button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Next"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>
+                <div class="bloc-slider" id="bloc-slider">
                     {% for item in module.teams %}
-                        <div class="bloc-txt">
+                        <div class="bloc-txt {% if loop.index == 1 %}selected{% endif %}" data-id="{{ loop.index }}">
                             {% if item.job %}
                                 <p class="job">{{ item.job }}</p>
                             {% endif %}
@@ -77,12 +79,11 @@
         <svg width="560" height="1116" viewBox="0 0 560 1116" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="2" cy="558" r="557" stroke="#F1762C" stroke-linecap="round" stroke-dasharray="0.5 7"/>
         </svg> 
-        
             <div class="circular-slider circular-slider-1" data-id="{{ loop.index }}">
                 <div class="wrapper">
                     <div class="slides-holder">
                         {% for item in module.teams %}
-                            <div class="slides-holder__item {% if loop.index == 1 %}slides-holder__item_active{% endif %}">
+                            <div class="slides-holder__item {% if loop.index == 1 %}slides-holder__item_active{% endif %}" data-index="{{ loop.index }}">
                                 <img src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" loading="lazy" alt="{{ item.title }}"/>
                             </div>
                         {% endfor %}

@@ -1,4 +1,4 @@
-a.btn {
+.btn {
     color: $text-color1;
     background-color: #fff;
     position: relative;
@@ -46,7 +46,7 @@ a.btn {
         rect{
             width:99%;
             height:97%;
-            
+            display:block;
             transition: all 0.8s ease-in-out 0s;
             stroke-width: 1px;
             stroke: $color2;

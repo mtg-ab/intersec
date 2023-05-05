@@ -37,8 +37,36 @@
         <div class="container">            
             {% for post in contents %}
                 {% if loop.index > 1 %}
-                    {% if loop.index == 6 %}
-                        {% set query_params = "typology__eq=8&limit=2&blog_listing_cta=2&cta_blog_listing="+type_blog+"&blog_tags"+lang+"__eq="+type_tag+"" %}
+                    <div class="bloc">
+                        <a href="{{ post.url }}" class="bloc-img">
+                            <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
+                                <img src="{{ post.featured_image }}" width="386" height="250" loading="lazy" alt="{{ post.name }}">
+                            </figure>
+                        </a>
+                        <a href="{{ post.url }}" class="bloc-txt">
+                            <div class="infos">
+                                <div class="tags">
+                                    {% if post.topic_list %}
+                                        {% for tags in post.topic_list %}
+                                            <span>{{tags|replace('-', ' ') }}</span>
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% if blog.name == "Intersec Pressroom" %}
+                                        {% if content.language.languageTag == 'en' %}
+                                            <span>Published on: {{ post.publish_date|datetimeformat('%e/%m/%Y') }}</span>
+                                        {% else %}
+                                            <span>Publié le : {{ post.publish_date|datetimeformat('%e/%m/%Y') }}</span>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% if post.name %}
+                                <p class="title"><span>{{ post.name }}</span></p>
+                            {% endif %}                      
+                        </a>
+                    </div>
+                    {% if loop.index == 5 %}
+                        {% set query_params = "typology__eq=8&orderBy=priority_order&limit=2&blog_listing_cta=2&cta_blog_listing="+type_blog+"&blog_tags"+lang+"__contains="+type_tag+"" %}
                         {% set results_global = hubdb_table_rows("Content",query_params) %}
                         {% if results_global %}
                             <div class="bloc-white-paper">
@@ -79,7 +107,7 @@
                                 {% endfor %}
                             </div>
                         {% endif %}
-                        {% set query_params = "typology__eq=8&limit=1&blog_listing_cta=1&blog_tags"+lang+"__eq="+type_tag+"&cta_blog_listing="+type_blog+"" %}
+                        {% set query_params = "typology__eq=8&orderBy=priority_order&limit=1&blog_listing_cta=1&blog_tags"+lang+"__contains="+type_tag+"&cta_blog_listing="+type_blog+"" %}
                         {% set results_global = hubdb_table_rows("Content",query_params) %}
                         {% for item in results_global %}
                             <div class="bloc-cta">
@@ -115,8 +143,8 @@
                             </div>
                         {% endfor %}
                     {% endif %}
-                    {% if loop.index == 8 %}
-                        {% set query_params = "typology__eq=8&blog_listing_cta=2&blog_tags"+lang+"__eq="+type_tag+"&cta_blog_listing="+type_blog+"" %}
+                    {% if loop.index == 7 %}
+                        {% set query_params = "typology__eq=8&orderBy=priority_order&blog_listing_cta=2&blog_tags"+lang+"__contains="+type_tag+"&cta_blog_listing="+type_blog+"" %}
                         {% set results_global = hubdb_table_rows("Content",query_params) %}
                         {% for item in results_global %}
                             {% if loop.index > 2 && loop.index < 6 %}
@@ -156,27 +184,7 @@
                             {% endif %}
                         {% endfor %}
                     {% endif %}
-                    <div class="bloc">
-                        <a href="{{ post.url }}" class="bloc-img link-hover">
-                            <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
-                                <img src="{{ post.featured_image }}" loading="lazy" alt="{{ post.featured_image_alt }}">
-                            </figure>
-                        </a>
-                        <a href="{{ post.url }}" class="bloc-txt">
-                            <div class="infos">
-                                <div class="tags">
-                                    {% if post.topic_list %}
-                                        {% for tags in post.topic_list %}
-                                            <span>{{tags|replace('-', ' ') }}</span>
-                                        {% endfor %}
-                                    {% endif %}
-                                </div>
-                            </div>
-                            {% if post.name %}
-                                <p class="title"><span>{{ post.name }}</span></p>
-                            {% endif %}                      
-                        </a>
-                    </div>
+                    
                 {% endif %}
             {% endfor %}
         </div>

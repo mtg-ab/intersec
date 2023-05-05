@@ -3,7 +3,7 @@
         {% if module.image.src %}
             <div class="bloc-img">
                 <figure>
-                    <img loading="lazy" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
+                    <img loading="lazy" width="{{ module.image.width }}" height="{{ module.image.height }}" src="{{ module.image.src }}" alt="{{ module.image.alt }}" />
                 </figure>
                 {% if module.file %}
                     <a href="{{ module.file }}" target="_blank" class="link">link</a>

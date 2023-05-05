@@ -83,15 +83,15 @@
                                         <div class="bloc-testimonial">
                                             {% if item.image.url %}
                                                 {% if content.language.languageTag == 'en' %}
-                                                    <a href="{{ item.link.url.href }}" class="bloc-img link-hover">
+                                                    <a href="{{ item.link.url.href }}" class="bloc-img">
                                                         <figure>
-                                                            <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                                                            <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
                                                         </figure>
                                                     </a>
                                                 {% else %}
-                                                    <a href="{{ item.fr_link.url.href }}" class="bloc-img link-hover">
+                                                    <a href="{{ item.fr_link.url.href }}" class="bloc-img">
                                                         <figure>
-                                                            <img loding="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                                                            <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
                                                         </figure>
                                                     </a>
                                                 {% endif %}

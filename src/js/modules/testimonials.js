@@ -7,6 +7,9 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(scrollTrigger);
         //INIT GSAP
 
+        var Flickity = require('flickity');
+        require('flickity-fade');
+
         //INIT TIMELINE
         let tl = gsap.timeline({
             scrollTrigger: {
@@ -17,11 +20,14 @@ jQuery( document ).ready(function() {
         });
         //INIT TIMELINE
 
-        var $ = require('jquery');
-        var Flickity = require('flickity');
-        require('flickity-fade');
+        var maxHeight = -1;
+        jQuery('section.testimonials div.bloc-slider div.bloc').each(function() {
+            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+        });
 
-        var flkty = new Flickity( 'section.testimonials div.bloc-slider', {
+        jQuery('section.testimonials div.bloc-slider').height(maxHeight);
+
+        var flktyT = new Flickity( 'section.testimonials div.bloc-slider', {
             wrapAround: true,
             pageDots: false,
             fade:true,
@@ -31,7 +37,7 @@ jQuery( document ).ready(function() {
         })
 
         $('div.bloc-slider').on( 'click', function() {
-            flkty.next();
+            flktyT.next();
         });
 
     }

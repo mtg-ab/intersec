@@ -83,9 +83,10 @@
     "flickity-fade": "^1.0.0",
     "flickity-fullscreen": "^1.1.1",
     "flickity-imagesloaded": "^2.0.0",
-    "gsap": "npm:@gsap/business@^3.10.4",
+    "gsap": "npm:@gsap/business@^3.11.4",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.4.1",
+    "prismjs": "^1.29.0",
     "splitting": "^1.0.6"
   }
 }

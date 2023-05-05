@@ -46,24 +46,15 @@ jQuery( document ).ready(function() {
 
         var $mouseX = 0, $mouseY = 0;
         var $xp = 0, $yp =0;
-        
-        jQuery("section.tabs-image-hover div.bloc-columns div.blocs").mousemove(function(e){
-            $mouseX = event.pageX - jQuery(this).offset().left + 0;
-            $mouseY = event.pageY - jQuery(this).offset().top + 0;   
-        });
-        
-        var $loop = setInterval(function(){
-            $xp += (($mouseX - $xp)/12);
-            $yp += (($mouseY - $yp)/12);
-            jQuery("section.tabs-image-hover div.bloc-columns div.blocs div.bloc-imgs-hover").css({left:$xp +'px', top:$yp +'px'});  
-        }, 30);
 
+        /*
         jQuery("section.tabs-image-hover div.bloc-columns div.blocs").mouseenter(function() {
             jQuery('section.tabs-image-hover div.bloc-columns div.bloc-imgs-hover').fadeIn()
         })
         jQuery("section.tabs-image-hover div.bloc-columns div.blocs").mouseleave(function() {
             jQuery('section.tabs-image-hover div.bloc-columns div.bloc-imgs-hover').fadeOut()
         })
+        */
 
         jQuery('section.tabs-image-hover div.bloc-columns div.blocs a.row').each(function() {
             var id = jQuery(this).data('id');

@@ -7,7 +7,7 @@ jQuery( document ).ready(function() {
         gsap.registerPlugin(ScrollTrigger);
         //INIT GSAP
 
-        var wh = jQuery("section.contain-post div.bloc-contain").height();
+        var wh = jQuery("section.contain-post div.bloc-contain").height() - 350;
 
         ScrollTrigger.create({
             trigger: ".bloc-anchor",

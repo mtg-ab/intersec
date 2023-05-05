@@ -16,7 +16,14 @@
     path="@hubspot/rich_text"
     %}
     {% module_attribute "html" %}
-    <h1>Results for "{{ request.query_dict.term|escape }}"</h1>
+    {% set list = request.path|string %}
+    {% set fr = 'fr' %}      
+    {% if fr in list %}
+      <h1>Resultats pour "{{ request.query_dict.term|escape }}"</h1>
+    {% else %}
+      <h1>Results for "{{ request.query_dict.term|escape }}"</h1>
+    {% endif %}
+    
     {% end_module_attribute %}
     {% end_module_block %}
     {% module "search_results"

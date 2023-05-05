@@ -21,34 +21,39 @@
         <div class="bloc-posts">
             {% for item in module.items %}
                 {% if item.blog_post %}
-                {% set id = item.blog_post %}
+                    {% set id = item.blog_post %}
                     {% set contents = content_by_id(id) %}
-                    {% for item in contents %}
+                    {% for content in contents %}
                         <div class="bloc" data-id="{{ loop.index }}">
-                            <a href="{{ item.absolute_url }}" class="bloc-img link-hover">
-                                <span>{{ item.title }}</span>
+                            <a href="{{ content.absolute_url }}" class="bloc-img">
+                                <span>{{ content.title }}</span>
                                 <figure>
-                                    <img src="{{ item.featured_image }}" loading="lazy" width="{{ item.featured_image.width }}" height="{{ item.featured_image.height }}" alt="{{ item.featured_image_alt }}">
+                                    <img src="{{ content.featured_image }}" loading="lazy" width="{{ content.featured_image.width }}" height="{{ content.featured_image.height }}" alt="{{ content.featured_image_alt }}">
                                 </figure>
                             </a>
-                            <a href="{{ item.absolute_url }}" class="bloc-txt">
-                                <h4>{{ item.title }}</h4>
-                                <div class="txt">
-                                    {{ item.post_summary|truncatehtml(132, '..' , false) }} 
-                                </div>
-                                
+                            <a href="{{ content.absolute_url }}" class="bloc-txt">
+                                <h3>{{ content.title }}</h3>
+                                {% if content.post_summary %}
+                                    <div class="txt">
+                                        {{ content.post_summary|striptags|truncatehtml(132, '..' , false) }} 
+                                    </div>
+                                {% else %}
+                                    <div class="txt">
+                                        {{ item.description }}
+                                    </div>
+                                {% endif %}
                             </a>
                         </div>
                     {% endfor %}
                 {% else %}
                     <div class="bloc" data-id="{{ loop.index }}">
-                        <a href="{{ item.link.href }}" class="bloc-img link-hover">
+                        <a href="{{ item.link.href }}" class="bloc-img">
                             <figure>
                                 <img loading="lazy" src="{{ item.image.src }}" width="{{ item.image.width }}" height="{{ item.image.height }}" alt="{{ item.image.alt }}">
                             </figure>
                         </a>
                         <a href="{{ item.link.href }}" class="bloc-txt">
-                            <h4>{{ item.title }}</h4>
+                            <h3>{{ item.title }}</h3>
                             <div class="txt">
                                 {{ item.description }} 
                             </div>

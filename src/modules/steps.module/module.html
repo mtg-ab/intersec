@@ -3,7 +3,6 @@
         {% if module.title %}
             <h2>{{ module.title }}</h2>
         {% endif %}
-        {% if module.steps.image %}
             <div class="bloc-img">
                 {% for item in module.steps %}
                     {% if item.image.src %}
@@ -13,7 +12,6 @@
                     {% endif %}
                 {% endfor %}
             </div>
-        {% endif %}
     </div>
     <div class="steps">
         {% for item in module.steps %}

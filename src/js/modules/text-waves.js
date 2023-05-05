@@ -12,12 +12,12 @@ jQuery( document ).ready(function() {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "section.txt-waves",
-                start:"-=0",
+                start:"-=500",
                 toggleClass: {targets: "section.txt-waves", className: "active"}
             }
         });
         //INIT TIMELINE
-
+        /*
         var Hblock = $("section.txt-waves div.block").height() + 60;
         var Hblock = Hblock * 3;
         
@@ -27,8 +27,9 @@ jQuery( document ).ready(function() {
             start: 'top 0',
             anticipatePin: 3,
             end:"+="+Hblock+"",
-            scrub: 3,
+            scrub: 1.5,
         })
+        */
 
         jQuery("section.txt-waves div.block").each(function() {
             var h = jQuery(this).height();
@@ -37,9 +38,9 @@ jQuery( document ).ready(function() {
                 ease: 'none',
                 scrollTrigger: {
                     trigger: jQuery(this),
-                    start: 'top 0',
+                    start: 'top +=650',
                     end: '+='+h+'',
-                    scrub: 3.5,
+                    scrub: 1.5,
                 }
             });
 

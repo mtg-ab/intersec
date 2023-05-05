@@ -31,6 +31,13 @@ section.featured{
                    width:100%;
                    margin-bottom:40px;
                 }
+                &:hover{
+                    a.bloc-img{
+                        figure{
+                            transform: scale(1.1);
+                        }
+                    }
+                }
                 a.bloc-img{
                     width:100%;
                     height:250px;
@@ -43,6 +50,7 @@ section.featured{
                         display: block;
                         width:100%;
                         height:100%;
+                        transition: 0.5s;
                         img{
                             display: block;
                             object-fit: cover;
@@ -63,7 +71,7 @@ section.featured{
                 a.bloc-txt{
                     color:$color1;
                     text-decoration: none;
-                    h4{
+                    h3{
                         font-size:19px;
                         line-height:22px;
                         padding-bottom:20px;
@@ -74,11 +82,11 @@ section.featured{
                     div.txt{
                         *{
                             color:$color1;
-                            font-size:16px;
+                            font-size:16px !important;
                             opacity:1;
                             transform: translatey(0px);
                             margin:0px;
-                            font-weight: 400;
+                            font-weight: 400 !important;
                             border:none;
                             padding:0px;
                         }

@@ -79,10 +79,7 @@ section#hero-home{
         h1{
             text-align: center;
             color:#fff;
-            margin-bottom:50px;
-            @media(max-width:$size3){
-                margin-bottom:30px;
-            }
+            margin-bottom:30px;
         }
         div.slider-words{
             display:flex;
@@ -97,7 +94,7 @@ section#hero-home{
             }
         }
         p{
-            max-width:380px;
+            max-width:440px;
             margin:0 auto;
             color:#fff;
             opacity:0;

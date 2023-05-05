@@ -4,7 +4,10 @@ jQuery( document ).ready(function() {
         var Flickity = require('flickity');
         require('flickity-fade');
 
-
+        var x = Array.from(document.querySelectorAll("section.team .bloc-slider .bloc-txt")).map(e => $(e).height());
+        var maxValueInArray = Math.max.apply(Math, x);
+        var tabsContain = document.getElementById("bloc-slider");
+        tabsContain.style.height = ""+maxValueInArray+"px";
 
         var maxHeight = -1;
         jQuery('section.team div.container-infos div.contain-slider').each(function() {
@@ -14,6 +17,7 @@ jQuery( document ).ready(function() {
 
         ( function() {
             'use strict';
+            let textes = document.querySelectorAll(".bloc-slider .bloc-txt")
         
             function startSetup( sliderSize, slideSize, animationDuration, autoplayInterval ) {
         
@@ -32,6 +36,7 @@ jQuery( document ).ready(function() {
                 this.slidesSize           = 0;
                 this.descriptionsHolder   = newSlider.querySelector( '.circular-slider .wrapper .descriptions' );
                 this.descriptions         = newSlider.querySelectorAll( '.circular-slider .wrapper .descriptions .descriptions__item' );
+                this.textes         = newSlider.querySelectorAll( '.bloc-slider .bloc-txt' );
                 this.slidesHolder         = newSlider.querySelector( '.circular-slider .wrapper .slides-holder' );
                 //this.btnLeft              = document.querySelector( '.controls .controls__left' );
                 //this.btnRight             = document.querySelector( '.controls .controls__right' );
@@ -148,8 +153,6 @@ jQuery( document ).ready(function() {
             Slider.prototype.setNav = function() {
         
                 let _this              = this;
-                //var btnLeft = document.querySelector( '.controls .controls__left' );
-                //var btnRight = document.querySelector( '.controls .controls__right' );
                 var btnLeft = document.querySelector( 'button.previous' );
                 var btnRight = document.querySelector( 'button.next' );
                 btnLeft.onclick  = function() { _this.rotate(1) };
@@ -177,13 +180,20 @@ jQuery( document ).ready(function() {
                 this.slides[x].style.height = this.slides[x].style.width = this.slidesSize + 'px';
         
             };
-        
             Slider.prototype.addStyle = function() {
                 let x = this.currentSlide;
                 this.descriptions[x].classList.add( 'descriptions__item_visible' );
                 this.slides[x].classList.add( 'slides-holder__item_active' );
+                var numb = this.slides[x].getAttribute('data-index');
                 this.slides[x].style.height = this.slides[x].style.width = this.slidesSize + 200 + 'px';
-        
+                
+                textes.forEach((texte,index)=>{
+                    if (texte.getAttribute('data-id') == numb) {
+                        texte.classList.add("selected")
+                    }else{
+                        texte.classList.remove("selected")
+                    }
+                })
             };
         
             Slider.prototype.resetNavs = function() {
@@ -191,7 +201,7 @@ jQuery( document ).ready(function() {
                 let _this = this;
         
                 this.disableNav();
-                setTimeout( function(){ _this.setNav() }, this.startSetup.animationDuration + 20 );
+                setTimeout( function(){ _this.setNav() }, this.startSetup.animationDuration + 0 );
                 if ( this.autoplay != null ) {
                     clearInterval( this.autoplay );
                     this.setAutoplay();

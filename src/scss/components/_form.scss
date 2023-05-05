@@ -19,7 +19,8 @@ form {
             margin-bottom: 25px;
 
             label {
-                font-size: 11px;
+                font-size: 12px;
+                line-height:15px;
                 margin: 0;
                 color:#fff;
                 opacity: 0.5;
@@ -74,7 +75,7 @@ form {
                     background-position: right 15px top 50%;
                     background-size: 24px auto;
                     padding-right: 38px;
-                    height: 40px;
+                    height: 32px;
 
                     &::-ms-expand {
                         display: none;
@@ -260,6 +261,7 @@ form {
 
                 li {
                     label {
+                        color:#fff;
                         &.hs-main-font-element {
                             background-color: rgba($color2, 1);
                             padding: 20px 40px;
@@ -344,6 +346,8 @@ form {
                 li {
                     label {
                         margin: 0px;
+                        color:#fff !important;
+                        opacity:1 !important;
                     }
                 }
             }

@@ -39,13 +39,13 @@ export default class Cursor extends EventEmitter {
         this.tl = gsap.timeline({
             paused: true,
             onStart: () => {
-                this.DOM.circleInner.style.filter = `url(${this.filterId}`;
+                //this.DOM.circleInner.style.filter = `url(${this.filterId}`;
             },
             onUpdate: () => {
                 this.DOM.feDisplacementMap.scale.baseVal = this.primitiveValues.scale;
             },
             onComplete: () => {
-                this.DOM.circleInner.style.filter = 'none';
+                //this.DOM.circleInner.style.filter = 'none';
             }
         })
         .to(this.primitiveValues, { 

@@ -11,20 +11,22 @@
 {% block body %}
 <section class="error-page content-wrapper">
   <div class="container" data-error="404">
-    {% if content.language.languageTag == 'en' %}
-      <h1>Page introuvable.</h1>
-    {% else if content.language.languageTag == 'fr' %}
-      <h1>Page not found.</h1>
+    {% set list = request.path|string %}
+    {% set fr = 'fr' %}
+    {% if fr in list %}
+      <h1>Nous avons cherché partout, mais cette page semble nous avoir échappé. Remettez-vous sur la bonne voie avec le lien ci-dessous.</h1>
+    {% else %}
+      <h1>We looked all over, but that page seems to have gotten away from us. Get back on track with the link below.</h1>
     {% endif %}
     <a href="/" class="btn">
       <svg xmlns="http://www.w3.org/2000/svg">
           <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
           <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-      </svg>
-      {% if content.language.languageTag == 'en' %}
-        Home
-      {% else if content.language.languageTag == 'fr' %}
+      </svg>        
+      {% if fr in list %}
         Accueil
+      {% else %}
+        Home
       {% endif %}
     </a>
   </div>
