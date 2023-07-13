@@ -58,7 +58,9 @@
                             <div class="bloc-txt">
                                 {% if content.language.languageTag == 'en' %}
                                     {{ bloc.description }}
-                                {% else if content.language.languageTag == 'fr' %}
+                                {% elif content.language.languageTag == 'es' %}
+                                    {{ bloc.es_description }}
+                                {% elif content.language.languageTag == 'fr' %}
                                     {{ bloc.fr_description }}
                                 {% endif %}
                             </div>
@@ -68,7 +70,13 @@
                                         <img loading="lazy" src="{{ bloc.image.url }}" alt="{{ bloc.name }}" />
                                     </figure>
                                 </a>
-                            {% else if content.language.languageTag == 'fr' %}
+                            {% elif content.language.languageTag == 'es' %}
+                                <a href="{{ bloc.es_link }}" class="bloc-img link-hover">
+                                    <figure>
+                                        <img loading="lazy" src="{{ bloc.image.url }}" alt="{{ bloc.name }}" />
+                                    </figure>
+                                </a>
+                            {% elif content.language.languageTag == 'fr' %}
                                 <a href="{{ bloc.fr_link }}" class="bloc-img link-hover">
                                     <figure>
                                         <img loading="lazy" src="{{ bloc.image.url }}" alt="{{ bloc.name }}" />

@@ -25,6 +25,7 @@
         {% else if content.language.languageTag == 'fr' %}
             {% set type_tag = tag %}
         {% endif %}
+        {{ type_tag }}
     {% else %}
         {% set type_tag = 'All' %}
     {% endif %}
@@ -192,9 +193,7 @@
     <!-- Pagination -->
     {% if contents.total_page_count > 1 %}
     <nav class="container-blog-pagination">
-        {% set page_list = [-9 ,-8, -7, -6 ,-5, -4, -3 ,-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
-        15,
-        16] %}
+        {% set page_list = [-9 ,-8, -7, -6 ,-5, -4, -3 ,-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8] %}
         {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
         {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
         {% elif current_page_num == 2 %}{% set offset = 1 %}

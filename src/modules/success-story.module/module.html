@@ -61,19 +61,29 @@
                                         {% if item.context %}
                                             {% if content.language.languageTag == 'en' %}
                                                 <h3 class="title-context">Context</h3>
+                                            {% elif content.language.languageTag == 'es' %}
+                                                <h3 class="title-context">Contexto</h3>
                                             {% else %}
                                                 <h3 class="title-context">Contexte</h3>
                                             {% endif %}
                                             {% if content.language.languageTag == 'en' %}
                                                 {% inline_rich_text field="rich_text" value="{{ item.context }}" %}
+                                            {% elif content.language.languageTag == 'es' %}
+                                                {% inline_rich_text field="rich_text" value="{{ item.es_context }}" %}
                                             {% else %}
                                                 {% inline_rich_text field="rich_text" value="{{ item.fr_context }}" %}
                                             {% endif %}
                                         {% endif %}
                                         {% if item.solution %}
-                                            <h3 class="title-solution">Solution</h3>
+                                            {% if content.language.languageTag == 'es' %}
+                                                <h3 class="title-context">Solución</h3>
+                                            {% else %}
+                                                <h3 class="title-context">Solution</h3>
+                                            {% endif %}
                                             {% if content.language.languageTag == 'en' %}
                                                 {% inline_rich_text field="rich_text" value="{{ item.solution }}" %}
+                                            {% elif content.language.languageTag == 'es' %}
+                                                {% inline_rich_text field="rich_text" value="{{ item.es_solution }}" %}
                                             {% else %}
                                                 {% inline_rich_text field="rich_text" value="{{ item.fr_solution }}" %}
                                             {% endif %}
@@ -83,27 +93,37 @@
                                         <div class="bloc-testimonial">
                                             {% if item.image.url %}
                                                 {% if content.language.languageTag == 'en' %}
-                                                    <a href="{{ item.link.url.href }}" class="bloc-img">
+                                                    <div href="{{ item.link }}" class="contain-img">
                                                         <figure>
                                                             <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
                                                         </figure>
-                                                    </a>
+                                                    </div>
+                                                {% elif content.language.languageTag == 'es' %}
+                                                    <div class="contain-img">
+                                                        <figure>
+                                                            <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                                                        </figure>
+                                                    </div>
                                                 {% else %}
-                                                    <a href="{{ item.fr_link.url.href }}" class="bloc-img">
+                                                    <div class="contain-img">
                                                         <figure>
                                                             <img loading="lazy" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
                                                         </figure>
-                                                    </a>
+                                                    </div>
                                                 {% endif %}
                                                 {% if content.language.languageTag == 'en' %}
-                                                    <a href="{{ item.link.url.href }}" class="link">{{ item.button }}</a>
+                                                    <a href="{{ item.link }}" class="link">{{ item.button }}</a>
+                                                {% elif content.language.languageTag == 'es' %}
+                                                    <a href="{{ item.es_link }}" class="link">{{ item.es_button }}</a>
                                                 {% else %}
-                                                    <a href="{{ item.fr_link.url.href }}" class="link">{{ item.fr_button }}</a>
+                                                    <a href="{{ item.fr_link }}" class="link">{{ item.fr_button }}</a>
                                                 {% endif %}
                                             {% endif %}
                                             <div class="testimonial">
                                                 {% if content.language.languageTag == 'en' %}
                                                     {% inline_rich_text field="rich_text" value="{{ item.testimonial }}" %}
+                                                {% elif content.language.languageTag == 'es' %}
+                                                    {% inline_rich_text field="rich_text" value="{{ item.es_testimonial }}" %}
                                                 {% else %}
                                                     {% inline_rich_text field="rich_text" value="{{ item.fr_testimonial }}" %}
                                                 {% endif %}
@@ -113,6 +133,10 @@
                                                 {% if content.language.languageTag == 'en' %}
                                                     {% if item.job_testimonial %}
                                                         <p class="job">{{ item.job_testimonial }}</p>
+                                                    {% endif %}
+                                                {% elif content.language.languageTag == 'es' %}
+                                                    {% if item.es_job_testimonial %}
+                                                        <p class="job">{{ item.es_job_testimonial }}</p>
                                                     {% endif %}
                                                 {% else %}
                                                     {% if item.fr_job_testimonial %}

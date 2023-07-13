@@ -423,3 +423,11 @@ div.bloc-bg-lines{
       }
   }
 }
+
+h1,h2{
+  &.words{
+    span.word{
+      white-space:nowrap;
+    }
+  }
+}

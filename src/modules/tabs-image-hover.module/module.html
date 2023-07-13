@@ -29,8 +29,12 @@
                                     
                                 </div>
                                 <div class="item-title">
-                                    <p class="title">{{ item.title }}</p>
-                                    <p class="subtitle">{{ item.subtitle }}</p>
+                                    {% if item.title %}
+                                        <p class="title">{{ item.title }}</p>
+                                    {% endif %}
+                                    {% if item.subtitle %}
+                                        <p class="subtitle">{{ item.subtitle }}</p>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endif %}
@@ -59,14 +63,18 @@
                         {% for item in results_global %}
                             {% if content.language.languageTag == 'en' %}
                                 {% set url = item.link %}
-                            {% else if content.language.languageTag == 'fr' %}
+                            {% elif content.language.languageTag == 'es' %}
+                                {% set url = item.es_link %}
+                            {% elif content.language.languageTag == 'fr' %}
                                 {% set url = item.fr_link %}
                             {% endif %}
                                 <a href="{{ url }}" data-id="{{ loop.index }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="row">
                             
                                 {% if content.language.languageTag == 'en' %}
                                     <h3>{{ item.title }}</h3>
-                                {% else if content.language.languageTag == 'fr' %}
+                                {% elif content.language.languageTag == 'es' %}
+                                    <h3>{{ item.es_title }}</h3>
+                                {% elif content.language.languageTag == 'fr' %}
                                     <h3>{{ item.fr_title }}</h3>
                                 {% endif %}
                                 {% if item.image.url %}
@@ -76,14 +84,24 @@
                                         </figure>
                                     </div>
                                 {% endif %}
-                                {% if item.description %}
-                                    <div class="bloc-txt">
-                                        {% if content.language.languageTag == 'en' %}
+                                {% if content.language.languageTag == 'en' %}
+                                    {% if item.description %}
+                                        <div class="bloc-txt">
                                             {{ item.description }}
-                                        {% else if content.language.languageTag == 'fr' %}
+                                        </div>
+                                    {% endif %}
+                                {% elif content.language.languageTag == 'es' %}
+                                    {% if item.es_description %}
+                                        <div class="bloc-txt">
+                                            {{ item.es_description }}
+                                        </div>
+                                    {% endif %}
+                                {% elif content.language.languageTag == 'fr' %}
+                                    {% if item.fr_description %}
+                                        <div class="bloc-txt">
                                             {{ item.fr_description }}
-                                        {% endif %}
-                                    </div>
+                                        </div>
+                                    {% endif %}
                                 {% endif %}
                                 <div class="step">(0{{ loop.index }})</div>
                             </a>

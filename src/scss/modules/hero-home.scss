@@ -80,6 +80,9 @@ section#hero-home{
             text-align: center;
             color:#fff;
             margin-bottom:30px;
+            @media(max-width:$size3){
+                font-size: 53px;
+            }
         }
         div.slider-words{
             display:flex;

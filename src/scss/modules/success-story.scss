@@ -244,7 +244,7 @@ section.success-story{
                                 width:100%;
                                 max-width:100%;
                             }
-                            a.bloc-img{
+                            div.contain-img{
                                 width:285px;
                                 height:200px;
                                 display:block;
@@ -272,6 +272,10 @@ section.success-story{
                                 font-weight: 500;
                                 font-size: 19px;
                                 line-height: 120%;
+                                transition: 0.55s;
+                                &:hover{
+                                    color:$color2;
+                                }
                             }
                             div.testimonial{
                                 position: relative;

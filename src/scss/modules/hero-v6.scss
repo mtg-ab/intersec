@@ -268,7 +268,7 @@ div.hero-v6{
                         flex-direction: column;
                         justify-content: center;
                         position: relative;
-                        padding:25px;
+                        padding:15px;
                         border: 1px solid $color2;
                         cursor: pointer;
                         z-index:-1;
@@ -588,6 +588,7 @@ div.hero-v6{
                     opacity:0;
                     transition: 0.55s;
                     pointer-events: none;
+                    width:100%;
                     &.selected{
                         opacity: 1;
                         top:0px;
@@ -635,7 +636,7 @@ div.hero-v6{
                                     }
                                 }
                                 div.bloc-img{
-                                    max-width:285px;
+                                    max-width:315px;
                                     min-height:400px;
                                     position: relative;
                                     @media(max-width:$size3){

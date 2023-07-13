@@ -63,6 +63,15 @@
                 "locked": false,
                 "type": "boolean",
                 "default": true
+            },
+            {
+                "name": "bg_black",
+                "label": "Is the background color black?",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": false
             }
         ]
     },
