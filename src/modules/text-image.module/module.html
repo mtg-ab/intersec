@@ -6,13 +6,15 @@
     {% endif %}
     <div class="container">
         
+        
         {% if module.video %}
-            <div class="bloc-video {% if module.autoplay !='true' %}btn-play{% endif %} {% if module.youtube =='true' %}btn-play-youtube{% endif %}">
-                <img loading="lazy" src="{{ module.image.src }}" width="{{ module.image.width }}" height="{{ module.image.height }}" alt="Video cover">
-                {% if module.youtube == 'true' %}
-                    <iframe width="560" height="315" data-src="{{ module.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="bloc-video {% if module.youtube == true %}iframe{% endif %} {% if module.autoplay !='true' %}btn-play{% endif %} {% if module.youtube =='true' %}btn-play-youtube{% endif %}">
+                <img loading="lazy" src="{{ module.image.src }}" width="{{ module.image.width }}" height="{{ module.image.height }}" alt="{{ module.image.alt }}">
+                {% if module.youtube == true %}
+                    {% set url = module.video|regex_replace('.*v=', '') %}
+                    <iframe width="560" height="315" data-src="https://www.youtube.com/embed/{{ url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 {% else %}
-                    <video muted {% if module.autoplay %}preload="none"{% endif %} {% if module.autoplay !=" true" %}class="btn-play"{% endif %} loop playsinline>  
+                    <video playsinline>  
                         <source src="{{ module.video }}" type="video/mp4">
                     </video>
                 {% endif %}

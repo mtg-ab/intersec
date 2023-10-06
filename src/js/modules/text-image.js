@@ -1,6 +1,99 @@
 jQuery( document ).ready(function() {
     if(jQuery("section").hasClass("txt-img")){
 
+
+        let videos = document.querySelectorAll(".txt-img .bloc-video")
+
+            videos.forEach((video,index)=>{
+                video.addEventListener("click", () =>{
+                    
+                    videos.forEach((video,index)=>{
+                        let cleanedUrl = "";
+                        if (window.matchMedia("(min-width: 768px)").matches) {
+                            if (videos[index].classList.contains('iframe')) {
+                                video.parentElement.classList.remove("play")
+                                videos[index].querySelector('iframe').setAttribute("src", cleanedUrl);
+                            }
+                        }
+                        if (videos[index].classList.contains('video')) {
+                            video.parentElement.classList.remove("play")
+                            videos[index].querySelector('video').pause();
+                        }
+                    })
+                    //IFRAME
+                    if (video.querySelector('iframe')) {
+                        if (window.matchMedia("(min-width: 768px)").matches) {
+                            if (videos[index].classList.contains('play')) {
+                                videos[index].parentElement.classList.remove("play")
+                                videos[index].classList.remove("play")
+                                videos[index].querySelector('iframe').setAttribute("src", cleanedUrl);
+                            }else{
+                                videos.forEach((video) => {
+                                    videos[index].parentElement.classList.remove("play")
+                                    video.classList.remove("play")
+                                    if(video.querySelector('iframe')){
+                                        let src = video.querySelector('iframe').getAttribute("data-src");
+                                        let srcString = src.toString();
+                                        let srcSplit = srcString;
+                                        let cleanedUrl = srcSplit + "?showinfo=0&rel=0&autoplay=true";
+                                        videos[index].querySelector('iframe').setAttribute("src", cleanedUrl);
+                                    }
+                                })
+                                videos[index].parentElement.classList.add("play")
+                                videos[index].classList.add("play")
+                            }
+                        }
+
+                    }else{
+                        //VIDEO HTML
+                        if (videos[index].classList.contains('play')) {
+                            videos[index].parentElement.classList.remove("play")
+                            videos[index].classList.remove("play")
+                            if(video.querySelector('video')){
+                                videos[index].querySelector('video').pause();
+                            }
+                        }else{
+                            videos.forEach((video) => {
+                                video.parentElement.classList.remove("play")
+                                video.classList.remove("play")
+                                if(video.querySelector('video')){
+                                    videos[index].querySelector('video').play();
+                                }
+                                
+                            })
+                            videos[index].parentElement.classList.add("play")
+                            videos[index].classList.add("play")
+                        }
+                       
+                    }
+                    video.addEventListener('ended', function() {
+                        videos[index].classList.remove('play');
+                    });
+
+                    
+                })
+
+                
+                
+                //RESPONSIVE MOBILE
+                if (window.matchMedia("(max-width: 768px)").matches) {
+                    videos.forEach((video) => {
+                        if(video.querySelector('iframe')){
+                            let src = video.querySelector('iframe').getAttribute("data-src");
+                            let srcString = src.toString();
+                            let srcSplit = srcString;
+                            let cleanedUrl = srcSplit + "?showinfo=0&rel=0&autoplay=true";
+                            video.querySelector('iframe').setAttribute("src", cleanedUrl);
+                        }
+                    })
+                    
+                }
+                //RESPONSIVE MOBILE
+                
+            })
+
+        /*
+
         var mrUtil = function ($) {
             var Util = {
                 activateIframeSrc: function activateIframeSrc(iframe) {
@@ -43,6 +136,7 @@ jQuery( document ).ready(function() {
                 this.paused ? this.play() : this.pause();
             })
         }
+        */
         
     }
 })

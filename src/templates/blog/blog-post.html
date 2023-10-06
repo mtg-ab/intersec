@@ -21,7 +21,7 @@
             {% if content.topic_list %}
               {% for tags in content.topic_list %}
                 {% if tags.name|lower != "featured" %}
-                  <a href="{{ blog_tag_url(group.id, tags.slug) }}">{{tags|replace('-', ' ') }}</a>
+                  <a href="{{ blog_tag_url(group.id, tags.slug) }}">{{tags|replace('-', ' ') }}</a>{% if !loop.last %} - {% endif %}
                 {% endif %}
               {% endfor %}
             {% endif %}

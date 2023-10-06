@@ -44,6 +44,49 @@ jQuery( document ).ready(function() {
         smoother.refresh();
         ScrollTrigger.update( ) ;
     }, 1000)
+
+    jQuery('a').each(function (index) {
+        jQuery(this).click(function (index) {
+            var href = $(this).attr('href');
+            if (href.indexOf("#") > -1) {
+                href = href.replace('#', '');
+                console.log(href)
+                jQuery('section').each(function (index) {
+                    var idTitle = jQuery(this).attr('id');
+                    if (href == idTitle) {
+                        jQuery('html, body').animate({
+                            scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset(jQuery(this), 'top +=120px')),
+                        }, 750);
+                    }
+                })
+            }
+        })
+    })
+
+    jQuery('.btn').each(function (index) {
+        jQuery(this).click(function (index) {
+            var href = $(this).attr('data-href');
+            if (href.indexOf("#") > -1) {
+                var indexHash = href.indexOf("#");
+                href = href.substring(indexHash + 1);  
+                if(href == "meeting"){
+                    jQuery('html, body').animate({
+                        scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset(jQuery(".meetings-iframe-container"), 'top +=120px')),
+                    }, 750);
+                }else{
+                    jQuery('section').each(function (index) {
+                        var idTitle = jQuery(this).attr('id');
+                        if (href == idTitle) {
+                            jQuery('html, body').animate({
+                                scrollTop: Math.min(ScrollTrigger.maxScroll(window), smoother.offset(jQuery(this), 'top +=120px')),
+                            }, 750);
+                        }
+                    })
+                }           
+                
+            }
+        })
+    })
     
     jQuery("section.hero-v6 div.bloc-items div.container-bloc-item").each(function() {
         jQuery(this).click(function() {

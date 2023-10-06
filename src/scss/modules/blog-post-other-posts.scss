@@ -22,12 +22,12 @@ section.other-posts{
             max-width:605px;
         }
         div.bloc-posts{
-            max-width:800px;
+            max-width:840px;
             width:100%;
             padding-top:45px;
             display:flex;
-            justify-content: space-between;
             margin-bottom:100px;
+            justify-content: space-between;
             @media(max-width:$size4){
                 flex-direction: column;
             }

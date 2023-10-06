@@ -6,6 +6,7 @@
         <div class="bloc-posts">
             {% set pop_posts = blog_popular_posts("default", 2, "popular_past_month") %}
             {% for pop_post in pop_posts %}
+                {% if loop.index < 3 %}
                 <a href="{{ pop_post.url }}" class="bloc">
                     <div class="bloc-img">
                         <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
@@ -30,6 +31,7 @@
                         {% endif %}                      
                     </div>
                 </a>
+                {% endif %}
             {% endfor %}
         </div>
         <div class="bloc-newsletter">

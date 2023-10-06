@@ -17,13 +17,24 @@
                 {% endif %}
                 {% if module.button_url.url.href != '' %}
                     <div class="row-btns test">
-                        <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
-                            <svg xmlns="http://www.w3.org/2000/svg">
-                                <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                                <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
-                            </svg>
-                            {{ module.button_text }}
-                        </a>
+                        {% if '#' in  module.button_url.url.href %}
+                            <div class="btn" data-href="{{ module.button_url.url.href }}">
+                                <svg xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                    <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                </svg>
+                                {{ module.button_text }}
+                            </div>
+                        {% else %}
+                            <a href="{{ module.button_url.url.href }}" {% if module.button_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="line-dashed" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                    <rect class="line-outline" ry="25" rx="25" id="button" height="44" width="200" y="1" x="1" stroke="#000000" fill="none" />
+                                </svg>
+                                {{ module.button_text }}
+                            </a>
+                        {% endif %}
+                        
                     </div>
                 {% endif %}
                 {% if module.cta_field_2 %}

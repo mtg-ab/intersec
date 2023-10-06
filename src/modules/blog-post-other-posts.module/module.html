@@ -5,10 +5,9 @@
     <div class="container">
         <div class="bloc-posts">
             
-            {% set tag_posts = blog_recent_tag_posts("default", content.tagList, 3) %}
+            {% set tag_posts = blog_recent_tag_posts("default", content.tagList, 2, "OR") %}
             {% for pop_post in tag_posts %}
                 {% unless pop_post.absolute_url == content.absolute_url %}
-                    {% if loop.index < 4 %}
                         <a href="{{ pop_post.url }}" class="bloc">
                             <div class="bloc-img">
                                 <figure class="position-relative h-100 mr-n1 mb-0 overflow-hidden">
@@ -33,7 +32,6 @@
                                 {% endif %}                      
                             </div>
                         </a>
-                    {% endif %}
                 {% endunless %}
             {% endfor %}
         </div>
