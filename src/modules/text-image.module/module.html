@@ -8,13 +8,13 @@
         
         
         {% if module.video %}
-            <div class="bloc-video {% if module.youtube == true %}iframe{% endif %} {% if module.autoplay !='true' %}btn-play{% endif %} {% if module.youtube =='true' %}btn-play-youtube{% endif %}">
+            <div class="bloc-video {% if module.youtube == true %}iframe{% endif %} {% if module.autoplay !='true' %}btn-play{% else %}play{% endif %} {% if module.youtube =='true' %}btn-play-youtube{% endif %}">
                 <img loading="lazy" src="{{ module.image.src }}" width="{{ module.image.width }}" height="{{ module.image.height }}" alt="{{ module.image.alt }}">
                 {% if module.youtube == true %}
                     {% set url = module.video|regex_replace('.*v=', '') %}
                     <iframe width="560" height="315" data-src="https://www.youtube.com/embed/{{ url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 {% else %}
-                    <video playsinline>  
+                    <video playsinline {% if module.autoplay =='true' %}autoplay muted{% endif %}>  
                         <source src="{{ module.video }}" type="video/mp4">
                     </video>
                 {% endif %}

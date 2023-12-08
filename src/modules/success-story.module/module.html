@@ -112,11 +112,17 @@
                                                     </div>
                                                 {% endif %}
                                                 {% if content.language.languageTag == 'en' %}
-                                                    <a href="{{ item.link }}" class="link">{{ item.button }}</a>
+                                                    {% if item.link %}
+                                                        <a href="{{ item.link }}" class="link">{{ item.button }}</a>
+                                                    {% endif %}
                                                 {% elif content.language.languageTag == 'es' %}
-                                                    <a href="{{ item.es_link }}" class="link">{{ item.es_button }}</a>
+                                                    {% if item.es_link %}
+                                                        <a href="{{ item.es_link }}" class="link">{{ item.es_button }}</a>
+                                                    {% endif %}
                                                 {% else %}
-                                                    <a href="{{ item.fr_link }}" class="link">{{ item.fr_button }}</a>
+                                                    {% if item.fr_link %}
+                                                        <a href="{{ item.fr_link }}" class="link">{{ item.fr_button }}</a>
+                                                    {% endif %}
                                                 {% endif %}
                                             {% endif %}
                                             <div class="testimonial">

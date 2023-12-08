@@ -1,10 +1,22 @@
 jQuery( document ).ready(function() {
     if(jQuery("section").hasClass("txt-img")){
 
+        let sections = document.querySelectorAll(".txt-img")
 
-        let videos = document.querySelectorAll(".txt-img .bloc-video")
-
+        sections.forEach((section,index)=>{
+        let videos = section.querySelectorAll(".bloc-video")
             videos.forEach((video,index)=>{
+                if (video.querySelector('video')) {
+                    if (video.classList.contains('play')) {
+                    }else{
+                        setTimeout(
+                            function() 
+                            {
+                                jQuery('section.txt-img video').trigger('play');
+                            }, 50
+                        );
+                    }
+                }
                 video.addEventListener("click", () =>{
                     
                     videos.forEach((video,index)=>{
@@ -137,6 +149,8 @@ jQuery( document ).ready(function() {
             })
         }
         */
+
+        })
         
     }
 })
